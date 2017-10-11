@@ -1,0 +1,185 @@
+PODS:
+  - ActionSheetPicker-3.0 (2.2.0)
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - ArrayUtils (1.3)
+  - Aspects (1.4.1)
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - DACircularProgress (2.3.1)
+  - DateTools (2.0.0)
+  - EDColor (1.0.1)
+  - FBSDKCoreKit (4.25.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.25.0):
+    - FBSDKCoreKit
+  - HexColors (4.0.0)
+  - hpple (0.2.0)
+  - IDMPhotoBrowser (1.11.3):
+    - DACircularProgress
+    - pop
+    - SDWebImage (= 4.0.0)
+  - iVersion (1.11.5)
+  - Masonry (0.6.4)
+  - MJExtension (3.0.13)
+  - MJRefresh (3.1.14)
+  - MWFeedParser (1.0.1):
+    - MWFeedParser/FeedParser (= 1.0.1)
+    - MWFeedParser/NSDate+InternetDateTime (= 1.0.1)
+    - MWFeedParser/NSString+HTML (= 1.0.1)
+  - MWFeedParser/FeedParser (1.0.1):
+    - MWFeedParser/NSDate+InternetDateTime
+    - MWFeedParser/NSString+HTML
+  - MWFeedParser/NSDate+InternetDateTime (1.0.1)
+  - MWFeedParser/NSString+HTML (1.0.1)
+  - NSHash (1.2.0)
+  - NYXImagesKit (2.3)
+  - ObjcAssociatedObjectHelpers (2.0.1):
+    - ObjcAssociatedObjectHelpers/Core (= 2.0.1)
+    - ObjcAssociatedObjectHelpers/NSObject+Dictionary (= 2.0.1)
+  - ObjcAssociatedObjectHelpers/Core (2.0.1)
+  - ObjcAssociatedObjectHelpers/NSObject+Dictionary (2.0.1):
+    - ObjcAssociatedObjectHelpers/Core
+  - PINCache (3.0.1-beta.6):
+    - PINCache/Arc-exception-safe (= 3.0.1-beta.6)
+    - PINCache/Core (= 3.0.1-beta.6)
+  - PINCache/Arc-exception-safe (3.0.1-beta.6):
+    - PINCache/Core
+  - PINCache/Core (3.0.1-beta.6):
+    - PINOperation (~> 1.1.0)
+  - PINOperation (1.1)
+  - pop (1.0.10)
+  - PPTopMostController (0.0.1)
+  - PromiseKit (4.4.0):
+    - PromiseKit/Foundation (= 4.4.0)
+    - PromiseKit/QuartzCore (= 4.4.0)
+    - PromiseKit/UIKit (= 4.4.0)
+  - PromiseKit/CorePromise (4.4.0)
+  - PromiseKit/Foundation (4.4.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.4.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.4.0):
+    - PromiseKit/CorePromise
+  - ReactiveObjC (3.0.0)
+  - RMessage (2.1.5):
+    - HexColors (~> 4.0)
+    - PPTopMostController
+  - SAMKeychain (1.5.3)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - SVProgressHUD (2.1.2)
+  - Toaster (2.1.0)
+  - TTTAttributedLabel (2.0.0)
+  - UIDeviceIdentifier (1.1.1)
+  - UIImage-Helpers (0.0.3)
+  - ViewUtils (1.1.2)
+
+DEPENDENCIES:
+  - ActionSheetPicker-3.0 (= 2.2.0)
+  - AFNetworking (~> 3.0)
+  - ArrayUtils (~> 1.3)
+  - Aspects (~> 1.4.1)
+  - BlocksKit (~> 2.2.5)
+  - DateTools (~> 2.0.0)
+  - EDColor (~> 1.0.1)
+  - FBSDKCoreKit (~> 4.25.0)
+  - FBSDKLoginKit (~> 4.25.0)
+  - hpple (~> 0.2.0)
+  - IDMPhotoBrowser (~> 1.11.3)
+  - iVersion (~> 1.11.4)
+  - Masonry (~> 0.6.4)
+  - MJExtension (= 3.0.13)
+  - MJRefresh (~> 3.1.4)
+  - MWFeedParser (~> 1.0.1)
+  - NSHash (~> 1.2.0)
+  - NYXImagesKit (~> 2.3)
+  - ObjcAssociatedObjectHelpers (= 2.0.1)
+  - PINCache (~> 3.0.1-beta.5)
+  - PromiseKit (~> 4.4.0)
+  - ReactiveObjC (~> 3.0.0)
+  - RMessage (~> 2.1.5)
+  - SAMKeychain (~> 1.5.2)
+  - SDWebImage (~> 4.0.0)
+  - SVProgressHUD (= 2.1.2)
+  - Toaster
+  - TTTAttributedLabel (~> 2.0.0)
+  - UIDeviceIdentifier (~> 1.1.1)
+  - UIImage-Helpers (~> 0.0.3)
+  - ViewUtils (~> 1.1.2)
+
+SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  ArrayUtils: 1444c5aab693bf1c8bde31145e10fc7c5cf930bf
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
+  EDColor: 91d127cd67d7c1d3862846fb11ef4b3851151bfa
+  FBSDKCoreKit: 53e3f4bfb64e80c5f229dd30ae33ff57fbbbd2d1
+  FBSDKLoginKit: f628c09684dae9c17f071cf90b014e886f5093ea
+  HexColors: 5f95843ef89aff6a72e1fd3a8ebabf205cc43379
+  hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
+  IDMPhotoBrowser: b96159fe4adb991a844068eb17dab9c0b7d7e51a
+  iVersion: 3a93a89259eb3b52b0a8ba52c46a0027fa6b4d30
+  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJRefresh: 6642e35b3227a5447b9fd5e17c552c90196c9859
+  MWFeedParser: 2cf646014c1baf6ad1b08c480b40a08180079247
+  NSHash: 036c03781d372c288d332b512b203e7bb832e46e
+  NYXImagesKit: 8163e3335a40eaa173ca5bbbf81fafb57d3947eb
+  ObjcAssociatedObjectHelpers: 686c291f292c26a49b9b1fa7d58130a8d35d59d2
+  PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
+  PINOperation: 7f042fa6df5b606deb4bd5997654cf7033d5be1d
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  PPTopMostController: 4e6f1e5f8c645bdcc74cd837a20f607ff262c048
+  PromiseKit: ecf5fe92275d57ee77c9ede858af47a162e9b97e
+  ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
+  RMessage: 31d44bd26a8f353f987d2e7194f3e9ffb203cbf2
+  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  Toaster: 8c3225dc465bef4aa57e147a288724576df8e439
+  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
+  UIDeviceIdentifier: 9281343882e24460235f00a0d7d2fc04a65688c6
+  UIImage-Helpers: 06b04a42bdd222844035602e87e936765c80f620
+  ViewUtils: 68e42c708a4b3912e39691cef5080282dc5013fb
+
+PODFILE CHECKSUM: c98989911feca3e18fe7a0d68581cf5f55f85fb5
+
+COCOAPODS: 1.3.0
