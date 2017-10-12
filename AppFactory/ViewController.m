@@ -72,11 +72,6 @@
     
     [RMessageHelper showOkay:@"123"];
     
-    HUD_SHOW;
-    [self bk_performBlock:^(id obj) {
-        HUD_DISMISS;
-    } afterDelay:1];
-    
     AFCountryPickerViewController *vc = [[AFCountryPickerViewController alloc] init];
     [vc setCellTextColor:[UIColor grayColor]];
     [vc setSelectTintColor:[UIColor yellowColor]];
