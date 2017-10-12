@@ -13,9 +13,9 @@ Pod::Spec.new do |s|
     s.source       = { :git => "https://github.com/alanchen/AppFactory.git", :tag => "dev" }
     s.requires_arc = true
     s.resources    = "AppFactory/Core/Resource/*.{png,bundle}"
-    s.source_files = "AppFactory/Core/**/*.{h,m}"
-    s.public_header_files = "AppFactory/Core/**/*.h"
     s.frameworks   = "Foundation","UIKit"
+    s.public_header_files = 'AppFactory/Core/**/*.h'
+    s.source_files = 'AppFactory/Core/**/*.{h,m}'
 
 	s.dependency "AFNetworking", "~> 3.0"
 	s.dependency "BlocksKit", "~> 2.2.5"
@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
 	s.dependency "SAMKeychain", "~> 1.5.2"
 	s.dependency "ArrayUtils", "~> 1.3"
 	s.dependency "NSHash", "~> 1.2.0"
-	s.dependency "MWFeedParser", "~> 1.0.1"
+    s.dependency "MWFeedParser", "~> 1.0.1"
 	s.dependency "ActionSheetPicker-3.0", "~> 2.2.0"
 	s.dependency "DateTools", "~> 2.0.0"
 	s.dependency "hpple", "~> 0.2.0"

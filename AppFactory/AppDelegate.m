@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "AFBaseNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     ViewController *signin = [[ViewController alloc] init];
-    UINavigationController *navi =[[UINavigationController alloc] initWithRootViewController:signin];
+    AFBaseNavigationController *navi =[AFBaseNavigationController navigationWithRootViewController:signin];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = navi;
     self.window.backgroundColor = [UIColor whiteColor];
