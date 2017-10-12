@@ -12,15 +12,10 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = "9.0"
     s.source       = { :git => "https://github.com/alanchen/AppFactory.git", :tag => "dev" }
     s.requires_arc = true
-    s.resources    = "AppFactory/Class/Resource/*.{png,bundle}"
+    s.resources    = "AppFactory/Core/Resource/*.{png,bundle}"
     s.frameworks   = "Foundation","UIKit"
-    s.public_header_files = 'AppFactory/Core/*.h'
-    s.source_files = 'AppFactory/Core/*.{h,m}'
-
-    s.subspec 'Core' do |ss|
-	    ss.source_files = 'AppFactory/Core/Class/**/*.{h,m}'
-        ss.public_header_files = 'AppFactory/Core/Class/**/*.h'
-    end
+    s.public_header_files = 'AppFactory/Core/**/*.h'
+    s.source_files = 'AppFactory/Core/**/*.{h,m}'
 
 	s.dependency "AFNetworking", "~> 3.0"
 	s.dependency "BlocksKit", "~> 2.2.5"
