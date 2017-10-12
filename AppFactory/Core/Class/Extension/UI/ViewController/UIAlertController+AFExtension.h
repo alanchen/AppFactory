@@ -1,0 +1,38 @@
+//
+//  UIAlertController+AFExtension.h
+//  AppFactory
+//
+//  Created by alan on 2017/10/2.
+//  Copyright © 2017年 alan. All rights reserved.
+//
+
+#import "UIAlertController+Window.h"
+
+@interface UIAlertController(AFExtension)
+
++ (UIAlertController *)showAlertViewWithTitle:(NSString *)title
+                                      message:(NSString *)message
+                                  cancelTitle:(NSString *)cancelTitle
+                                   otherTitle:(NSString *)otherTitle
+                                cancelHandler:(void (^)(UIAlertAction *action))cancleBlock
+                                 otherHandler:(void (^)(UIAlertAction *action))otherblock;
+
++ (UIAlertController *)showWithTitle:(NSString *)title
+                             message:(NSString *)message
+                         buttonTitle:(NSString *)btnTitle
+                             handler:(void (^)(UIAlertAction *action))block;
+
+
++ (UIAlertController *)alertControllerWithTitle:(NSString *)title message:(NSString *)message;
+
++ (UIAlertController *)actionSheetControllerWithTitle:(NSString *)title message:(NSString *)message;
+
+- (void)showActionSheetOnViewController:(UIViewController *)viewController from:(id)from;
+
+- (void)addDefaultActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block;
+
+- (void)addCancelActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block;
+
+- (void)addDestructiveActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block;
+
+@end
