@@ -54,26 +54,6 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     return [[CTFeedbackViewController alloc] initWithTopics:topics localizedTopics:localizedTopics];
 }
 
-+ (NSArray *)defaultTopics
-{
-    return @[
-            @"Question",
-            @"Request",
-            @"Bug Report",
-            @"Other"
-    ];
-}
-
-+ (NSArray *)defaultLocalizedTopics
-{
-    return @[
-            CTFBLocalizedString(@"Question"),
-            CTFBLocalizedString(@"Request"),
-            CTFBLocalizedString(@"Bug Report"),
-            CTFBLocalizedString(@"Other")
-    ];
-}
-
 - (instancetype)initWithTopics:(NSArray *)topics localizedTopics:(NSArray *)localizedTopics
 {
     self = [super initWithStyle:UITableViewStyleGrouped];

@@ -13,6 +13,7 @@
 		E7905D511F7A32E4006CC6F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7905D501F7A32E4006CC6F5 /* Assets.xcassets */; };
 		E7905D571F7A32E4006CC6F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7905D561F7A32E4006CC6F5 /* main.m */; };
 		E7905D5E1F7A350A006CC6F5 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7905D5D1F7A350A006CC6F5 /* Launch Screen.storyboard */; };
+		E7C20AD61F906A16004B70E0 /* CTFeedback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7C20AD51F906A16004B70E0 /* CTFeedback.bundle */; };
 		E7F8C1C21F8F1C1600B1E14B /* AppFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C0F21F8F1C1600B1E14B /* AppFactory.m */; };
 		E7F8C1C31F8F1C1600B1E14B /* AFApiResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C0F61F8F1C1600B1E14B /* AFApiResponse.m */; };
 		E7F8C1C41F8F1C1600B1E14B /* AFApiTaskError.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C0F81F8F1C1600B1E14B /* AFApiTaskError.m */; };
@@ -75,7 +76,6 @@
 		E7F8C1FD1F8F1C1600B1E14B /* CTFeedbackTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1801F8F1C1600B1E14B /* CTFeedbackTopicsViewController.m */; };
 		E7F8C1FE1F8F1C1600B1E14B /* CTFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1821F8F1C1600B1E14B /* CTFeedbackViewController.m */; };
 		E7F8C1FF1F8F1C1600B1E14B /* NSBundle+CTFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1841F8F1C1600B1E14B /* NSBundle+CTFeedback.m */; };
-		E7F8C2001F8F1C1600B1E14B /* CTFeedbackLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7F8C1861F8F1C1600B1E14B /* CTFeedbackLocalizable.strings */; };
 		E7F8C2011F8F1C1600B1E14B /* FeedbackHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1961F8F1C1600B1E14B /* FeedbackHelper.m */; };
 		E7F8C2021F8F1C1600B1E14B /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1991F8F1C1600B1E14B /* HTMLParser.m */; };
 		E7F8C2031F8F1C1600B1E14B /* TFHpple+Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C19B1F8F1C1600B1E14B /* TFHpple+Tag.m */; };
@@ -107,6 +107,7 @@
 		E7905D5D1F7A350A006CC6F5 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E7905D631F7A5ACB006CC6F5 /* AppFactory-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppFactory-Prefix.pch"; sourceTree = "<group>"; };
 		E7AD2E321F8DA8EA00F8E58A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7C20AD51F906A16004B70E0 /* CTFeedback.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CTFeedback.bundle; sourceTree = "<group>"; };
 		E7F8C0F11F8F1C1600B1E14B /* AppFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppFactory.h; sourceTree = "<group>"; };
 		E7F8C0F21F8F1C1600B1E14B /* AppFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppFactory.m; sourceTree = "<group>"; };
 		E7F8C0F51F8F1C1600B1E14B /* AFApiResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFApiResponse.h; sourceTree = "<group>"; };
@@ -230,8 +231,6 @@
 		E7F8C1821F8F1C1600B1E14B /* CTFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFeedbackViewController.m; sourceTree = "<group>"; };
 		E7F8C1831F8F1C1600B1E14B /* NSBundle+CTFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CTFeedback.h"; sourceTree = "<group>"; };
 		E7F8C1841F8F1C1600B1E14B /* NSBundle+CTFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CTFeedback.m"; sourceTree = "<group>"; };
-		E7F8C1871F8F1C1600B1E14B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
-		E7F8C1941F8F1C1600B1E14B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/CTFeedbackLocalizable.strings"; sourceTree = "<group>"; };
 		E7F8C1951F8F1C1600B1E14B /* FeedbackHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackHelper.h; sourceTree = "<group>"; };
 		E7F8C1961F8F1C1600B1E14B /* FeedbackHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackHelper.m; sourceTree = "<group>"; };
 		E7F8C1981F8F1C1600B1E14B /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
@@ -662,7 +661,6 @@
 			isa = PBXGroup;
 			children = (
 				E7F8C17A1F8F1C1600B1E14B /* Classes */,
-				E7F8C1851F8F1C1600B1E14B /* Resources */,
 			);
 			path = "CTFeedback-1.0.19";
 			sourceTree = "<group>";
@@ -682,14 +680,6 @@
 				E7F8C1841F8F1C1600B1E14B /* NSBundle+CTFeedback.m */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		E7F8C1851F8F1C1600B1E14B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				E7F8C1861F8F1C1600B1E14B /* CTFeedbackLocalizable.strings */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		E7F8C1971F8F1C1600B1E14B /* HTMLParser */ = {
@@ -803,6 +793,7 @@
 		E7F8C1C01F8F1C1600B1E14B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E7C20AD51F906A16004B70E0 /* CTFeedback.bundle */,
 				E7F8C1C11F8F1C1600B1E14B /* AppFactory.bundle */,
 			);
 			path = Resource;
@@ -871,11 +862,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7F8C1F61F8F1C1600B1E14B /* countries.json in Resources */,
+				E7C20AD61F906A16004B70E0 /* CTFeedback.bundle in Resources */,
 				E7F8C2061F8F1C1600B1E14B /* AlternativeDesigns.json in Resources */,
 				E7905D5E1F7A350A006CC6F5 /* Launch Screen.storyboard in Resources */,
 				E7905D511F7A32E4006CC6F5 /* Assets.xcassets in Resources */,
 				E7F8C20E1F8F1C1600B1E14B /* AppFactory.bundle in Resources */,
-				E7F8C2001F8F1C1600B1E14B /* CTFeedbackLocalizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1092,18 +1083,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		E7F8C1861F8F1C1600B1E14B /* CTFeedbackLocalizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E7F8C1871F8F1C1600B1E14B /* Base */,
-				E7F8C1941F8F1C1600B1E14B /* zh-Hant */,
-			);
-			name = CTFeedbackLocalizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E7905D581F7A32E4006CC6F5 /* Debug */ = {

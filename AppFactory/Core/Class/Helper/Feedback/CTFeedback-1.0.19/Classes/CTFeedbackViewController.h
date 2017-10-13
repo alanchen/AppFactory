@@ -47,10 +47,6 @@
 
 + (CTFeedbackViewController *)controllerWithTopics:(NSArray *)topics localizedTopics:(NSArray *)localizedTopics;
 
-+ (NSArray *)defaultTopics;
-
-+ (NSArray *)defaultLocalizedTopics;
-
 - (instancetype)initWithTopics:(NSArray *)topics localizedTopics:(NSArray *)localizedTopics;
 
 @end
