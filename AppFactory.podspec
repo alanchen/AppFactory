@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
     s.author       = { "Alan" => "mvpi3.tw@gmail.com" }
     s.platform     = :ios
     s.ios.deployment_target = "9.0"
-    s.source       = { :git => "https://github.com/alanchen/AppFactory.git", :tag => "dev" }
+    s.source       = { :git => "https://github.com/alanchen/AppFactory.git", :tag => "master" }
     s.requires_arc = true
     s.resources    = "AppFactory/Core/Resource/*.{png,bundle}"
     s.frameworks   = "Foundation","UIKit"
