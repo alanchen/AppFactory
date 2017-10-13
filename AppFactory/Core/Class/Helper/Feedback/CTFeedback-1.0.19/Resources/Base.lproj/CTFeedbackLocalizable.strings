@@ -4,20 +4,6 @@
  Created by Ryoichi Izumita on 2013/10/31.
  Copyright (c) 2013 CAPH. All rights reserved. */
 
-"Question" = "Question";
-
-"Request" = "Request";
-
-"Bug Report" = "Bug Report";
-
-"Lost Points" = "Lost Points";
-
-"Appeal Report" = "Appeal Report";
-
-"Banned Report" = "Banned Report";
-
-"Other" = "Other";
-
 "Device" = "Device";
 
 "iOS" = "iOS";
@@ -58,6 +44,3 @@
 
 "Please leave your feedback below:" = "Please leave your feedback below:";
 
-"Thanks for your report." = "Thanks for your report.";
-
-"You feedback has been sent." = "You feedback has been sent.";
