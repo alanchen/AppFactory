@@ -4,20 +4,6 @@
  Created by Ryoichi Izumita on 2013/10/31.
  Copyright (c) 2013 CAPH. All rights reserved. */
 
-"Question" = "問題修正";
-
-"Request" = "想要新功能";
-
-"Bug Report" = "會閃退";
-
-"Lost Points" = "完成任務卻未得到獎勵";
-
-"Appeal Report" = "申訴問題";
-
-"Banned Report" = "帳號權限問題";
-
-"Other" = "其他";
-
 "Device" = "機型";
 
 "iOS" = "iOS 版本";
@@ -58,6 +44,3 @@
 
 "Please leave your feedback below:"="請於下方空白處輸入您的意見：";
 
-"Thanks for your report." = "感謝回報!! ^_^";
-
-"You feedback has been sent." = "您的意見已送出";

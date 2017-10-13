@@ -18,6 +18,7 @@
 #import "LibsHeader.h"
 
 #import "RMessageHelper.h"
+#import "FeedbackHelper.h"
 
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource,AFBaseTableViewDelegate>
 
@@ -70,12 +71,15 @@
 //        DLog(@"cc");
 //    }];
     
-    [RMessageHelper showOkay:@"123"];
+//    [RMessageHelper showOkay:@"123"];
+//
+//    AFCountryPickerViewController *vc = [[AFCountryPickerViewController alloc] init];
+//    [vc setCellTextColor:[UIColor grayColor]];
+//    [vc setSelectTintColor:[UIColor yellowColor]];
+//    [self pushViewController:vc];
     
-    AFCountryPickerViewController *vc = [[AFCountryPickerViewController alloc] init];
-    [vc setCellTextColor:[UIColor grayColor]];
-    [vc setSelectTintColor:[UIColor yellowColor]];
-    [self pushViewController:vc];
+    
+    [FeedbackHelper showFeedbackWithAdditionalContent:nil topics:nil eMail:@"@123" onVC:self];
     
 }
 
