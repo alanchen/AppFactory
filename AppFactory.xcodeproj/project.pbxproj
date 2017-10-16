@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		31177A34D2ACFD80D51F3D30 /* Pods_AppFactory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19FD220FAE9F8F2F3D9BC3DD /* Pods_AppFactory.framework */; };
+		E70E9CDD1F948E640017F881 /* UIColor+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E70E9CDC1F948E640017F881 /* UIColor+AFExtension.m */; };
 		E7905D491F7A32E4006CC6F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7905D481F7A32E4006CC6F5 /* AppDelegate.m */; };
 		E7905D4C1F7A32E4006CC6F5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7905D4B1F7A32E4006CC6F5 /* ViewController.m */; };
 		E7905D511F7A32E4006CC6F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7905D501F7A32E4006CC6F5 /* Assets.xcassets */; };
@@ -96,6 +97,8 @@
 		19FD220FAE9F8F2F3D9BC3DD /* Pods_AppFactory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppFactory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		718971DA37BB2B94F20D9133 /* Pods-AppFactory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFactory.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppFactory/Pods-AppFactory.release.xcconfig"; sourceTree = "<group>"; };
 		821A19A83CA18C63B2FC3144 /* Pods-AppFactory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFactory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppFactory/Pods-AppFactory.debug.xcconfig"; sourceTree = "<group>"; };
+		E70E9CDB1F948E640017F881 /* UIColor+AFExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+AFExtension.h"; sourceTree = "<group>"; };
+		E70E9CDC1F948E640017F881 /* UIColor+AFExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AFExtension.m"; sourceTree = "<group>"; };
 		E7905D441F7A32E4006CC6F5 /* AppFactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7905D471F7A32E4006CC6F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E7905D481F7A32E4006CC6F5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -489,6 +492,8 @@
 				E7F8C1481F8F1C1600B1E14B /* UITextView+AFExtension.m */,
 				E7F8C1491F8F1C1600B1E14B /* UIView */,
 				E7F8C1501F8F1C1600B1E14B /* ViewController */,
+				E70E9CDB1F948E640017F881 /* UIColor+AFExtension.h */,
+				E70E9CDC1F948E640017F881 /* UIColor+AFExtension.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1073,6 +1078,7 @@
 				E7F8C2081F8F1C1600B1E14B /* SVProgressHUDHelper.m in Sources */,
 				E7F8C1F31F8F1C1600B1E14B /* AFAppVersonHelper.m in Sources */,
 				E7F8C1EA1F8F1C1600B1E14B /* UIActivityViewController+AFExtension.m in Sources */,
+				E70E9CDD1F948E640017F881 /* UIColor+AFExtension.m in Sources */,
 				E7F8C2071F8F1C1600B1E14B /* RMessageHelper.m in Sources */,
 				E7F8C1C51F8F1C1600B1E14B /* AFHTTPSessionManager+AFExtension.m in Sources */,
 				E7905D491F7A32E4006CC6F5 /* AppDelegate.m in Sources */,
