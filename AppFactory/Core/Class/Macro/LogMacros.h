@@ -9,6 +9,7 @@
 #ifdef DEBUG
 //#   define DLog(fmt, ...) NSLog((@"%s (Line %d): " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 #   define DLog(format, ...) printf("\n[%s] %s [Line %d] %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String])
+#   define PrintObj(obj) printf("\n[%s] %s [Line %d] %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:@"%@",obj] UTF8String])
 #else
 #   define DLog(...)
 #endif

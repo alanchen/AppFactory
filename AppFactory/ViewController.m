@@ -20,6 +20,8 @@
 #import "RMessageHelper.h"
 #import "FeedbackHelper.h"
 
+#import "LogMacros.h"
+
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource,AFBaseTableViewDelegate>
 
 @property (nonatomic,strong) AFBaseTableView *tableView;
@@ -57,6 +59,10 @@
     [self.tableView addRefreshingHeaderWithTarget:self action:@selector(test) color:[UIColor redColor]];
     
     [self.tableView reloadData];
+    
+    id obj = [@{} mutableCopy];
+    [obj setObject:@"123" forKey:@"wdfewf"];
+    PrintObj(obj);
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
