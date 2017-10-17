@@ -83,12 +83,23 @@ static NSString *kFBRefreshUserDataDate = @"FB_UPDATE_USER_DATE";
 
 #pragma mark - Public Methods
 
-+ (void)connectWithComplete:(void (^)(BOOL success, id userData, id errInfo))complete
++ (void) connectWithPermissionREAD:(NSArray *)permission
+                        userFields:(NSString *)userFields
+                          complete:(void (^)(BOOL success, id userData, NSError *err))complete
+{
+    [self fb_connectWithPermissionREAD:permission
+                            userFields:userFields
+                          withComplete:^(BOOL success, id result, NSError *err) {
+                              complete(success, result, err);
+                          }];
+}
+
++ (void)connectWithComplete:(void (^)(BOOL success, id userData, NSError *err))complete
 {
     [self fb_connectWithPermissionREAD:[self defaultPermissionREAD]
                             userFields:[self defaultUserFields]
-                          withComplete:^(BOOL success, id result, id errInfo) {
-                              complete(success, result, errInfo);
+                          withComplete:^(BOOL success, id result, NSError *err) {
+                              complete(success, result, err);
                           }];
 }
 
@@ -133,7 +144,7 @@ static NSString *kFBRefreshUserDataDate = @"FB_UPDATE_USER_DATE";
 
 #pragma mark - Private Methods
 
-+ (void)fb_connectWithPermissionREAD:(NSArray *)permissionREAD userFields:(NSString *)userFields withComplete:(void (^)(BOOL success, id result, id errInfo))complete
++ (void)fb_connectWithPermissionREAD:(NSArray *)permissionREAD userFields:(NSString *)userFields withComplete:(void (^)(BOOL success, id result, NSError *err))complete
 {
     FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
     [loginManager logOut];
@@ -146,7 +157,7 @@ static NSString *kFBRefreshUserDataDate = @"FB_UPDATE_USER_DATE";
                                    handler:^(FBSDKLoginManagerLoginResult *result, NSError *error)
      {
          if (error) {
-             if(complete) complete(NO ,nil, nil);
+             if(complete) complete(NO ,nil, error);
              DLog(@"FB Login Process error:%@", error);
              return ;
          }
@@ -157,13 +168,14 @@ static NSString *kFBRefreshUserDataDate = @"FB_UPDATE_USER_DATE";
              return ;
          }
          if (result.isDeclinedPermissions) {
-             if(complete) complete(NO ,nil, [result declinedErrorWithREADPermission:permissionREAD]);
+             NSError *err = [NSError errorSSOWithUserInfo:[result declinedErrorWithREADPermission:permissionREAD]];
+             if(complete) complete(NO ,nil, err);
              return ;
          }
          
          [self fb_fetchUserWithFields:userFields withComplete:^( id result, NSError *error) {
              BOOL success = !error;
-             if(complete)  complete(success ,result, nil);
+             if(complete)  complete(success ,result, error);
          }];
      }];
 }
@@ -207,3 +219,5 @@ static NSString *kFBRefreshUserDataDate = @"FB_UPDATE_USER_DATE";
 }
 
 @end
+
+
