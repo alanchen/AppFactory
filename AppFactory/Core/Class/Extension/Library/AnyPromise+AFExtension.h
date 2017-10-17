@@ -13,6 +13,19 @@ typedef void (^ thenPromiseBlock)(PMKResolver, id);
 
 @interface AnyPromise(AFExtension)
 
++ (AnyPromise *)promiseStart:(void (^)(PMKResolver))block;
 - (AnyPromise * (^)(thenPromiseBlock))thenWithANewPromise;
 
 @end
+
+//[AnyPromise promiseStart:^(PMKResolver resolve){
+//    resolve(@"123");
+//}].thenWithANewPromise(^(PMKResolver resolve, id data){
+//    @throw [NSError errorWithDomain:@"fb.sso.helper123" code:99 userInfo:nil];
+//    resolve(@"456");
+//}).thenWithANewPromise(^(PMKResolver resolve, id data){
+//    resolve(@"789");
+//}).catch(^(NSError *err){
+//
+//});
+

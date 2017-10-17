@@ -10,6 +10,15 @@
 
 @implementation AnyPromise(AFExtension)
 
++ (AnyPromise *)promiseStart:(void (^)(PMKResolver))block
+{
+    return [AnyPromise promiseWithResolverBlock:^(PMKResolver resolve){
+        resolve(nil);
+    }].thenWithANewPromise(^(PMKResolver resolve, id data){
+        if(block){ block(resolve); }
+    });
+}
+
 - (AnyPromise * (^)(thenPromiseBlock))thenWithANewPromise {
     __weak AnyPromise *weakSelf = self;
     

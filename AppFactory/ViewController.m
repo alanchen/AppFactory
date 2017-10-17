@@ -60,21 +60,6 @@
     [self.tableView addRefreshingHeaderWithTarget:self action:@selector(test) color:[UIColor redColor]];
     
     [self.tableView reloadData];
-    
-    
-    [AnyPromise promiseWithResolverBlock:^(PMKResolver resolve){
-        resolve(@"123");
-    }].thenWithANewPromise(^(PMKResolver resolve, id data){
-        PrintObj(data);
-        resolve(@"456");
-    }).thenWithANewPromise(^(PMKResolver resolve, id data){
-        PrintObj(data);
-        [self bk_performBlock:^(id obj) {
-            resolve(@"789");
-        } afterDelay:2.0];
-    }).thenWithANewPromise(^(PMKResolver resolve, id data){
-        PrintObj(data);
-    });;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
