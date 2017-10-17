@@ -15,4 +15,7 @@
 
 - (UIImage *)circleImage;
 
++ (UIImage *)imageFrom:(NSBundle *)bundle name:(NSString *)name;
+
+
 @end

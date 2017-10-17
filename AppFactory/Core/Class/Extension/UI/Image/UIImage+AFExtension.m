@@ -41,4 +41,26 @@
     return image;
 }
 
++ (UIImage *)imageFrom:(NSBundle *)bundle name:(NSString *)name
+{
+    NSInteger scale = (NSInteger)[[UIScreen mainScreen] scale];
+    NSString *bundlePath = [bundle bundlePath];
+    NSString *imgPath = [bundlePath stringByAppendingPathComponent:name];
+    NSString *pathExtension = [imgPath pathExtension];
+    if (!pathExtension || pathExtension.length == 0) {
+        pathExtension = @"png";
+    }
+    
+    NSString *imageName = [[imgPath lastPathComponent] stringByDeletingPathExtension];
+    if (scale == 1) {
+        imageName = [NSString stringWithFormat:@"%@.%@", imageName, pathExtension];
+    }else {
+        imageName = [NSString stringWithFormat:@"%@@%zdx.%@", imageName, scale, pathExtension];
+    }
+    
+    NSString *imageFilePath = [[imgPath stringByDeletingLastPathComponent] stringByAppendingPathComponent:imageName];
+    
+    return [UIImage imageWithContentsOfFile:imageFilePath];
+}
+
 @end
