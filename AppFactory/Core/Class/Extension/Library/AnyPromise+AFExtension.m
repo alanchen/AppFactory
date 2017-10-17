@@ -10,12 +10,16 @@
 
 @implementation AnyPromise(AFExtension)
 
--(AnyPromise *)af_thenWithANewPromise:(void (^)(PMKResolver, id))block{
-    return self.then(^(id data){
-        return [AnyPromise promiseWithResolverBlock:^(PMKResolver resolve){
-            if(block){ block(resolve, data); }
-        }];
-    });
+- (AnyPromise * (^)(thenPromiseBlock))thenWithANewPromise {
+    __weak AnyPromise *weakSelf = self;
+    
+    return ^(thenPromiseBlock block){
+        return weakSelf.then(^(id data){
+            return [AnyPromise promiseWithResolverBlock:^(PMKResolver resolve){
+                if(block){ block(resolve, data); }
+            }];
+        });
+    };
 }
 
 @end

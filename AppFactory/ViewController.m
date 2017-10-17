@@ -19,6 +19,7 @@
 
 #import "RMessageHelper.h"
 #import "FeedbackHelper.h"
+#import "AnyPromise+AFExtension.h"
 
 #import "LogMacros.h"
 
@@ -60,9 +61,20 @@
     
     [self.tableView reloadData];
     
-    id obj = [@{} mutableCopy];
-    [obj setObject:@"123" forKey:@"wdfewf"];
-    PrintObj(obj);
+    
+    [AnyPromise promiseWithResolverBlock:^(PMKResolver resolve){
+        resolve(@"123");
+    }].thenWithANewPromise(^(PMKResolver resolve, id data){
+        PrintObj(data);
+        resolve(@"456");
+    }).thenWithANewPromise(^(PMKResolver resolve, id data){
+        PrintObj(data);
+        [self bk_performBlock:^(id obj) {
+            resolve(@"789");
+        } afterDelay:2.0];
+    }).thenWithANewPromise(^(PMKResolver resolve, id data){
+        PrintObj(data);
+    });;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

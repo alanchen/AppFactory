@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <PromiseKit/PromiseKit.h>
 
+typedef void (^ thenPromiseBlock)(PMKResolver, id);
+
 @interface AnyPromise(AFExtension)
 
--(AnyPromise *)af_thenWithANewPromise:(void (^)(PMKResolver resolve, id data))block;
+- (AnyPromise * (^)(thenPromiseBlock))thenWithANewPromise;
 
 @end
