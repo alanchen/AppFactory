@@ -44,6 +44,28 @@
 + (UIImage *)imageFrom:(NSBundle *)bundle name:(NSString *)name
 {
     NSInteger scale = (NSInteger)[[UIScreen mainScreen] scale];
+    
+    for (NSInteger i = scale ; i >= 1; i--) {
+        UIImage *tempImage = [UIImage imageFrom:bundle name:name scale:i];
+        if (tempImage) {
+            return tempImage;
+        }
+    }
+    
+    for (NSInteger i = scale + 1 ; i <= 3; i++) {
+        UIImage *tempImage = [UIImage imageFrom:bundle name:name scale:i];
+        if (tempImage) {
+            return tempImage;
+        }
+    }
+    
+    return nil;
+}
+
+#pragma mark - Private
+
++ (UIImage *)imageFrom:(NSBundle *)bundle name:(NSString *)name scale:(NSInteger)scale
+{
     NSString *bundlePath = [bundle bundlePath];
     NSString *imgPath = [bundlePath stringByAppendingPathComponent:name];
     NSString *pathExtension = [imgPath pathExtension];
@@ -59,7 +81,6 @@
     }
     
     NSString *imageFilePath = [[imgPath stringByDeletingLastPathComponent] stringByAppendingPathComponent:imageName];
-    
     return [UIImage imageWithContentsOfFile:imageFilePath];
 }
 
