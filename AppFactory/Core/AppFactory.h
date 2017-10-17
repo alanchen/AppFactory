@@ -26,6 +26,8 @@
 #import "NSUserDefualtsMacros.h"
 
 // Extension
+#import "AnyPromise+AFExtension.h"
+
 #import "UIView+AFExtension.h"
 #import "UIView+AFBorder.h"
 #import "UIView+AFSubView.h"
