@@ -85,21 +85,21 @@ static NSString *kFBRefreshUserDataDate = @"FB_UPDATE_USER_DATE";
 
 + (void) connectWithPermissionREAD:(NSArray *)permission
                         userFields:(NSString *)userFields
-                          complete:(void (^)(BOOL success, id userData, NSError *err))complete
+                          complete:(void (^)(BOOL success, id userData, FBSDKLoginManagerLoginResult *result))complete
 {
     [self fb_connectWithPermissionREAD:permission
                             userFields:userFields
-                          withComplete:^(BOOL success, id result, NSError *err) {
-                              complete(success, result, err);
+                          withComplete:^(BOOL success, id data, FBSDKLoginManagerLoginResult *result) {
+                              complete(success, data, result);
                           }];
 }
 
-+ (void)connectWithComplete:(void (^)(BOOL success, id userData, NSError *err))complete
++ (void)connectWithComplete:(void (^)(BOOL success, id userData, FBSDKLoginManagerLoginResult *result))complete
 {
     [self fb_connectWithPermissionREAD:[self defaultPermissionREAD]
                             userFields:[self defaultUserFields]
-                          withComplete:^(BOOL success, id result, NSError *err) {
-                              complete(success, result, err);
+                          withComplete:^(BOOL success, id data, FBSDKLoginManagerLoginResult *result) {
+                              complete(success, data, result);
                           }];
 }
 
@@ -137,19 +137,19 @@ static NSString *kFBRefreshUserDataDate = @"FB_UPDATE_USER_DATE";
 
     [self fb_connectWithPermissionREAD:[self defaultPermissionREAD]
                             userFields:[self defaultUserFields]
-                          withComplete:^(BOOL success, id result, id errInfo) {
+                          withComplete:^(BOOL success, id data, FBSDKLoginManagerLoginResult *result) {
         complete(success);
     }];
 }
 
 #pragma mark - Private Methods
 
-+ (void)fb_connectWithPermissionREAD:(NSArray *)permissionREAD userFields:(NSString *)userFields withComplete:(void (^)(BOOL success, id result, NSError *err))complete
++ (void)fb_connectWithPermissionREAD:(NSArray *)permissionREAD userFields:(NSString *)userFields withComplete:(void (^)(BOOL success, id userData, FBSDKLoginManagerLoginResult *result))complete
 {
     FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
     [loginManager logOut];
-    NSUserDefaultsSetObj(kFBUserData, nil);
-    NSUserDefaultsSetObj(kFBRefreshUserDataDate, nil);
+    NSUserDefaultsRemove(kFBUserData);
+    NSUserDefaultsRemove(kFBRefreshUserDataDate);
     NSUserDefaultsSaved;
     
     [loginManager logInWithReadPermissions:permissionREAD
@@ -157,25 +157,18 @@ static NSString *kFBRefreshUserDataDate = @"FB_UPDATE_USER_DATE";
                                    handler:^(FBSDKLoginManagerLoginResult *result, NSError *error)
      {
          if (error) {
-             if(complete) complete(NO ,nil, error);
-             DLog(@"FB Login Process error:%@", error);
+             if(complete) complete(NO ,nil, nil);
              return ;
          }
          
-         if (result.isCancelled) {
-             if(complete)  complete(NO ,nil, nil);
-             DLog(@"FB Login was Cancelled by user");
-             return ;
-         }
-         if (result.isDeclinedPermissions) {
-             NSError *err = [NSError errorSSOWithUserInfo:[result declinedErrorWithREADPermission:permissionREAD]];
-             if(complete) complete(NO ,nil, err);
+         if (result.isCancelled  || [result.declinedPermissions count]) {
+             if(complete)  complete(NO ,nil, result);
              return ;
          }
          
-         [self fb_fetchUserWithFields:userFields withComplete:^( id result, NSError *error) {
+         [self fb_fetchUserWithFields:userFields withComplete:^( id data, NSError *error) {
              BOOL success = !error;
-             if(complete)  complete(success ,result, error);
+             if(complete)  complete(success ,data, nil);
          }];
      }];
 }

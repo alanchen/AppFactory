@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		31177A34D2ACFD80D51F3D30 /* Pods_AppFactory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19FD220FAE9F8F2F3D9BC3DD /* Pods_AppFactory.framework */; };
 		E70E9CDD1F948E640017F881 /* UIColor+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E70E9CDC1F948E640017F881 /* UIColor+AFExtension.m */; };
-		E722EB571F95F6260027CC05 /* NSError+SSOHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E722EB561F95F6260027CC05 /* NSError+SSOHelper.m */; };
 		E722EB5A1F960F890027CC05 /* AnyPromise+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E722EB591F960F890027CC05 /* AnyPromise+AFExtension.m */; };
 		E7905D491F7A32E4006CC6F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7905D481F7A32E4006CC6F5 /* AppDelegate.m */; };
 		E7905D4C1F7A32E4006CC6F5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7905D4B1F7A32E4006CC6F5 /* ViewController.m */; };
@@ -72,7 +71,6 @@
 		E7F8C1F61F8F1C1600B1E14B /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = E7F8C16E1F8F1C1600B1E14B /* countries.json */; };
 		E7F8C1F71F8F1C1600B1E14B /* CountryCodePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1701F8F1C1600B1E14B /* CountryCodePicker.m */; };
 		E7F8C1F81F8F1C1600B1E14B /* CountryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1721F8F1C1600B1E14B /* CountryModel.m */; };
-		E7F8C1F91F8F1C1600B1E14B /* FBSDKLoginManagerLoginResult+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1751F8F1C1600B1E14B /* FBSDKLoginManagerLoginResult+AFExtension.m */; };
 		E7F8C1FA1F8F1C1600B1E14B /* FBSSOHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1771F8F1C1600B1E14B /* FBSSOHelper.m */; };
 		E7F8C1FB1F8F1C1600B1E14B /* CTFeedbackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C17C1F8F1C1600B1E14B /* CTFeedbackCell.m */; };
 		E7F8C1FC1F8F1C1600B1E14B /* CTFeedbackCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C17E1F8F1C1600B1E14B /* CTFeedbackCellItem.m */; };
@@ -101,8 +99,6 @@
 		821A19A83CA18C63B2FC3144 /* Pods-AppFactory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFactory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppFactory/Pods-AppFactory.debug.xcconfig"; sourceTree = "<group>"; };
 		E70E9CDB1F948E640017F881 /* UIColor+AFExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+AFExtension.h"; sourceTree = "<group>"; };
 		E70E9CDC1F948E640017F881 /* UIColor+AFExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AFExtension.m"; sourceTree = "<group>"; };
-		E722EB551F95F6260027CC05 /* NSError+SSOHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+SSOHelper.h"; sourceTree = "<group>"; };
-		E722EB561F95F6260027CC05 /* NSError+SSOHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+SSOHelper.m"; sourceTree = "<group>"; };
 		E722EB581F960F890027CC05 /* AnyPromise+AFExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AnyPromise+AFExtension.h"; sourceTree = "<group>"; };
 		E722EB591F960F890027CC05 /* AnyPromise+AFExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AnyPromise+AFExtension.m"; sourceTree = "<group>"; };
 		E7905D441F7A32E4006CC6F5 /* AppFactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,8 +222,6 @@
 		E7F8C1701F8F1C1600B1E14B /* CountryCodePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryCodePicker.m; sourceTree = "<group>"; };
 		E7F8C1711F8F1C1600B1E14B /* CountryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryModel.h; sourceTree = "<group>"; };
 		E7F8C1721F8F1C1600B1E14B /* CountryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryModel.m; sourceTree = "<group>"; };
-		E7F8C1741F8F1C1600B1E14B /* FBSDKLoginManagerLoginResult+AFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FBSDKLoginManagerLoginResult+AFExtension.h"; sourceTree = "<group>"; };
-		E7F8C1751F8F1C1600B1E14B /* FBSDKLoginManagerLoginResult+AFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FBSDKLoginManagerLoginResult+AFExtension.m"; sourceTree = "<group>"; };
 		E7F8C1761F8F1C1600B1E14B /* FBSSOHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBSSOHelper.h; sourceTree = "<group>"; };
 		E7F8C1771F8F1C1600B1E14B /* FBSSOHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBSSOHelper.m; sourceTree = "<group>"; };
 		E7F8C17B1F8F1C1600B1E14B /* CTFeedbackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFeedbackCell.h; sourceTree = "<group>"; };
@@ -652,12 +646,8 @@
 		E7F8C1731F8F1C1600B1E14B /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
-				E7F8C1741F8F1C1600B1E14B /* FBSDKLoginManagerLoginResult+AFExtension.h */,
-				E7F8C1751F8F1C1600B1E14B /* FBSDKLoginManagerLoginResult+AFExtension.m */,
 				E7F8C1761F8F1C1600B1E14B /* FBSSOHelper.h */,
 				E7F8C1771F8F1C1600B1E14B /* FBSSOHelper.m */,
-				E722EB551F95F6260027CC05 /* NSError+SSOHelper.h */,
-				E722EB561F95F6260027CC05 /* NSError+SSOHelper.m */,
 			);
 			path = Facebook;
 			sourceTree = "<group>";
@@ -1029,7 +1019,6 @@
 				E7F8C1DA1F8F1C1600B1E14B /* UIButton+AFExtension.m in Sources */,
 				E7F8C1F11F8F1C1600B1E14B /* APNHelper.m in Sources */,
 				E7F8C1E71F8F1C1600B1E14B /* UIView+AFBorder.m in Sources */,
-				E722EB571F95F6260027CC05 /* NSError+SSOHelper.m in Sources */,
 				E7F8C1E91F8F1C1600B1E14B /* UIView+AFSubView.m in Sources */,
 				E7F8C1E21F8F1C1600B1E14B /* UITableViewCell+AFExtension.m in Sources */,
 				E7F8C2041F8F1C1600B1E14B /* ImagePickerHelper.m in Sources */,
@@ -1077,7 +1066,6 @@
 				E7F8C1CF1F8F1C1600B1E14B /* NSMutableArray+AFExtension.m in Sources */,
 				E7F8C1DE1F8F1C1600B1E14B /* AFRefreshlHeader.m in Sources */,
 				E7F8C1ED1F8F1C1600B1E14B /* UIBarButtonItem+AFExtension.m in Sources */,
-				E7F8C1F91F8F1C1600B1E14B /* FBSDKLoginManagerLoginResult+AFExtension.m in Sources */,
 				E7F8C1FF1F8F1C1600B1E14B /* NSBundle+CTFeedback.m in Sources */,
 				E7F8C1F71F8F1C1600B1E14B /* CountryCodePicker.m in Sources */,
 				E7F8C2091F8F1C1600B1E14B /* ToastMessage.m in Sources */,

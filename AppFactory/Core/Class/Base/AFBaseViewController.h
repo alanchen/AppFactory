@@ -42,6 +42,8 @@
 -(void)popToRootViewController;
 -(void)popToRootViewControllerWithAnimated:(BOOL)animated;
 
+-(void)setLeftBarButtonItem:(UIBarButtonItem *)item;
+-(void)setRightBarButtonItem:(UIBarButtonItem *)item;
 -(void)addCancelButtonWithBlock:(void (^)(void))block;
 
 @end

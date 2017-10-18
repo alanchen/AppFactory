@@ -15,3 +15,5 @@
 #define NSUserDefaultsGetBool(keyValue) [[NSUserDefaults standardUserDefaults] boolForKey:keyValue]
 #define NSUserDefaultsGetObj(keyValue) [[NSUserDefaults standardUserDefaults] objectForKey:keyValue]
 #define NSUserDefaultsGetInt(keyValue) [[NSUserDefaults standardUserDefaults] integerForKey:keyValue]
+
+#define NSUserDefaultsRemove(keyValue) [[NSUserDefaults standardUserDefaults] removeObjectForKey:keyValue]

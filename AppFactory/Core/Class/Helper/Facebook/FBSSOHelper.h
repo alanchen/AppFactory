@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import "FBSDKLoginManagerLoginResult+AFExtension.h"
-#import "NSError+SSOHelper.h"
 
 @interface FBSSOHelper : NSObject
 
@@ -28,9 +26,9 @@
 #pragma mark - Main
 + (void) connectWithPermissionREAD:(NSArray *)permission
                         userFields:(NSString *)userFields
-                          complete:(void (^)(BOOL success, id userData, NSError *err))complete;
+                          complete:(void (^)(BOOL success, id userData, FBSDKLoginManagerLoginResult *result))complete;
 
-+ (void) connectWithComplete:(void (^)(BOOL success, id userData, NSError *err))complete;
++ (void) connectWithComplete:(void (^)(BOOL success, id userData, FBSDKLoginManagerLoginResult *result))complete;
 + (void) refreshUserDataWithCompletion:(void (^)(NSDictionary *user))completion;
 + (void) reconnectIfNeed:(void (^)(BOOL success))complete;
 

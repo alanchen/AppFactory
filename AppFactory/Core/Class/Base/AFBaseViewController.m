@@ -38,7 +38,7 @@
         UIBarButtonItem *backItem = [[UIBarButtonItem alloc] bk_initWithImage:back style:UIBarButtonItemStylePlain handler:^(id sender) {
             [weakSelf popViewController];
         }];
-        self.navigationItem.leftBarButtonItem = backItem;
+        [self setLeftBarButtonItem:backItem];
     }
 }
 
@@ -252,13 +252,25 @@
     [self.navigationController popToRootViewControllerAnimated:animated];
 }
 
+#pragma mark -
+
+-(void)setLeftBarButtonItem:(UIBarButtonItem *)item
+{
+    self.navigationItem.leftBarButtonItem = item;
+}
+
+-(void)setRightBarButtonItem:(UIBarButtonItem *)item
+{
+    self.navigationItem.rightBarButtonItem = item;
+}
+
 - (void)addCancelButtonWithBlock:(void (^)(void))block
 {
     UIImage *back = AF_BUNDLE_IMAGE(@"navi-cross");
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] bk_initWithImage:back style:UIBarButtonItemStylePlain handler:^(id sender) {
         if(block) block();
     }];
-    self.navigationItem.leftBarButtonItem = backItem;
+    [self setLeftBarButtonItem:backItem];
 }
 
 @end
