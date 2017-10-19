@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FBSSOResult.h"
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
@@ -26,9 +27,9 @@
 #pragma mark - Main
 + (void) connectWithPermissionREAD:(NSArray *)permission
                         userFields:(NSString *)userFields
-                          complete:(void (^)(BOOL success, id userData, FBSDKLoginManagerLoginResult *result))complete;
+                          complete:(void (^)(FBSSOResult *result))complete;
 
-+ (void) connectWithComplete:(void (^)(BOOL success, id userData, FBSDKLoginManagerLoginResult *result))complete;
++ (void) connectWithComplete:(void (^)(FBSSOResult *result))complete;
 + (void) refreshUserDataWithCompletion:(void (^)(NSDictionary *user))completion;
 + (void) reconnectIfNeed:(void (^)(BOOL success))complete;
 

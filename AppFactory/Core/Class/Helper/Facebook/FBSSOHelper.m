@@ -85,21 +85,21 @@ static NSString *kFBRefreshUserDataDate = @"FB_UPDATE_USER_DATE";
 
 + (void) connectWithPermissionREAD:(NSArray *)permission
                         userFields:(NSString *)userFields
-                          complete:(void (^)(BOOL success, id userData, FBSDKLoginManagerLoginResult *result))complete
+                          complete:(void (^)(FBSSOResult *result))complete
 {
     [self fb_connectWithPermissionREAD:permission
                             userFields:userFields
-                          withComplete:^(BOOL success, id data, FBSDKLoginManagerLoginResult *result) {
-                              complete(success, data, result);
+                          withComplete:^(FBSSOResult *result) {
+                              complete(result);
                           }];
 }
 
-+ (void)connectWithComplete:(void (^)(BOOL success, id userData, FBSDKLoginManagerLoginResult *result))complete
++ (void)connectWithComplete:(void (^)(FBSSOResult *result))complete
 {
     [self fb_connectWithPermissionREAD:[self defaultPermissionREAD]
                             userFields:[self defaultUserFields]
-                          withComplete:^(BOOL success, id data, FBSDKLoginManagerLoginResult *result) {
-                              complete(success, data, result);
+                          withComplete:^(FBSSOResult *result) {
+                              complete(result);
                           }];
 }
 
@@ -137,14 +137,14 @@ static NSString *kFBRefreshUserDataDate = @"FB_UPDATE_USER_DATE";
 
     [self fb_connectWithPermissionREAD:[self defaultPermissionREAD]
                             userFields:[self defaultUserFields]
-                          withComplete:^(BOOL success, id data, FBSDKLoginManagerLoginResult *result) {
-        complete(success);
+                          withComplete:^(FBSSOResult *result) {
+        complete([result isSuccess]);
     }];
 }
 
 #pragma mark - Private Methods
 
-+ (void)fb_connectWithPermissionREAD:(NSArray *)permissionREAD userFields:(NSString *)userFields withComplete:(void (^)(BOOL success, id userData, FBSDKLoginManagerLoginResult *result))complete
++ (void)fb_connectWithPermissionREAD:(NSArray *)permissionREAD userFields:(NSString *)userFields withComplete:(void (^)(FBSSOResult *))complete
 {
     FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
     [loginManager logOut];
@@ -156,19 +156,17 @@ static NSString *kFBRefreshUserDataDate = @"FB_UPDATE_USER_DATE";
                         fromViewController:nil
                                    handler:^(FBSDKLoginManagerLoginResult *result, NSError *error)
      {
-         if (error) {
-             if(complete) complete(NO ,nil, nil);
-             return ;
-         }
-         
-         if (result.isCancelled  || [result.declinedPermissions count]) {
-             if(complete)  complete(NO ,nil, result);
+         FBSSOResult *obj = [FBSSOResult resultWith:result error:error];
+
+         if (![obj isSuccess] ) {
+             if(complete) complete(obj);
              return ;
          }
          
          [self fb_fetchUserWithFields:userFields withComplete:^( id data, NSError *error) {
-             BOOL success = !error;
-             if(complete)  complete(success ,data, nil);
+             if(error){ obj.error = error; }
+             if(data){ obj.userData = data;}
+             if(complete)  complete(data);
          }];
      }];
 }
