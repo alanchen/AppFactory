@@ -158,7 +158,7 @@ static NSString *kFBRefreshUserDataDate = @"FB_UPDATE_USER_DATE";
      {
          FBSSOResult *obj = [FBSSOResult resultWith:result error:error];
 
-         if (![obj isSuccess] ) {
+         if (error || result.isCancelled || [result.declinedPermissions count]) {
              if(complete) complete(obj);
              return ;
          }
