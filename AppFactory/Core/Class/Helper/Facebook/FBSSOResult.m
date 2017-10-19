@@ -21,7 +21,13 @@
 
 -(BOOL)isCancelled
 {
-    return YES;
+    if(self.sdkResult.isCancelled)
+        return YES;
+    
+    if([self.error.domain isEqualToString:@"com.apple.SafariServices.Authentication"] && self.error.code == 1)
+        return YES;
+    
+    return NO;
 }
 
 -(BOOL)isSuccess
