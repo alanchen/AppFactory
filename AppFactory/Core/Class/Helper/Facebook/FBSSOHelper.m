@@ -209,6 +209,22 @@ static NSString *kFBRefreshUserDataDate = @"FB_UPDATE_USER_DATE";
     }];
 }
 
+#pragma mark - Must Have
+
++(void)application:(UIApplication *)application didLaunch:(NSDictionary *)launchOptions
+{
+    [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+}
+
++(BOOL)application:(UIApplication *)application url:(NSURL *)url sourceApp:(NSString *)sourceApp annotation:(id)annotation
+{
+    BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                                  openURL:url
+                                                        sourceApplication:sourceApp
+                                                               annotation:annotation];
+    return handled;
+}
+
 @end
 
 
