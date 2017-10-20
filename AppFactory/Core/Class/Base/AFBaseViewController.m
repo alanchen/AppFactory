@@ -115,6 +115,7 @@
 }
 
 -(void)dealloc{
+    NOTIFICATION_REMOVE_SELF_OBSERVER;
     DLog(@"%@",self);
 }
 
@@ -135,7 +136,7 @@
     
     if([NSStringFromClass([self class]) isEqualToString:className]){
         if([self respondsToSelector:@selector(viewIsNotifiedToReloadData:)]){
-            [self viewIsNotifiedToReloadData:noti.userInfo];
+            [self viewIsNotifiedToReloadData:noti.object];
         }
     }
 }
