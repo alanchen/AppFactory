@@ -27,6 +27,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(viewUpdateNotifiactionComing:)
+                                                 name:UPDATE_VC_NOTI_NAME([self class])
+                                               object:nil];
+    
     self.isFirstTimeWillAppeared = YES;
     self.isFirstTimeDidAppeared = YES;
     self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -120,6 +125,19 @@
     }
     
     return UIStatusBarStyleDefault;
+}
+#pragma mark - Notification
+
+-(void)viewUpdateNotifiactionComing:(NSNotification *)noti
+{
+    NSString *notiName = noti.name;
+    NSString *className = [notiName stringByReplacingOccurrencesOfString:updateNotiPrefix withString:@""];
+    
+    if([NSStringFromClass([self class]) isEqualToString:className]){
+        if([self respondsToSelector:@selector(viewIsNotifiedToReloadData:)]){
+            [self viewIsNotifiedToReloadData:noti.userInfo];
+        }
+    }
 }
 
 #pragma mark - Action & Response

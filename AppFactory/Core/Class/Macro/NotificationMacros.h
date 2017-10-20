@@ -14,3 +14,4 @@
 #define NOTIFICATION_POSTOBJ(notiname,obj) [[NSNotificationCenter defaultCenter] postNotificationName:notiname object:obj]
 
 #define NOTIFICATION_REMOVE_OBSERVER(ob) [[NSNotificationCenter defaultCenter] removeObserver:ob]
+
