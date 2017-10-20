@@ -166,7 +166,7 @@ static NSString *kFBRefreshUserDataDate = @"FB_UPDATE_USER_DATE";
          [self fb_fetchUserWithFields:userFields withComplete:^( id data, NSError *error) {
              if(error){ obj.error = error; }
              if(data){ obj.userData = data;}
-             if(complete)  complete(data);
+             if(complete)  complete(obj);
          }];
      }];
 }
