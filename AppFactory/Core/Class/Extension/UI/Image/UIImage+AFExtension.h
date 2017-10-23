@@ -17,4 +17,8 @@
 
 + (UIImage *)imageFrom:(NSBundle *)bundle name:(NSString *)name;
 
++ (UIImage *)imageGradientVerticalFromColor:(UIColor *)startColor endColor:(UIColor *)endColor size:(CGSize)size;
+
++ (UIImage *)imageGradientHorizatalFromColor:(UIColor *)startColor endColor:(UIColor *)endColor size:(CGSize)size;
+
 @end

@@ -62,6 +62,36 @@
     return nil;
 }
 
++ (UIImage *)imageGradientHorizatalFromColor:(UIColor *)startColor endColor:(UIColor *)endColor size:(CGSize)size
+{
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = CGRectMake(0, 0, size.width,size.height);
+    gradientLayer.colors = [NSArray arrayWithObjects:(id)[startColor CGColor], (id)[endColor CGColor], nil];
+    gradientLayer.startPoint = CGPointMake(0.0, 0.5);
+    gradientLayer.endPoint = CGPointMake(1.0, 0.5);
+    
+    UIGraphicsBeginImageContext([gradientLayer frame].size);
+    [gradientLayer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return outputImage;
+}
+
++ (UIImage *)imageGradientVerticalFromColor:(UIColor *)startColor endColor:(UIColor *)endColor size:(CGSize)size
+{
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = CGRectMake(0, 0, size.width,size.height);
+    gradientLayer.colors = [NSArray arrayWithObjects:(id)[startColor CGColor], (id)[endColor CGColor], nil];
+    
+    UIGraphicsBeginImageContext([gradientLayer frame].size);
+    [gradientLayer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return outputImage;
+}
+
 #pragma mark - Private
 
 + (UIImage *)imageFrom:(NSBundle *)bundle name:(NSString *)name scale:(NSInteger)scale
