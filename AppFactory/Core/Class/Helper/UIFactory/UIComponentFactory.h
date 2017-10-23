@@ -54,8 +54,6 @@
                                          target: (id)target
                                          action:(SEL)action;
 
-+ (UIBarButtonItem *) barButtonItemSpace;
-
 + (UIBarButtonItem *) barButtonItemWithCustomeViewImageName: (NSString *)name
                                                      target: (id)target
                                                      action: (SEL)action;

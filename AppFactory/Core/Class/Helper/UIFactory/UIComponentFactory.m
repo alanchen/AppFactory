@@ -148,15 +148,6 @@
     return item;
 }
 
-+ (UIBarButtonItem *) barButtonItemSpace
-{
-    UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
-                                                                           target:nil
-                                                                           action:nil];
-//    space.width = -10;
-    return space;
-}
-
 + (UIBarButtonItem *) barButtonItemWithCustomeViewImageName: (NSString *)name
                                                      target: (id)target
                                                      action: (SEL)action

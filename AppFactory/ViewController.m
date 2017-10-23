@@ -63,22 +63,6 @@
     
     [self.tableView reloadData];
     
-    
-    TTTAttributedLabel *label = [[TTTAttributedLabel alloc] initWithFrame:CGRectZero];
-    
-    label.numberOfLines = 0;
-    label.font= [UIFont systemFontOfSize:20];
-    
-    [self.view addSubview:label];
-    
-    NSString *content = @"❈ 帳號綁定即表示您已經閱讀並同意我們的 使用者條款 / 隱私權政策\n\n❈ 我們不會主動為您發佈任何動態";
-    NSString *policy = @"隱私權政策";
-    NSString *useOfTerm = @"使用者條款";
-    
-    [label setText:content links:[NSSet setWithObjects:policy, useOfTerm, nil] linkColor:[UIColor redColor] linkFont:[UIFont systemFontOfSize:16]];
-    [label sizeToFit];
-    label.top = 100;
-    label.left = 100;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

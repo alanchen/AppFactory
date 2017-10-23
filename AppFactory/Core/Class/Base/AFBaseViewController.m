@@ -273,16 +273,6 @@
 
 #pragma mark -
 
--(void)setLeftBarButtonItem:(UIBarButtonItem *)item
-{
-    self.navigationItem.leftBarButtonItem = item;
-}
-
--(void)setRightBarButtonItem:(UIBarButtonItem *)item
-{
-    self.navigationItem.rightBarButtonItem = item;
-}
-
 - (void)addCancelButtonWithBlock:(void (^)(void))block
 {
     UIImage *back = AF_BUNDLE_IMAGE(@"navi-cross");

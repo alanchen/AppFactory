@@ -9,6 +9,7 @@
 #import "UIViewController+AFExtension.h"
 #import "UINavigationController+AFExtension.h"
 #import "LibsHeader.h"
+#import "UIComponentFactory.h"
 
 @implementation UIViewController(AFExtension)
 
@@ -49,6 +50,52 @@
     }
     
     [self.navigationController popToRootViewControllerAnimated:animated];
+}
+
+-(void)setLeftBarButtonItem:(UIBarButtonItem *)item
+{
+    self.navigationItem.leftBarButtonItem = item;
+}
+
+-(void)setRightBarButtonItem:(UIBarButtonItem *)item
+{
+    self.navigationItem.rightBarButtonItem = item;
+}
+
+- (UIBarButtonItem *)setLeftBarItemWithButtonImageName:(NSString *)name
+                                                target:(id)target
+                                                action:(SEL)action
+{
+    UIBarButtonItem *barItem = [UIComponentFactory barButtonItemWithCustomeViewImageName:name target:target action:action];
+    [self setLeftBarButtonItem:barItem];
+    return barItem;
+}
+
+- (UIBarButtonItem *)setRightBarItemWithButtonImageName:(NSString *)name
+                                                 target:(id)target
+                                                 action:(SEL)action
+{
+    UIBarButtonItem *barItem = [UIComponentFactory barButtonItemWithCustomeViewImageName:name target:target action:action];
+    [self setRightBarButtonItem:barItem];
+    return barItem;
+}
+
+- (UIBarButtonItem *)setLeftBarItemWithTitle:(NSString *)title
+                                      target:(id)target
+                                      action:(SEL)action
+{
+    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:target action:action];
+    [self setLeftBarButtonItem:barItem];
+    return barItem;
+}
+
+- (UIBarButtonItem *)setRightBarItemWithTitle:(NSString *)title
+                                      target:(id)target
+                                      action:(SEL)action
+{
+    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:target action:action];
+    [self setRightBarButtonItem:barItem];
+    return barItem;
 }
 
 #pragma mark - Private

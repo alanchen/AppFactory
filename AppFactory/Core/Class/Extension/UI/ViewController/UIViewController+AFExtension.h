@@ -21,4 +21,26 @@
 
 - (void)popToRootIfItCanWithAnimated:(BOOL)animated;
 
+#pragma mark -
+
+-(void)setLeftBarButtonItem:(UIBarButtonItem *)item;
+
+-(void)setRightBarButtonItem:(UIBarButtonItem *)item;
+
+- (UIBarButtonItem *)setRightBarItemWithButtonImageName:(NSString *)name
+                                                 target:(id)target
+                                                 action:(SEL)action;
+
+- (UIBarButtonItem *)setRightBarItemWithTitle:(NSString *)title
+                                       target:(id)target
+                                       action:(SEL)action;
+
+- (UIBarButtonItem *)setLeftBarItemWithTitle:(NSString *)title
+                                      target:(id)target
+                                      action:(SEL)action;
+
+- (UIBarButtonItem *)setLeftBarItemWithButtonImageName:(NSString *)name
+                                                target:(id)target
+                                                action:(SEL)action;
+
 @end
