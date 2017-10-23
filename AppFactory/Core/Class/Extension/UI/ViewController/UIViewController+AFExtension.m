@@ -10,6 +10,7 @@
 #import "UINavigationController+AFExtension.h"
 #import "LibsHeader.h"
 #import "UIComponentFactory.h"
+#import "UIButton+AFExtension.h"
 
 @implementation UIViewController(AFExtension)
 
@@ -67,6 +68,7 @@
                                                 action:(SEL)action
 {
     UIBarButtonItem *barItem = [UIComponentFactory barButtonItemWithCustomeViewImageName:name target:target action:action];
+    [((UIButton *)barItem.customView) addHighlightAlphaEffect];
     [self setLeftBarButtonItem:barItem];
     return barItem;
 }
@@ -76,6 +78,7 @@
                                                  action:(SEL)action
 {
     UIBarButtonItem *barItem = [UIComponentFactory barButtonItemWithCustomeViewImageName:name target:target action:action];
+    [((UIButton *)barItem.customView) addHighlightAlphaEffect];
     [self setRightBarButtonItem:barItem];
     return barItem;
 }
