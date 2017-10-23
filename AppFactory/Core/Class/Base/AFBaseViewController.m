@@ -122,10 +122,10 @@
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
     if(self.navigationController.barStyle == NavigationBarStyleLight){
-        return UIStatusBarStyleLightContent;
+        return UIStatusBarStyleDefault;
     }
     
-    return UIStatusBarStyleDefault;
+    return UIStatusBarStyleLightContent;
 }
 #pragma mark - Notification
 

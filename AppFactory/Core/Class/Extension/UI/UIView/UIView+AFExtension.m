@@ -124,4 +124,13 @@ SYNTHESIZE_ASC_OBJ(tapGesture, setTapGesture);
     return target;
 }
 
+- (CAGradientLayer *)setGradientColorFrom:(UIColor *)color1 to:(UIColor *)color2
+{
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = CGRectMake(0, 0, self.width, self.height);
+    gradient.colors = @[(id)color1.CGColor, (id)color2.CGColor];
+    [self.layer insertSublayer:gradient atIndex:0];
+    return gradient;
+}
+
 @end
