@@ -11,7 +11,7 @@
 
 @interface TTTAttributedLabel(AFExension)
 
--(void)setText:(NSString *)text links:(NSSet *)links linkColor:(UIColor *)linkColor linkFont:(UIFont *)linkFont;
+-(void)setText:(NSString *)text linkTexts:(NSSet *)linkTexts links:(NSSet *)links linkColor:(UIColor *)linkColor linkFont:(UIFont *)linkFont;
 
 @end
 

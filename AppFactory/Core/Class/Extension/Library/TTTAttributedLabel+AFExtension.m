@@ -11,7 +11,7 @@
 
 @implementation TTTAttributedLabel(AFExension)
 
--(void)setText:(NSString *)text links:(NSSet *)links linkColor:(UIColor *)linkColor linkFont:(UIFont *)linkFont
+-(void)setText:(NSString *)text linkTexts:(NSArray *)linkTexts links:(NSArray *)links linkColor:(UIColor *)linkColor linkFont:(UIFont *)linkFont
 {
     NSMutableDictionary *mutableLinkAttributes = [NSMutableDictionary dictionary];
     NSMutableDictionary *mutableActiveLinkAttributes = [NSMutableDictionary dictionary];
@@ -38,9 +38,9 @@
     }];
 
     self.enabledTextCheckingTypes = NSTextCheckingTypeLink;
-    
-    [links enumerateObjectsUsingBlock:^(NSString *link, BOOL * _Nonnull stop) {
-        NSRange range = [text rangeOfString:link];
+    [linkTexts enumerateObjectsUsingBlock:^(NSString *linkTxt, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSRange range = [text rangeOfString:linkTxt];
+        NSString *link = [links objectAtIndex:idx];
         [self addLinkToURL:[NSURL URLWithString:link] withRange:range];
     }];
 }
