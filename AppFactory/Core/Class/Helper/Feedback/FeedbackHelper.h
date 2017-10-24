@@ -11,10 +11,11 @@
 
 @interface FeedbackHelper : NSObject
 
-+(void)showFeedbackWithAdditionalContent:(NSString *)additionalContent
-                                  topics:(NSArray *)topics
-                                   eMail:(NSString *)email
-                                    onVC:(UIViewController *)viewController;
++(CTFeedbackViewController *)showFeedbackWithAdditionalContent:(NSString *)additionalContent
+                                                        topics:(NSArray *)topics
+                                                         eMail:(NSString *)email
+                                                          onVC:(UIViewController *)viewController
+                                                     doneBlock:(void (^)(CTFeedbackViewController *vc))block;
 
 +(void)showFacebookFanPageWithFBFanPageId:(NSString *)fbId
                          onViewController:(UIViewController *)viewController;

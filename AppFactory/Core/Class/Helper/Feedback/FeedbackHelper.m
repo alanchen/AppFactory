@@ -9,21 +9,50 @@
 #import "FeedbackHelper.h"
 #import "WebControllerHelper.h"
 
+@interface FeedbackHelper() <CTFeedbackViewControllerDelegate>
+@property (nonatomic,copy) void (^finishedBlock)(CTFeedbackViewController* vc);
+@end
+
 @implementation FeedbackHelper
 
-+(void)showFeedbackWithAdditionalContent:(NSString *)additionalContent
++(FeedbackHelper *)sharedInstance
+{
+    static FeedbackHelper *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[FeedbackHelper alloc] init];
+    });
+    
+    return sharedInstance;
+}
+
+- (void)feedbackViewController:(CTFeedbackViewController *)controller didFinishWithMailComposeResult:(MFMailComposeResult)result error:(NSError *)error;
+{
+    if([FeedbackHelper sharedInstance].finishedBlock){
+        [FeedbackHelper sharedInstance].finishedBlock(controller);
+        [FeedbackHelper sharedInstance].finishedBlock = nil;
+    }
+}
+
++(CTFeedbackViewController *)showFeedbackWithAdditionalContent:(NSString *)additionalContent
                                   topics:(NSArray *)topics
                                    eMail:(NSString *)email
                                     onVC:(UIViewController *)viewController
+                               doneBlock:(void (^)(CTFeedbackViewController *vc))block;
+
 {
     CTFeedbackViewController *feedbackViewController =
     [CTFeedbackViewController controllerWithTopics:topics localizedTopics:topics];
     feedbackViewController.toRecipients = @[email];
     feedbackViewController.useHTML = NO;
     feedbackViewController.additionalDiagnosticContent = additionalContent;
+    feedbackViewController.delegate = [FeedbackHelper sharedInstance];
+    [FeedbackHelper sharedInstance].finishedBlock = block;
     
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:feedbackViewController];
     [viewController presentViewController:navi animated:YES completion:nil];
+    
+    return feedbackViewController;
 }
 
 +(void)showFacebookFanPageWithFBFanPageId:(NSString *)fbId

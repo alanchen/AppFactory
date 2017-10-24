@@ -52,6 +52,11 @@
     [super viewDidLoad];
     self.title = @"Page 1";
     
+  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                        target:self
+                                                                                        action:@selector(test)];
+    
+    
     self.tableView = [[AFBaseTableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
     [self.tableView setAllDelegateTo:self];
@@ -95,7 +100,11 @@
 //    [self pushViewController:vc];
     
     
-    [FeedbackHelper showFeedbackWithAdditionalContent:nil topics:nil eMail:@"@123" onVC:self];
+    CTFeedbackViewController *vc = [FeedbackHelper showFeedbackWithAdditionalContent:@"hihihi" topics:@[@"12",@"34"] eMail:@"@123" onVC:self doneBlock:^(CTFeedbackViewController *vc) {
+        ToastShow(@"OKOKKOOK");
+    }];
+    
+    vc.navigationController.navigationBar.tintColor = [UIColor redColor];
     
 }
 

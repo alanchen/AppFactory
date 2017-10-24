@@ -876,7 +876,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				"zh-Hant",
 			);
 			mainGroup = E7905D3B1F7A32E4006CC6F5;
