@@ -19,7 +19,7 @@
 
 -(CGFloat)navigationbarHeight;
 
-- (void)popToRootIfItCanWithAnimated:(BOOL)animated;
+-(void)popToRootIfItCanWithAnimated:(BOOL)animated;
 
 #pragma mark -
 

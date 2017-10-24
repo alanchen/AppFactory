@@ -23,6 +23,8 @@
 
 #import "LogMacros.h"
 #import "TTTAttributedLabel+AFExtension.h"
+#import "AFGhostButton.h"
+
 
 
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource,AFBaseTableViewDelegate>
@@ -62,6 +64,14 @@
     [self.tableView addRefreshingHeaderWithTarget:self action:@selector(test) color:[UIColor redColor]];
     
     [self.tableView reloadData];
+    
+    AFGhostButton *btn = [AFGhostButton ghostButtonWithColor:[UIColor redColor] font:[UIFont systemFontOfSize:12]];
+    [btn setTitle:@"123" forState:UIControlStateNormal];
+    [btn setSize:CGSizeMake(100, 50)];
+    btn.top = 100;
+    btn.left = 100;
+    [self.view addSubview:btn];
+    btn.enabled = NO;
     
 }
 

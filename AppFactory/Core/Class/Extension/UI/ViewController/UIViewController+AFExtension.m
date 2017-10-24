@@ -53,6 +53,8 @@
     [self.navigationController popToRootViewControllerAnimated:animated];
 }
 
+#pragma mark -
+
 -(void)setLeftBarButtonItem:(UIBarButtonItem *)item
 {
     self.navigationItem.leftBarButtonItem = item;
