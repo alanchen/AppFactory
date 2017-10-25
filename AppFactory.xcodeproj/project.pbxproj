@@ -18,6 +18,7 @@
 		E78E5FFD1FA07A6D00EA022E /* LightBoxData.m in Sources */ = {isa = PBXBuildFile; fileRef = E78E5FF41FA07A6D00EA022E /* LightBoxData.m */; };
 		E78E60011FA07A6D00EA022E /* LightBoxWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E78E5FFC1FA07A6D00EA022E /* LightBoxWrapper.m */; };
 		E78E60051FA08CAD00EA022E /* ScrollableSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E78E60041FA08CAD00EA022E /* ScrollableSegmentedControl.m */; };
+		E78E60091FA08F6600EA022E /* NotificationNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = E78E60081FA08F6600EA022E /* NotificationNumberView.m */; };
 		E7905D491F7A32E4006CC6F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7905D481F7A32E4006CC6F5 /* AppDelegate.m */; };
 		E7905D4C1F7A32E4006CC6F5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7905D4B1F7A32E4006CC6F5 /* ViewController.m */; };
 		E7905D511F7A32E4006CC6F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7905D501F7A32E4006CC6F5 /* Assets.xcassets */; };
@@ -125,6 +126,8 @@
 		E78E5FFC1FA07A6D00EA022E /* LightBoxWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightBoxWrapper.m; sourceTree = "<group>"; };
 		E78E60031FA08CAD00EA022E /* ScrollableSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollableSegmentedControl.h; sourceTree = "<group>"; };
 		E78E60041FA08CAD00EA022E /* ScrollableSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollableSegmentedControl.m; sourceTree = "<group>"; };
+		E78E60071FA08F6600EA022E /* NotificationNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationNumberView.h; sourceTree = "<group>"; };
+		E78E60081FA08F6600EA022E /* NotificationNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationNumberView.m; sourceTree = "<group>"; };
 		E7905D441F7A32E4006CC6F5 /* AppFactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7905D471F7A32E4006CC6F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E7905D481F7A32E4006CC6F5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -351,6 +354,15 @@
 				E78E60041FA08CAD00EA022E /* ScrollableSegmentedControl.m */,
 			);
 			path = SegCtrl;
+			sourceTree = "<group>";
+		};
+		E78E60061FA08F6600EA022E /* NotificationCount */ = {
+			isa = PBXGroup;
+			children = (
+				E78E60071FA08F6600EA022E /* NotificationNumberView.h */,
+				E78E60081FA08F6600EA022E /* NotificationNumberView.m */,
+			);
+			path = NotificationCount;
 			sourceTree = "<group>";
 		};
 		E7905D3B1F7A32E4006CC6F5 = {
@@ -842,6 +854,7 @@
 		E7F8C1BB1F8F1C1600B1E14B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E78E60061FA08F6600EA022E /* NotificationCount */,
 				E78E60021FA08CAD00EA022E /* SegCtrl */,
 				E78E5FF21FA07A6D00EA022E /* LightBox */,
 				E741BEF01F9ED46800FE41C4 /* Button */,
@@ -1093,6 +1106,7 @@
 				E7F8C1FD1F8F1C1600B1E14B /* CTFeedbackTopicsViewController.m in Sources */,
 				E7F8C1E11F8F1C1600B1E14B /* UITableView+AFExtension.m in Sources */,
 				E7F8C1EB1F8F1C1600B1E14B /* UIAlertController+AFExtension.m in Sources */,
+				E78E60091FA08F6600EA022E /* NotificationNumberView.m in Sources */,
 				E741BEF61F9ED49500FE41C4 /* AFGhostButton.m in Sources */,
 				E7F8C1D01F8F1C1600B1E14B /* NSMutableDictionary+AFExtension.m in Sources */,
 				E7F8C1E81F8F1C1600B1E14B /* UIView+AFExtension.m in Sources */,

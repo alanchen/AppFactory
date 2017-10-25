@@ -26,6 +26,7 @@
 #import "AFGhostButton.h"
 
 #import "LightBoxWrapper.h"
+#import "NotificationNumberView.h"
 
 
 
@@ -73,6 +74,13 @@
     [self.tableView.refreshlHeader setSpinnerColor:[UIColor redColor]];
 
     [self.tableView reloadData];
+    
+    NotificationNumberView *no  = [NotificationNumberView view];
+    no.circleRadius = 10;
+    no.number = 9;
+    no.left = 100;
+    no.top = 90;
+    [self.view  addSubview:no];
     
 }
 
