@@ -15,6 +15,8 @@
 		E74174561FA03D6B009456FD /* RACSubject+AFThrottle.m in Sources */ = {isa = PBXBuildFile; fileRef = E74174551FA03D6B009456FD /* RACSubject+AFThrottle.m */; };
 		E741BEF61F9ED49500FE41C4 /* AFGhostButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E741BEF51F9ED49500FE41C4 /* AFGhostButton.m */; };
 		E741BEF91F9EDA5600FE41C4 /* AFRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E741BEF81F9EDA5600FE41C4 /* AFRadioButton.m */; };
+		E78E5FFD1FA07A6D00EA022E /* LightBoxData.m in Sources */ = {isa = PBXBuildFile; fileRef = E78E5FF41FA07A6D00EA022E /* LightBoxData.m */; };
+		E78E60011FA07A6D00EA022E /* LightBoxWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E78E5FFC1FA07A6D00EA022E /* LightBoxWrapper.m */; };
 		E7905D491F7A32E4006CC6F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7905D481F7A32E4006CC6F5 /* AppDelegate.m */; };
 		E7905D4C1F7A32E4006CC6F5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7905D4B1F7A32E4006CC6F5 /* ViewController.m */; };
 		E7905D511F7A32E4006CC6F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7905D501F7A32E4006CC6F5 /* Assets.xcassets */; };
@@ -116,6 +118,10 @@
 		E741BEF51F9ED49500FE41C4 /* AFGhostButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFGhostButton.m; sourceTree = "<group>"; };
 		E741BEF71F9EDA5600FE41C4 /* AFRadioButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFRadioButton.h; sourceTree = "<group>"; };
 		E741BEF81F9EDA5600FE41C4 /* AFRadioButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFRadioButton.m; sourceTree = "<group>"; };
+		E78E5FF31FA07A6D00EA022E /* LightBoxData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightBoxData.h; sourceTree = "<group>"; };
+		E78E5FF41FA07A6D00EA022E /* LightBoxData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightBoxData.m; sourceTree = "<group>"; };
+		E78E5FFB1FA07A6D00EA022E /* LightBoxWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightBoxWrapper.h; sourceTree = "<group>"; };
+		E78E5FFC1FA07A6D00EA022E /* LightBoxWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightBoxWrapper.m; sourceTree = "<group>"; };
 		E7905D441F7A32E4006CC6F5 /* AppFactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7905D471F7A32E4006CC6F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E7905D481F7A32E4006CC6F5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -322,6 +328,17 @@
 				E741BEF81F9EDA5600FE41C4 /* AFRadioButton.m */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		E78E5FF21FA07A6D00EA022E /* LightBox */ = {
+			isa = PBXGroup;
+			children = (
+				E78E5FF31FA07A6D00EA022E /* LightBoxData.h */,
+				E78E5FF41FA07A6D00EA022E /* LightBoxData.m */,
+				E78E5FFB1FA07A6D00EA022E /* LightBoxWrapper.h */,
+				E78E5FFC1FA07A6D00EA022E /* LightBoxWrapper.m */,
+			);
+			path = LightBox;
 			sourceTree = "<group>";
 		};
 		E7905D3B1F7A32E4006CC6F5 = {
@@ -813,6 +830,7 @@
 		E7F8C1BB1F8F1C1600B1E14B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E78E5FF21FA07A6D00EA022E /* LightBox */,
 				E741BEF01F9ED46800FE41C4 /* Button */,
 				E7F8C1BC1F8F1C1600B1E14B /* SearchBar */,
 			);
@@ -1083,6 +1101,7 @@
 				E7F8C1CA1F8F1C1600B1E14B /* AFBaseTableCell.m in Sources */,
 				E7F8C1DB1F8F1C1600B1E14B /* UIButton+ExpandHitArea.m in Sources */,
 				E7F8C2011F8F1C1600B1E14B /* FeedbackHelper.m in Sources */,
+				E78E5FFD1FA07A6D00EA022E /* LightBoxData.m in Sources */,
 				E7F8C1F01F8F1C1600B1E14B /* UIViewController+AFExtension.m in Sources */,
 				E7905D4C1F7A32E4006CC6F5 /* ViewController.m in Sources */,
 				E7F8C1DD1F8F1C1600B1E14B /* UIImageView+AFExtension.m in Sources */,
@@ -1118,6 +1137,7 @@
 				E722EB5A1F960F890027CC05 /* AnyPromise+AFExtension.m in Sources */,
 				E722EB661F98867F0027CC05 /* FBSSOResult.m in Sources */,
 				E7F8C1C51F8F1C1600B1E14B /* AFHTTPSessionManager+AFExtension.m in Sources */,
+				E78E60011FA07A6D00EA022E /* LightBoxWrapper.m in Sources */,
 				E7905D491F7A32E4006CC6F5 /* AppDelegate.m in Sources */,
 				E7F8C1CD1F8F1C1600B1E14B /* IDMPhotoBrowser+AFExtension.m in Sources */,
 				E7F8C1D41F8F1C1600B1E14B /* NSAttributedString+AFExtension.m in Sources */,

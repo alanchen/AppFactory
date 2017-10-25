@@ -25,6 +25,8 @@
 #import "TTTAttributedLabel+AFExtension.h"
 #import "AFGhostButton.h"
 
+#import "LightBoxWrapper.h"
+
 
 
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource,AFBaseTableViewDelegate>
@@ -72,19 +74,12 @@
 
     [self.tableView reloadData];
     
-    AFGhostButton *btn = [AFGhostButton ghostButtonWithColor:[UIColor redColor] font:[UIFont systemFontOfSize:12]];
-    [btn setTitle:@"123" forState:UIControlStateNormal];
-    [btn setSize:CGSizeMake(100, 50)];
-    btn.top = 100;
-    btn.left = 100;
-    [self.view addSubview:btn];
-    btn.enabled = NO;
-    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.tableView endHeaderRefreshing];
+    id cell = [tableView cellForRowAtIndexPath:indexPath];
     
 //    ToastShow(INT2STR(indexPath.row));
     
@@ -102,11 +97,17 @@
 //    [self pushViewController:vc];
     
     
-    CTFeedbackViewController *vc = [FeedbackHelper showFeedbackWithAdditionalContent:@"hihihi" topics:@[@"12",@"34"] eMail:@"@123" onVC:self doneBlock:^(CTFeedbackViewController *vc) {
-        ToastShow(@"OKOKKOOK");
-    }];
+//    CTFeedbackViewController *vc = [FeedbackHelper showFeedbackWithAdditionalContent:@"hihihi" topics:@[@"12",@"34"] eMail:@"@123" onVC:self doneBlock:^(CTFeedbackViewController *vc) {
+//        ToastShow(@"OKOKKOOK");
+//    }];
+//
+//    vc.navigationController.navigationBar.tintColor = [UIColor redColor];
     
-    vc.navigationController.navigationBar.tintColor = [UIColor redColor];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    view.backgroundColor = [UIColor redColor];
+
+    LightboxShowFrom(view, cell);
     
 }
 
