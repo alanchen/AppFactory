@@ -27,6 +27,7 @@
 
 // Extension
 #import "AnyPromise+AFExtension.h"
+#import "RACSubject+AFThrottle.h"
 
 #import "UIView+AFExtension.h"
 #import "UIView+AFBorder.h"
