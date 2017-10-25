@@ -11,7 +11,11 @@
 #import "LibsHeader.h"
 
 @implementation UIScrollView(AFRefresh)
-SYNTHESIZE_ASC_OBJ(spinner, setSpinner);
+
+- (AFRefreshlHeader *)refreshlHeader
+{
+    return (AFRefreshlHeader *)self.mj_header;
+}
 
 - (AFRefreshlHeader *)addRefreshingHeaderWithTarget:(id)target action:(SEL)action color:(UIColor *)color
 {
@@ -92,21 +96,7 @@ SYNTHESIZE_ASC_OBJ(spinner, setSpinner);
 
 -(UIActivityIndicatorView *)loadingSpinner
 {
-    if(!self.spinner){
-        self.spinner =  [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        [self.spinner hidesWhenStopped];
-        [self.spinner stopAnimating];
-        [self addSubview:self.spinner];
-        
-        @weakify(self);
-        [self.spinner mas_makeConstraints:^(MASConstraintMaker *make) {
-            @strongify(self);
-            make.center.equalTo(self);
-            make.width.and.height.greaterThanOrEqualTo(@1);
-        }];
-    }
-    
-    return self.spinner;
+    return self.af_spinner;
 }
 
 -(void)hideSpinner
@@ -124,6 +114,11 @@ SYNTHESIZE_ASC_OBJ(spinner, setSpinner);
 - (BOOL)isSpinnerAnimating
 {
     return  [self.loadingSpinner isAnimating];
+}
+
+- (void)setSpinnerColor:(UIColor *)color
+{
+    self.loadingSpinner.color = color;
 }
 
 @end

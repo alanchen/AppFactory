@@ -38,6 +38,11 @@
     }
 }
 
+- (void)setSpinnertColor:(UIColor *)color
+{
+    _loadingView.color = color;
+}
+
 - (UIImageView *)arrowView
 {
     if (!_arrowView) {

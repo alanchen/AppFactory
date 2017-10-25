@@ -67,7 +67,9 @@
     }];
     
     [self.tableView addRefreshingHeaderWithTarget:self action:@selector(test) color:[UIColor redColor]];
-    
+    [self.tableView setSpinnerColor:[UIColor redColor]];
+    [self.tableView.refreshlHeader setSpinnertColor:[UIColor redColor]];
+
     [self.tableView reloadData];
     
     AFGhostButton *btn = [AFGhostButton ghostButtonWithColor:[UIColor redColor] font:[UIFont systemFontOfSize:12]];

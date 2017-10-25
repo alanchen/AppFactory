@@ -13,6 +13,7 @@
 
 @interface UIScrollView(AFRefresh)
 
+- (AFRefreshlHeader *)refreshlHeader;
 - (AFRefreshlHeader *)addRefreshingHeaderWithTarget:(id)target action:(SEL)action color:(UIColor *)color;
 - (MJRefreshFooter *)addLoadMoreFooterWithTarget:(id)target action:(SEL)action color:(UIColor *)color;
 
@@ -22,6 +23,7 @@
 - (void)hideSpinner;
 - (void)showSpinner;
 - (BOOL)isSpinnerAnimating;
+- (void)setSpinnerColor:(UIColor *)color;
 
 /**
  *    Need to make suer you loaded the tableview otherwise terrible thing happened.
