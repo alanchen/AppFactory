@@ -38,7 +38,7 @@
     }
 }
 
-- (void)setSpinnertColor:(UIColor *)color
+- (void)setSpinnerColor:(UIColor *)color
 {
     _loadingView.color = color;
 }

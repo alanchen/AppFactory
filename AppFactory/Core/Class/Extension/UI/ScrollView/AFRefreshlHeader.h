@@ -16,7 +16,7 @@
 
 + (instancetype)headerWithRefreshingTarget:(id)target refreshingAction:(SEL)action reloadImage:(UIImage *)image;
 - (void)setArrowTintColor:(UIColor *)tintColor;
-- (void)setSpinnertColor:(UIColor *)color;
+- (void)setSpinnerColor:(UIColor *)color;
 
 @end
 

@@ -68,7 +68,7 @@
     
     [self.tableView addRefreshingHeaderWithTarget:self action:@selector(test) color:[UIColor redColor]];
     [self.tableView setSpinnerColor:[UIColor redColor]];
-    [self.tableView.refreshlHeader setSpinnertColor:[UIColor redColor]];
+    [self.tableView.refreshlHeader setSpinnerColor:[UIColor redColor]];
 
     [self.tableView reloadData];
     
