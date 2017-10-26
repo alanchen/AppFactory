@@ -126,9 +126,9 @@
 //
 //}
 
-#pragma mark - PMBaseTableViewDelegate
+#pragma mark - BaseTableViewDelegate
 
-- (BOOL) emptyCaseShouldDisplay
+- (BOOL) tableViewEmptyCaseShouldDisplay
 {
     return  [self.itemList count]?NO:YES;
 }
