@@ -12,6 +12,7 @@
 #import "UsefulDefinition.h"
 #import "DeviceMacros.h"
 #import "LibsHeader.h"
+#import <Photos/Photos.h>
 
 @interface ImagePickerHelper()<UINavigationControllerDelegate>
 
@@ -127,6 +128,40 @@
     }];
     
     return imagePickerController;
+}
+
++(void)checkAuthorizationWithMessage:(NSString *)msg
+                          cacnelText:(NSString *)cancelText
+                            openText:(NSString *)openText
+                           doneBlock:(void (^)(BOOL))block
+{
+    void (^showAlert)() = ^void() {
+        [UIAlertController showAlertViewWithTitle:nil
+                                          message:msg
+                                      cancelTitle:cancelText
+                                       otherTitle:openText
+                                    cancelHandler:^(UIAlertAction *action) {
+                                        if(block){block(NO);}
+                                    } otherHandler:^(UIAlertAction *action) {
+                                        NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+                                        [[UIApplication sharedApplication] openURL:url];
+                                        if(block){block(NO);}
+                                    }];
+    };
+    PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+    if (status == PHAuthorizationStatusAuthorized){
+        if(block) {block(YES);}
+    }else if (status == PHAuthorizationStatusDenied){
+        showAlert();
+    }else if (status == PHAuthorizationStatusNotDetermined){
+        [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+            if(status == PHAuthorizationStatusAuthorized){
+                [NSObject bk_performBlock:^(){if(block){block(YES);}}onQueue:dispatch_get_main_queue() afterDelay:0.3];
+            } else{
+                [NSObject bk_performBlock:^(){showAlert();}onQueue:dispatch_get_main_queue() afterDelay:0.3];
+            }
+        }];
+    }
 }
 
 #pragma  mark - Private Method

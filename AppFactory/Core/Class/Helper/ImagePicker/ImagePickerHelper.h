@@ -26,4 +26,10 @@
                                       completion:(void (^)(UIImagePickerController * ,UIImage *)) completion
                                           cancel:(void (^)(UIImagePickerController *)) cancel;
 
+
++(void)checkAuthorizationWithMessage:(NSString *)msg
+                          cacnelText:(NSString *)cancelText
+                            openText:(NSString *)openText
+                           doneBlock:(void (^)(BOOL success))block;
+
 @end

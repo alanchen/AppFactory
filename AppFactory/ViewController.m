@@ -28,7 +28,7 @@
 #import "LightBoxWrapper.h"
 #import "NotificationNumberView.h"
 
-
+#import "ImagePickerHelper.h"
 
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource,AFBaseTableViewDelegate>
 
@@ -112,10 +112,14 @@
 //    vc.navigationController.navigationBar.tintColor = [UIColor redColor];
     
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    view.backgroundColor = [UIColor redColor];
-
-    LightboxShowFrom(view, cell);
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+//    view.backgroundColor = [UIColor redColor];
+//
+//    LightboxShowFrom(view, cell);
+    
+    [ImagePickerHelper checkAuthorizationWithMessage:@"try" cacnelText:@"ccc" openText:@"opop" doneBlock:^(BOOL success) {
+        ToastShow(INT2STR(success));
+    }];
     
 }
 
