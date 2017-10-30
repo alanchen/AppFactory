@@ -124,7 +124,7 @@ SYNTHESIZE_ASC_OBJ(tapGesture, setTapGesture);
     return target;
 }
 
-//- (id)findTheSuperviewOfClass:(NSString *)className
+- (id)findTheSuperviewOfClass:(NSString *)className
 {
     __block UIView *target = self.superview;
     while (target) {
