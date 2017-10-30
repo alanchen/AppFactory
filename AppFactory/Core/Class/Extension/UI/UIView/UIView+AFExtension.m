@@ -124,6 +124,20 @@ SYNTHESIZE_ASC_OBJ(tapGesture, setTapGesture);
     return target;
 }
 
+//- (id)findTheSuperviewOfClass:(NSString *)className
+{
+    __block UIView *target = self.superview;
+    while (target) {
+        if([target isKindOfClass:NSClassFromString(className)]){
+            return target ;
+        }else{
+            target = self.superview;
+        }
+    }
+    
+    return nil;
+}
+
 - (CAGradientLayer *)setGradientColorFrom:(UIColor *)color1 to:(UIColor *)color2
 {
     CAGradientLayer *gradient = [CAGradientLayer layer];

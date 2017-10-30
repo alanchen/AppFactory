@@ -28,6 +28,8 @@
 
 - (id)findTheSubviewOfClass:(NSString *)className;
 
+- (id)findTheSuperviewOfClass:(NSString *)className;
+
 - (CAGradientLayer *)setGradientColorFrom:(UIColor *)color1 to:(UIColor *)color2;
 
 @end
