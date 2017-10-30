@@ -20,7 +20,8 @@ static double const kRMessageDuration = 2.0f;
     static BOOL setupOnce = NO;
     
     if(!setupOnce){
-        [RMessage addDesignsFromFileWithName:@"AlternativeDesigns" inBundle:[NSBundle mainBundle]];
+        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+        [RMessage addDesignsFromFileWithName:@"AlternativeDesigns" inBundle:bundle];
         [[RMessageView appearance] setTitleAlignment:NSTextAlignmentCenter];
         setupOnce = YES;
     }

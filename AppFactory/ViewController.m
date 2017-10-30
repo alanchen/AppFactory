@@ -30,6 +30,7 @@
 
 #import "ImagePickerHelper.h"
 
+
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource,AFBaseTableViewDelegate>
 
 @property (nonatomic,strong) AFBaseTableView *tableView;
@@ -97,7 +98,7 @@
 //        DLog(@"cc");
 //    }];
     
-//    [RMessageHelper showOkay:@"123"];
+    [RMessageHelper showOkay:@"123"];
 //
 //    AFCountryPickerViewController *vc = [[AFCountryPickerViewController alloc] init];
 //    [vc setCellTextColor:[UIColor grayColor]];
@@ -117,9 +118,9 @@
 //
 //    LightboxShowFrom(view, cell);
     
-    [ImagePickerHelper checkAuthorizationWithMessage:@"try" cacnelText:@"ccc" openText:@"opop" doneBlock:^(BOOL success) {
-        ToastShow(INT2STR(success));
-    }];
+//    [ImagePickerHelper checkAuthorizationWithMessage:@"try" cacnelText:@"ccc" openText:@"opop" doneBlock:^(BOOL success) {
+//        ToastShow(INT2STR(success));
+//    }];
     
 }
 

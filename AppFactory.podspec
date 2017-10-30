@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
     s.resources    = "AppFactory/Core/Resource/*.{png,bundle}"
     s.frameworks   = "Foundation","UIKit"
     s.public_header_files = 'AppFactory/Core/**/*.h'
-    s.source_files = 'AppFactory/Core/**/*.{h,m}'
+    s.source_files = 'AppFactory/Core/**/*.{h,m,json}'
 
 	s.dependency "AFNetworking", "~> 3.0"
 	s.dependency "BlocksKit", "~> 2.2.5"
