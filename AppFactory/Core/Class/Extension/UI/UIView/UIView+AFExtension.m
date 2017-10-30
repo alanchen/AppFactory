@@ -131,7 +131,7 @@ SYNTHESIZE_ASC_OBJ(tapGesture, setTapGesture);
         if([target isKindOfClass:targetClass]){
             return target ;
         }else{
-            target = self.superview;
+            target = target.superview;
         }
     }
     
