@@ -109,26 +109,26 @@ SYNTHESIZE_ASC_OBJ(tapGesture, setTapGesture);
     }];
 }
 
-- (id)findTheSubviewOfClass:(NSString *)className
+- (id)findTheSubviewOfClass:(Class)targetClass
 {
     __block  id target;
     [[self subviews] enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull subview, NSUInteger idx, BOOL * _Nonnull stop) {
-        if([subview isKindOfClass:NSClassFromString(className)]){
+        if([subview isKindOfClass:targetClass]){
             target = subview;
             *stop = YES;
         }else{
-            target =  [subview findTheSubviewOfClass:className];
+            target = [subview findTheSubviewOfClass:targetClass];
         }
     }];
     
     return target;
 }
 
-- (id)findTheSuperviewOfClass:(NSString *)className
+- (id)findTheSuperviewOfClass:(Class)targetClass
 {
     __block UIView *target = self.superview;
     while (target) {
-        if([target isKindOfClass:NSClassFromString(className)]){
+        if([target isKindOfClass:targetClass]){
             return target ;
         }else{
             target = self.superview;

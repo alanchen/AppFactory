@@ -26,9 +26,9 @@
 
 - (void)setAllSubviewBgColor:(UIColor *)color;
 
-- (id)findTheSubviewOfClass:(NSString *)className;
+- (id)findTheSubviewOfClass:(Class)targetClass;
 
-- (id)findTheSuperviewOfClass:(NSString *)className;
+- (id)findTheSuperviewOfClass:(Class)targetClass;
 
 - (CAGradientLayer *)setGradientColorFrom:(UIColor *)color1 to:(UIColor *)color2;
 
