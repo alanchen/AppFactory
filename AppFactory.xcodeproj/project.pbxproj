@@ -91,7 +91,6 @@
 		E7F8C2031F8F1C1600B1E14B /* TFHpple+Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C19B1F8F1C1600B1E14B /* TFHpple+Tag.m */; };
 		E7F8C2041F8F1C1600B1E14B /* ImagePickerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C19E1F8F1C1600B1E14B /* ImagePickerHelper.m */; };
 		E7F8C2051F8F1C1600B1E14B /* KeyChainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1A11F8F1C1600B1E14B /* KeyChainWrapper.m */; };
-		E7F8C2061F8F1C1600B1E14B /* AlternativeDesigns.json in Resources */ = {isa = PBXBuildFile; fileRef = E7F8C1A41F8F1C1600B1E14B /* AlternativeDesigns.json */; };
 		E7F8C2071F8F1C1600B1E14B /* RMessageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1A61F8F1C1600B1E14B /* RMessageHelper.m */; };
 		E7F8C2081F8F1C1600B1E14B /* SVProgressHUDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1A81F8F1C1600B1E14B /* SVProgressHUDHelper.m */; };
 		E7F8C2091F8F1C1600B1E14B /* ToastMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1AA1F8F1C1600B1E14B /* ToastMessage.m */; };
@@ -271,7 +270,6 @@
 		E7F8C19E1F8F1C1600B1E14B /* ImagePickerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePickerHelper.m; sourceTree = "<group>"; };
 		E7F8C1A01F8F1C1600B1E14B /* KeyChainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyChainWrapper.h; sourceTree = "<group>"; };
 		E7F8C1A11F8F1C1600B1E14B /* KeyChainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyChainWrapper.m; sourceTree = "<group>"; };
-		E7F8C1A41F8F1C1600B1E14B /* AlternativeDesigns.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AlternativeDesigns.json; sourceTree = "<group>"; };
 		E7F8C1A51F8F1C1600B1E14B /* RMessageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMessageHelper.h; sourceTree = "<group>"; };
 		E7F8C1A61F8F1C1600B1E14B /* RMessageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMessageHelper.m; sourceTree = "<group>"; };
 		E7F8C1A71F8F1C1600B1E14B /* SVProgressHUDHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUDHelper.h; sourceTree = "<group>"; };
@@ -804,7 +802,6 @@
 		E7F8C1A31F8F1C1600B1E14B /* RMessage */ = {
 			isa = PBXGroup;
 			children = (
-				E7F8C1A41F8F1C1600B1E14B /* AlternativeDesigns.json */,
 				E7F8C1A51F8F1C1600B1E14B /* RMessageHelper.h */,
 				E7F8C1A61F8F1C1600B1E14B /* RMessageHelper.m */,
 			);
@@ -944,7 +941,6 @@
 			files = (
 				E7F8C1F61F8F1C1600B1E14B /* countries.json in Resources */,
 				E7C20AD61F906A16004B70E0 /* CTFeedback.bundle in Resources */,
-				E7F8C2061F8F1C1600B1E14B /* AlternativeDesigns.json in Resources */,
 				E7905D5E1F7A350A006CC6F5 /* Launch Screen.storyboard in Resources */,
 				E7905D511F7A32E4006CC6F5 /* Assets.xcassets in Resources */,
 				E7F8C20E1F8F1C1600B1E14B /* AppFactory.bundle in Resources */,

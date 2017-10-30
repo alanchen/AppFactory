@@ -64,5 +64,7 @@
 
 +(UIImage *)imageInTheBundleWithName:(NSString *)name;
 
++(NSBundle *)bundle;
+
 @end
 

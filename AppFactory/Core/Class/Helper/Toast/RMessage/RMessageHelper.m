@@ -8,6 +8,7 @@
 
 #import "RMessageHelper.h"
 #import "RMessageView.h"
+#import "AppFactory.h"
 
 static double const kRMessageDuration = 2.0f;
 
@@ -21,7 +22,7 @@ static double const kRMessageDuration = 2.0f;
     
     if(!setupOnce){
         NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-        [RMessage addDesignsFromFileWithName:@"AlternativeDesigns" inBundle:bundle];
+        [RMessage addDesignsFromFileWithName:@"AlternativeDesigns" inBundle:[AppFactory bundle]];
         [[RMessageView appearance] setTitleAlignment:NSTextAlignmentCenter];
         setupOnce = YES;
     }

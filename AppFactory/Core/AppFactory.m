@@ -13,11 +13,17 @@
 
 +(UIImage *)imageInTheBundleWithName:(NSString *)name
 {
-    NSBundle *bundle = [NSBundle bundleForClass:[AppFactory class]];
+    NSBundle *bundle = [self bundle];
     NSURL *url = [bundle URLForResource:@"AppFactory" withExtension:@"bundle"];
     NSBundle *imageBundle = [NSBundle bundleWithURL:url];
     UIImage* img = [UIImage imageWithContentsOfFile:[imageBundle pathForResource:name ofType:@"png"]];
     return img;
+}
+
++(NSBundle *)bundle
+{
+    NSBundle *bundle = [NSBundle bundleForClass:[AppFactory class]];
+    return bundle;
 }
 
 @end
