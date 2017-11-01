@@ -29,6 +29,7 @@
 #import "NotificationNumberView.h"
 
 #import "ImagePickerHelper.h"
+#import "AFButtonsView.h"
 
 
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource,AFBaseTableViewDelegate>
@@ -99,6 +100,17 @@
 //    }];
     
     [RMessageHelper showOkay:@"123"];
+    
+    UIButton *btn1 = [AFButtonsView createGhostButtonWithColor:[UIColor redColor] title:@"1" font:[UIFont systemFontOfSize:16] target:nil action:nil];
+    UIButton *btn2 = [AFButtonsView createButtonWithFillledColor:[UIColor blueColor] title:@"2" font:[UIFont systemFontOfSize:8] target:nil action:nil];
+
+   AFButtonsView *btnView = [AFButtonsView viewWithButtons:@[btn1,btn2]];
+    btnView.backgroundColor = [UIColor yellowColor];
+    btnView.top = 200;
+    btnView.left = 100;
+    btnView.width = 300;
+    [self.view addSubview:btnView];
+    
 //
 //    AFCountryPickerViewController *vc = [[AFCountryPickerViewController alloc] init];
 //    [vc setCellTextColor:[UIColor grayColor]];
