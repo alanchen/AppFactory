@@ -26,6 +26,7 @@
 		E7905D5E1F7A350A006CC6F5 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7905D5D1F7A350A006CC6F5 /* Launch Screen.storyboard */; };
 		E7C20AD61F906A16004B70E0 /* CTFeedback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7C20AD51F906A16004B70E0 /* CTFeedback.bundle */; };
 		E7F4A97D1FA9A5CD00AE7B27 /* AFButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F4A97C1FA9A5CD00AE7B27 /* AFButtonsView.m */; };
+		E7F4A9A41FAC05A200AE7B27 /* AFNaviBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F4A9A31FAC05A200AE7B27 /* AFNaviBar.m */; };
 		E7F8C1C21F8F1C1600B1E14B /* AppFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C0F21F8F1C1600B1E14B /* AppFactory.m */; };
 		E7F8C1C31F8F1C1600B1E14B /* AFApiResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C0F61F8F1C1600B1E14B /* AFApiResponse.m */; };
 		E7F8C1C41F8F1C1600B1E14B /* AFApiTaskError.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C0F81F8F1C1600B1E14B /* AFApiTaskError.m */; };
@@ -142,6 +143,8 @@
 		E7C20AD51F906A16004B70E0 /* CTFeedback.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CTFeedback.bundle; sourceTree = "<group>"; };
 		E7F4A97B1FA9A5CD00AE7B27 /* AFButtonsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFButtonsView.h; sourceTree = "<group>"; };
 		E7F4A97C1FA9A5CD00AE7B27 /* AFButtonsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFButtonsView.m; sourceTree = "<group>"; };
+		E7F4A9A21FAC05A200AE7B27 /* AFNaviBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNaviBar.h; sourceTree = "<group>"; };
+		E7F4A9A31FAC05A200AE7B27 /* AFNaviBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNaviBar.m; sourceTree = "<group>"; };
 		E7F8C0F11F8F1C1600B1E14B /* AppFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppFactory.h; sourceTree = "<group>"; };
 		E7F8C0F21F8F1C1600B1E14B /* AppFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppFactory.m; sourceTree = "<group>"; };
 		E7F8C0F51F8F1C1600B1E14B /* AFApiResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFApiResponse.h; sourceTree = "<group>"; };
@@ -410,6 +413,15 @@
 				E7AD2E321F8DA8EA00F8E58A /* Info.plist */,
 			);
 			path = bundle;
+			sourceTree = "<group>";
+		};
+		E7F4A9A11FAC058600AE7B27 /* NaviBar */ = {
+			isa = PBXGroup;
+			children = (
+				E7F4A9A21FAC05A200AE7B27 /* AFNaviBar.h */,
+				E7F4A9A31FAC05A200AE7B27 /* AFNaviBar.m */,
+			);
+			path = NaviBar;
 			sourceTree = "<group>";
 		};
 		E7F8C0F01F8F1C1600B1E14B /* Core */ = {
@@ -856,6 +868,7 @@
 		E7F8C1BB1F8F1C1600B1E14B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E7F4A9A11FAC058600AE7B27 /* NaviBar */,
 				E78E60061FA08F6600EA022E /* NotificationCount */,
 				E78E60021FA08CAD00EA022E /* SegCtrl */,
 				E78E5FF21FA07A6D00EA022E /* LightBox */,
@@ -1141,6 +1154,7 @@
 				E7F8C1EE1F8F1C1600B1E14B /* UINavigationController+AFExtension.m in Sources */,
 				E7F8C1CC1F8F1C1600B1E14B /* AFTableEmptyCaseView.m in Sources */,
 				E7F8C1F51F8F1C1600B1E14B /* AFCountryPickerViewController.m in Sources */,
+				E7F4A9A41FAC05A200AE7B27 /* AFNaviBar.m in Sources */,
 				E7F8C1D21F8F1C1600B1E14B /* NSDate+AFExtension.m in Sources */,
 				E7F8C1F21F8F1C1600B1E14B /* APNModel.m in Sources */,
 				E7F8C20C1F8F1C1600B1E14B /* WebControllerHelper.m in Sources */,
