@@ -76,7 +76,7 @@
     
     [self.tableView reloadData];
     if([list count] < self.loadMoreLimit){
-        [self.tableView nomoreFooterRefreshing];
+        [self.tableView endFooterRefreshingWithNoMoreData];
     }else{
         [self.tableView endFooterRefreshing];
     }
@@ -93,7 +93,7 @@
     [self.itemList safelyAddObjectsFromArray:list];
     [self.tableView reloadData];
     if([list count] < self.loadMoreLimit){
-        [self.tableView nomoreFooterRefreshing];
+        [self.tableView endFooterRefreshingWithNoMoreData];
     }else{
         [self.tableView endFooterRefreshing];
     }

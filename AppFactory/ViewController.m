@@ -92,7 +92,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.tableView endHeaderRefreshing];
-    [self.tableView nomoreFooterRefreshing];
+    [self.tableView endFooterRefreshingWithNoMoreData];
 //    id cell = [tableView cellForRowAtIndexPath:indexPath];
     
 //    ToastShow(INT2STR(indexPath.row));

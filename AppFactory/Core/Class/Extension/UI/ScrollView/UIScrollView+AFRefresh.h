@@ -21,7 +21,7 @@
 
 - (void)endHeaderRefreshing; // can be trigger
 - (void)endFooterRefreshing; // can be trigger
-- (void)nomoreFooterRefreshing; // auto hide, can't be trigger
+- (void)endFooterRefreshingWithNoMoreData; // auto hide, can't be trigger
 
 - (void)hideSpinner;
 - (void)showSpinner;

@@ -61,9 +61,9 @@
     [self.mj_footer endRefreshing];
 }
 
-- (void)nomoreFooterRefreshing
+- (void)endFooterRefreshingWithNoMoreData
 {
-    self.mj_footer.state = MJRefreshStateNoMoreData;
+    [self.mj_footer endRefreshingWithNoMoreData];
 }
 
 #pragma mark -
