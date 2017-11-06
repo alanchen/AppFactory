@@ -24,6 +24,8 @@
 		E7905D511F7A32E4006CC6F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7905D501F7A32E4006CC6F5 /* Assets.xcassets */; };
 		E7905D571F7A32E4006CC6F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7905D561F7A32E4006CC6F5 /* main.m */; };
 		E7905D5E1F7A350A006CC6F5 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7905D5D1F7A350A006CC6F5 /* Launch Screen.storyboard */; };
+		E7AF70C21FB0350C0040904F /* AFRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AF70C11FB0350C0040904F /* AFRefreshFooter.m */; };
+		E7AF70C51FB036810040904F /* AFRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AF70C41FB036810040904F /* AFRefreshHeader.m */; };
 		E7C20AD61F906A16004B70E0 /* CTFeedback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7C20AD51F906A16004B70E0 /* CTFeedback.bundle */; };
 		E7F4A97D1FA9A5CD00AE7B27 /* AFButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F4A97C1FA9A5CD00AE7B27 /* AFButtonsView.m */; };
 		E7F4A9A41FAC05A200AE7B27 /* AFNaviBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F4A9A31FAC05A200AE7B27 /* AFNaviBar.m */; };
@@ -55,7 +57,6 @@
 		E7F8C1DB1F8F1C1600B1E14B /* UIButton+ExpandHitArea.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C12F1F8F1C1600B1E14B /* UIButton+ExpandHitArea.m */; };
 		E7F8C1DC1F8F1C1600B1E14B /* UIImage+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1321F8F1C1600B1E14B /* UIImage+AFExtension.m */; };
 		E7F8C1DD1F8F1C1600B1E14B /* UIImageView+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1341F8F1C1600B1E14B /* UIImageView+AFExtension.m */; };
-		E7F8C1DE1F8F1C1600B1E14B /* AFRefreshlHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1371F8F1C1600B1E14B /* AFRefreshlHeader.m */; };
 		E7F8C1DF1F8F1C1600B1E14B /* UIScrollView+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1391F8F1C1600B1E14B /* UIScrollView+AFExtension.m */; };
 		E7F8C1E01F8F1C1600B1E14B /* UIScrollView+AFRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C13B1F8F1C1600B1E14B /* UIScrollView+AFRefresh.m */; };
 		E7F8C1E11F8F1C1600B1E14B /* UITableView+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C13E1F8F1C1600B1E14B /* UITableView+AFExtension.m */; };
@@ -140,6 +141,10 @@
 		E7905D5D1F7A350A006CC6F5 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E7905D631F7A5ACB006CC6F5 /* AppFactory-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppFactory-Prefix.pch"; sourceTree = "<group>"; };
 		E7AD2E321F8DA8EA00F8E58A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7AF70C01FB0350C0040904F /* AFRefreshFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFRefreshFooter.h; sourceTree = "<group>"; };
+		E7AF70C11FB0350C0040904F /* AFRefreshFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFRefreshFooter.m; sourceTree = "<group>"; };
+		E7AF70C31FB036810040904F /* AFRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFRefreshHeader.h; sourceTree = "<group>"; };
+		E7AF70C41FB036810040904F /* AFRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFRefreshHeader.m; sourceTree = "<group>"; };
 		E7C20AD51F906A16004B70E0 /* CTFeedback.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CTFeedback.bundle; sourceTree = "<group>"; };
 		E7F4A97B1FA9A5CD00AE7B27 /* AFButtonsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFButtonsView.h; sourceTree = "<group>"; };
 		E7F4A97C1FA9A5CD00AE7B27 /* AFButtonsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFButtonsView.m; sourceTree = "<group>"; };
@@ -201,8 +206,6 @@
 		E7F8C1321F8F1C1600B1E14B /* UIImage+AFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AFExtension.m"; sourceTree = "<group>"; };
 		E7F8C1331F8F1C1600B1E14B /* UIImageView+AFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFExtension.h"; sourceTree = "<group>"; };
 		E7F8C1341F8F1C1600B1E14B /* UIImageView+AFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFExtension.m"; sourceTree = "<group>"; };
-		E7F8C1361F8F1C1600B1E14B /* AFRefreshlHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFRefreshlHeader.h; sourceTree = "<group>"; };
-		E7F8C1371F8F1C1600B1E14B /* AFRefreshlHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFRefreshlHeader.m; sourceTree = "<group>"; };
 		E7F8C1381F8F1C1600B1E14B /* UIScrollView+AFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+AFExtension.h"; sourceTree = "<group>"; };
 		E7F8C1391F8F1C1600B1E14B /* UIScrollView+AFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+AFExtension.m"; sourceTree = "<group>"; };
 		E7F8C13A1F8F1C1600B1E14B /* UIScrollView+AFRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+AFRefresh.h"; sourceTree = "<group>"; };
@@ -611,8 +614,10 @@
 		E7F8C1351F8F1C1600B1E14B /* ScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				E7F8C1361F8F1C1600B1E14B /* AFRefreshlHeader.h */,
-				E7F8C1371F8F1C1600B1E14B /* AFRefreshlHeader.m */,
+				E7AF70C31FB036810040904F /* AFRefreshHeader.h */,
+				E7AF70C41FB036810040904F /* AFRefreshHeader.m */,
+				E7AF70C01FB0350C0040904F /* AFRefreshFooter.h */,
+				E7AF70C11FB0350C0040904F /* AFRefreshFooter.m */,
 				E7F8C1381F8F1C1600B1E14B /* UIScrollView+AFExtension.h */,
 				E7F8C1391F8F1C1600B1E14B /* UIScrollView+AFExtension.m */,
 				E7F8C13A1F8F1C1600B1E14B /* UIScrollView+AFRefresh.h */,
@@ -1140,6 +1145,7 @@
 				E7F8C1C21F8F1C1600B1E14B /* AppFactory.m in Sources */,
 				E7F8C1E01F8F1C1600B1E14B /* UIScrollView+AFRefresh.m in Sources */,
 				E7F8C1C71F8F1C1600B1E14B /* AFBaseNavigationController.m in Sources */,
+				E7AF70C21FB0350C0040904F /* AFRefreshFooter.m in Sources */,
 				E7F8C1CA1F8F1C1600B1E14B /* AFBaseTableCell.m in Sources */,
 				E7F8C1DB1F8F1C1600B1E14B /* UIButton+ExpandHitArea.m in Sources */,
 				E7F8C2011F8F1C1600B1E14B /* FeedbackHelper.m in Sources */,
@@ -1162,7 +1168,6 @@
 				E7F8C1FC1F8F1C1600B1E14B /* CTFeedbackCellItem.m in Sources */,
 				E7F8C20A1F8F1C1600B1E14B /* UIComponentFactory.m in Sources */,
 				E7F8C1CF1F8F1C1600B1E14B /* NSMutableArray+AFExtension.m in Sources */,
-				E7F8C1DE1F8F1C1600B1E14B /* AFRefreshlHeader.m in Sources */,
 				E7F8C1ED1F8F1C1600B1E14B /* UIBarButtonItem+AFExtension.m in Sources */,
 				E7F8C1FF1F8F1C1600B1E14B /* NSBundle+CTFeedback.m in Sources */,
 				E7F8C1F71F8F1C1600B1E14B /* CountryCodePicker.m in Sources */,
@@ -1180,6 +1185,7 @@
 				E722EB5A1F960F890027CC05 /* AnyPromise+AFExtension.m in Sources */,
 				E722EB661F98867F0027CC05 /* FBSSOResult.m in Sources */,
 				E7F8C1C51F8F1C1600B1E14B /* AFHTTPSessionManager+AFExtension.m in Sources */,
+				E7AF70C51FB036810040904F /* AFRefreshHeader.m in Sources */,
 				E78E60011FA07A6D00EA022E /* LightBoxWrapper.m in Sources */,
 				E7905D491F7A32E4006CC6F5 /* AppDelegate.m in Sources */,
 				E7F4A97D1FA9A5CD00AE7B27 /* AFButtonsView.m in Sources */,

@@ -1,28 +1,28 @@
 //
-//  AFRefreshlHeader.m
+//  AFRefreshHeader.m
 //  AppFactory
 //
-//  Created by alan on 2017/10/2.
+//  Created by alan on 2017/11/6.
 //  Copyright © 2017年 alan. All rights reserved.
 //
 
-#import "AFRefreshlHeader.h"
+#import "AFRefreshHeader.h"
 
-@interface AFRefreshlHeader(){
+@interface AFRefreshHeader(){
     __unsafe_unretained UIImageView *_arrowView;
-
+    
 }
 @property (weak, nonatomic) UIActivityIndicatorView *loadingView;
 @end
 
-@implementation AFRefreshlHeader
+@implementation AFRefreshHeader
 
 + (instancetype)headerWithRefreshingTarget:(id)target refreshingAction:(SEL)action reloadImage:(UIImage *)image
 {
     if(!image)
         return nil;
     
-    AFRefreshlHeader *cmp = [super headerWithRefreshingTarget:target refreshingAction:action];
+    AFRefreshHeader *cmp = [super headerWithRefreshingTarget:target refreshingAction:action];
     cmp.lastUpdatedTimeLabel.hidden = YES;
     cmp.stateLabel.hidden = YES;
     cmp.arrowView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];

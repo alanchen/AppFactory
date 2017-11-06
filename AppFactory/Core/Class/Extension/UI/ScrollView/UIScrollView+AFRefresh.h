@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <MJRefresh/MJRefresh.h>
-#import "AFRefreshlHeader.h"
-
+#import "AFRefreshHeader.h"
+#import "AFRefreshFooter.h"
 
 @interface UIScrollView(AFRefresh)
 
-- (AFRefreshlHeader *)refreshlHeader;
-- (AFRefreshlHeader *)addRefreshingHeaderWithTarget:(id)target action:(SEL)action color:(UIColor *)color;
-- (MJRefreshFooter *)addLoadMoreFooterWithTarget:(id)target action:(SEL)action color:(UIColor *)color;
+- (AFRefreshHeader *)refreshHeader;
+- (AFRefreshFooter *)refreshFooter;
+
+- (AFRefreshHeader *)addRefreshingHeaderWithTarget:(id)target action:(SEL)action color:(UIColor *)color;
+- (AFRefreshFooter *)addLoadMoreFooterWithTarget:(id)target action:(SEL)action color:(UIColor *)color;
 
 - (void)endHeaderRefreshing;
 - (void)endFooterRefreshing;

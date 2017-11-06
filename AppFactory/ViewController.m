@@ -72,8 +72,11 @@
     }];
     
     [self.tableView addRefreshingHeaderWithTarget:self action:@selector(test) color:[UIColor redColor]];
+    [self.tableView addLoadMoreFooterWithTarget:self action:@selector(test) color:[UIColor blueColor]];
+
     [self.tableView setSpinnerColor:[UIColor redColor]];
-    [self.tableView.refreshlHeader setSpinnerColor:[UIColor redColor]];
+    [self.tableView.refreshHeader setSpinnerColor:[UIColor redColor]];
+
 
     [self.tableView reloadData];
     
@@ -89,7 +92,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.tableView endHeaderRefreshing];
-    id cell = [tableView cellForRowAtIndexPath:indexPath];
+    [self.tableView endFooterRefreshing];
+    self.tableView.refreshFooter.hidden = YES;
+//    id cell = [tableView cellForRowAtIndexPath:indexPath];
     
 //    ToastShow(INT2STR(indexPath.row));
     
@@ -99,17 +104,17 @@
 //        DLog(@"cc");
 //    }];
     
-    [RMessageHelper showOkay:@"123"];
-    
-    UIButton *btn1 = [AFButtonsView createGhostButtonWithColor:[UIColor redColor] title:@"1" font:[UIFont systemFontOfSize:16] target:nil action:nil];
-    UIButton *btn2 = [AFButtonsView createButtonWithFillledColor:[UIColor blueColor] title:@"2" font:[UIFont systemFontOfSize:8] target:nil action:nil];
-
-   AFButtonsView *btnView = [AFButtonsView viewWithButtons:@[btn1,btn2]];
-    btnView.backgroundColor = [UIColor yellowColor];
-    btnView.top = 200;
-    btnView.left = 100;
-    btnView.width = 300;
-    [self.view addSubview:btnView];
+//    [RMessageHelper showOkay:@"123"];
+//
+//    UIButton *btn1 = [AFButtonsView createGhostButtonWithColor:[UIColor redColor] title:@"1" font:[UIFont systemFontOfSize:16] target:nil action:nil];
+//    UIButton *btn2 = [AFButtonsView createButtonWithFillledColor:[UIColor blueColor] title:@"2" font:[UIFont systemFontOfSize:8] target:nil action:nil];
+//
+//   AFButtonsView *btnView = [AFButtonsView viewWithButtons:@[btn1,btn2]];
+//    btnView.backgroundColor = [UIColor yellowColor];
+//    btnView.top = 200;
+//    btnView.left = 100;
+//    btnView.width = 300;
+//    [self.view addSubview:btnView];
     
 //
 //    AFCountryPickerViewController *vc = [[AFCountryPickerViewController alloc] init];
@@ -149,7 +154,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AFBaseTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"123"];
-    cell.textLabel.text = @"123";
+    cell.textLabel.text = INT2STR(arc4random()%999);
 //    cell.cellHighLightStyle = CellHighLightStyleNone;
     
     return cell;

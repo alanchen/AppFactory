@@ -12,23 +12,43 @@
 
 @implementation UIScrollView(AFRefresh)
 
-- (AFRefreshlHeader *)refreshlHeader
+- (AFRefreshHeader *)refreshHeader
 {
-    return (AFRefreshlHeader *)self.mj_header;
+    return (AFRefreshHeader *)self.mj_header;
 }
 
-- (AFRefreshlHeader *)addRefreshingHeaderWithTarget:(id)target action:(SEL)action color:(UIColor *)color
+- (AFRefreshFooter *)refreshFooter
 {
-    self.mj_header = [AFRefreshlHeader headerWithRefreshingTarget:target
-                                                 refreshingAction:action
-                                                      reloadImage:AF_BUNDLE_IMAGE(@"table-reload-arrow")];
-    [(AFRefreshlHeader *)self.mj_header setArrowTintColor:color];
-    return (AFRefreshlHeader *)self.mj_header;
+    return (AFRefreshFooter *)self.mj_footer;
+}
+
+- (AFRefreshHeader *)addRefreshingHeaderWithTarget:(id)target action:(SEL)action color:(UIColor *)color
+{
+    self.mj_header = [AFRefreshHeader headerWithRefreshingTarget:target
+                                                refreshingAction:action
+                                                     reloadImage:AF_BUNDLE_IMAGE(@"table-reload-arrow")];
+    [(AFRefreshHeader *)self.mj_header setArrowTintColor:color];
+    return (AFRefreshHeader *)self.mj_header;
 }
 
 - (MJRefreshFooter *)addLoadMoreFooterWithTarget:(id)target action:(SEL)action color:(UIColor *)color
 {
-    return nil;
+    AFRefreshFooter *footer = [AFRefreshFooter footerWithRefreshingTarget:target refreshingAction:action];
+    footer.automaticallyHidden = YES;
+    footer.refreshingTitleHidden = YES;
+    footer.mj_h = 60;
+    [footer setTitle:@"" forState:MJRefreshStateIdle];
+    [footer setTitle:@"" forState:MJRefreshStatePulling];
+    [footer setTitle:@"" forState:MJRefreshStateRefreshing];
+    [footer setTitle:@"" forState:MJRefreshStateWillRefresh];
+    [footer setTitle:@"" forState:MJRefreshStateNoMoreData];
+
+    if(color){
+        footer.spinner.color = color;
+    }
+    [footer resetNoMoreData];
+    self.mj_footer = footer;
+    return self.mj_footer;
 }
 
 - (void)endHeaderRefreshing
