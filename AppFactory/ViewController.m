@@ -40,17 +40,24 @@
 
 @implementation ViewController
 
+-(void)reloadHeader
+{
+    [self.tableView endFooterRefreshing];
+    [self bk_performBlock:^(id obj) {
+        [self.tableView endHeaderRefreshing];
+    } afterDelay:1.0];
+}
+
+-(void)reloadFooter
+{
+    [self bk_performBlock:^(id obj) {
+        [self.tableView endFooterRefreshingWithNoMoreData];
+    } afterDelay:1.0];
+}
+
 -(void)test
 {
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    NSURLSessionDataTask *task =
-    [manager GET:@"http://soundcloud.com/oembed?url=http%3A//soundcloud.com/forss/flickermood&format=json" parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(NSURLSessionTask *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
     
-    [task cancel];
 }
 
 - (void)viewDidLoad {
@@ -61,7 +68,6 @@
                                                                                         target:self
                                                                                         action:@selector(test)];
     
-    
     self.tableView = [[AFBaseTableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
     [self.tableView setAllDelegateTo:self];
@@ -71,8 +77,8 @@
         make.edges.equalTo(self.view);
     }];
     
-    [self.tableView addRefreshingHeaderWithTarget:self action:@selector(test) color:[UIColor redColor]];
-    [self.tableView addLoadMoreFooterWithTarget:self action:@selector(test) color:[UIColor blueColor]];
+    [self.tableView addRefreshingHeaderWithTarget:self action:@selector(reloadHeader) color:[UIColor redColor]];
+    [self.tableView addLoadMoreFooterWithTarget:self action:@selector(reloadFooter) color:[UIColor blueColor]];
 
     [self.tableView setSpinnerColor:[UIColor redColor]];
     [self.tableView.refreshHeader setSpinnerColor:[UIColor redColor]];
@@ -91,8 +97,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.tableView endHeaderRefreshing];
-    [self.tableView endFooterRefreshingWithNoMoreData];
+//    [self.tableView endHeaderRefreshing];
+//    [self.tableView endFooterRefreshingWithNoMoreData];
 //    id cell = [tableView cellForRowAtIndexPath:indexPath];
     
 //    ToastShow(INT2STR(indexPath.row));

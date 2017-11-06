@@ -63,7 +63,7 @@
 - (void)beginOfReloadWithApi:(NSURLSessionTask* (^)(void))api
 {
     self.task = api();
-    self.tableView.mj_footer.hidden = YES;
+    [self.tableView endFooterRefreshingWithNoMoreData];
 }
 
 -(void)endOfReloadWithList:(NSMutableArray *)list

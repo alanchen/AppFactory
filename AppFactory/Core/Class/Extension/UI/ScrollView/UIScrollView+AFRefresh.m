@@ -47,6 +47,9 @@
         footer.spinner.color = color;
     }
     [footer resetNoMoreData];
+    [footer endRefreshingWithNoMoreData];
+    footer.hidden = YES;
+    
     self.mj_footer = footer;
     return self.mj_footer;
 }
@@ -59,11 +62,13 @@
 - (void)endFooterRefreshing
 {
     [self.mj_footer endRefreshing];
+    self.mj_footer.hidden = NO;
 }
 
 - (void)endFooterRefreshingWithNoMoreData
 {
     [self.mj_footer endRefreshingWithNoMoreData];
+    self.mj_footer.hidden = YES;
 }
 
 #pragma mark -
@@ -79,7 +84,7 @@
     PERFORM_SELECTOR(target,selector);
     
     [self showSpinner];
-    self.mj_footer.hidden = YES;
+    [self endFooterRefreshingWithNoMoreData];
 }
 
 - (void)normalReloadLaunched
@@ -88,7 +93,7 @@
         return;
     
     self.mj_header.state = MJRefreshStateRefreshing;
-    self.mj_footer.hidden = YES;
+    [self endFooterRefreshingWithNoMoreData];
 }
 
 - (void)slientReloadLaunched
@@ -105,7 +110,7 @@
     PERFORM_SELECTOR(target,selector);
     
     [self hideSpinner];
-    self.mj_footer.hidden = YES;
+    [self endFooterRefreshingWithNoMoreData];
 }
 
 - (void)loadMoreLaunched
