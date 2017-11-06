@@ -19,8 +19,9 @@
 - (AFRefreshHeader *)addRefreshingHeaderWithTarget:(id)target action:(SEL)action color:(UIColor *)color;
 - (AFRefreshFooter *)addLoadMoreFooterWithTarget:(id)target action:(SEL)action color:(UIColor *)color;
 
-- (void)endHeaderRefreshing;
-- (void)endFooterRefreshing;
+- (void)endHeaderRefreshing; // can be trigger
+- (void)endFooterRefreshing; // can be trigger
+- (void)nomoreFooterRefreshing; // auto hide, can't be trigger
 
 - (void)hideSpinner;
 - (void)showSpinner;

@@ -61,6 +61,11 @@
     [self.mj_footer endRefreshing];
 }
 
+- (void)nomoreFooterRefreshing
+{
+    self.mj_footer.state = MJRefreshStateNoMoreData;
+}
+
 #pragma mark -
 
 - (void)firstReloadLaunched

@@ -75,7 +75,11 @@
     [self.itemList safelyAddObjectsFromArray:list];
     
     [self.tableView reloadData];
-    self.tableView.mj_footer.hidden = [list count] < self.loadMoreLimit;
+    if([list count] < self.loadMoreLimit){
+        [self.tableView nomoreFooterRefreshing];
+    }else{
+        [self.tableView endFooterRefreshing];
+    }
 }
 
 - (void)beginOfLoadMore:(NSURLSessionTask* (^)(void))api
@@ -88,7 +92,11 @@
     [self.tableView.mj_footer endRefreshing];
     [self.itemList safelyAddObjectsFromArray:list];
     [self.tableView reloadData];
-    self.tableView.mj_footer.hidden = [list count] < self.loadMoreLimit;
+    if([list count] < self.loadMoreLimit){
+        [self.tableView nomoreFooterRefreshing];
+    }else{
+        [self.tableView endFooterRefreshing];
+    }
 }
 
 - (void)cancelTask
