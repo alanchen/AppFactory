@@ -126,7 +126,7 @@
         _searchTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
         
         @weakify(self);
-        [_searchTextField.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
+        [[_searchTextField.rac_textSignal distinctUntilChanged] subscribeNext:^(NSString * _Nullable x) {
             @strongify(self);
             if([self.delegate respondsToSelector:@selector(searchView:textDidChange:)]){
                 [self.delegate searchView:self textDidChange:x];
