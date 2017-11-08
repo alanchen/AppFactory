@@ -21,9 +21,15 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[ToastMessage alloc] init];
+        ToastView.appearance.bottomOffsetPortrait = 90;
     });
     
     return sharedInstance;
+}
+
++(void)setBottomOffsetPortrait:(CGFloat)offset
+{
+    ToastView.appearance.bottomOffsetPortrait = MAX(offset, 30);
 }
 
 +(void)show:(NSString *)str

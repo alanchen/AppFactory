@@ -13,7 +13,7 @@
 #define ToastShowWithSound(str) [ToastMessage showWithSound:str]
 
 @interface ToastMessage : NSObject
-
++(void)setBottomOffsetPortrait:(CGFloat)offset; // default is 90
 +(void)show:(NSString *)str;
 +(void)showWithSound:(NSString *)str;
 

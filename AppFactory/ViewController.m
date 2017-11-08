@@ -92,12 +92,11 @@
     no.left = 100;
     no.top = 90;
     [self.view  addSubview:no];
-    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ToastShow(@"123");
+    ToastShow(@"123\nwefoiewf\nfiewhfohewiufu idhfpiuqewhf\n");
     
 //    [self.tableView endHeaderRefreshing];
 //    [self.tableView endFooterRefreshingWithNoMoreData];
