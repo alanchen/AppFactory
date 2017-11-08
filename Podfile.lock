@@ -102,7 +102,7 @@ PODS:
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
   - SVProgressHUD (2.1.2)
-  - Toaster (2.1.0)
+  - Toaster (2.1.1)
   - TTTAttributedLabel (2.0.0)
   - UIDeviceIdentifier (1.1.1)
   - UIImage-Helpers (0.0.3)
@@ -135,7 +135,7 @@ DEPENDENCIES:
   - SAMKeychain (~> 1.5.2)
   - SDWebImage (~> 4.0.0)
   - SVProgressHUD (= 2.1.2)
-  - Toaster
+  - Toaster (~> 2.1.1)
   - TTTAttributedLabel (~> 2.0.0)
   - UIDeviceIdentifier (~> 1.1.1)
   - UIImage-Helpers (~> 0.0.3)
@@ -174,12 +174,12 @@ SPEC CHECKSUMS:
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
-  Toaster: 8c3225dc465bef4aa57e147a288724576df8e439
+  Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   UIDeviceIdentifier: 9281343882e24460235f00a0d7d2fc04a65688c6
   UIImage-Helpers: 06b04a42bdd222844035602e87e936765c80f620
   ViewUtils: 68e42c708a4b3912e39691cef5080282dc5013fb
 
-PODFILE CHECKSUM: c98989911feca3e18fe7a0d68581cf5f55f85fb5
+PODFILE CHECKSUM: cebd2a4c136aa89d173c22508b55679e55e24888
 
 COCOAPODS: 1.3.0

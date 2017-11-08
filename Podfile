@@ -32,7 +32,7 @@ pod 'IDMPhotoBrowser', '~> 1.11.3'
 pod 'TTTAttributedLabel', '~> 2.0.0'
 pod 'ViewUtils', '~> 1.1.2'
 pod 'MJRefresh', '~> 3.1.4'
-pod 'Toaster'
+pod 'Toaster', '~> 2.1.1'
 pod 'RMessage', '~> 2.1.5'
 
 # Helper
