@@ -71,6 +71,27 @@
     }
 }
 
+-(void)setDefaultEmptyText:(NSString *)text
+{
+    if([self.emptyView isKindOfClass:[AFTableEmptyCaseView class]]){
+        ((AFTableEmptyCaseView *)self.emptyView).label.text = text;
+    }
+}
+
+-(void)setDefaultEmptyTextColor:(UIColor *)color
+{
+    if([self.emptyView isKindOfClass:[AFTableEmptyCaseView class]]){
+        ((AFTableEmptyCaseView *)self.emptyView).label.textColor = color;
+    }
+}
+
+-(void)setDefaultEmptyTextFont:(UIFont *)font
+{
+    if([self.emptyView isKindOfClass:[AFTableEmptyCaseView class]]){
+        ((AFTableEmptyCaseView *)self.emptyView).label.font = font;
+    }
+}
+
 #pragma mark - Private Methods
 
 -(BOOL)shouldShowEmptyView

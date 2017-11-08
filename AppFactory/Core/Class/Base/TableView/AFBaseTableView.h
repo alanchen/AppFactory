@@ -22,6 +22,9 @@
 @property (nonatomic,strong) UIView *emptyView;
 
 -(void)setAllDelegateTo:(id)delegate;
+-(void)setDefaultEmptyText:(NSString *)text;
+-(void)setDefaultEmptyTextColor:(UIColor *)color;
+-(void)setDefaultEmptyTextFont:(UIFont *)font;
 
 @end
 
