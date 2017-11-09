@@ -136,6 +136,11 @@
     [self applyDisappearingAnimationTo:self.contentView startPoint:self.data.endCenterPosition endPoint:self.data.startCenterPosition];
 }
 
+- (void)dismissWithoutAnimation
+{
+    [self reset];
+}
+
 #pragma mark - Private
 
 -(void)reset

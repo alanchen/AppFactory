@@ -38,4 +38,6 @@
 
 - (void)dismiss;
 
+- (void)dismissWithoutAnimation;
+
 @end
