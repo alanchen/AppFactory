@@ -7,6 +7,7 @@
 //
 
 #import "CountryCodePicker.h"
+#import "AppFactory.h"
 
 @interface CountryCodePicker ()
 
@@ -75,7 +76,7 @@
 
 -(NSDictionary *)importCountryJson
 {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"countries" ofType:@"json"];
+    NSString *filePath = [[AppFactory bundle] pathForResource:@"countries" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     NSError *error;
     

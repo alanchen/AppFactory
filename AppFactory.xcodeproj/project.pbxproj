@@ -80,7 +80,6 @@
 		E7F8C1F31F8F1C1600B1E14B /* AFAppVersonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1671F8F1C1600B1E14B /* AFAppVersonHelper.m */; };
 		E7F8C1F41F8F1C1600B1E14B /* AFCountryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C16A1F8F1C1600B1E14B /* AFCountryCell.m */; };
 		E7F8C1F51F8F1C1600B1E14B /* AFCountryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C16C1F8F1C1600B1E14B /* AFCountryPickerViewController.m */; };
-		E7F8C1F61F8F1C1600B1E14B /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = E7F8C16E1F8F1C1600B1E14B /* countries.json */; };
 		E7F8C1F71F8F1C1600B1E14B /* CountryCodePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1701F8F1C1600B1E14B /* CountryCodePicker.m */; };
 		E7F8C1F81F8F1C1600B1E14B /* CountryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1721F8F1C1600B1E14B /* CountryModel.m */; };
 		E7F8C1FA1F8F1C1600B1E14B /* FBSSOHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1771F8F1C1600B1E14B /* FBSSOHelper.m */; };
@@ -252,7 +251,6 @@
 		E7F8C16A1F8F1C1600B1E14B /* AFCountryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFCountryCell.m; sourceTree = "<group>"; };
 		E7F8C16B1F8F1C1600B1E14B /* AFCountryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCountryPickerViewController.h; sourceTree = "<group>"; };
 		E7F8C16C1F8F1C1600B1E14B /* AFCountryPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFCountryPickerViewController.m; sourceTree = "<group>"; };
-		E7F8C16E1F8F1C1600B1E14B /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		E7F8C16F1F8F1C1600B1E14B /* CountryCodePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryCodePicker.h; sourceTree = "<group>"; };
 		E7F8C1701F8F1C1600B1E14B /* CountryCodePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryCodePicker.m; sourceTree = "<group>"; };
 		E7F8C1711F8F1C1600B1E14B /* CountryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryModel.h; sourceTree = "<group>"; };
@@ -725,7 +723,6 @@
 		E7F8C16D1F8F1C1600B1E14B /* CountryCodePicker */ = {
 			isa = PBXGroup;
 			children = (
-				E7F8C16E1F8F1C1600B1E14B /* countries.json */,
 				E7F8C16F1F8F1C1600B1E14B /* CountryCodePicker.h */,
 				E7F8C1701F8F1C1600B1E14B /* CountryCodePicker.m */,
 				E7F8C1711F8F1C1600B1E14B /* CountryModel.h */,
@@ -962,7 +959,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7F8C1F61F8F1C1600B1E14B /* countries.json in Resources */,
 				E7C20AD61F906A16004B70E0 /* CTFeedback.bundle in Resources */,
 				E7905D5E1F7A350A006CC6F5 /* Launch Screen.storyboard in Resources */,
 				E7905D511F7A32E4006CC6F5 /* Assets.xcassets in Resources */,
