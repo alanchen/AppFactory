@@ -30,7 +30,7 @@
     
     if([rootViewController isKindOfClass:[UITabBarController class]]){
         UITabBarController *tabBarController = (UITabBarController *) rootViewController;
-        return tabBarController.selectedViewController;
+        return [self getVisibleViewController:tabBarController.selectedViewController];
     }
     
     return rootViewController;
