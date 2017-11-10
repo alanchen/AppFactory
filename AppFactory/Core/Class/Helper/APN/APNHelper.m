@@ -232,6 +232,7 @@
 //        [center requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError * _Nullable error) {}];
 //    }else{
         UIApplication *application = [UIApplication sharedApplication];
+        [application registerForRemoteNotifications];
         UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
         UIUserNotificationSettings* settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
         [application registerUserNotificationSettings:settings];
