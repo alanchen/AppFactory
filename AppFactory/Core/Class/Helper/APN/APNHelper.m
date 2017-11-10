@@ -178,64 +178,64 @@
     return @"前往開啟";
 }
 
-#pragma mark - UNUserNotificationCenterDelegate
-
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler __IOS_AVAILABLE(10.0)
-{
-    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        NSDictionary * userInfo = notification.request.content.userInfo;
-        APNModel *model = [self createModelWithNotification:userInfo];
-        [self recieveInForegroundWithModel:model];
-    }
-    
-    completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionSound|UNNotificationPresentationOptionAlert);
-}
-
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler __IOS_AVAILABLE(10.0)
-{
-    UNNotificationRequest *request = response.notification.request;
-    UNNotificationContent *content = request.content;
-    NSDictionary *userInfo = content.userInfo;
-    
-    APNModel *model = [self createModelWithNotification:userInfo];
-    [self bringAppToForegroundWithModel:model action:response.actionIdentifier];
-    completionHandler();
-}
+//#pragma mark - UNUserNotificationCenterDelegate
+//
+//- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler __IOS_AVAILABLE(10.0)
+//{
+//    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+//        NSDictionary * userInfo = notification.request.content.userInfo;
+//        APNModel *model = [self createModelWithNotification:userInfo];
+//        [self recieveInForegroundWithModel:model];
+//    }
+//
+//    completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionSound|UNNotificationPresentationOptionAlert);
+//}
+//
+//- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler __IOS_AVAILABLE(10.0)
+//{
+//    UNNotificationRequest *request = response.notification.request;
+//    UNNotificationContent *content = request.content;
+//    NSDictionary *userInfo = content.userInfo;
+//
+//    APNModel *model = [self createModelWithNotification:userInfo];
+//    [self bringAppToForegroundWithModel:model action:response.actionIdentifier];
+//    completionHandler();
+//}
 
 #pragma mark - Token
 
 + (void)isNotificationAuthorized:(void(^)(BOOL isEnable))completion;
 {
-    if (@available(iOS 10, *)) {
-        UNUserNotificationCenter *center ;
-        [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
-            if(completion)
-                completion(settings.authorizationStatus == UNAuthorizationStatusAuthorized);
-        }];
-    }else{
+//    if (@available(iOS 10, *)) {
+//        UNUserNotificationCenter *center ;
+//        [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+//            if(completion)
+//                completion(settings.authorizationStatus == UNAuthorizationStatusAuthorized);
+//        }];
+//    }else{
         // http://stackoverflow.com/questions/1535403/
         UIUserNotificationSettings* settings = [[UIApplication sharedApplication] currentUserNotificationSettings];
         UIUserNotificationType types = settings.types;
         if(completion)
             completion(types != UIUserNotificationTypeNone);
-    }
+//    }
 }
 
 + (void)registerRemoteNotification
 {
     [[self class] setAlreadyAskForPushAuthorization];
 
-    if (@available(iOS 10, *)) {
-        UNAuthorizationOptions options = UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound;
-        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-        center.delegate = [self sharedInstance];
-        [center requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError * _Nullable error) {}];
-    }else{
+//    if (@available(iOS 10, *)) {
+//        UNAuthorizationOptions options = UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound;
+//        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+//        center.delegate = [self sharedInstance];
+//        [center requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError * _Nullable error) {}];
+//    }else{
         UIApplication *application = [UIApplication sharedApplication];
         UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
         UIUserNotificationSettings* settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
         [application registerUserNotificationSettings:settings];
-    }
+//    }
 }
 
 + (NSString *)parseToken:(NSData *)tokenData

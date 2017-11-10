@@ -7,18 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#ifdef NSFoundationVersionNumber_iOS_9_x_Max
-#import <UserNotifications/UserNotifications.h>
-#endif
 #import "APNModel.h"
+//#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+//#import <UserNotifications/UserNotifications.h>
+//#endif
 
-@protocol APNHelperDelegate<NSObject, UNUserNotificationCenterDelegate>
+@protocol APNHelperDelegate<NSObject>
 
 @required
 -(void)setupAfterCreateModel:(APNModel *)model;
 -(void)launchAppWithModel:(APNModel *)model;
 -(void)bringAppToForegroundWithModel:(APNModel *)model;
--(void)bringAppToForegroundWithModel:(APNModel *)model action:(NSString *)action; // iOS10
 -(void)recieveInForegroundWithModel:(APNModel *)model;
 -(void)gotTokenHandler:(NSString *)token;
 
