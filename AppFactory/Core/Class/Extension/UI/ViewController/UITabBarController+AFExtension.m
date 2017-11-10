@@ -11,7 +11,7 @@
 
 @implementation UITabBarController(AFExtension)
 
--(void)switchToSelectedIndex:(NSUInteger)selectedIndex popToRootWithCompletion:(void (^)())completion
+-(void)switchToSelectedIndex:(NSUInteger)selectedIndex popToRootWithCompletion:(void (^)(void))completion
 {
     if(self.selectedIndex == selectedIndex){
         [self setSelectedIndex:selectedIndex];

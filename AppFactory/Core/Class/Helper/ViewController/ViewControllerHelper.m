@@ -18,7 +18,7 @@
 
 +(void)switchMainTabBarToSelectedIndex:(NSUInteger)selectedIndex
                              popToRoot:(BOOL)popToRoot
-                        withCompletion:(void (^)())completion
+                        withCompletion:(void (^)(void))completion
 {
     UITabBarController *tabVC = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
     if([tabVC isKindOfClass:[UITabBarController class]]){

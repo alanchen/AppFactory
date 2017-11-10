@@ -11,6 +11,6 @@
 
 @interface UITabBarController(AFExtension)
 
--(void)switchToSelectedIndex:(NSUInteger)selectedIndex popToRootWithCompletion:(void (^)())completion;
+-(void)switchToSelectedIndex:(NSUInteger)selectedIndex popToRootWithCompletion:(void (^)(void))completion;
 
 @end

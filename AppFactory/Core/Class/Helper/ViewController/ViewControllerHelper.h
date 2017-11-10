@@ -15,7 +15,7 @@
 
 +(void)switchMainTabBarToSelectedIndex:(NSUInteger)selectedIndex
                              popToRoot:(BOOL)popToRoot
-                        withCompletion:(void (^)())completion;
+                        withCompletion:(void (^)(void))completion;
 
 
 @end
