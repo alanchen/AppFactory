@@ -216,13 +216,11 @@ static NSString *kFBRefreshUserDataDate = @"FB_UPDATE_USER_DATE";
     [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
-+(BOOL)application:(UIApplication *)application url:(NSURL *)url sourceApp:(NSString *)sourceApp annotation:(id)annotation
++ (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
-    BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
-                                                                  openURL:url
-                                                        sourceApplication:sourceApp
-                                                               annotation:annotation];
-    return handled;
+    return [[FBSDKApplicationDelegate sharedInstance] application:application openURL:url options:options];
 }
 
 @end

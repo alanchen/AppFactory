@@ -34,10 +34,10 @@
 + (void) reconnectIfNeed:(void (^)(BOOL success))complete;
 
 #pragma mark - Must Have
-// - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 +(void)application:(UIApplication *)application didLaunch:(NSDictionary *)launchOptions;
-//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-+(BOOL)application:(UIApplication *)application url:(NSURL *)url sourceApp:(NSString *)sourceApp annotation:(id)annotation;
 
++ (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options;
 @end
 
