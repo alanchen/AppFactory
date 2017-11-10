@@ -18,7 +18,12 @@
 -(void)runGotTokenHandler;
 
 @optional
--(NSString *)alertMessageTitle;
+-(Class)modelClass; // subcalss of APNModel
+-(NSString *)alertAllowPermissionMessage;
+-(NSString *)alertSettingOpenMessage;
+-(NSString *)alertTitle;
+-(NSString *)alertCancel;
+-(NSString *)alertOpen;
 
 @end
 
@@ -26,7 +31,6 @@
 
 +(id)sharedInstance;
 @property (nonatomic,strong) APNModel *launchedModel;
-@property (nonatomic,weak) id<APNHelperDelegate> delegate;
 
 /**********************************************************************
  Put below snippets in where they should be

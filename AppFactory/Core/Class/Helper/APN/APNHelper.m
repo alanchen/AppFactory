@@ -26,20 +26,29 @@
     return sharedInstance;
 }
 
+#pragma mark - Private
+
+-(id)createModelWithNotification:(NSDictionary *)remoteNoti
+{
+    Class modelClass = [self modelClass];
+    APNModel *model = [modelClass modelWithNotification:remoteNoti];
+    return model;
+}
+
 #pragma mark - App
 
 - (void)appDidLaunchWithOptions:(NSDictionary *)launchOptions
 {
     if (launchOptions){
-        NSDictionary *remoteNotif  = [launchOptions valueForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-        APNModel *model = [APNModel modelWithNotification:remoteNotif];
+        NSDictionary *remoteNoti  = [launchOptions valueForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        APNModel *model = [self createModelWithNotification:remoteNoti];
         self.launchedModel = model;
     }
 }
 
 -(void)appDidReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    APNModel *model = [APNModel modelWithNotification:userInfo];
+    APNModel *model = [self createModelWithNotification:userInfo];
     [self runInitWithModel:model];
     
     BOOL launchedFromBackground = ![SHARED_APP isAppActive];
@@ -79,12 +88,9 @@
     }
     
     /////////////////////////
-    NSString *title = @"為了即時通知您訊息";
-    RUN_SELECTOR_WITH_RETURN_VALUE_IF_VALID(self.delegate, alertMessageTitle, title);
-     // see this alert at first time only
+    // see this alert at first time only
     if(![APNHelper didIRegisterAPNToken]){
-        NSString *msg = [NSString stringWithFormat:@"\n%@，\n\n請允許「%@」傳送通知給您。", title, INFO_APP_NAME];
-        [UIAlertController showWithTitle:@"開啟「通知」功能" message:msg buttonTitle:@"OK" handler:^(UIAlertAction *action) {
+        [UIAlertController showWithTitle:[self alertTitle] message:[self alertAllowPermissionMessage] buttonTitle:@"OK" handler:^(UIAlertAction *action) {
             [APNHelper registerRemoteNotification];
             [APNHelper registeredAPNToken];
             if(completion) completion();
@@ -94,8 +100,7 @@
     }
     
     /////////////////////////
-    NSString *msg = [NSString stringWithFormat:@"\n%@，\n\n請至「設定」開啟「通知」功能。", title];
-    [UIAlertController showAlertViewWithTitle:@"開啟「通知」功能" message:msg cancelTitle:@"取消" otherTitle:@"前往開啟"  cancelHandler:^(UIAlertAction *action) {
+    [UIAlertController showAlertViewWithTitle:[self alertTitle] message:[self alertSettingOpenMessage] cancelTitle:[self alertCancel] otherTitle:[self alertOpen] cancelHandler:^(UIAlertAction *action) {
         if(completion) completion();
     } otherHandler:^(UIAlertAction *action) {
          [APNHelper gotoSettings];
@@ -123,6 +128,34 @@
 -(void)runGotTokenHandler
 {
     //Implement
+}
+
+#pragma mark -
+
+-(Class)modelClass
+{
+    //Implement
+    return [APNModel class];
+}
+
+-(NSString *)alertAllowPermissionMessage{
+    return [NSString stringWithFormat:@"\n為了即時通知您訊息，\n\n請允許「%@」傳送通知給您。", INFO_APP_NAME];
+}
+
+-(NSString *)alertSettingOpenMessage{
+    return  @"\n為了即時通知您訊息，\n\n請至「設定」開啟「通知」功能。";
+}
+
+-(NSString *)alertTitle{
+    return @"開啟「通知」功能";
+}
+
+-(NSString *)alertCancel{
+    return @"取消";
+}
+
+-(NSString *)alertOpen{
+    return @"前往開啟";
 }
 
 #pragma mark - Token
