@@ -12,6 +12,11 @@
 #import "UIAlertController+AFExtension.h"
 #import "DeviceMacros.h"
 #import "UIApplication+AFExtension.h"
+#import "AnyPromise+AFExtension.h"
+
+@interface APNHelper()
+@property (nonatomic,strong) APNModel *launchedModel;
+@end
 
 @implementation APNHelper
 
@@ -32,6 +37,7 @@
 {
     Class modelClass = [self modelClass];
     APNModel *model = [modelClass modelWithNotification:remoteNoti];
+    [self setupAfterCreateModel:model];
     return model;
 }
 
@@ -43,89 +49,103 @@
         NSDictionary *remoteNoti  = [launchOptions valueForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
         APNModel *model = [self createModelWithNotification:remoteNoti];
         self.launchedModel = model;
+        [self launchAppWithModel:model];
     }
 }
 
 -(void)appDidReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     APNModel *model = [self createModelWithNotification:userInfo];
-    [self runInitWithModel:model];
-    
     BOOL launchedFromBackground = ![SHARED_APP isAppActive];
     if(launchedFromBackground){
-        [self runInactiveHandlerWithModel:model];
+        [self bringAppToForegroundWithModel:model];
     }else{
-        [self runActiveHandlerWithModel:model];
+        [self recieveInForegroundWithModel:model];
     }
 }
 
 - (void)appDidRegisterToken:(NSData *)deviceToken
 {
     if(!deviceToken) return;
-    NSString *token = [APNHelper parseToken:deviceToken];
+    NSString *token = [[self class] parseToken:deviceToken];
     if(token){
-        [APNHelper saveTokenToDevice:token];
-        [self runGotTokenHandler];
+        [[self class] saveTokenToDevice:token];
+        [self gotTokenHandler:token];
     }
 }
 
--(void)userDidLoginWithCompletion:(void (^)(void))completion
+-(void)runWhenYouAreReadyWithCompletion:(void (^)(void))completion
 {
     if(self.launchedModel){
-        [self runInitWithModel:self.launchedModel];
-        [self runInactiveHandlerWithModel:self.launchedModel];
+        [self setupAfterCreateModel:self.launchedModel];
+        [self bringAppToForegroundWithModel:self.launchedModel];
         self.launchedModel = nil;
         if(completion) completion();
-        return;
+        return ;
     }
     
-    /////////////////////////
-    if([APNHelper isAPNEnable]){
-        [APNHelper registerRemoteNotification];
-        [APNHelper registeredAPNToken];
-        if(completion) completion();
-        return;
-    }
-    
-    /////////////////////////
-    // see this alert at first time only
-    if(![APNHelper didIRegisterAPNToken]){
-        [UIAlertController showWithTitle:[self alertTitle] message:[self alertAllowPermissionMessage] buttonTitle:@"OK" handler:^(UIAlertAction *action) {
-            [APNHelper registerRemoteNotification];
-            [APNHelper registeredAPNToken];
-            if(completion) completion();
+    NSError *jumpToEnd = [NSError errorWithDomain:@"push.end" code:99 userInfo:nil];
+    [AnyPromise promiseStart:^(PMKResolver resolve){
+        [[self class] isNotificationAuthorized:^(BOOL isEnable) {
+            if(isEnable){
+                [[self class] registerRemoteNotification];
+                resolve(jumpToEnd);
+            }else{
+                resolve(nil);
+            }
         }];
+    }].thenWithANewPromise(^(PMKResolver resolve, id data){
+        if(![[self class] didIAskForPushAuthorization]){
+            [UIAlertController showWithTitle:[self alertTitle] message:[self alertAllowPermissionMessage] buttonTitle:@"OK" handler:^(UIAlertAction *action) {
+                [[self class] registerRemoteNotification];
+                resolve(jumpToEnd);
+            }];
+        }else{
+            resolve(nil);
+        }
+    }).thenWithANewPromise(^(PMKResolver resolve, id data){
+        [UIAlertController showAlertViewWithTitle:[self alertTitle] message:[self alertSettingOpenMessage] cancelTitle:[self alertCancel] otherTitle:[self alertOpen] cancelHandler:^(UIAlertAction *action) {
+            resolve(jumpToEnd);
+        } otherHandler:^(UIAlertAction *action) {
+            [[self class] gotoSettings];
+            resolve(jumpToEnd);
+        }];
+    }).catch(^(NSError *err){
         
-        return;
-    }
-    
-    /////////////////////////
-    [UIAlertController showAlertViewWithTitle:[self alertTitle] message:[self alertSettingOpenMessage] cancelTitle:[self alertCancel] otherTitle:[self alertOpen] cancelHandler:^(UIAlertAction *action) {
-        if(completion) completion();
-    } otherHandler:^(UIAlertAction *action) {
-         [APNHelper gotoSettings];
-        if(completion) completion();
-    }];
+    }).always(^(){
+        if(completion)
+            completion();
+    });
 }
 
 #pragma mark - APNHelperDelegate
 
--(void)runInitWithModel:(APNModel *)model
+-(void)setupAfterCreateModel:(APNModel *)model
 {
     //Implement
 }
 
--(void)runInactiveHandlerWithModel:(APNModel *)model
+-(void)launchAppWithModel:(APNModel *)model
 {
     //Implement
 }
 
--(void)runActiveHandlerWithModel:(APNModel *)model
+-(void)bringAppToForegroundWithModel:(APNModel *)model
 {
     //Implement
 }
 
--(void)runGotTokenHandler
+-(void)bringAppToForegroundWithModel:(APNModel *)model action:(NSString *)action
+{
+    //Implement
+}
+
+-(void)recieveInForegroundWithModel:(APNModel *)model
+{
+    //Implement
+}
+
+-(void)gotTokenHandler:(NSString *)token
 {
     //Implement
 }
@@ -158,26 +178,64 @@
     return @"前往開啟";
 }
 
+#pragma mark - UNUserNotificationCenterDelegate
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler __IOS_AVAILABLE(10.0)
+{
+    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        NSDictionary * userInfo = notification.request.content.userInfo;
+        APNModel *model = [self createModelWithNotification:userInfo];
+        [self recieveInForegroundWithModel:model];
+    }
+    
+    completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionSound|UNNotificationPresentationOptionAlert);
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler __IOS_AVAILABLE(10.0)
+{
+    UNNotificationRequest *request = response.notification.request;
+    UNNotificationContent *content = request.content;
+    NSDictionary *userInfo = content.userInfo;
+    
+    APNModel *model = [self createModelWithNotification:userInfo];
+    [self bringAppToForegroundWithModel:model action:response.actionIdentifier];
+    completionHandler();
+}
+
 #pragma mark - Token
 
-// http://stackoverflow.com/questions/1535403/
-+ (BOOL)isAPNEnable
++ (void)isNotificationAuthorized:(void(^)(BOOL isEnable))completion;
 {
-    BOOL isAPNSForbidden = NO;
-    UIUserNotificationSettings* settings = [[UIApplication sharedApplication] currentUserNotificationSettings];
-    UIUserNotificationType types = settings.types;
-    isAPNSForbidden = types == UIUserNotificationTypeNone ? YES:NO;
-    
-    return !isAPNSForbidden;
+    if (@available(iOS 10, *)) {
+        UNUserNotificationCenter *center ;
+        [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+            if(completion)
+                completion(settings.authorizationStatus == UNAuthorizationStatusAuthorized);
+        }];
+    }else{
+        // http://stackoverflow.com/questions/1535403/
+        UIUserNotificationSettings* settings = [[UIApplication sharedApplication] currentUserNotificationSettings];
+        UIUserNotificationType types = settings.types;
+        if(completion)
+            completion(types != UIUserNotificationTypeNone);
+    }
 }
 
 + (void)registerRemoteNotification
 {
-    UIApplication *application = [UIApplication sharedApplication];
-    
-    UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
-    UIUserNotificationSettings* settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
-    [application registerUserNotificationSettings:settings];
+    [[self class] setAlreadyAskForPushAuthorization];
+
+    if (@available(iOS 10, *)) {
+        UNAuthorizationOptions options = UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound;
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        center.delegate = [self sharedInstance];
+        [center requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError * _Nullable error) {}];
+    }else{
+        UIApplication *application = [UIApplication sharedApplication];
+        UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
+        UIUserNotificationSettings* settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        [application registerUserNotificationSettings:settings];
+    }
 }
 
 + (NSString *)parseToken:(NSData *)tokenData
@@ -206,11 +264,11 @@
     return token;
 }
 
-+ (BOOL)didIRegisterAPNToken{
++ (BOOL)didIAskForPushAuthorization{
     return NSUserDefaultsGetBool(@"didIRegisterAPNToken");
 }
 
-+ (void)registeredAPNToken{
++ (void)setAlreadyAskForPushAuthorization{
     NSUserDefaultsSetBool(@"didIRegisterAPNToken", YES);
     NSUserDefaultsSaved;
 }

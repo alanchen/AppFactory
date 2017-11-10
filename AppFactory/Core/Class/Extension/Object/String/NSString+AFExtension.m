@@ -18,12 +18,12 @@
     return formattedNumberString;
 }
 
-+ (NSString*) stringAbbreviateWithNumber:(NSInteger)num
++ (NSString*) stringAbbreviateWithNumber:(NSInteger)numInt
 {
-    int s = ( (num < 0) ? -1 : (num > 0) ? 1 : 0 );
+    int s = ( (numInt < 0) ? -1 : (numInt > 0) ? 1 : 0 );
     NSString* sign = (s == -1 ? @"-" : @"" );
     
-    num = llabs(num);
+    long long num = llabs(numInt);
     
     if (num < 1000)
         return [NSString stringWithFormat:@"%@%zd",sign,num];

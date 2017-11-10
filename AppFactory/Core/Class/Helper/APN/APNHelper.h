@@ -7,15 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+#import <UserNotifications/UserNotifications.h>
+#endif
 #import "APNModel.h"
 
-@protocol APNHelperDelegate<NSObject>
+@protocol APNHelperDelegate<NSObject, UNUserNotificationCenterDelegate>
 
 @required
--(void)runInitWithModel:(APNModel *)model;
--(void)runInactiveHandlerWithModel:(APNModel *)model;
--(void)runActiveHandlerWithModel:(APNModel *)model;
--(void)runGotTokenHandler;
+-(void)setupAfterCreateModel:(APNModel *)model;
+-(void)launchAppWithModel:(APNModel *)model;
+-(void)bringAppToForegroundWithModel:(APNModel *)model;
+-(void)bringAppToForegroundWithModel:(APNModel *)model action:(NSString *)action; // iOS10
+-(void)recieveInForegroundWithModel:(APNModel *)model;
+-(void)gotTokenHandler:(NSString *)token;
 
 @optional
 -(Class)modelClass; // subcalss of APNModel
@@ -30,7 +35,6 @@
 @interface APNHelper : NSObject
 
 +(id)sharedInstance;
-@property (nonatomic,strong) APNModel *launchedModel;
 
 /**********************************************************************
  Put below snippets in where they should be
@@ -43,20 +47,29 @@
 
 #pragma mark - Interface
 
--(void)appDidLaunchWithOptions:(NSDictionary *)launchOptions; // didFinishLaunchingWithOptions
--(void)appDidReceiveRemoteNotification:(NSDictionary *)userInfo; // didReceiveRemoteNotification:fetchCompletionHandler:
--(void)appDidRegisterToken:(NSData *)deviceToken; // didRegisterForRemoteNotificationsWithDeviceToken
--(void)userDidLoginWithCompletion:(void (^)(void))completion;
+// Put in didFinishLaunchingWithOptions
+-(void)appDidLaunchWithOptions:(NSDictionary *)launchOptions;
+
+// Put in didRegisterForRemoteNotificationsWithDeviceToken
+-(void)appDidRegisterToken:(NSData *)deviceToken;
+
+// If below iOS10, put in didReceiveRemoteNotification:fetchCompletionHandler:
+-(void)appDidReceiveRemoteNotification:(NSDictionary *)userInfo;
+
+// Use it if user needs login. Also ask for push token
+-(void)runWhenYouAreReadyWithCompletion:(void (^)(void))completion;
 
 #pragma mark - Token
 
-+ (BOOL)isAPNEnable;
++ (void)isNotificationAuthorized:(void(^)(BOOL isEnable))completion;
 + (void)registerRemoteNotification;
+
 + (NSString *)parseToken:(NSData *)tokenData;
 + (void)saveTokenToDevice:(NSString *)token;
 + (NSString *)savedToken;
-+ (BOOL)didIRegisterAPNToken;
-+ (void)registeredAPNToken;
+
++ (BOOL)didIAskForPushAuthorization;
++ (void)setAlreadyAskForPushAuthorization;
 
 #pragma mark - Other
 
