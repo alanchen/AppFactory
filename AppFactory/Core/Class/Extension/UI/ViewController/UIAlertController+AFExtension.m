@@ -78,6 +78,21 @@
     [self addAction:action];
 }
 
+- (void)addActionWithTitle:(NSString *)title imageName:(NSString *)name handler:(void (^)(UIAlertAction *action))block
+{
+    UIAlertAction *action = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:block];
+    UIImage *img = [[UIImage imageNamed:name] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [action setValue:img forKey:@"image"];
+    [self addAction:action];
+}
+
+- (void)addActionWithTitle:(NSString *)title image:(UIImage *)image handler:(void (^)(UIAlertAction *action))block
+{
+    UIAlertAction *action = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:block];
+    if(image){[action setValue:image forKey:@"image"]; }
+    [self addAction:action];
+}
+
 - (void)addCancelActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block
 {
     UIAlertAction *action = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleCancel handler:block];

@@ -31,6 +31,10 @@
 
 - (void)addDefaultActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block;
 
+- (void)addActionWithTitle:(NSString *)title imageName:(NSString *)name handler:(void (^)(UIAlertAction *action))block;
+
+- (void)addActionWithTitle:(NSString *)title image:(UIImage *)image handler:(void (^)(UIAlertAction *action))block;
+
 - (void)addCancelActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block;
 
 - (void)addDestructiveActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block;

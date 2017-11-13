@@ -41,7 +41,7 @@
     [self sharedInstance].currentToast = nil;
     
     ToastView.appearance.font = [UIFont systemFontOfSize:16];
-    Toast *t = [[Toast alloc] initWithText:str delay:0.0 duration:3.0];
+    Toast *t = [[Toast alloc] initWithText:str delay:0.0 duration:2.5];
     [self sharedInstance].currentToast = t;
     [t show];
 }
