@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "WKWebViewController.h"
 
 @interface WebControllerHelper : NSObject
 
 +(void)showWithURLStr:(NSString *)urlStr on:(UIViewController *)vc;
 +(void)showWithURL:(NSURL *)url on:(UIViewController *)vc;
+
++(WKWebViewController *)showWebViewWithURLStr:(NSString *)urlStr onViewController:(UIViewController *)vc;
++(WKWebViewController *)showWebViewWithURL:(NSURL *)url onViewController:(UIViewController *)vc;
 
 @end
