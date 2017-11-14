@@ -101,8 +101,6 @@
     WKWebViewController *vc =
     [WebControllerHelper showWebViewWithURLStr:@"http://ckclouds.com/api/meta/service" onViewController:self];
     
-    vc.title = @"123";
-    
 //    [self.tableView endHeaderRefreshing];
 //    [self.tableView endFooterRefreshingWithNoMoreData];
 //    id cell = [tableView cellForRowAtIndexPath:indexPath];

@@ -12,6 +12,7 @@
 @interface WKWebViewController()<WKNavigationDelegate>
 
 @property (nonatomic,strong) NSURL *url ;
+@property (nonatomic,strong) UIProgressView *progressView;
 
 @end
 
@@ -20,6 +21,7 @@
 +(WKWebViewController *)createWithURL:(NSURL *)url
 {
     WKWebViewController *webVC = [[WKWebViewController alloc] init];
+    if(!url){url = [NSURL URLWithString:@"about:blank"];}
     webVC.url = url;
     return webVC;
 }
@@ -27,27 +29,43 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                target:self
                                                                                 action:@selector(canelAction)];
-    self.navigationItem.leftBarButtonItem = cancelItem;
     
     UIBarButtonItem *reloadItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                                                 target:self
                                                                                 action:@selector(reloadAction)];
-    
+    self.navigationItem.leftBarButtonItem = cancelItem;
     self.navigationItem.rightBarButtonItem =reloadItem;
     
-    self.webview = [[WKWebView alloc] initWithFrame:CGRectZero];
-    self.webview.navigationDelegate = self;
-    [self.view addSubview:self.webview];
-    [self.webview mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.webView = [[WKWebView alloc] initWithFrame:CGRectZero];
+    self.webView.navigationDelegate = self;
+    [self.view addSubview:self.webView];
+    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
     
-    [self.webview loadRequest: [NSMutableURLRequest requestWithURL:self.url]];
+    self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+    self.progressView.trackTintColor = [UIColor clearColor];
+    self.progressView.progressTintColor = [UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0];
+    [self.progressView setProgress:0.1 animated:YES];
+    [self.webView addSubview:self.progressView];
+    [self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(@0);
+        make.top.mas_equalTo(@0);
+        make.width.equalTo(self.webView);
+        make.height.equalTo(@2);
+    }];
+    
+    [self.webView loadRequest: [NSMutableURLRequest requestWithURL:self.url]];
+    [self.webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
+    [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:NULL];
 }
+
+#pragma mark - Actions
 
 -(void)canelAction
 {
@@ -56,17 +74,39 @@
 
 -(void)reloadAction
 {
-    [self.webview stopLoading];
-    [self.webview reload];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"about:blank"]]];
+    [self.webView loadRequest: [NSMutableURLRequest requestWithURL:self.url]];
 }
+
+#pragma mark - WKNavigationDelegate
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation
 {
-    [webView.scrollView setContentOffset:CGPointZero animated:NO];
 }
 
+#pragma mark - Observer
 
-
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    if ([object isEqual:self.webView] && [keyPath isEqualToString:@"estimatedProgress"]) {
+        CGFloat newprogress = [[change objectForKey:NSKeyValueChangeNewKey] doubleValue];
+        if (newprogress == 1) {
+            [self.progressView setProgress:newprogress animated:YES];
+            __weak typeof(self) weakSelf = self;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.8 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                weakSelf.progressView.hidden = YES;
+                [weakSelf.progressView setProgress:0 animated:NO];
+            });
+        } else { // loading
+            self.progressView.hidden = NO;
+            [self.progressView setProgress:newprogress animated:YES];
+        }
+    } else if ([object isEqual:self.webView] && [keyPath isEqualToString:@"title"]) {
+        self.title = self.webView.title;
+    } else { 
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
 
 
 @end

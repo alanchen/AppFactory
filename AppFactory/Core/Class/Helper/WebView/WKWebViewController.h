@@ -11,7 +11,7 @@
 
 @interface WKWebViewController : UIViewController
 
-@property (nonatomic,strong) WKWebView *webview;
+@property (nonatomic,strong) WKWebView *webView;
 
 +(WKWebViewController *)createWithURL:(NSURL *)url;
 
