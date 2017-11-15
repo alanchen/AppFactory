@@ -8,9 +8,9 @@
 
 #import "AFRefreshHeader.h"
 
-@interface AFRefreshHeader(){
+@interface AFRefreshHeader()
+{
     __unsafe_unretained UIImageView *_arrowView;
-    
 }
 @property (weak, nonatomic) UIActivityIndicatorView *loadingView;
 @end
@@ -61,6 +61,7 @@
     }
     return _loadingView;
 }
+
 
 #pragma mark - 公共方法
 - (void)setActivityIndicatorViewStyle:(UIActivityIndicatorViewStyle)activityIndicatorViewStyle
@@ -143,6 +144,21 @@
         self.loadingView.alpha = 1.0; // 防止refreshing -> idle的动画完毕动作没有被执行
         [self.loadingView startAnimating];
         self.arrowView.hidden = YES;
+    }
+}
+
+#pragma mark - Tricky
+// A tricky way to make refreshing look Ok in invisible viewController.
+// Override super scrollViewContentOffsetDidChange
+- (void)scrollViewContentOffsetDidChange:(NSDictionary *)change
+{
+    [super scrollViewContentOffsetDidChange:change];
+    
+    if (self.state == MJRefreshStateRefreshing) {
+        CGFloat insetT = - self.scrollView.mj_offsetY > _scrollViewOriginalInset.top ? - self.scrollView.mj_offsetY : _scrollViewOriginalInset.top;
+        insetT = insetT > self.mj_h + _scrollViewOriginalInset.top ? self.mj_h + _scrollViewOriginalInset.top : insetT;
+        self.scrollView.mj_insetT = insetT;
+        [self setValue:@(_scrollViewOriginalInset.top - insetT) forKey:@"insetTDelta"];
     }
 }
 

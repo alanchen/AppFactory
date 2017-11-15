@@ -46,28 +46,52 @@
     [self.tableView endFooterRefreshing];
     [self bk_performBlock:^(id obj) {
         [self.tableView endHeaderRefreshing];
+        [self.tableView hideSpinner];
+         [self.tableView endFooterRefreshingWithNoMoreData];
+//        [self.tableView reloadData];
+//        if([list count] < self.loadMoreLimit){
+//            [self.tableView endFooterRefreshingWithNoMoreData];
+//        }else{
+//            [self.tableView endFooterRefreshing];
+//        }
+        
     } afterDelay:1.0];
 }
 
 -(void)reloadFooter
 {
+    NSInteger page =  [self.navigationController.viewControllers indexOfObject:self];
+    DLog(@"%zd",page);
     [self bk_performBlock:^(id obj) {
         [self.tableView endFooterRefreshingWithNoMoreData];
-    } afterDelay:1.0];
+    } afterDelay:2.0];
 }
 
 -(void)test
 {
+    NOTIFICATION_POST(@"reload");
+}
+
+-(void)reload123
+{
+    NSInteger page =  [self.navigationController.viewControllers indexOfObject:self];
+//    DLog(@"page %zd",page);
     
+    if(page != 0)
+        return;
+    
+      [self.tableView normalReloadLaunched];
+//    self.tableView.mj_header.state = MJRefreshStateRefreshing;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Page 1";
     
-  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                                                        target:self
-                                                                                        action:@selector(test)];
+    NOTIFICATION_ADD(self, @selector(reload123), @"reload");
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                          target:self
+                                                                                          action:@selector(test)];
     
     self.tableView = [[AFBaseTableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
@@ -97,9 +121,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ToastShow(@"123\nwefoiewf\nfiewhfohewiufu idhfpiuqewhf\n");
-    WKWebViewController *vc =
-    [WebControllerHelper showWebViewWithURLStr:@"http://ckclouds.com/api/meta/service" onViewController:self];
+    ViewController *vc = [[ViewController alloc] init];
+    [self pushViewController:vc];
+    
+//    [self.tableView normalReloadLaunched];
+    
+//    ToastShow(@"123\nwefoiewf\nfiewhfohewiufu idhfpiuqewhf\n");
+//    WKWebViewController *vc =
+//    [WebControllerHelper showWebViewWithURLStr:@"http://ckclouds.com/api/meta/service" onViewController:self];
     
 //    [self.tableView endHeaderRefreshing];
 //    [self.tableView endFooterRefreshingWithNoMoreData];
