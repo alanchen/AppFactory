@@ -27,6 +27,17 @@
     return objc_getAssociatedObject(self, @selector(alertWindow));
 }
 
+- (UIWindow *)appDelegateWindow
+{
+    // Applications that does not load with UIMainStoryboardFile might not have a window property:
+    id<UIApplicationDelegate> delegate = [UIApplication sharedApplication].delegate;
+    if ([delegate respondsToSelector:@selector(window)]) {
+        return delegate.window;
+    }
+    
+    return nil;
+}
+
 @end
 
 @implementation  UIAlertController(Window)
@@ -39,27 +50,19 @@
     self.alertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.alertWindow.rootViewController = [[UIViewController alloc] init];
     
-    id<UIApplicationDelegate> delegate = [UIApplication sharedApplication].delegate;
-    // Applications that does not load with UIMainStoryboardFile might not have a window property:
-    if ([delegate respondsToSelector:@selector(window)]) {
-        // we inherit the main window's tintColor
-        self.alertWindow.tintColor = delegate.window.tintColor;
-    }
-    
-    // window level is above the top window (this makes the alert, if it's a sheet, show over the keyboard)
-    UIWindow *topWindow = [UIApplication sharedApplication].windows.lastObject;
-    self.alertWindow.windowLevel = topWindow.windowLevel + 1;
-    
+    // we inherit the main window's tintColor
+    self.alertWindow.tintColor = [self appDelegateWindow].tintColor;
+    self.alertWindow.windowLevel = UIWindowLevelAlert + 1;
     [self.alertWindow makeKeyAndVisible];
     [self.alertWindow.rootViewController presentViewController:self animated:animated completion:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    
-    // precaution to insure window gets destroyed
+    [self.alertWindow resignKeyWindow];
     self.alertWindow.hidden = YES;
     self.alertWindow = nil;
+    [[self appDelegateWindow] makeKeyAndVisible];
 }
 
 @end
