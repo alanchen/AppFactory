@@ -92,6 +92,24 @@
     return outputImage;
 }
 
+- (UIImage *) imageWithTintColor:(UIColor *)tintColor blendMode:(CGBlendMode)blendMode
+{
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0f);
+    [tintColor setFill];
+    CGRect bounds = CGRectMake(0, 0, self.size.width, self.size.height);
+    UIRectFill(bounds);
+    [self drawInRect:bounds blendMode:blendMode alpha:1.0];
+    
+    if (blendMode != kCGBlendModeDestinationIn) {
+        [self drawInRect:bounds blendMode:kCGBlendModeDestinationIn alpha:1.0f];
+    }
+    
+    UIImage *tintedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return tintedImage;
+}
+
 #pragma mark - Private
 
 + (UIImage *)imageFrom:(NSBundle *)bundle name:(NSString *)name scale:(NSInteger)scale

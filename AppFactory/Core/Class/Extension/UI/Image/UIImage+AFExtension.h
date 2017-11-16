@@ -21,4 +21,7 @@
 
 + (UIImage *)imageGradientHorizatalFromColor:(UIColor *)startColor endColor:(UIColor *)endColor size:(CGSize)size;
 
+- (UIImage *)imageWithTintColor:(UIColor *)tintColor blendMode:(CGBlendMode)blendMode;
+
+
 @end
