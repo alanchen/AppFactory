@@ -155,10 +155,12 @@
     [super scrollViewContentOffsetDidChange:change];
     
     if (self.state == MJRefreshStateRefreshing) {
-        CGFloat insetT = - self.scrollView.mj_offsetY > _scrollViewOriginalInset.top ? - self.scrollView.mj_offsetY : _scrollViewOriginalInset.top;
-        insetT = insetT > self.mj_h + _scrollViewOriginalInset.top ? self.mj_h + _scrollViewOriginalInset.top : insetT;
-        self.scrollView.mj_insetT = insetT;
-        [self setValue:@(_scrollViewOriginalInset.top - insetT) forKey:@"insetTDelta"];
+        if(!self.window){
+            CGFloat insetT = - self.scrollView.mj_offsetY > _scrollViewOriginalInset.top ? - self.scrollView.mj_offsetY : _scrollViewOriginalInset.top;
+            insetT = insetT > self.mj_h + _scrollViewOriginalInset.top ? self.mj_h + _scrollViewOriginalInset.top : insetT;
+            self.scrollView.mj_insetT = insetT;
+            [self setValue:@(_scrollViewOriginalInset.top - insetT) forKey:@"insetTDelta"];
+        }
     }
 }
 
