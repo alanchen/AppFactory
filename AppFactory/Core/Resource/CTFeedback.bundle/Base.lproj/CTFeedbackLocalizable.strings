@@ -4,43 +4,44 @@
  Created by Ryoichi Izumita on 2013/10/31.
  Copyright (c) 2013 CAPH. All rights reserved. */
 
-"Device" = "Device";
+"Device" = "機型";
 
-"iOS" = "iOS";
+"iOS" = "iOS 版本";
 
-"Name" = "Name";
+"Name" = "名字";
 
-"Version" = "Version";
+"Version" = "App 版本";
 
 "Build" = "Build";
 
-"Device Info" = "Device Info";
+"Device Info" = "裝置";
 
-"App Info" = "App Info";
+"App Info" = "App";
 
-"Feedback" = "Feedback";
+"Feedback" = "問題回報";
 
-"Topic" = "Topic";
+"Topic" = "類型";
 
-"Topics" = "Topics";
+"Topics" = "類型";
 
-"Error" = "Error";
+"Error" = "錯誤";
 
-"Mail" = "Mail";
+"Mail" = "完成";
 
-"Mail no configuration"="You do not have a valid e-mail account";
+"Mail no configuration"="\n為寄送您的意見至客服信箱，您的裝置需先設定一組 Email 信箱。請至【設定 > 郵件、聯絡資訊、行事曆】，加入一組經常使用的 Email 帳號，謝謝。";
 
-"Dismiss"="Dismiss";
+"Dismiss"="關閉";
 
-"Additional Info"="Additional Info";
+"Additional Info"="附加圖片";
 
-"Additional detail"="Select the feedback attachment (picture)";
+"Additional detail"="選擇圖片";
 
-"Cancel"="Cancel";
+"Cancel"="取消";
 
-"Camera"="Camera";
+"Camera"="拍照";
 
-"PhotoLibrary"="Select from the album";
+"PhotoLibrary"="相簿";
 
-"Please leave your feedback below:" = "Please leave your feedback below:";
+"Please leave your feedback below:"="請於下方空白處輸入您的意見：";
+
 

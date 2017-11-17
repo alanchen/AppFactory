@@ -82,7 +82,7 @@
         self.textView.text = self.content;
         self.textView.delegate = self;
         self.textView.scrollEnabled = NO;
-        self.textView.font = [UIFont systemFontOfSize:14];
+        self.textView.font = [UIFont systemFontOfSize:16];
         self.textView.backgroundColor = [UIColor clearColor];
         
         self.textLabel = [[UILabel alloc] initWithFrame:CGRectZero];
