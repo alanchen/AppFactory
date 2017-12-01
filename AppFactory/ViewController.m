@@ -32,6 +32,7 @@
 #import "AFButtonsView.h"
 
 #import "WebControllerHelper.h"
+#import "AFAppVersonHelper.h"
 
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource,AFBaseTableViewDelegate>
 
@@ -121,8 +122,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ViewController *vc = [[ViewController alloc] init];
-    [self pushViewController:vc];
+    [AFAppVersonHelper showAndCheckVersionWithTitle:nil message:nil goTitle:nil nextimeTitle:nil serverBuild:10 serverBuildForced:0 forcedUpdate:^{
+        
+    } optionalUpdate:^{
+        
+    } nextTimeUpdate:^{
+        
+    }];
+    
+//    ViewController *vc = [[ViewController alloc] init];
+//    [self pushViewController:vc];
     
 //    [self.tableView normalReloadLaunched];
     

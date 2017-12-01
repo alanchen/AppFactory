@@ -47,7 +47,6 @@ Pod::Spec.new do |s|
 	s.dependency "PINCache", "~> 3.0.1-beta.5"
     s.dependency "EDColor", "~> 1.0.1"
 	s.dependency "UIDeviceIdentifier", "~> 1.1.1"
-    s.dependency "Harpy", "~> 4.1.8"
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #

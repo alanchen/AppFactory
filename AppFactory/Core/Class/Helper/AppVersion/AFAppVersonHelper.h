@@ -7,28 +7,29 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import <iVersion/iVersion.h>
 
 @interface AFAppVersonHelper : NSObject
 
-//+(void)configWithAppId:(NSString *)appId;
-//
-//+(void)openAppleStore;
-//
-//+(NSString *)appleStoreVersion;
-//
-///**
-// *  @return YES if it will show.
-// */
-//+ (BOOL)checkAndUpdateVersionWithTitle:(NSString *)title
-//                               message:(NSString *)message
-//                               goTitle:(NSString *)goTitle
-//                          nextimeTitle:(NSString *)nextimeTitle
-//                           serverBuild:(NSInteger )serverBuildNumber
-//                     serverBuildForced:(NSInteger )serverBuildNumberForce
-//                          forcedUpdate:(void (^)(void))forcedBlock
-//                        optionalUpdate:(void (^)(void))optionalBlock
-//                        nextTimeUpdate:(void (^)(void))nextTimeBlock;
++(AFAppVersonHelper *)sharedInstance;
+
+- (void)performVersionCheck;
+
+- (void)launchAppStore;
+
+- (NSString *)appStoreVersion;
+
+/**
+ *  @return YES if it will show.
+ */
++ (BOOL)showAndCheckVersionWithTitle:(NSString *)title
+                             message:(NSString *)message
+                             goTitle:(NSString *)goTitle
+                        nextimeTitle:(NSString *)nextimeTitle
+                         serverBuild:(NSInteger )serverBuildNumber
+                   serverBuildForced:(NSInteger )serverBuildNumberForce
+                        forcedUpdate:(void (^)(void))forcedBlock
+                      optionalUpdate:(void (^)(void))optionalBlock
+                      nextTimeUpdate:(void (^)(void))nextTimeBlock;
 
 
 @end
