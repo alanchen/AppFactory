@@ -45,6 +45,7 @@ PODS:
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.25.0):
     - FBSDKCoreKit
+  - Harpy (4.1.8)
   - HexColors (4.0.0)
   - hpple (0.2.0)
   - IDMPhotoBrowser (1.11.3):
@@ -117,6 +118,7 @@ DEPENDENCIES:
   - EDColor (~> 1.0.1)
   - FBSDKCoreKit (~> 4.25.0)
   - FBSDKLoginKit (~> 4.25.0)
+  - Harpy (~> 4.1.8)
   - hpple (~> 0.2.0)
   - IDMPhotoBrowser (~> 1.11.3)
   - Masonry (~> 0.6.4)
@@ -151,6 +153,7 @@ SPEC CHECKSUMS:
   EDColor: 91d127cd67d7c1d3862846fb11ef4b3851151bfa
   FBSDKCoreKit: 53e3f4bfb64e80c5f229dd30ae33ff57fbbbd2d1
   FBSDKLoginKit: f628c09684dae9c17f071cf90b014e886f5093ea
+  Harpy: 386e42162de1f300194e19e78dbb85e9940db92d
   HexColors: 5f95843ef89aff6a72e1fd3a8ebabf205cc43379
   hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
   IDMPhotoBrowser: b96159fe4adb991a844068eb17dab9c0b7d7e51a
@@ -177,6 +180,6 @@ SPEC CHECKSUMS:
   UIImage-Helpers: 06b04a42bdd222844035602e87e936765c80f620
   ViewUtils: 68e42c708a4b3912e39691cef5080282dc5013fb
 
-PODFILE CHECKSUM: 0e0745c046e23c7a406db25a98130451e503edbe
+PODFILE CHECKSUM: ff7dedd2def9c3346621606e423c9345d03a4b34
 
 COCOAPODS: 1.3.1

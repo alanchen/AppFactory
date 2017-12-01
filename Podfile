@@ -46,6 +46,7 @@ pod 'hpple', '~> 0.2.0'
 pod 'PINCache', '~> 3.0.1-beta.5'
 pod 'EDColor', '~> 1.0.1'
 pod 'UIDeviceIdentifier', '~> 1.1.1'
+pod 'Harpy', '~> 4.1.8'
 
 end
 
