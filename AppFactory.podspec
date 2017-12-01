@@ -46,7 +46,6 @@ Pod::Spec.new do |s|
 	s.dependency "hpple", "~> 0.2.0"
 	s.dependency "PINCache", "~> 3.0.1-beta.5"
     s.dependency "EDColor", "~> 1.0.1"
-	s.dependency "iVersion", "~> 1.11.4"
 	s.dependency "UIDeviceIdentifier", "~> 1.1.1"
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

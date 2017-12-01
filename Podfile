@@ -45,7 +45,6 @@ pod 'DateTools', '~> 2.0.0'
 pod 'hpple', '~> 0.2.0'
 pod 'PINCache', '~> 3.0.1-beta.5'
 pod 'EDColor', '~> 1.0.1'
-pod 'iVersion', '~> 1.11.4'
 pod 'UIDeviceIdentifier', '~> 1.1.1'
 
 end
