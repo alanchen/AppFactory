@@ -122,13 +122,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [AFAppVersonHelper showAndCheckVersionWithTitle:nil message:nil goTitle:nil nextimeTitle:nil serverBuild:10 serverBuildForced:0 forcedUpdate:^{
-        
-    } optionalUpdate:^{
-        
-    } nextTimeUpdate:^{
-        
-    }];
+//    [AFAppVersonHelper showAndCheckVersionWithTitle:nil message:nil goTitle:nil nextimeTitle:nil serverBuild:10 serverBuildForced:0 forcedUpdate:^{
+//        
+//    } optionalUpdate:^{
+//        
+//    } nextTimeUpdate:^{
+//        
+//    }];
     
 //    ViewController *vc = [[ViewController alloc] init];
 //    [self pushViewController:vc];
@@ -137,7 +137,7 @@
     
 //    ToastShow(@"123\nwefoiewf\nfiewhfohewiufu idhfpiuqewhf\n");
 //    WKWebViewController *vc =
-//    [WebControllerHelper showWebViewWithURLStr:@"http://ckclouds.com/api/meta/service" onViewController:self];
+    [WebControllerHelper showWebViewWithURLStr:@"http://ckclouds.com/api/meta/service" onViewController:self];
     
 //    [self.tableView endHeaderRefreshing];
 //    [self.tableView endFooterRefreshingWithNoMoreData];

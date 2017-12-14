@@ -65,6 +65,12 @@
     [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:NULL];
 }
 
+-(void)dealloc
+{
+    [self.webView removeObserver:self forKeyPath:@"title"];
+    [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
+}
+
 #pragma mark - Actions
 
 -(void)canelAction
