@@ -24,10 +24,17 @@
 
 - (NSURL *)urlByAddingValidHTTPSchemeIfNeed
 {
-    BOOL isHttpScheme = [[self.scheme lowercaseString] containsString:@"http"]||[self.scheme containsString:@"https"];
+    NSString *schemeLowercaseString = [self.scheme lowercaseString];
+    BOOL isHttpsScheme = [schemeLowercaseString containsString:@"https"];
+    BOOL isHttpScheme = [schemeLowercaseString containsString:@"http"];
     
-    if(isHttpScheme)
-        return self;
+    if(isHttpsScheme || isHttpScheme){
+        NSURLComponents *components = [NSURLComponents componentsWithURL:self resolvingAgainstBaseURL:YES];
+        components.scheme = isHttpsScheme ? @"https" : @"http";
+        NSURL *url = components.URL;
+        if(!url){ return [NSURL URLWithString:@"http://"];}
+        return components.URL;
+    }
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@",self.absoluteString]];
     return url;
