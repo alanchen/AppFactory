@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		31177A34D2ACFD80D51F3D30 /* Pods_AppFactory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19FD220FAE9F8F2F3D9BC3DD /* Pods_AppFactory.framework */; };
+		E7074E59200853680030D946 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = E7074E57200853680030D946 /* UITextView+Placeholder.m */; };
+		E7074E5C200853830030D946 /* UITextView+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7074E5B200853830030D946 /* UITextView+AFExtension.m */; };
 		E70E9CDD1F948E640017F881 /* UIColor+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E70E9CDC1F948E640017F881 /* UIColor+AFExtension.m */; };
 		E722EB5A1F960F890027CC05 /* AnyPromise+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E722EB591F960F890027CC05 /* AnyPromise+AFExtension.m */; };
 		E722EB661F98867F0027CC05 /* FBSSOResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E722EB651F98867F0027CC05 /* FBSSOResult.m */; };
@@ -65,7 +67,6 @@
 		E7F8C1E31F8F1C1600B1E14B /* UIApplication+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1421F8F1C1600B1E14B /* UIApplication+AFExtension.m */; };
 		E7F8C1E41F8F1C1600B1E14B /* UILabel+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1441F8F1C1600B1E14B /* UILabel+AFExtension.m */; };
 		E7F8C1E51F8F1C1600B1E14B /* UITextField+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1461F8F1C1600B1E14B /* UITextField+AFExtension.m */; };
-		E7F8C1E61F8F1C1600B1E14B /* UITextView+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1481F8F1C1600B1E14B /* UITextView+AFExtension.m */; };
 		E7F8C1E71F8F1C1600B1E14B /* UIView+AFBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C14B1F8F1C1600B1E14B /* UIView+AFBorder.m */; };
 		E7F8C1E81F8F1C1600B1E14B /* UIView+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C14D1F8F1C1600B1E14B /* UIView+AFExtension.m */; };
 		E7F8C1E91F8F1C1600B1E14B /* UIView+AFSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C14F1F8F1C1600B1E14B /* UIView+AFSubView.m */; };
@@ -108,6 +109,10 @@
 		19FD220FAE9F8F2F3D9BC3DD /* Pods_AppFactory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppFactory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		718971DA37BB2B94F20D9133 /* Pods-AppFactory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFactory.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppFactory/Pods-AppFactory.release.xcconfig"; sourceTree = "<group>"; };
 		821A19A83CA18C63B2FC3144 /* Pods-AppFactory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFactory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppFactory/Pods-AppFactory.debug.xcconfig"; sourceTree = "<group>"; };
+		E7074E57200853680030D946 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
+		E7074E58200853680030D946 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
+		E7074E5A200853830030D946 /* UITextView+AFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+AFExtension.h"; sourceTree = "<group>"; };
+		E7074E5B200853830030D946 /* UITextView+AFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+AFExtension.m"; sourceTree = "<group>"; };
 		E70E9CDB1F948E640017F881 /* UIColor+AFExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+AFExtension.h"; sourceTree = "<group>"; };
 		E70E9CDC1F948E640017F881 /* UIColor+AFExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AFExtension.m"; sourceTree = "<group>"; };
 		E722EB581F960F890027CC05 /* AnyPromise+AFExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AnyPromise+AFExtension.h"; sourceTree = "<group>"; };
@@ -222,8 +227,6 @@
 		E7F8C1441F8F1C1600B1E14B /* UILabel+AFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AFExtension.m"; sourceTree = "<group>"; };
 		E7F8C1451F8F1C1600B1E14B /* UITextField+AFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+AFExtension.h"; sourceTree = "<group>"; };
 		E7F8C1461F8F1C1600B1E14B /* UITextField+AFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+AFExtension.m"; sourceTree = "<group>"; };
-		E7F8C1471F8F1C1600B1E14B /* UITextView+AFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+AFExtension.h"; sourceTree = "<group>"; };
-		E7F8C1481F8F1C1600B1E14B /* UITextView+AFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+AFExtension.m"; sourceTree = "<group>"; };
 		E7F8C14A1F8F1C1600B1E14B /* UIView+AFBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AFBorder.h"; sourceTree = "<group>"; };
 		E7F8C14B1F8F1C1600B1E14B /* UIView+AFBorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AFBorder.m"; sourceTree = "<group>"; };
 		E7F8C14C1F8F1C1600B1E14B /* UIView+AFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AFExtension.h"; sourceTree = "<group>"; };
@@ -331,6 +334,17 @@
 				718971DA37BB2B94F20D9133 /* Pods-AppFactory.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E7074E56200853680030D946 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				E7074E5A200853830030D946 /* UITextView+AFExtension.h */,
+				E7074E5B200853830030D946 /* UITextView+AFExtension.m */,
+				E7074E57200853680030D946 /* UITextView+Placeholder.m */,
+				E7074E58200853680030D946 /* UITextView+Placeholder.h */,
+			);
+			path = TextView;
 			sourceTree = "<group>";
 		};
 		E741BEF01F9ED46800FE41C4 /* Button */ = {
@@ -570,6 +584,7 @@
 		E7F8C12A1F8F1C1600B1E14B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E7074E56200853680030D946 /* TextView */,
 				E7F8C12B1F8F1C1600B1E14B /* Button */,
 				E7F8C1301F8F1C1600B1E14B /* Image */,
 				E7F8C1351F8F1C1600B1E14B /* ScrollView */,
@@ -580,8 +595,6 @@
 				E7F8C1441F8F1C1600B1E14B /* UILabel+AFExtension.m */,
 				E7F8C1451F8F1C1600B1E14B /* UITextField+AFExtension.h */,
 				E7F8C1461F8F1C1600B1E14B /* UITextField+AFExtension.m */,
-				E7F8C1471F8F1C1600B1E14B /* UITextView+AFExtension.h */,
-				E7F8C1481F8F1C1600B1E14B /* UITextView+AFExtension.m */,
 				E7F8C1491F8F1C1600B1E14B /* UIView */,
 				E7F8C1501F8F1C1600B1E14B /* ViewController */,
 				E70E9CDB1F948E640017F881 /* UIColor+AFExtension.h */,
@@ -1103,6 +1116,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E78E60051FA08CAD00EA022E /* ScrollableSegmentedControl.m in Sources */,
+				E7074E59200853680030D946 /* UITextView+Placeholder.m in Sources */,
 				E7F8C1C31F8F1C1600B1E14B /* AFApiResponse.m in Sources */,
 				E7F8C2051F8F1C1600B1E14B /* KeyChainWrapper.m in Sources */,
 				E7F8C2021F8F1C1600B1E14B /* HTMLParser.m in Sources */,
@@ -1143,6 +1157,7 @@
 				E7F8C1D61F8F1C1600B1E14B /* NSString+AFExtension.m in Sources */,
 				E7F8C1C21F8F1C1600B1E14B /* AppFactory.m in Sources */,
 				E7F8C1E01F8F1C1600B1E14B /* UIScrollView+AFRefresh.m in Sources */,
+				E7074E5C200853830030D946 /* UITextView+AFExtension.m in Sources */,
 				E7F8C1C71F8F1C1600B1E14B /* AFBaseNavigationController.m in Sources */,
 				E7AF70C21FB0350C0040904F /* AFRefreshFooter.m in Sources */,
 				E7F8C1CA1F8F1C1600B1E14B /* AFBaseTableCell.m in Sources */,
@@ -1173,7 +1188,6 @@
 				E7F8C1F71F8F1C1600B1E14B /* CountryCodePicker.m in Sources */,
 				E7F8C2091F8F1C1600B1E14B /* ToastMessage.m in Sources */,
 				E7F8C1D81F8F1C1600B1E14B /* NSString+AFTimeExtension.m in Sources */,
-				E7F8C1E61F8F1C1600B1E14B /* UITextView+AFExtension.m in Sources */,
 				E7F8C1EF1F8F1C1600B1E14B /* UITabBarController+AFExtension.m in Sources */,
 				E7F8C1DF1F8F1C1600B1E14B /* UIScrollView+AFExtension.m in Sources */,
 				E7F8C1C91F8F1C1600B1E14B /* AFBaseViewController.m in Sources */,

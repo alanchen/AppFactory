@@ -58,6 +58,7 @@ end
       target.build_configurations.each do |configuration|
         target.build_settings(configuration.name)['VALID_ARCHS'] = '$(ARCHS_STANDARD)'
         target.build_settings(configuration.name)['ONLY_ACTIVE_ARCH'] = 'NO'
+        configuration.build_settings['SWIFT_VERSION'] = '3.2'
       end
     end
   end
