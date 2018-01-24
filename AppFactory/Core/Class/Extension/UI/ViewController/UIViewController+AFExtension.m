@@ -43,16 +43,6 @@
     return naviH?naviH:44;
 }
 
-- (void)popToRootIfItCanWithAnimated:(BOOL)animated
-{
-    if([self isKindOfClass:[UINavigationController class]]){
-        [(UINavigationController *)self popToRootViewControllerAnimated:animated];
-        return;
-    }
-    
-    [self.navigationController popToRootViewControllerAnimated:animated];
-}
-
 #pragma mark -
 
 -(void)setLeftBarButtonItem:(UIBarButtonItem *)item

@@ -19,8 +19,6 @@
 
 -(CGFloat)navigationbarHeight;
 
--(void)popToRootIfItCanWithAnimated:(BOOL)animated;
-
 #pragma mark -
 
 -(void)setLeftBarButtonItem:(UIBarButtonItem *)item;

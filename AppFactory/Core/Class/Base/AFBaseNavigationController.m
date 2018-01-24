@@ -7,6 +7,7 @@
 //
 
 #import "AFBaseNavigationController.h"
+#import "AppFactory.h"
 
 @interface AFBaseNavigationController () <UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 
@@ -31,6 +32,23 @@
     }
     
     return self;
+}
+
+-(void)popToRootViewControllerWithAnimated:(BOOL)animated
+{
+    if([self.viewControllers count]==0)
+        return;
+    
+    UIViewController *rootVC = self.rootViewController;
+    rootVC.hidesBottomBarWhenPushed = NO;
+    for(UIViewController *vc in self.viewControllers){
+        vc.hidesBottomBarWhenPushed = NO;
+        if(vc!=rootVC){
+            NOTIFICATION_REMOVE_OBSERVER(vc);
+        }
+    }
+    
+    [self popToRootViewControllerAnimated:animated];
 }
 
 #pragma mark - UINavigationControllerDelegate

@@ -13,5 +13,7 @@
 
 +(AFBaseNavigationController *)navigationWithRootViewController:(UIViewController *)rootViewController;
 
+-(void)popToRootViewControllerWithAnimated:(BOOL)animated;
+
 @end
 
