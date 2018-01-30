@@ -17,7 +17,6 @@
                                 cancelHandler:(void (^)(UIAlertAction *action))cancleBlock
                                  otherHandler:(void (^)(UIAlertAction *action))otherblock
 {
-    
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:message];
     if(cancelTitle){
         [alertVC addCancelActionWithTitle:cancelTitle handler:cancleBlock];
@@ -72,37 +71,42 @@
     [viewController presentViewController:alertController animated:YES completion:nil];
 }
 
-- (void)addDefaultActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block
+- (UIAlertAction *)addDefaultActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block
 {
     UIAlertAction *action = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:block];
     [self addAction:action];
+    return action;
 }
 
-- (void)addActionWithTitle:(NSString *)title imageName:(NSString *)name handler:(void (^)(UIAlertAction *action))block
+- (UIAlertAction *)addActionWithTitle:(NSString *)title imageName:(NSString *)name handler:(void (^)(UIAlertAction *action))block
 {
     UIAlertAction *action = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:block];
     UIImage *img = [[UIImage imageNamed:name] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [action setValue:img forKey:@"image"];
     [self addAction:action];
+    return action;
 }
 
-- (void)addActionWithTitle:(NSString *)title image:(UIImage *)image handler:(void (^)(UIAlertAction *action))block
+- (UIAlertAction *)addActionWithTitle:(NSString *)title image:(UIImage *)image handler:(void (^)(UIAlertAction *action))block
 {
     UIAlertAction *action = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:block];
     if(image){[action setValue:image forKey:@"image"]; }
     [self addAction:action];
+    return action;
 }
 
-- (void)addCancelActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block
+- (UIAlertAction *)addCancelActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block
 {
     UIAlertAction *action = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleCancel handler:block];
     [self addAction:action];
+    return action;
 }
 
-- (void)addDestructiveActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block
+- (UIAlertAction *)addDestructiveActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block
 {
     UIAlertAction *action = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDestructive handler:block];
     [self addAction:action];
+    return action;
 }
 
 @end

@@ -29,14 +29,14 @@
 
 - (void)showActionSheetOnViewController:(UIViewController *)viewController from:(id)from;
 
-- (void)addDefaultActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block;
+- (UIAlertAction *)addDefaultActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block;
 
-- (void)addActionWithTitle:(NSString *)title imageName:(NSString *)name handler:(void (^)(UIAlertAction *action))block;
+- (UIAlertAction *)addActionWithTitle:(NSString *)title imageName:(NSString *)name handler:(void (^)(UIAlertAction *action))block;
 
-- (void)addActionWithTitle:(NSString *)title image:(UIImage *)image handler:(void (^)(UIAlertAction *action))block;
+- (UIAlertAction *)addActionWithTitle:(NSString *)title image:(UIImage *)image handler:(void (^)(UIAlertAction *action))block;
 
-- (void)addCancelActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block;
+- (UIAlertAction *)addCancelActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block;
 
-- (void)addDestructiveActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block;
+- (UIAlertAction *)addDestructiveActionWithTitle:(NSString *)title handler:(void (^)(UIAlertAction *action))block;
 
 @end
