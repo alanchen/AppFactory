@@ -108,8 +108,9 @@
         self.data.yAlign = v;
         self.data.xAlign = h;
     }
-    
-    [self applyAppearingAnimationTo:contentView startPoint:self.data.startCenterPosition endPoint:self.data.endCenterPosition];
+    [self bk_performBlock:^(id obj) {
+        [self applyAppearingAnimationTo:contentView startPoint:self.data.startCenterPosition endPoint:self.data.endCenterPosition];
+    } afterDelay:0.1];
 }
 
 - (void)showContentView:(UIView *)contentView
