@@ -12,6 +12,29 @@
 
 + (UIAlertController *)showAlertViewWithTitle:(NSString *)title
                                       message:(NSString *)message
+                                    leftTitle:(NSString *)leftTitle
+                                   rightTitle:(NSString *)rightTitle
+                                    boldRight:(BOOL)isboldRight
+                                  leftHandler:(void (^)(UIAlertAction *action))leftBlock
+                                 rightHandler:(void (^)(UIAlertAction *action))rightblock
+{
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:message];
+    if(leftTitle){
+        [alertVC addDefaultActionWithTitle:leftTitle handler:leftBlock];
+    }
+    
+    if(rightTitle){
+        UIAlertAction *rightAction = [alertVC addDefaultActionWithTitle:rightTitle handler:rightblock];
+        if(isboldRight){
+            alertVC.preferredAction = rightAction;
+        }
+    }
+    [alertVC show];
+    return alertVC;
+}
+
++ (UIAlertController *)showAlertViewWithTitle:(NSString *)title
+                                      message:(NSString *)message
                                   cancelTitle:(NSString *)cancelTitle
                                    otherTitle:(NSString *)otherTitle
                                 cancelHandler:(void (^)(UIAlertAction *action))cancleBlock

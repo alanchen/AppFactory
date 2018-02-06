@@ -12,6 +12,14 @@
 
 + (UIAlertController *)showAlertViewWithTitle:(NSString *)title
                                       message:(NSString *)message
+                                    leftTitle:(NSString *)leftTitle
+                                   rightTitle:(NSString *)rightTitle
+                                    boldRight:(BOOL)isboldRight
+                                  leftHandler:(void (^)(UIAlertAction *action))leftBlock
+                                 rightHandler:(void (^)(UIAlertAction *action))rightblock;
+
++ (UIAlertController *)showAlertViewWithTitle:(NSString *)title
+                                      message:(NSString *)message
                                   cancelTitle:(NSString *)cancelTitle
                                    otherTitle:(NSString *)otherTitle
                                 cancelHandler:(void (^)(UIAlertAction *action))cancleBlock
