@@ -30,14 +30,7 @@
         self.clipsToBounds = YES;
         self.hideWhenZero  = YES;
         self.circleRadius = 8;
-        
         [self addSubview: self.numberLabel];
-        [self.numberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.greaterThanOrEqualTo(@1);
-            make.height.greaterThanOrEqualTo(@1);
-            make.center.equalTo(self);
-        }];
-        
         [self setNumber:0];
     }
     
@@ -62,6 +55,7 @@
 
     self.layer.cornerRadius = self.circleRadius;
     self.size = CGSizeMake(MAX(self.numberLabel.width + 10, diameter), diameter);
+    self.numberLabel.center = CGPointMake(self.width/2, self.height/2);
 
     self.hidden = NO;
 }
@@ -82,6 +76,7 @@
 
     self.layer.cornerRadius = self.circleRadius;
     self.size = CGSizeMake(MAX(self.numberLabel.width + 10, diameter), diameter);
+    self.numberLabel.center = CGPointMake(self.width/2, self.height/2);
 
     if(number <= 0)
         self.hidden = self.hideWhenZero;
