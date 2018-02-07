@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "AFBaseNavigationController.h"
+#import "TabBarViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,10 +20,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    ViewController *signin = [[ViewController alloc] init];
-    AFBaseNavigationController *navi =[AFBaseNavigationController navigationWithRootViewController:signin];
+//    ViewController *signin = [[ViewController alloc] init];
+//    AFBaseNavigationController *navi =[AFBaseNavigationController navigationWithRootViewController:signin];
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window.rootViewController = navi;
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    [self.window makeKeyAndVisible];
+    
+    
+    TabBarViewController *tab = [[TabBarViewController alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = navi;
+    self.window.rootViewController = tab;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     

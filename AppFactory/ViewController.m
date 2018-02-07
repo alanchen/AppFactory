@@ -137,7 +137,7 @@
     
 //    ToastShow(@"123\nwefoiewf\nfiewhfohewiufu idhfpiuqewhf\n");
 //    WKWebViewController *vc =
-    [WebControllerHelper showWebViewWithURLStr:@"http://ckclouds.com/api/meta/service" onViewController:self];
+//    [WebControllerHelper showWebViewWithURLStr:@"http://ckclouds.com/api/meta/service" onViewController:self];
     
 //    [self.tableView endHeaderRefreshing];
 //    [self.tableView endFooterRefreshingWithNoMoreData];
@@ -164,10 +164,10 @@
 //    [self.view addSubview:btnView];
     
 //
-//    AFCountryPickerViewController *vc = [[AFCountryPickerViewController alloc] init];
-//    [vc setCellTextColor:[UIColor grayColor]];
-//    [vc setSelectTintColor:[UIColor yellowColor]];
-//    [self pushViewController:vc];
+    AFCountryPickerViewController *vc = [[AFCountryPickerViewController alloc] init];
+    [vc setCellTextColor:[UIColor grayColor]];
+    [vc setSelectTintColor:[UIColor yellowColor]];
+    [self pushViewController:vc];
     
     
 //    CTFeedbackViewController *vc = [FeedbackHelper showFeedbackWithAdditionalContent:@"hihihi" topics:@[@"12",@"34"] eMail:@"@123" onVC:self doneBlock:^(CTFeedbackViewController *vc) {

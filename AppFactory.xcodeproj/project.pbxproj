@@ -10,6 +10,7 @@
 		31177A34D2ACFD80D51F3D30 /* Pods_AppFactory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19FD220FAE9F8F2F3D9BC3DD /* Pods_AppFactory.framework */; };
 		E7074E59200853680030D946 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = E7074E57200853680030D946 /* UITextView+Placeholder.m */; };
 		E7074E5C200853830030D946 /* UITextView+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7074E5B200853830030D946 /* UITextView+AFExtension.m */; };
+		E70DE2D0202AA920006DDD1E /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70DE2CF202AA920006DDD1E /* TabBarViewController.m */; };
 		E70E9CDD1F948E640017F881 /* UIColor+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E70E9CDC1F948E640017F881 /* UIColor+AFExtension.m */; };
 		E722EB5A1F960F890027CC05 /* AnyPromise+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E722EB591F960F890027CC05 /* AnyPromise+AFExtension.m */; };
 		E722EB661F98867F0027CC05 /* FBSSOResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E722EB651F98867F0027CC05 /* FBSSOResult.m */; };
@@ -113,6 +114,8 @@
 		E7074E58200853680030D946 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
 		E7074E5A200853830030D946 /* UITextView+AFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+AFExtension.h"; sourceTree = "<group>"; };
 		E7074E5B200853830030D946 /* UITextView+AFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+AFExtension.m"; sourceTree = "<group>"; };
+		E70DE2CE202AA920006DDD1E /* TabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		E70DE2CF202AA920006DDD1E /* TabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		E70E9CDB1F948E640017F881 /* UIColor+AFExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+AFExtension.h"; sourceTree = "<group>"; };
 		E70E9CDC1F948E640017F881 /* UIColor+AFExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AFExtension.m"; sourceTree = "<group>"; };
 		E722EB581F960F890027CC05 /* AnyPromise+AFExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AnyPromise+AFExtension.h"; sourceTree = "<group>"; };
@@ -416,6 +419,8 @@
 				E7905D481F7A32E4006CC6F5 /* AppDelegate.m */,
 				E7905D4A1F7A32E4006CC6F5 /* ViewController.h */,
 				E7905D4B1F7A32E4006CC6F5 /* ViewController.m */,
+				E70DE2CE202AA920006DDD1E /* TabBarViewController.h */,
+				E70DE2CF202AA920006DDD1E /* TabBarViewController.m */,
 				E7905D501F7A32E4006CC6F5 /* Assets.xcassets */,
 				E7905D551F7A32E4006CC6F5 /* Info.plist */,
 				E7905D561F7A32E4006CC6F5 /* main.m */,
@@ -1155,6 +1160,7 @@
 				E74174561FA03D6B009456FD /* RACSubject+AFThrottle.m in Sources */,
 				E7F8C1C61F8F1C1600B1E14B /* APICategories.m in Sources */,
 				E7F8C1D61F8F1C1600B1E14B /* NSString+AFExtension.m in Sources */,
+				E70DE2D0202AA920006DDD1E /* TabBarViewController.m in Sources */,
 				E7F8C1C21F8F1C1600B1E14B /* AppFactory.m in Sources */,
 				E7F8C1E01F8F1C1600B1E14B /* UIScrollView+AFRefresh.m in Sources */,
 				E7074E5C200853830030D946 /* UITextView+AFExtension.m in Sources */,
