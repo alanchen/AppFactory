@@ -8,6 +8,8 @@
 
 #import "UITabBarController+AFExtension.h"
 #import "UIViewController+AFExtension.h"
+#import "AFBaseTabBar.h"
+#import "DeviceMacros.h"
 
 @implementation UITabBarController(AFExtension)
 
@@ -31,6 +33,30 @@
         [self popViewcontroller:topVC toRootWithAnimation:NO];
         [self setSelectedIndex:selectedIndex];
         if(completion){ completion (); }
+    }
+}
+
+-(UITabBarItem *)createTabBarItem:(NSString *)title
+                        imageName:(NSString *)name
+                textSelectedColor:(UIColor *)textSelectedColor
+{
+    //    About 50 x 50 pixels (96 x 64 pixels maximum)
+    //    About 25 x 25 pixels (48 x 32 pixels maximum) for standard resolution
+    
+    UIImage *img = [[UIImage imageNamed:name] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:img selectedImage:img];
+    if(textSelectedColor){
+        [tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:textSelectedColor}
+                                  forState:UIControlStateSelected];
+    }
+    return tabBarItem;
+}
+
+-(void)addIPhoneXTabBarIfNeed
+{
+    if (IS_IPHONE_X) {
+        AFBaseTabBar *baseTabBar = [[AFBaseTabBar alloc] init];
+        [self setValue:baseTabBar forKey:@"tabBar"];
     }
 }
 

@@ -15,6 +15,7 @@
 		E722EB5A1F960F890027CC05 /* AnyPromise+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E722EB591F960F890027CC05 /* AnyPromise+AFExtension.m */; };
 		E722EB661F98867F0027CC05 /* FBSSOResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E722EB651F98867F0027CC05 /* FBSSOResult.m */; };
 		E722EB701F9C7ECD0027CC05 /* TTTAttributedLabel+AFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E722EB6F1F9C7ECD0027CC05 /* TTTAttributedLabel+AFExtension.m */; };
+		E73BD18D202D716B0028B351 /* AFBaseTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E73BD18C202D716B0028B351 /* AFBaseTabBar.m */; };
 		E74174561FA03D6B009456FD /* RACSubject+AFThrottle.m in Sources */ = {isa = PBXBuildFile; fileRef = E74174551FA03D6B009456FD /* RACSubject+AFThrottle.m */; };
 		E741BEF61F9ED49500FE41C4 /* AFGhostButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E741BEF51F9ED49500FE41C4 /* AFGhostButton.m */; };
 		E741BEF91F9EDA5600FE41C4 /* AFRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E741BEF81F9EDA5600FE41C4 /* AFRadioButton.m */; };
@@ -124,6 +125,8 @@
 		E722EB651F98867F0027CC05 /* FBSSOResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBSSOResult.m; sourceTree = "<group>"; };
 		E722EB6E1F9C7ECD0027CC05 /* TTTAttributedLabel+AFExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TTTAttributedLabel+AFExtension.h"; sourceTree = "<group>"; };
 		E722EB6F1F9C7ECD0027CC05 /* TTTAttributedLabel+AFExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TTTAttributedLabel+AFExtension.m"; sourceTree = "<group>"; };
+		E73BD18B202D716B0028B351 /* AFBaseTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFBaseTabBar.h; sourceTree = "<group>"; };
+		E73BD18C202D716B0028B351 /* AFBaseTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFBaseTabBar.m; sourceTree = "<group>"; };
 		E74174541FA03D6B009456FD /* RACSubject+AFThrottle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RACSubject+AFThrottle.h"; sourceTree = "<group>"; };
 		E74174551FA03D6B009456FD /* RACSubject+AFThrottle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RACSubject+AFThrottle.m"; sourceTree = "<group>"; };
 		E741BEF41F9ED49500FE41C4 /* AFGhostButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFGhostButton.h; sourceTree = "<group>"; };
@@ -350,6 +353,15 @@
 			path = TextView;
 			sourceTree = "<group>";
 		};
+		E73BD187202D71350028B351 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E73BD18B202D716B0028B351 /* AFBaseTabBar.h */,
+				E73BD18C202D716B0028B351 /* AFBaseTabBar.m */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		E741BEF01F9ED46800FE41C4 /* Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,13 +502,14 @@
 		E7F8C0FD1F8F1C1600B1E14B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				E7F8C1041F8F1C1600B1E14B /* TableView */,
+				E73BD187202D71350028B351 /* TabBar */,
 				E7F8C0FE1F8F1C1600B1E14B /* AFBaseNavigationController.h */,
 				E7F8C0FF1F8F1C1600B1E14B /* AFBaseNavigationController.m */,
 				E7F8C1001F8F1C1600B1E14B /* AFBaseTableViewController.h */,
 				E7F8C1011F8F1C1600B1E14B /* AFBaseTableViewController.m */,
 				E7F8C1021F8F1C1600B1E14B /* AFBaseViewController.h */,
 				E7F8C1031F8F1C1600B1E14B /* AFBaseViewController.m */,
-				E7F8C1041F8F1C1600B1E14B /* TableView */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1179,6 +1192,7 @@
 				E722EB701F9C7ECD0027CC05 /* TTTAttributedLabel+AFExtension.m in Sources */,
 				E7F8C1EE1F8F1C1600B1E14B /* UINavigationController+AFExtension.m in Sources */,
 				E7F8C1CC1F8F1C1600B1E14B /* AFTableEmptyCaseView.m in Sources */,
+				E73BD18D202D716B0028B351 /* AFBaseTabBar.m in Sources */,
 				E7F8C1F51F8F1C1600B1E14B /* AFCountryPickerViewController.m in Sources */,
 				E7F4A9A41FAC05A200AE7B27 /* AFNaviBar.m in Sources */,
 				E7F8C1D21F8F1C1600B1E14B /* NSDate+AFExtension.m in Sources */,

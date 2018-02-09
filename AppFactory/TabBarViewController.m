@@ -9,6 +9,8 @@
 #import "TabBarViewController.h"
 #import "ViewController.h"
 #import "AFBaseNavigationController.h"
+#import "UITabBarController+AFExtension.h"
+
 
 @interface TabBarViewController ()
 
@@ -18,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self addIPhoneXTabBarIfNeed];
     
     ViewController *vc1 = [[ViewController alloc] init];
     AFBaseNavigationController *navi1 =[AFBaseNavigationController navigationWithRootViewController:vc1];
