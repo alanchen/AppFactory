@@ -10,6 +10,8 @@
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
+#define VIEW_SAFEAREAINSETS(view) ({UIEdgeInsets i; if(@available(iOS 11.0, *)) {i = view.safeAreaInsets;} else {i = UIEdgeInsetsZero;} i;})
+
 #define STATUSBAR_FRAME [[UIApplication sharedApplication] statusBarFrame]
 #define STATUSBAR_WIDTH [[UIApplication sharedApplication] statusBarFrame].size.width
 #define STATUSBAR_HEIGHT [[UIApplication sharedApplication] statusBarFrame].size.height
