@@ -36,6 +36,23 @@
                                success:(void (^)(UIImage *image))successBlock
                                 cancel:(void (^)())cancelBlock
 {
+    [self showImagePickerOnViewController:vc
+                                 onButton:btn
+                              cancelTitle:nil
+                              cameraTitle:nil
+                               albumTitle:nil
+                                  success:successBlock
+                                   cancel:cancelBlock];
+}
+
+-(void)showImagePickerOnViewController:(UIViewController *)vc
+                              onButton:(id)btn
+                           cancelTitle:(NSString *)cancelTitle
+                           cameraTitle:(NSString *)cameraTitle
+                            albumTitle:(NSString *)albumTitle
+                               success:(void (^)(UIImage *image))successBlock
+                                cancel:(void (^)())cancelBlock
+{
     vc = NULL_TEST(vc, WIN_ROOT_VC);
 
     void(^imageDidCancelBlock)() = ^(UIImagePickerController *ipc){
@@ -51,12 +68,12 @@
     };
     
     UIAlertController *actionSheet = [UIAlertController actionSheetControllerWithTitle:nil message:nil];
-    [actionSheet addCancelActionWithTitle:@"取消" handler:^(UIAlertAction *action) { if(cancelBlock) cancelBlock();}];
-    [actionSheet addDefaultActionWithTitle:@"相機" handler:^(UIAlertAction *action) {
+    [actionSheet addCancelActionWithTitle:cancelTitle?cancelTitle:@"取消" handler:^(UIAlertAction *action) { if(cancelBlock) cancelBlock();}];
+    [actionSheet addDefaultActionWithTitle:cameraTitle?cameraTitle:@"拍照" handler:^(UIAlertAction *action) {
         [self presentCameraPickerOn:vc completion:imageDidComplete cancel:imageDidCancelBlock];
     }];
     
-    [actionSheet addDefaultActionWithTitle:@"相簿" handler:^(UIAlertAction *action) {
+    [actionSheet addDefaultActionWithTitle:albumTitle?albumTitle:@"挑選照片" handler:^(UIAlertAction *action) {
         [self presentAlbumPickerOn:vc completion:imageDidComplete cancel:imageDidCancelBlock];
     }];
     
