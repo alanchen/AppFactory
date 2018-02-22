@@ -33,6 +33,10 @@
                                        target:(id)target
                                        action:(SEL)action;
 
+- (UIBarButtonItem *)setLargeHitRightBarItemWithButtonImageName:(NSString *)name
+                                                         target:(id)target
+                                                         action:(SEL)action;
+
 - (UIBarButtonItem *)setLeftBarItemWithTitle:(NSString *)title
                                       target:(id)target
                                       action:(SEL)action;

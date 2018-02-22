@@ -75,6 +75,31 @@
     return barItem;
 }
 
+- (UIBarButtonItem *)setLargeHitRightBarItemWithButtonImageName:(NSString *)name
+                                                         target:(id)target
+                                                         action:(SEL)action
+{
+    if(!name){name = @"";}
+    
+    UIImage *image = [[UIImage imageNamed:name] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIButton *btn =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setImage:image forState:UIControlStateNormal];
+    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    [btn sizeToFit];
+    
+    UIView *view =  [[UIView alloc] initWithFrame:CGRectMake(0, 0, btn.width + 16, 38)];
+    view.backgroundColor = [UIColor clearColor];
+    [view addSubview:btn];
+    [btn setExtend20TappingArea];
+    [btn addHighlightAlphaEffect];
+    btn.center = CGPointMake(view.width/2, view.height/2);
+    btn.right = view.width;
+
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:view];
+    [self setRightBarButtonItem:item];
+    return item;
+}
+
 - (UIBarButtonItem *)setLeftBarItemWithTitle:(NSString *)title
                                       target:(id)target
                                       action:(SEL)action
