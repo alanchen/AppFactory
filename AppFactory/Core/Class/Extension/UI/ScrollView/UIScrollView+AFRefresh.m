@@ -34,7 +34,6 @@
 - (MJRefreshFooter *)addLoadMoreFooterWithTarget:(id)target action:(SEL)action color:(UIColor *)color
 {
     AFRefreshFooter *footer = [AFRefreshFooter footerWithRefreshingTarget:target refreshingAction:action];
-    footer.automaticallyHidden = YES;
     footer.refreshingTitleHidden = YES;
     footer.mj_h = 60;
     [footer setTitle:@"" forState:MJRefreshStateIdle];
