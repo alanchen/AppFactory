@@ -15,4 +15,6 @@
 
 +(WKWebViewController *)createWithURL:(NSURL *)url;
 
+@property (nonatomic,copy) void (^cancelBlock)();
+
 @end

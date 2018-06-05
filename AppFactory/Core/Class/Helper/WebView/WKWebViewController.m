@@ -42,7 +42,6 @@
     self.navigationItem.rightBarButtonItem =reloadItem;
     
     self.webView = [[WKWebView alloc] initWithFrame:CGRectZero];
-    self.webView.navigationDelegate = self;
     [self.view addSubview:self.webView];
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -75,6 +74,7 @@
 
 -(void)canelAction
 {
+    if(self.cancelBlock) self.cancelBlock();
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -82,12 +82,6 @@
 {
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"about:blank"]]];
     [self.webView loadRequest: [NSMutableURLRequest requestWithURL:self.url]];
-}
-
-#pragma mark - WKNavigationDelegate
-
-- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation
-{
 }
 
 #pragma mark - Observer

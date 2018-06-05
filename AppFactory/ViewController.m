@@ -136,8 +136,11 @@
 //    [self.tableView normalReloadLaunched];
     
 //    ToastShow(@"123\nwefoiewf\nfiewhfohewiufu idhfpiuqewhf\n");
-//    WKWebViewController *vc =
-//    [WebControllerHelper showWebViewWithURLStr:@"http://ckclouds.com/api/meta/service" onViewController:self];
+    WKWebViewController *vc =
+    [WebControllerHelper showWebViewWithURLStr:@"http://ckclouds.com/api/meta/service" onViewController:self];
+    vc.cancelBlock = ^{
+        NSLog(@"ccccc");
+    };
     
 //    [self.tableView endHeaderRefreshing];
 //    [self.tableView endFooterRefreshingWithNoMoreData];
@@ -165,20 +168,20 @@
     
 //
     
-    if(indexPath.row ==0){
-        AFCountryPickerViewController *vc = [[AFCountryPickerViewController alloc] init];
-        [vc setCellTextColor:[UIColor grayColor]];
-        [vc setSelectTintColor:[UIColor yellowColor]];
-        [self pushViewController:vc];
-        
-//        UIViewController *vc = [[UIViewController alloc] init];
-//        vc.hidesBottomBarWhenPushed = YES;
-//        [self.navigationController pushViewController:vc animated:YES];
-//        self.hidesBottomBarWhenPushed = NO;
-
-    }else{
-        [WebControllerHelper showWebViewWithURLStr:@"http://ckclouds.com/api/meta/service" onViewController:self];
-    }
+//    if(indexPath.row ==0){
+//        AFCountryPickerViewController *vc = [[AFCountryPickerViewController alloc] init];
+//        [vc setCellTextColor:[UIColor grayColor]];
+//        [vc setSelectTintColor:[UIColor yellowColor]];
+//        [self pushViewController:vc];
+//        
+////        UIViewController *vc = [[UIViewController alloc] init];
+////        vc.hidesBottomBarWhenPushed = YES;
+////        [self.navigationController pushViewController:vc animated:YES];
+////        self.hidesBottomBarWhenPushed = NO;
+//
+//    }else{
+//        [WebControllerHelper showWebViewWithURLStr:@"http://ckclouds.com/api/meta/service" onViewController:self];
+//    }
 
     
 //    CTFeedbackViewController *vc = [FeedbackHelper showFeedbackWithAdditionalContent:@"hihihi" topics:@[@"12",@"34"] eMail:@"@123" onVC:self doneBlock:^(CTFeedbackViewController *vc) {
