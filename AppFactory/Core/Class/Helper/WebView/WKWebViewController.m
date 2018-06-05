@@ -25,6 +25,15 @@
     webVC.url = url;
     return webVC;
 }
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.webView = [[WKWebView alloc] initWithFrame:CGRectZero];
+    }
+    
+    return self;
+}
 
 -(void)viewDidLoad
 {
@@ -39,9 +48,8 @@
                                                                                 target:self
                                                                                 action:@selector(reloadAction)];
     self.navigationItem.leftBarButtonItem = cancelItem;
-    self.navigationItem.rightBarButtonItem =reloadItem;
+    self.navigationItem.rightBarButtonItem = reloadItem;
     
-    self.webView = [[WKWebView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:self.webView];
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
