@@ -105,6 +105,7 @@
 		E7F8C20C1F8F1C1600B1E14B /* WebControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1B31F8F1C1600B1E14B /* WebControllerHelper.m */; };
 		E7F8C20D1F8F1C1600B1E14B /* AFSearchBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8C1BE1F8F1C1600B1E14B /* AFSearchBarView.m */; };
 		E7F8C20E1F8F1C1600B1E14B /* AppFactory.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7F8C1C11F8F1C1600B1E14B /* AppFactory.bundle */; };
+		E7FF1CC420EC730B0009E046 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FF1CC220EC730B0009E046 /* IAPHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -311,6 +312,8 @@
 		E7F8C1BE1F8F1C1600B1E14B /* AFSearchBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSearchBarView.m; sourceTree = "<group>"; };
 		E7F8C1BF1F8F1C1600B1E14B /* LibsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibsHeader.h; sourceTree = "<group>"; };
 		E7F8C1C11F8F1C1600B1E14B /* AppFactory.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AppFactory.bundle; sourceTree = "<group>"; };
+		E7FF1CC220EC730B0009E046 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
+		E7FF1CC320EC730B0009E046 /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -706,6 +709,7 @@
 		E7F8C15F1F8F1C1600B1E14B /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				E7FF1CC120EC730B0009E046 /* IAP */,
 				E7F8C1601F8F1C1600B1E14B /* APN */,
 				E7F8C1651F8F1C1600B1E14B /* AppVersion */,
 				E7F8C1681F8F1C1600B1E14B /* CountryPicker */,
@@ -934,6 +938,15 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		E7FF1CC120EC730B0009E046 /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+				E7FF1CC220EC730B0009E046 /* IAPHelper.m */,
+				E7FF1CC320EC730B0009E046 /* IAPHelper.h */,
+			);
+			path = IAP;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1143,6 +1156,7 @@
 				E7F8C1FB1F8F1C1600B1E14B /* CTFeedbackCell.m in Sources */,
 				E7F8C20B1F8F1C1600B1E14B /* ViewControllerHelper.m in Sources */,
 				E7F8C1DC1F8F1C1600B1E14B /* UIImage+AFExtension.m in Sources */,
+				E7FF1CC420EC730B0009E046 /* IAPHelper.m in Sources */,
 				E7F8C1DA1F8F1C1600B1E14B /* UIButton+AFExtension.m in Sources */,
 				E7F8C1F11F8F1C1600B1E14B /* APNHelper.m in Sources */,
 				E7F8C1E71F8F1C1600B1E14B /* UIView+AFBorder.m in Sources */,
