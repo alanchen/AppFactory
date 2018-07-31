@@ -20,9 +20,10 @@
 
 @interface LightBoxWrapper : UIView
 
-@property (nonatomic)BOOL shouldTapBackbgroundToDismiss; // change it after show method
-
-@property (nonatomic)CGFloat bgAlpha; 
+@property (nonatomic)BOOL shouldTapBackbgroundToDismiss; // default is YES
+@property (nonatomic)CGFloat bgAlpha;  // default is 0.3
+@property (nonatomic)CGFloat appearDuration; // default is 0.3
+@property (nonatomic)CGFloat disappearDuration; // default is 0.3
 
 + (LightBoxWrapper *)sharedInstance;
 

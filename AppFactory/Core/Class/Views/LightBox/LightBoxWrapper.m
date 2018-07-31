@@ -39,8 +39,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.size = SCREENBOUNDS.size;
-        self.bgAlpha = 0.3;
-
+        [self resetCustomValues];
+        
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] bk_initWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
             if(state != UIGestureRecognizerStateEnded){ return ;}
             CGPoint point = [sender locationInView:self];
@@ -74,6 +74,7 @@
 {
     if([anim.name isEqualToString:@"DismissAnimation"] && finished){
         [self reset];
+        [self resetCustomValues];
     }else if([anim.name isEqualToString:@"ShowAnimation"] && finished){
         self.isTouchBlocked = NO;
     }
@@ -140,6 +141,7 @@
 - (void)dismissWithoutAnimation
 {
     [self reset];
+    [self resetCustomValues];
 }
 
 #pragma mark - Private
@@ -164,15 +166,22 @@
     self.contentView = nil;
     self.isTouchBlocked = YES;
     self.data = [[LightBoxData alloc] init];
+}
+
+-(void)resetCustomValues
+{
     self.shouldTapBackbgroundToDismiss = YES;
+    self.bgAlpha = 0.3;
+    self.appearDuration = 0.3;
+    self.disappearDuration = 0.3;
 }
 
 #pragma mark - Animation
 
 -(void)applyDisappearingAnimationTo:(UIView *)contentView startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint
 {
-    CGFloat duration = 0.3;
-    
+    CGFloat duration = self.disappearDuration;
+
     POPBasicAnimation *bgAnimation = [POPBasicAnimation animation];
     bgAnimation.property = [POPAnimatableProperty propertyWithName:kPOPViewBackgroundColor];
     bgAnimation.fromValue= [UIColor colorWithRed:0 green:0 blue:0 alpha:self.bgAlpha];
@@ -207,7 +216,7 @@
 
 -(void)applyAppearingAnimationTo:(UIView *)contentView startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint
 {
-    CGFloat duration = 0.3;
+    CGFloat duration = self.appearDuration;
 
     POPBasicAnimation *bgAnimation = [POPBasicAnimation animation];
     bgAnimation.property = [POPAnimatableProperty propertyWithName:kPOPViewBackgroundColor];

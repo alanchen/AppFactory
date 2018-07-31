@@ -136,15 +136,15 @@
 //    [self.tableView normalReloadLaunched];
     
 //    ToastShow(@"123\nwefoiewf\nfiewhfohewiufu idhfpiuqewhf\n");
-    WKWebViewController *vc =
-    [WebControllerHelper showWebViewWithURLStr:@"http://ckclouds.com/api/meta/service" onViewController:self];
-    vc.cancelBlock = ^{
-        NSLog(@"ccccc");
-    };
+//    WKWebViewController *vc =
+//    [WebControllerHelper showWebViewWithURLStr:@"http://ckclouds.com/api/meta/service" onViewController:self];
+//    vc.cancelBlock = ^{
+//        NSLog(@"ccccc");
+//    };
     
 //    [self.tableView endHeaderRefreshing];
 //    [self.tableView endFooterRefreshingWithNoMoreData];
-//    id cell = [tableView cellForRowAtIndexPath:indexPath];
+    id cell = [tableView cellForRowAtIndexPath:indexPath];
     
 //    ToastShow(INT2STR(indexPath.row));
     
@@ -191,10 +191,22 @@
 //    vc.navigationController.navigationBar.tintColor = [UIColor redColor];
     
     
-//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-//    view.backgroundColor = [UIColor redColor];
-//
-//    LightboxShowFrom(view, cell);
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    view.backgroundColor = [UIColor redColor];
+
+    if(indexPath.row ==0){
+        [LightBoxWrapper sharedInstance].appearDuration  = 0.1;
+        [LightBoxWrapper sharedInstance].disappearDuration  = 0.1;
+        [LightBoxWrapper sharedInstance].shouldTapBackbgroundToDismiss = NO;
+        [self bk_performBlock:^(id obj) {
+            LightboxDismiss;
+        } afterDelay:1.];
+    }else if(indexPath.row ==1){
+        [LightBoxWrapper sharedInstance].appearDuration  = 1.1;
+        [LightBoxWrapper sharedInstance].disappearDuration  = 1.1;
+
+    }
+    LightboxShowFrom(view, cell);
     
 //    [ImagePickerHelper checkAuthorizationWithMessage:@"try" cacnelText:@"ccc" openText:@"opop" doneBlock:^(BOOL success) {
 //        ToastShow(INT2STR(success));
