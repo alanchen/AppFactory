@@ -13,13 +13,23 @@
 
 -(void)setText:(NSString *)text linkTexts:(NSArray *)linkTexts links:(NSArray *)links linkColor:(UIColor *)linkColor linkFont:(UIFont *)linkFont
 {
+    [self setText:text underline:NO linkTexts:linkTexts links:links linkColor:linkColor linkFont:linkFont];
+}
+
+-(void)setText:(NSString *)text
+     underline:(BOOL)showUnderline
+     linkTexts:(NSArray *)linkTexts
+         links:(NSArray *)links
+     linkColor:(UIColor *)linkColor
+      linkFont:(UIFont *)linkFont
+{
     NSMutableDictionary *mutableLinkAttributes = [NSMutableDictionary dictionary];
     NSMutableDictionary *mutableActiveLinkAttributes = [NSMutableDictionary dictionary];
     NSMutableDictionary *mutableInactiveLinkAttributes = [NSMutableDictionary dictionary];
 
-    [mutableLinkAttributes setObject:@(NO) forKey:(NSString *)kCTUnderlineStyleAttributeName];
-    [mutableActiveLinkAttributes setObject:@(NO) forKey:(NSString *)kCTUnderlineStyleAttributeName];
-    [mutableInactiveLinkAttributes setObject:@(NO) forKey:(NSString *)kCTUnderlineStyleAttributeName];
+    [mutableLinkAttributes setObject:@(showUnderline) forKey:(NSString *)kCTUnderlineStyleAttributeName];
+    [mutableActiveLinkAttributes setObject:@(showUnderline) forKey:(NSString *)kCTUnderlineStyleAttributeName];
+    [mutableInactiveLinkAttributes setObject:@(showUnderline) forKey:(NSString *)kCTUnderlineStyleAttributeName];
     
     [mutableLinkAttributes setObject:linkColor forKey:(NSString *)kCTForegroundColorAttributeName];
     [mutableActiveLinkAttributes setObject:linkColor.withAlpha(0.6) forKey:(NSString *)kCTForegroundColorAttributeName];

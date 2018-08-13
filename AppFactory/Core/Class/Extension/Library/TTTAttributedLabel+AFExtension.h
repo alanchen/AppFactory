@@ -13,6 +13,14 @@
 
 -(void)setText:(NSString *)text linkTexts:(NSArray *)linkTexts links:(NSArray *)links linkColor:(UIColor *)linkColor linkFont:(UIFont *)linkFont;
 
+-(void)setText:(NSString *)text
+     underline:(BOOL)showUnderline
+     linkTexts:(NSArray *)linkTexts
+         links:(NSArray *)links
+     linkColor:(UIColor *)linkColor
+      linkFont:(UIFont *)linkFont;
+
+
 @end
 
 //#pragma mark - TTTAttributedLabelDelegate
