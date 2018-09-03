@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
 	s.dependency "MJExtension", "~> 3.0.13"
 	s.dependency "Aspects", "~> 1.4.1"
 	s.dependency "Masonry", "~> 0.6.4"
-	s.dependency "SVProgressHUD", "~> 2.1.2"
+	s.dependency "SVProgressHUD", "~> 2.2.5"
 	s.dependency "ObjcAssociatedObjectHelpers", "~> 2.0.1"
 	s.dependency "FBSDKCoreKit", "~> 4.31.1"
 	s.dependency "FBSDKLoginKit", "~> 4.31.1"

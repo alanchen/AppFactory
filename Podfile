@@ -15,7 +15,7 @@ pod 'PromiseKit', '~> 4.4.0'
 pod 'MJExtension', '3.0.13'
 pod 'Aspects', '~> 1.4.1'
 pod 'Masonry', '~> 0.6.4'
-pod 'SVProgressHUD', '2.1.2'
+pod 'SVProgressHUD', '2.2.5'
 pod 'ObjcAssociatedObjectHelpers', '2.0.1'
 
 # Analytics Tools & SDK

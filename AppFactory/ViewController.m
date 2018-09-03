@@ -122,6 +122,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    HUD_SHOW;
+    
+    [self bk_performBlock:^(id obj) {
+        HUD_DISMISS;
+    } afterDelay:2.0];
+    return;
 //    [AFAppVersonHelper showAndCheckVersionWithTitle:nil message:nil goTitle:nil nextimeTitle:nil serverBuild:10 serverBuildForced:0 forcedUpdate:^{
 //        
 //    } optionalUpdate:^{

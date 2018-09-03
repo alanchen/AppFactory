@@ -56,20 +56,20 @@ PODS:
   - MJRefresh (3.1.15.3)
   - MWFeedParser (1.0.1):
     - MWFeedParser/FeedParser (= 1.0.1)
-    - MWFeedParser/NSDate+InternetDateTime (= 1.0.1)
-    - MWFeedParser/NSString+HTML (= 1.0.1)
+    - "MWFeedParser/NSDate+InternetDateTime (= 1.0.1)"
+    - "MWFeedParser/NSString+HTML (= 1.0.1)"
   - MWFeedParser/FeedParser (1.0.1):
-    - MWFeedParser/NSDate+InternetDateTime
-    - MWFeedParser/NSString+HTML
-  - MWFeedParser/NSDate+InternetDateTime (1.0.1)
-  - MWFeedParser/NSString+HTML (1.0.1)
+    - "MWFeedParser/NSDate+InternetDateTime"
+    - "MWFeedParser/NSString+HTML"
+  - "MWFeedParser/NSDate+InternetDateTime (1.0.1)"
+  - "MWFeedParser/NSString+HTML (1.0.1)"
   - NSHash (1.2.0)
   - NYXImagesKit (2.3)
   - ObjcAssociatedObjectHelpers (2.0.1):
     - ObjcAssociatedObjectHelpers/Core (= 2.0.1)
-    - ObjcAssociatedObjectHelpers/NSObject+Dictionary (= 2.0.1)
+    - "ObjcAssociatedObjectHelpers/NSObject+Dictionary (= 2.0.1)"
   - ObjcAssociatedObjectHelpers/Core (2.0.1)
-  - ObjcAssociatedObjectHelpers/NSObject+Dictionary (2.0.1):
+  - "ObjcAssociatedObjectHelpers/NSObject+Dictionary (2.0.1)":
     - ObjcAssociatedObjectHelpers/Core
   - PINCache (3.0.1-beta.6):
     - PINCache/Arc-exception-safe (= 3.0.1-beta.6)
@@ -100,7 +100,7 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
-  - SVProgressHUD (2.1.2)
+  - SVProgressHUD (2.2.5)
   - Toaster (2.1.1)
   - TTTAttributedLabel (2.0.0)
   - UIDeviceIdentifier (1.1.1)
@@ -132,12 +132,51 @@ DEPENDENCIES:
   - RMessage (~> 2.1.5)
   - SAMKeychain (~> 1.5.2)
   - SDWebImage (~> 4.0.0)
-  - SVProgressHUD (= 2.1.2)
+  - SVProgressHUD (= 2.2.5)
   - Toaster (~> 2.1.1)
   - TTTAttributedLabel (~> 2.0.0)
   - UIDeviceIdentifier
   - UIImage-Helpers (~> 0.0.3)
   - ViewUtils (~> 1.1.2)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ActionSheetPicker-3.0
+    - AFNetworking
+    - ArrayUtils
+    - Aspects
+    - BlocksKit
+    - Bolts
+    - DACircularProgress
+    - DateTools
+    - EDColor
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - HexColors
+    - hpple
+    - IDMPhotoBrowser
+    - Masonry
+    - MJExtension
+    - MJRefresh
+    - MWFeedParser
+    - NSHash
+    - NYXImagesKit
+    - ObjcAssociatedObjectHelpers
+    - PINCache
+    - PINOperation
+    - pop
+    - PPTopMostController
+    - PromiseKit
+    - ReactiveObjC
+    - RMessage
+    - SAMKeychain
+    - SDWebImage
+    - SVProgressHUD
+    - Toaster
+    - TTTAttributedLabel
+    - UIDeviceIdentifier
+    - UIImage-Helpers
+    - ViewUtils
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
@@ -170,13 +209,13 @@ SPEC CHECKSUMS:
   RMessage: 31d44bd26a8f353f987d2e7194f3e9ffb203cbf2
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
-  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   UIDeviceIdentifier: 9281343882e24460235f00a0d7d2fc04a65688c6
   UIImage-Helpers: 06b04a42bdd222844035602e87e936765c80f620
   ViewUtils: 68e42c708a4b3912e39691cef5080282dc5013fb
 
-PODFILE CHECKSUM: 252fcdc92db04834ad48dabb8d460a22afefb3be
+PODFILE CHECKSUM: b7698ef8842843be1fc2eabc5666cb73a02e868f
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3
