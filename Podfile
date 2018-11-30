@@ -32,7 +32,7 @@ pod 'IDMPhotoBrowser', '~> 1.11.3'
 pod 'TTTAttributedLabel', '~> 2.0.0'
 pod 'ViewUtils', '~> 1.1.2'
 pod 'MJRefresh', '~> 3.1.4'
-pod 'Toaster', '~> 2.1.1'
+pod 'MBProgressHUD', '~> 1.1.0'
 pod 'RMessage', '~> 2.1.5'
 
 # Helper
@@ -58,7 +58,7 @@ end
       target.build_configurations.each do |configuration|
         target.build_settings(configuration.name)['VALID_ARCHS'] = '$(ARCHS_STANDARD)'
         target.build_settings(configuration.name)['ONLY_ACTIVE_ARCH'] = 'NO'
-        configuration.build_settings['SWIFT_VERSION'] = '3.2'
+        configuration.build_settings['SWIFT_VERSION'] = '4.0'
       end
     end
   end

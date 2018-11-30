@@ -10,7 +10,9 @@
 #import <AudioToolbox/AudioServices.h>
 
 @interface ToastMessage ()
-@property (nonatomic,weak) Toast *currentToast;
+@property (nonatomic,weak) MBProgressHUD *currentToast;
+@property (nonatomic) float bottomOffsetPortrait;
+
 @end
 
 @implementation ToastMessage
@@ -21,29 +23,49 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[ToastMessage alloc] init];
-        ToastView.appearance.bottomOffsetPortrait = 90;
+        sharedInstance.bottomOffsetPortrait = 90;
     });
     
     return sharedInstance;
 }
 
-+(void)setBottomOffsetPortrait:(CGFloat)offset
++(void)setBottomOffsetPortrait:(float)offset
 {
-    ToastView.appearance.bottomOffsetPortrait = MAX(offset, 30);
+    [self sharedInstance].bottomOffsetPortrait = MAX(offset, 30);
 }
 
 +(void)show:(NSString *)str
 {
     if(!str)
         return;
+    UIWindow *window = [UIApplication sharedApplication].delegate.window;
+    window = window ? window: [UIApplication sharedApplication].keyWindow;
+
+    ToastMessage *toastInstance = [self sharedInstance];
+    if(toastInstance.currentToast){
+        [toastInstance.currentToast hideAnimated:NO];
+        [toastInstance.currentToast removeFromSuperview];
+        toastInstance.currentToast = nil;
+    }
     
-    [[self sharedInstance].currentToast cancel];
-    [self sharedInstance].currentToast = nil;
+    MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:window];
+    [window addSubview:hud];
+    hud.label.text = str;
+    hud.label.font = [UIFont systemFontOfSize:16];
+    hud.label.numberOfLines = 0;
+    hud.label.textColor = [UIColor whiteColor];
+    hud.bezelView.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.9];
+    hud.contentColor = [UIColor whiteColor];
+
+    float offsetY = window.frame.size.height/2 - toastInstance.bottomOffsetPortrait - hud.margin;
+    hud.offset = CGPointMake(hud.offset.x, offsetY);
+    hud.userInteractionEnabled = NO;
+    hud.mode = MBProgressHUDModeText;
+    hud.removeFromSuperViewOnHide = YES;
     
-    ToastView.appearance.font = [UIFont systemFontOfSize:16];
-    Toast *t = [[Toast alloc] initWithText:str delay:0.0 duration:2.5];
-    [self sharedInstance].currentToast = t;
-    [t show];
+    [hud showAnimated:YES];
+    [hud hideAnimated:YES afterDelay:2.5];
+    toastInstance.currentToast = hud;
 }
 
 +(void)showWithSound:(NSString *)str

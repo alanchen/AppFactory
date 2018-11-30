@@ -123,12 +123,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    HUD_SHOW;
-    
-    [self bk_performBlock:^(id obj) {
-        HUD_DISMISS;
-    } afterDelay:2.0];
-    return;
+//    HUD_SHOW;
+//
+//    [self bk_performBlock:^(id obj) {
+//        HUD_DISMISS;
+//    } afterDelay:2.0];
+//    return;
 //    [AFAppVersonHelper showAndCheckVersionWithTitle:nil message:nil goTitle:nil nextimeTitle:nil serverBuild:10 serverBuildForced:0 forcedUpdate:^{
 //        
 //    } optionalUpdate:^{
@@ -142,7 +142,13 @@
     
 //    [self.tableView normalReloadLaunched];
     
-//    ToastShow(@"123\nwefoiewf\nfiewhfohewiufu idhfpiuqewhf\n");
+//    if(arc4random()%2){
+//        ToastShow(@"123\nwefoiewf\nfiewhfohewiufu idhfpiuqewhf");
+//    }else{
+//        ToastShow(@"123f");
+//    }
+//    return;
+    
 //    WKWebViewController *vc =
 //    [WebControllerHelper showWebViewWithURLStr:@"http://ckclouds.com/api/meta/service" onViewController:self];
 //    vc.cancelBlock = ^{
@@ -234,7 +240,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AFBaseTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"123"];
-    cell.textLabel.text = INT2STR(arc4random()%999);
+    NSInteger r = arc4random()%999;
+    cell.textLabel.text = INT2STR(r);
 //    cell.cellHighLightStyle = CellHighLightStyleNone;
     
     return cell;

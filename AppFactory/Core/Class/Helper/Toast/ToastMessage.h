@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-@import Toaster;
+#import <MBProgressHUD/MBProgressHUD.h>
 
 #define ToastShow(str) [ToastMessage show:str]
 #define ToastShowWithSound(str) [ToastMessage showWithSound:str]
 
 @interface ToastMessage : NSObject
-+(void)setBottomOffsetPortrait:(CGFloat)offset; // default is 90
++(void)setBottomOffsetPortrait:(float)offset; // default is 90
 +(void)show:(NSString *)str;
 +(void)showWithSound:(NSString *)str;
 
