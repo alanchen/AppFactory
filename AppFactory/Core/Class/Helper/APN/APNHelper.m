@@ -112,7 +112,7 @@
         }];
     }).catch(^(NSError *err){
         
-    }).always(^(){
+    }).ensure(^(){
         if(completion)
             completion();
     });

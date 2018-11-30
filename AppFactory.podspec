@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 	s.dependency "AFNetworking", "~> 3.0"
 	s.dependency "BlocksKit", "~> 2.2.5"
 	s.dependency "ReactiveObjC", "~> 3.0.0"
-	s.dependency "PromiseKit", "~> 4.4.0"
+	s.dependency "PromiseKit", "~> 6.5.3"
 	s.dependency "MJExtension", "~> 3.0.13"
 	s.dependency "Aspects", "~> 1.4.1"
 	s.dependency "Masonry", "~> 0.6.4"

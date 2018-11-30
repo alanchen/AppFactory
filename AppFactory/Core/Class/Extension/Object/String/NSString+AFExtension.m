@@ -26,7 +26,7 @@
     long long num = llabs(numInt);
     
     if (num < 1000)
-        return [NSString stringWithFormat:@"%@%zd",sign,num];
+        return [NSString stringWithFormat:@"%@%zd",sign,(long)num];
     
     int exp = (int) (log(num) / log(1000));
     

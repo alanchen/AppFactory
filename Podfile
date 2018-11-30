@@ -11,7 +11,7 @@ target "AppFactory" do
 pod 'AFNetworking', '~> 3.0'
 pod 'BlocksKit', '~> 2.2.5'
 pod 'ReactiveObjC', '~> 3.0.0'
-pod 'PromiseKit', '~> 4.4.0'
+pod 'PromiseKit', '~> 6.5.3'
 pod 'MJExtension', '3.0.13'
 pod 'Aspects', '~> 1.4.1'
 pod 'Masonry', '~> 0.6.4'
