@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
 	s.dependency "TTTAttributedLabel", "~> 2.0.0"
 	s.dependency "ViewUtils", "~> 1.1.2"
 	s.dependency "MJRefresh", "~> 3.1.4"
-	s.dependency "Toaster", "~> 2.1.1"
+	s.dependency "MBProgressHUD", "~> 1.1.0"
 	s.dependency "RMessage", "~> 2.1.5"
 	s.dependency "SAMKeychain", "~> 1.5.2"
 	s.dependency "ArrayUtils", "~> 1.3"
