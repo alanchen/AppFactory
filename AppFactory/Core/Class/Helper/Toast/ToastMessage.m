@@ -49,12 +49,14 @@
     }
     
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:window];
+    hud.margin = 12.0;
     [window addSubview:hud];
     hud.label.text = str;
     hud.label.font = [UIFont systemFontOfSize:16];
     hud.label.numberOfLines = 0;
     hud.label.textColor = [UIColor whiteColor];
-    hud.bezelView.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.9];
+    hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+    hud.bezelView.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.7];
     hud.contentColor = [UIColor whiteColor];
 
     float offsetY = window.frame.size.height/2 - toastInstance.bottomOffsetPortrait - hud.margin;
