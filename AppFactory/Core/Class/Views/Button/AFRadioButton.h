@@ -20,6 +20,9 @@
 
 -(void)setOnTitleColor:(UIColor *)onColor offColor:(UIColor *)offColor;
 
+-(void)setOnBgColor:(UIColor *)onColor offBgColor:(UIColor *)offColor;
+
+
 @property (nonatomic) BOOL isON;
 
 @property (nonatomic) BOOL isAutoToggle;
