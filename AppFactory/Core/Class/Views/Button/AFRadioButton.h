@@ -22,6 +22,7 @@
 
 -(void)setOnBgColor:(UIColor *)onColor offBgColor:(UIColor *)offColor;
 
+-(void)setOnBorderColor:(UIColor *)onColor offBorderColor:(UIColor *)offColor;
 
 @property (nonatomic) BOOL isON;
 

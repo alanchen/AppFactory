@@ -26,6 +26,9 @@
 @property (nonatomic,strong) UIColor *onBgColor;
 @property (nonatomic,strong) UIColor *offBgColor;
 
+@property (nonatomic,strong) UIColor *onBorderColor;
+@property (nonatomic,strong) UIColor *offBorderColor;
+
 @end
 
 @implementation AFRadioButton
@@ -92,6 +95,19 @@
     [self updateLayout];
 }
 
+-(void)setOnBorderColor:(UIColor *)onColor offBorderColor:(UIColor *)offColor
+{
+    if(onColor){
+        self.onBorderColor = onColor;
+    }
+    
+    if(offColor){
+        self.offBorderColor = offColor;
+    }
+    
+    [self updateLayout];
+}
+
 -(void)setOnBgColor:(UIColor *)onColor offBgColor:(UIColor *)offColor
 {
     if(onColor){
@@ -145,6 +161,10 @@
         if(self.onBgColor){
             [self setBackgroundColor:self.onBgColor forState:UIControlStateNormal];
         }
+        
+        if(self.onBorderColor){
+            self.layer.borderColor = self.onBorderColor.CGColor;
+        }
     }else{
         if(self.offImageName){
             [self setImage:[UIImage imageNamed:self.offImageName] forState:UIControlStateNormal];
@@ -162,6 +182,10 @@
         
         if(self.offBgColor){
             [self setBackgroundColor:self.offBgColor forState:UIControlStateNormal];
+        }
+        
+        if(self.offBorderColor){
+            self.layer.borderColor = self.offBorderColor.CGColor;
         }
     }
     
