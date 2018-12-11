@@ -14,4 +14,6 @@
 
 -(void)setNormalColor:(UIColor *)normalColor;
 
+-(void)setDisableColor:(UIColor *)disableColor;
+
 @end
