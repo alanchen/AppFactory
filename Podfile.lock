@@ -41,9 +41,9 @@ PODS:
   - DACircularProgress (2.3.1)
   - DateTools (2.0.0)
   - EDColor (1.0.1)
-  - FBSDKCoreKit (4.31.1):
+  - FBSDKCoreKit (4.37.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.31.1):
+  - FBSDKLoginKit (4.37.0):
     - FBSDKCoreKit
   - HexColors (4.0.0)
   - hpple (0.2.0)
@@ -113,8 +113,8 @@ DEPENDENCIES:
   - BlocksKit (~> 2.2.5)
   - DateTools (~> 2.0.0)
   - EDColor (~> 1.0.1)
-  - FBSDKCoreKit (~> 4.31.1)
-  - FBSDKLoginKit (~> 4.31.1)
+  - FBSDKCoreKit (~> 4.37.0)
+  - FBSDKLoginKit (~> 4.37.0)
   - hpple (~> 0.2.0)
   - IDMPhotoBrowser (~> 1.11.3)
   - Masonry (~> 0.6.4)
@@ -186,8 +186,8 @@ SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   EDColor: 91d127cd67d7c1d3862846fb11ef4b3851151bfa
-  FBSDKCoreKit: e08ccfcefa7bc1347a07c276dac9bf6c7fe57024
-  FBSDKLoginKit: 99797ac39252fef6f72600b886f6ee60b4b29cab
+  FBSDKCoreKit: fe5f3474499a81963e11e3f3a5c753d0a95ca2b4
+  FBSDKLoginKit: 2f7249686d1e30ce8a5ef5400eedf50b3e3df332
   HexColors: 5f95843ef89aff6a72e1fd3a8ebabf205cc43379
   hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
   IDMPhotoBrowser: b96159fe4adb991a844068eb17dab9c0b7d7e51a
@@ -214,6 +214,6 @@ SPEC CHECKSUMS:
   UIImage-Helpers: 06b04a42bdd222844035602e87e936765c80f620
   ViewUtils: 68e42c708a4b3912e39691cef5080282dc5013fb
 
-PODFILE CHECKSUM: 3f5caa1274acc6021d8c48c0add07f3ee900c2ec
+PODFILE CHECKSUM: bc99a7b553c2ca0901ebef74ca1db17b7735aac0
 
 COCOAPODS: 1.5.3
