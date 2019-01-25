@@ -24,6 +24,8 @@
 
 -(void)setOnBorderColor:(UIColor *)onColor offBorderColor:(UIColor *)offColor;
 
+-(void)setDisableStyle:(void (^)(AFRadioButton *btn))block;
+
 @property (nonatomic) BOOL isON;
 
 @property (nonatomic) BOOL isAutoToggle;

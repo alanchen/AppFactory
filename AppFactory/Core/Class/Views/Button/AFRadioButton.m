@@ -29,6 +29,8 @@
 @property (nonatomic,strong) UIColor *onBorderColor;
 @property (nonatomic,strong) UIColor *offBorderColor;
 
+@property (nonatomic,copy) void (^disableStyleBlock)(id obj);
+
 @end
 
 @implementation AFRadioButton
@@ -121,9 +123,20 @@
     [self updateLayout];
 }
 
+-(void)setDisableStyle:(void (^)(AFRadioButton *btn))block
+{
+    self.disableStyleBlock = block;
+}
+
 -(void)setIsON:(BOOL)isON
 {
     _isON  = isON;
+    [self updateLayout];
+}
+
+-(void)setEnabled:(BOOL)enabled
+{
+    [super setEnabled:enabled];
     [self updateLayout];
 }
 
@@ -143,6 +156,11 @@
 
 -(void)updateLayout
 {
+    if( !self.enabled && self.disableStyleBlock) {
+        self.disableStyleBlock(self);
+        return;
+    }
+    
     if(_isON){
         if(self.onImageName){
             [self setImage:[UIImage imageNamed:self.onImageName] forState:UIControlStateNormal];

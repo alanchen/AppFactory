@@ -32,11 +32,15 @@
 #import "AFButtonsView.h"
 
 #import "WebControllerHelper.h"
+
+#import "AFRadioButton.h"
 #import "AFAppVersonHelper.h"
 
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource,AFBaseTableViewDelegate>
 
 @property (nonatomic,strong) AFBaseTableView *tableView;
+
+@property (nonatomic,strong) AFRadioButton *btn;
 
 @end
 
@@ -122,6 +126,28 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if(!self.btn){
+         self.btn= [AFRadioButton button];
+        [self.btn setOnBgColor:[UIColor redColor] offBgColor:[UIColor yellowColor]];
+        [self.btn setOnBorderColor:[UIColor blackColor]  offBorderColor:[UIColor blackColor]  ];
+        [self.btn setFrame:CGRectMake(30, 30, 100, 100)];
+        [self.btn setDisableStyle:^(AFRadioButton *btn) {
+            btn.layer.borderColor = [UIColor blueColor].CGColor;
+            btn.layer.borderWidth = 2.0;
+        }];
+        
+        [self.view addSubview:self.btn];
+    }
+    
+    if(indexPath.row == 0){
+        self.btn.isON =YES;
+    }else if(indexPath.row == 1){
+        self.btn.isON = NO;
+    }else{
+        self.btn.enabled = indexPath.row%2;
+    }
+        
+    return;
     
 //    HUD_SHOW;
 //
