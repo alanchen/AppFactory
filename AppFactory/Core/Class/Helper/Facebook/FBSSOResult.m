@@ -35,13 +35,18 @@
     if(self.error)
         return NO;
     
-    if(self.sdkResult.isCancelled || [self.sdkResult.declinedPermissions count])
+    if(self.sdkResult.isCancelled)
         return NO;
     
     if(self.userData)
         return YES;
     
      return NO;
+}
+
+-(BOOL)isDeclinedPermissions
+{
+    return [self.sdkResult.declinedPermissions count]>0;
 }
 
 @end

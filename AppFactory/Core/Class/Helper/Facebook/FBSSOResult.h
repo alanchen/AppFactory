@@ -19,5 +19,6 @@
 +(FBSSOResult *)resultWith:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error;
 -(BOOL)isCancelled;
 -(BOOL)isSuccess;
+-(BOOL)isDeclinedPermissions;
 
 @end
