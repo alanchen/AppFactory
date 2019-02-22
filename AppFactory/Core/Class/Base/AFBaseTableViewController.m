@@ -170,7 +170,7 @@
         return nil;
     
     if(!_tableView){
-        _tableView = [[AFBaseTableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+        _tableView = [[AFBaseTableView alloc] initWithFrame:self.view.frame style:self.tableStyle];
         [_tableView setAllDelegateTo:self];
     }
     

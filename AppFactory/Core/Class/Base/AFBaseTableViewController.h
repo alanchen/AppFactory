@@ -22,6 +22,7 @@
 @property (nonatomic,strong) AFBaseTableView *tableView;
 @property (nonatomic,strong) NSMutableArray *itemList;
 @property (nonatomic) NSInteger loadMoreLimit;
+@property (nonatomic) UITableViewStyle tableStyle; //It only works before [super viewDidLoad]
 
 - (void)launchFirstReload;
 - (void)reloadLaunched;
