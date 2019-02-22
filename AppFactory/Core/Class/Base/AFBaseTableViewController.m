@@ -38,6 +38,10 @@
     return YES;
 }
 
+-(UITableViewStyle)tableStyle{
+    return UITableViewStylePlain;
+}
+
 #pragma mark - Public Method
 
 - (void)launchFirstReload
@@ -170,7 +174,7 @@
         return nil;
     
     if(!_tableView){
-        _tableView = [[AFBaseTableView alloc] initWithFrame:self.view.frame style:self.tableStyle];
+        _tableView = [[AFBaseTableView alloc] initWithFrame:self.view.frame style:[self tableStyle]];
         [_tableView setAllDelegateTo:self];
     }
     
