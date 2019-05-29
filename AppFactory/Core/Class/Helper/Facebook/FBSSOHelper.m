@@ -152,12 +152,13 @@ static NSString *kFBRefreshUserDataDate = @"FB_UPDATE_USER_DATE";
     NSUserDefaultsRemove(kFBRefreshUserDataDate);
     NSUserDefaultsSaved;
     
-    [loginManager logInWithReadPermissions:permissionREAD
-                        fromViewController:nil
-                                   handler:^(FBSDKLoginManagerLoginResult *result, NSError *error)
+    [loginManager logInWithPermissions:permissionREAD
+     //    [loginManager logInWithReadPermissions:permissionREAD
+                    fromViewController:nil
+                               handler:^(FBSDKLoginManagerLoginResult *result, NSError *error)
      {
          FBSSOResult *obj = [FBSSOResult resultWith:result error:error];
-
+         
          if (error || result.isCancelled || [result.declinedPermissions count]) {
              if(complete) complete(obj);
              return ;

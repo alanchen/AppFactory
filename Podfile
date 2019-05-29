@@ -11,7 +11,7 @@ target "AppFactory" do
 pod 'AFNetworking', '~> 3.0'
 pod 'BlocksKit', '~> 2.2.5'
 pod 'ReactiveObjC', '~> 3.0.0'
-pod 'PromiseKit', '~> 6.5.3'
+pod 'PromiseKit', '~> 6.8.4'
 pod 'MJExtension', '3.0.13'
 pod 'Aspects', '~> 1.4.1'
 pod 'Masonry', '~> 0.6.4'
@@ -19,8 +19,8 @@ pod 'SVProgressHUD', '2.2.5'
 pod 'ObjcAssociatedObjectHelpers', '2.0.1'
 
 # Analytics Tools & SDK
-pod 'FBSDKCoreKit', '~> 4.39.1'
-pod 'FBSDKLoginKit', '~> 4.39.1'
+pod 'FBSDKCoreKit', '~> 5.0.1'
+pod 'FBSDKLoginKit', '~> 5.0.1'
 
 # Image & ImageView & ImagePicker
 pod 'SDWebImage', '~> 4.0.0'
