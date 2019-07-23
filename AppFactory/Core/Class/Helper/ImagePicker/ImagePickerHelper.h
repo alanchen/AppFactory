@@ -34,6 +34,16 @@
                                       completion:(void (^)(UIImagePickerController * ,UIImage *)) completion
                                           cancel:(void (^)(UIImagePickerController *)) cancel;
 
+-(UIImagePickerController *)presentCameraPickerOn:(id)vc
+                                         compress:(BOOL)compress
+                                       completion:(void (^)(UIImagePickerController * ,UIImage *))completion
+                                           cancel:(void (^)(UIImagePickerController *)) cancel;
+
+-(UIImagePickerController *)presentAlbumPickerOn:(id)vc
+                                        compress:(BOOL)compress
+                                      completion:(void (^)(UIImagePickerController * ,UIImage *)) completion
+                                          cancel:(void (^)(UIImagePickerController *)) cancel;
+
 
 +(void)checkAuthorizationWithMessage:(NSString *)msg
                           cacnelText:(NSString *)cancelText

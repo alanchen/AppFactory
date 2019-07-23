@@ -83,6 +83,7 @@
 #pragma  mark -
 
 -(UIImagePickerController *)presentCameraPickerOn:(id)vc
+                                         compress:(BOOL)compress
                                        completion:(void (^)(UIImagePickerController * ,UIImage *))completion
                                            cancel:(void (^)(UIImagePickerController *)) cancel
 {
@@ -103,9 +104,13 @@
     }];
     
     [imagePickerController setBk_didFinishPickingMediaBlock:^(UIImagePickerController *ipc, NSDictionary *info) {
-        UIImage *img = [self compressImageFromPickerInfo:info];
-        if(completion)
-            completion(ipc,img);
+        if(compress){
+            UIImage *img = [self compressImageFromPickerInfo:info];
+            if(completion) completion(ipc,img);
+        }else{
+            UIImage *img = [self imageFromPickerInfo:info];
+            if(completion) completion(ipc,img);
+        }
     }];
     
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -116,6 +121,7 @@
 }
 
 -(UIImagePickerController *)presentAlbumPickerOn:(id)vc
+                                        compress:(BOOL)compress
                                       completion:(void (^)(UIImagePickerController * ,UIImage *)) completion
                                           cancel:(void (^)(UIImagePickerController *)) cancel
 {
@@ -135,9 +141,13 @@
     }];
     
     [imagePickerController setBk_didFinishPickingMediaBlock:^(UIImagePickerController *ipc, NSDictionary *info) {
-        UIImage *img = [self compressImageFromPickerInfo:info];
-        if(completion)
-            completion(ipc,img);
+        if(compress){
+            UIImage *img = [self compressImageFromPickerInfo:info];
+            if(completion) completion(ipc,img);
+        }else{
+            UIImage *img = [self imageFromPickerInfo:info];
+            if(completion) completion(ipc,img);
+        }
     }];
     
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -145,6 +155,20 @@
     }];
     
     return imagePickerController;
+}
+
+-(UIImagePickerController *)presentCameraPickerOn:(id)vc
+                                       completion:(void (^)(UIImagePickerController * ,UIImage *))completion
+                                           cancel:(void (^)(UIImagePickerController *)) cancel
+{
+    return [self presentCameraPickerOn:vc compress:YES completion:completion cancel:cancel];
+}
+
+-(UIImagePickerController *)presentAlbumPickerOn:(id)vc
+                                      completion:(void (^)(UIImagePickerController * ,UIImage *)) completion
+                                          cancel:(void (^)(UIImagePickerController *)) cancel
+{
+    return [self presentAlbumPickerOn:vc compress:YES completion:completion cancel:cancel];
 }
 
 +(void)checkAuthorizationWithMessage:(NSString *)msg
@@ -183,13 +207,18 @@
 
 #pragma  mark - Private Method
 
--(UIImage *) compressImageFromPickerInfo:(id)info
+-(UIImage *) imageFromPickerInfo:(id)info
 {
     UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
-    
     if (!image)
         image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
+    return image;
+}
+
+-(UIImage *) compressImageFromPickerInfo:(id)info
+{
+    UIImage *image = [self imageFromPickerInfo:info];
     CGSize maxSize = CGSizeMake(800,800);
     if(image.size.width>maxSize.width || image.size.height>maxSize.height)
         image = [image scaleToSize:maxSize usingMode:NYXResizeModeAspectFit];
