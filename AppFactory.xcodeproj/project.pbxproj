@@ -483,9 +483,7 @@
 		E79A89DA23177CC90049968A /* IDMPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				E79A89DB23177CC90049968A /* IDMPhotoBrowser.bundle */,
 				E79A89DC23177CC90049968A /* IDMCaptionView.h */,
-				E79A89DD23177CC90049968A /* IDMPBLocalizations.bundle */,
 				E79A89DE23177CC90049968A /* IDMZoomingScrollView.h */,
 				E79A89DF23177CC90049968A /* IDMPhoto.h */,
 				E79A89E023177CC90049968A /* IDMPhotoBrowser.h */,
@@ -993,6 +991,8 @@
 		E7F8C1C01F8F1C1600B1E14B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E79A89DB23177CC90049968A /* IDMPhotoBrowser.bundle */,
+				E79A89DD23177CC90049968A /* IDMPBLocalizations.bundle */,
 				E7C20AD51F906A16004B70E0 /* CTFeedback.bundle */,
 				E7F8C1C11F8F1C1600B1E14B /* AppFactory.bundle */,
 			);
