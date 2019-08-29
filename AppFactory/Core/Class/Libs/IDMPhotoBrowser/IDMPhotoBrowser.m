@@ -39,10 +39,9 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
     
     dispatch_once(&predicate, ^{
         NSBundle *classBundle = [NSBundle bundleForClass:[IDMPhotoBrowser class]];
-        NSURL *bundleURL = [classBundle URLForResource:@"IDMPBLocalizations" withExtension:@"bundle"];
         
-        if (bundleURL) {
-            bundle = [NSBundle bundleWithURL:bundleURL];
+        if (classBundle) {
+            bundle = classBundle;
         } else {
             bundle = [NSBundle mainBundle];
         }
