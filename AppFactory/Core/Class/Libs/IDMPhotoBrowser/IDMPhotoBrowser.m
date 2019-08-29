@@ -12,11 +12,46 @@
 #import "IDMUtils.h"
 
 #import "pop/POP.h"
-
+/*
 #ifndef IDMPhotoBrowserLocalizedStrings
 #define IDMPhotoBrowserLocalizedStrings(key) \
 NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBundle bundleForClass: [IDMPhotoBrowser class]] pathForResource:@"IDMPBLocalizations" ofType:@"bundle"]], nil)
 #endif
+ */
+
+#ifndef IDMPhotoBrowserLocalizedStrings
+#define IDMPhotoBrowserLocalizedStrings(key) \
+[[NSBundle idmBundle] localizedStringForKey:key value:nil table:@"Localizable"]
+#endif
+
+@interface NSBundle (IDMPhotoBroswer)
+
++ (NSBundle *)idmBundle;
+
+@end
+
+@implementation NSBundle (IDMPhotoBroswer)
+
++ (NSBundle *)idmBundle
+{
+    static NSBundle *bundle = nil;
+    static dispatch_once_t predicate;
+    
+    dispatch_once(&predicate, ^{
+        NSBundle *classBundle = [NSBundle bundleForClass:[IDMPhotoBrowser class]];
+        NSURL *bundleURL = [classBundle URLForResource:@"IDMPBLocalizations" withExtension:@"bundle"];
+        
+        if (bundleURL) {
+            bundle = [NSBundle bundleWithURL:bundleURL];
+        } else {
+            bundle = [NSBundle mainBundle];
+        }
+    });
+    
+    return bundle;
+}
+
+@end
 
 // Private
 @interface IDMPhotoBrowser () {
