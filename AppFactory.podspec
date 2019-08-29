@@ -28,10 +28,11 @@ Pod::Spec.new do |s|
 	s.dependency "ObjcAssociatedObjectHelpers", "~> 2.0.1"
 	s.dependency "FBSDKCoreKit", "~> 5.0.1"
 	s.dependency "FBSDKLoginKit", "~> 5.0.1"
-	s.dependency "SDWebImage", "~> 4.0.0"
+	s.dependency "SDWebImage", "~> 5.0"
 	s.dependency "NYXImagesKit", "~> 2.3"
 	s.dependency "UIImage-Helpers", "~> 0.0.3"
-	s.dependency "IDMPhotoBrowser", "~> 1.11.3"
+#	s.dependency "IDMPhotoBrowser", "~> 1.11.3"
+	s.dependency "IDMPhotoBrowser", :git => 'https://github.com/thiagoperes/IDMPhotoBrowser.git', :branch => 'master'
 	s.dependency "TTTAttributedLabel", "~> 2.0.0"
 	s.dependency "ViewUtils", "~> 1.1.2"
 	s.dependency "MJRefresh", "~> 3.1.4"
@@ -40,12 +41,12 @@ Pod::Spec.new do |s|
 	s.dependency "SAMKeychain", "~> 1.5.2"
 	s.dependency "ArrayUtils", "~> 1.3"
 	s.dependency "NSHash", "~> 1.2.0"
-    s.dependency "MWFeedParser", "~> 1.0.1"
+	s.dependency "MWFeedParser", "~> 1.0.1"
 	s.dependency "ActionSheetPicker-3.0", "~> 2.2.0"
 	s.dependency "DateTools", "~> 2.0.0"
 	s.dependency "hpple", "~> 0.2.0"
 	s.dependency "PINCache", "~> 3.0.1-beta.5"
-    s.dependency "EDColor", "~> 1.0.1"
+	s.dependency "EDColor", "~> 1.0.1"
 	s.dependency "UIDeviceIdentifier"
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

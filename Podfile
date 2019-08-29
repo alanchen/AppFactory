@@ -23,10 +23,11 @@ pod 'FBSDKCoreKit', '~> 5.0.1'
 pod 'FBSDKLoginKit', '~> 5.0.1'
 
 # Image & ImageView & ImagePicker
-pod 'SDWebImage', '~> 4.0.0'
+pod 'SDWebImage', '~> 5.0'
 pod 'NYXImagesKit', '~> 2.3'
 pod 'UIImage-Helpers', '~> 0.0.3'
-pod 'IDMPhotoBrowser', '~> 1.11.3'
+#pod 'IDMPhotoBrowser', '~> 1.11.3'
+pod 'IDMPhotoBrowser', :git => 'https://github.com/thiagoperes/IDMPhotoBrowser.git', :branch => 'master'
 
 # View
 pod 'TTTAttributedLabel', '~> 2.0.0'
