@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <IDMPhotoBrowser/IDMPhotoBrowser.h>
+#import "IDMPhotoBrowser.h"
 
 @interface IDMPhotoBrowser(AFExtension)
 

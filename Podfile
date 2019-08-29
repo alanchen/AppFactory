@@ -26,8 +26,6 @@ pod 'FBSDKLoginKit', '~> 5.0.1'
 pod 'SDWebImage', '~> 5.0'
 pod 'NYXImagesKit', '~> 2.3'
 pod 'UIImage-Helpers', '~> 0.0.3'
-#pod 'IDMPhotoBrowser', '~> 1.11.3'
-pod 'IDMPhotoBrowser', :git => 'https://github.com/thiagoperes/IDMPhotoBrowser.git', :branch => 'master'
 
 # View
 pod 'TTTAttributedLabel', '~> 2.0.0'
@@ -47,6 +45,8 @@ pod 'hpple', '~> 0.2.0'
 pod 'PINCache', '~> 3.0.1-beta.5'
 pod 'EDColor', '~> 1.0.1'
 pod 'UIDeviceIdentifier'
+pod 'DACircularProgress'
+pod 'pop'
 
 end
 

@@ -31,8 +31,6 @@ Pod::Spec.new do |s|
 	s.dependency "SDWebImage", "~> 5.0"
 	s.dependency "NYXImagesKit", "~> 2.3"
 	s.dependency "UIImage-Helpers", "~> 0.0.3"
-#	s.dependency "IDMPhotoBrowser", "~> 1.11.3"
-	s.dependency "IDMPhotoBrowser", :git => 'https://github.com/thiagoperes/IDMPhotoBrowser.git', :branch => 'master'
 	s.dependency "TTTAttributedLabel", "~> 2.0.0"
 	s.dependency "ViewUtils", "~> 1.1.2"
 	s.dependency "MJRefresh", "~> 3.1.4"
@@ -48,6 +46,8 @@ Pod::Spec.new do |s|
 	s.dependency "PINCache", "~> 3.0.1-beta.5"
 	s.dependency "EDColor", "~> 1.0.1"
 	s.dependency "UIDeviceIdentifier"
+	s.dependency "DACircularProgress"
+	s.dependency "pop"
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #

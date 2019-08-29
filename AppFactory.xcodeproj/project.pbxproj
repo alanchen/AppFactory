@@ -28,6 +28,15 @@
 		E7905D511F7A32E4006CC6F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7905D501F7A32E4006CC6F5 /* Assets.xcassets */; };
 		E7905D571F7A32E4006CC6F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7905D561F7A32E4006CC6F5 /* main.m */; };
 		E7905D5E1F7A350A006CC6F5 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7905D5D1F7A350A006CC6F5 /* Launch Screen.storyboard */; };
+		E79A89ED23177CC90049968A /* IDMPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E79A89DB23177CC90049968A /* IDMPhotoBrowser.bundle */; };
+		E79A89EE23177CC90049968A /* IDMPBLocalizations.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E79A89DD23177CC90049968A /* IDMPBLocalizations.bundle */; };
+		E79A89EF23177CC90049968A /* IDMTapDetectingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E79A89E123177CC90049968A /* IDMTapDetectingImageView.m */; };
+		E79A89F023177CC90049968A /* IDMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E79A89E223177CC90049968A /* IDMUtils.m */; };
+		E79A89F123177CC90049968A /* IDMCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E79A89E423177CC90049968A /* IDMCaptionView.m */; };
+		E79A89F223177CC90049968A /* IDMPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = E79A89E523177CC90049968A /* IDMPhoto.m */; };
+		E79A89F323177CC90049968A /* IDMZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E79A89E623177CC90049968A /* IDMZoomingScrollView.m */; };
+		E79A89F423177CC90049968A /* IDMPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = E79A89E823177CC90049968A /* IDMPhotoBrowser.m */; };
+		E79A89F523177CC90049968A /* IDMTapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E79A89EA23177CC90049968A /* IDMTapDetectingView.m */; };
 		E7AF70C21FB0350C0040904F /* AFRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AF70C11FB0350C0040904F /* AFRefreshFooter.m */; };
 		E7AF70C51FB036810040904F /* AFRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AF70C41FB036810040904F /* AFRefreshHeader.m */; };
 		E7C20AD61F906A16004B70E0 /* CTFeedback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7C20AD51F906A16004B70E0 /* CTFeedback.bundle */; };
@@ -152,6 +161,24 @@
 		E7905D561F7A32E4006CC6F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E7905D5D1F7A350A006CC6F5 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E7905D631F7A5ACB006CC6F5 /* AppFactory-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppFactory-Prefix.pch"; sourceTree = "<group>"; };
+		E79A89DB23177CC90049968A /* IDMPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IDMPhotoBrowser.bundle; sourceTree = "<group>"; };
+		E79A89DC23177CC90049968A /* IDMCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMCaptionView.h; sourceTree = "<group>"; };
+		E79A89DD23177CC90049968A /* IDMPBLocalizations.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IDMPBLocalizations.bundle; sourceTree = "<group>"; };
+		E79A89DE23177CC90049968A /* IDMZoomingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMZoomingScrollView.h; sourceTree = "<group>"; };
+		E79A89DF23177CC90049968A /* IDMPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMPhoto.h; sourceTree = "<group>"; };
+		E79A89E023177CC90049968A /* IDMPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMPhotoBrowser.h; sourceTree = "<group>"; };
+		E79A89E123177CC90049968A /* IDMTapDetectingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMTapDetectingImageView.m; sourceTree = "<group>"; };
+		E79A89E223177CC90049968A /* IDMUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMUtils.m; sourceTree = "<group>"; };
+		E79A89E323177CC90049968A /* IDMTapDetectingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMTapDetectingView.h; sourceTree = "<group>"; };
+		E79A89E423177CC90049968A /* IDMCaptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMCaptionView.m; sourceTree = "<group>"; };
+		E79A89E523177CC90049968A /* IDMPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMPhoto.m; sourceTree = "<group>"; };
+		E79A89E623177CC90049968A /* IDMZoomingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMZoomingScrollView.m; sourceTree = "<group>"; };
+		E79A89E723177CC90049968A /* IDMPhotoProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMPhotoProtocol.h; sourceTree = "<group>"; };
+		E79A89E823177CC90049968A /* IDMPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMPhotoBrowser.m; sourceTree = "<group>"; };
+		E79A89E923177CC90049968A /* IDMPBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMPBConstants.h; sourceTree = "<group>"; };
+		E79A89EA23177CC90049968A /* IDMTapDetectingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMTapDetectingView.m; sourceTree = "<group>"; };
+		E79A89EB23177CC90049968A /* IDMUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMUtils.h; sourceTree = "<group>"; };
+		E79A89EC23177CC90049968A /* IDMTapDetectingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMTapDetectingImageView.h; sourceTree = "<group>"; };
 		E7AD2E321F8DA8EA00F8E58A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7AF70C01FB0350C0040904F /* AFRefreshFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFRefreshFooter.h; sourceTree = "<group>"; };
 		E7AF70C11FB0350C0040904F /* AFRefreshFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFRefreshFooter.m; sourceTree = "<group>"; };
@@ -445,6 +472,39 @@
 			path = AppFactory;
 			sourceTree = "<group>";
 		};
+		E79A89D923177CC90049968A /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				E79A89DA23177CC90049968A /* IDMPhotoBrowser */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		E79A89DA23177CC90049968A /* IDMPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				E79A89DB23177CC90049968A /* IDMPhotoBrowser.bundle */,
+				E79A89DC23177CC90049968A /* IDMCaptionView.h */,
+				E79A89DD23177CC90049968A /* IDMPBLocalizations.bundle */,
+				E79A89DE23177CC90049968A /* IDMZoomingScrollView.h */,
+				E79A89DF23177CC90049968A /* IDMPhoto.h */,
+				E79A89E023177CC90049968A /* IDMPhotoBrowser.h */,
+				E79A89E123177CC90049968A /* IDMTapDetectingImageView.m */,
+				E79A89E223177CC90049968A /* IDMUtils.m */,
+				E79A89E323177CC90049968A /* IDMTapDetectingView.h */,
+				E79A89E423177CC90049968A /* IDMCaptionView.m */,
+				E79A89E523177CC90049968A /* IDMPhoto.m */,
+				E79A89E623177CC90049968A /* IDMZoomingScrollView.m */,
+				E79A89E723177CC90049968A /* IDMPhotoProtocol.h */,
+				E79A89E823177CC90049968A /* IDMPhotoBrowser.m */,
+				E79A89E923177CC90049968A /* IDMPBConstants.h */,
+				E79A89EA23177CC90049968A /* IDMTapDetectingView.m */,
+				E79A89EB23177CC90049968A /* IDMUtils.h */,
+				E79A89EC23177CC90049968A /* IDMTapDetectingImageView.h */,
+			);
+			path = IDMPhotoBrowser;
+			sourceTree = "<group>";
+		};
 		E7AD2E311F8DA8EA00F8E58A /* bundle */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,6 +537,7 @@
 		E7F8C0F31F8F1C1600B1E14B /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				E79A89D923177CC90049968A /* Libs */,
 				E7F8C0F41F8F1C1600B1E14B /* API */,
 				E7F8C0FD1F8F1C1600B1E14B /* Base */,
 				E7F8C10B1F8F1C1600B1E14B /* Extension */,
@@ -1009,8 +1070,10 @@
 			files = (
 				E7C20AD61F906A16004B70E0 /* CTFeedback.bundle in Resources */,
 				E7905D5E1F7A350A006CC6F5 /* Launch Screen.storyboard in Resources */,
+				E79A89ED23177CC90049968A /* IDMPhotoBrowser.bundle in Resources */,
 				E7905D511F7A32E4006CC6F5 /* Assets.xcassets in Resources */,
 				E7F8C20E1F8F1C1600B1E14B /* AppFactory.bundle in Resources */,
+				E79A89EE23177CC90049968A /* IDMPBLocalizations.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1053,7 +1116,6 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework",
-				"${BUILT_PRODUCTS_DIR}/IDMPhotoBrowser/IDMPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
@@ -1091,7 +1153,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HexColors.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IDMPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
@@ -1130,6 +1191,7 @@
 			files = (
 				E78E60051FA08CAD00EA022E /* ScrollableSegmentedControl.m in Sources */,
 				E7074E59200853680030D946 /* UITextView+Placeholder.m in Sources */,
+				E79A89EF23177CC90049968A /* IDMTapDetectingImageView.m in Sources */,
 				E7F8C1C31F8F1C1600B1E14B /* AFApiResponse.m in Sources */,
 				E7F8C2051F8F1C1600B1E14B /* KeyChainWrapper.m in Sources */,
 				E7F8C2021F8F1C1600B1E14B /* HTMLParser.m in Sources */,
@@ -1142,6 +1204,7 @@
 				E7F8C1DA1F8F1C1600B1E14B /* UIButton+AFExtension.m in Sources */,
 				E7F8C1F11F8F1C1600B1E14B /* APNHelper.m in Sources */,
 				E7F8C1E71F8F1C1600B1E14B /* UIView+AFBorder.m in Sources */,
+				E79A89F123177CC90049968A /* IDMCaptionView.m in Sources */,
 				E7F8C1E91F8F1C1600B1E14B /* UIView+AFSubView.m in Sources */,
 				E7F8C1E21F8F1C1600B1E14B /* UITableViewCell+AFExtension.m in Sources */,
 				E7F8C2041F8F1C1600B1E14B /* ImagePickerHelper.m in Sources */,
@@ -1152,6 +1215,7 @@
 				E7F8C1FD1F8F1C1600B1E14B /* CTFeedbackTopicsViewController.m in Sources */,
 				E7F8C1E11F8F1C1600B1E14B /* UITableView+AFExtension.m in Sources */,
 				E7F8C1EB1F8F1C1600B1E14B /* UIAlertController+AFExtension.m in Sources */,
+				E79A89F323177CC90049968A /* IDMZoomingScrollView.m in Sources */,
 				E78E60091FA08F6600EA022E /* NotificationNumberView.m in Sources */,
 				E741BEF61F9ED49500FE41C4 /* AFGhostButton.m in Sources */,
 				E7F8C1D01F8F1C1600B1E14B /* NSMutableDictionary+AFExtension.m in Sources */,
@@ -1170,11 +1234,13 @@
 				E7F8C1C61F8F1C1600B1E14B /* APICategories.m in Sources */,
 				E7F8C1D61F8F1C1600B1E14B /* NSString+AFExtension.m in Sources */,
 				E70DE2D0202AA920006DDD1E /* TabBarViewController.m in Sources */,
+				E79A89F523177CC90049968A /* IDMTapDetectingView.m in Sources */,
 				E7F8C1C21F8F1C1600B1E14B /* AppFactory.m in Sources */,
 				E7F8C1E01F8F1C1600B1E14B /* UIScrollView+AFRefresh.m in Sources */,
 				E7074E5C200853830030D946 /* UITextView+AFExtension.m in Sources */,
 				E7F8C1C71F8F1C1600B1E14B /* AFBaseNavigationController.m in Sources */,
 				E7AF70C21FB0350C0040904F /* AFRefreshFooter.m in Sources */,
+				E79A89F023177CC90049968A /* IDMUtils.m in Sources */,
 				E7F8C1CA1F8F1C1600B1E14B /* AFBaseTableCell.m in Sources */,
 				E7F8C1DB1F8F1C1600B1E14B /* UIButton+ExpandHitArea.m in Sources */,
 				E7F8C2011F8F1C1600B1E14B /* FeedbackHelper.m in Sources */,
@@ -1184,6 +1250,7 @@
 				E7F8C1DD1F8F1C1600B1E14B /* UIImageView+AFExtension.m in Sources */,
 				E7F8C1D51F8F1C1600B1E14B /* NSMutableAttributedString+AFExtension.m in Sources */,
 				E7F8C1E31F8F1C1600B1E14B /* UIApplication+AFExtension.m in Sources */,
+				E79A89F423177CC90049968A /* IDMPhotoBrowser.m in Sources */,
 				E7905D571F7A32E4006CC6F5 /* main.m in Sources */,
 				E722EB701F9C7ECD0027CC05 /* TTTAttributedLabel+AFExtension.m in Sources */,
 				E7F8C1EE1F8F1C1600B1E14B /* UINavigationController+AFExtension.m in Sources */,
@@ -1204,6 +1271,7 @@
 				E7F8C1F71F8F1C1600B1E14B /* CountryCodePicker.m in Sources */,
 				E7F8C2091F8F1C1600B1E14B /* ToastMessage.m in Sources */,
 				E7F8C1D81F8F1C1600B1E14B /* NSString+AFTimeExtension.m in Sources */,
+				E79A89F223177CC90049968A /* IDMPhoto.m in Sources */,
 				E7F8C1EF1F8F1C1600B1E14B /* UITabBarController+AFExtension.m in Sources */,
 				E7F8C1DF1F8F1C1600B1E14B /* UIScrollView+AFExtension.m in Sources */,
 				E7F8C1C91F8F1C1600B1E14B /* AFBaseViewController.m in Sources */,
