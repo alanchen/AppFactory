@@ -33,6 +33,8 @@ pod 'ViewUtils', '~> 1.1.2'
 pod 'MJRefresh', '~> 3.1.4'
 pod 'MBProgressHUD', '~> 1.1.0'
 pod 'RMessage', '~> 2.1.5'
+pod 'DACircularProgress'
+pod 'pop'
 
 # Helper
 pod 'SAMKeychain', '~> 1.5.2'

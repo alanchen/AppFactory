@@ -158,9 +158,13 @@
     IDMPhoto *p = (IDMPhoto*)self.photo;
 
     if ([photo.photoURL.absoluteString isEqualToString:p.photoURL.absoluteString]) {
-        if (_progressView.progress < progress) {
-            [_progressView setProgress:progress animated:YES];
-        }
+        __weak DACircularProgressView *weakProgressView = _progressView;
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (weakProgressView.progress < progress) {
+                [weakProgressView setProgress:progress animated:YES];
+            }
+        });
     }
 }
 
