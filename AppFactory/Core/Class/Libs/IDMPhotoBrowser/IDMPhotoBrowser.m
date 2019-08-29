@@ -960,7 +960,9 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
 		if ([photo underlyingImage]) {
 			return [photo underlyingImage];
 		} else {
-            [photo loadUnderlyingImageAndNotify];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [photo loadUnderlyingImageAndNotify];
+            });
             if ([photo respondsToSelector:@selector(placeholderImage)]) {
                 return [photo placeholderImage];
             }
@@ -980,7 +982,10 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
                 // Preload index - 1
                 id <IDMPhoto> photo = [self photoAtIndex:pageIndex-1];
                 if (![photo underlyingImage]) {
-                    [photo loadUnderlyingImageAndNotify];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [photo loadUnderlyingImageAndNotify];
+                    });
+
                     IDMLog(@"Pre-loading image at index %i", pageIndex-1);
                 }
             }
@@ -988,7 +993,9 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
                 // Preload index + 1
                 id <IDMPhoto> photo = [self photoAtIndex:pageIndex+1];
                 if (![photo underlyingImage]) {
-                    [photo loadUnderlyingImageAndNotify];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [photo loadUnderlyingImageAndNotify];
+                    });
                     IDMLog(@"Pre-loading image at index %i", pageIndex+1);
                 }
             }
