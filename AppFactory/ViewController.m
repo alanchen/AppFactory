@@ -199,7 +199,9 @@
 //    }
 //    return;
     
-     NSString *str =@"http://ckclouds.com/api/meta/service";
+//     NSString *str =@"http://ckclouds.com/api/meta/service";
+    NSString *str =@"https://m.bilibili.com/video/av20644256.html?p=1";
+
 //    NSString *str = @"https://apps.apple.com/tw/app/%E5%85%A8%E6%B0%91party-%E5%9C%A8%E7%B7%9A%E5%8D%A1%E6%8B%89ok%E8%A6%96%E8%A8%8A%E4%BA%A4%E5%8F%8B%E8%BB%9F%E9%AB%94/id1112801526";
     WKWebViewController *vc =
     [WebControllerHelper showWebViewWithURLStr:str onViewController:self];

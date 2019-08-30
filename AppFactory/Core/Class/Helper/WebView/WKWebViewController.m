@@ -95,7 +95,6 @@
     else if (url.scheme && ![url.scheme hasPrefix:@"http"]) {
         [[UIApplication sharedApplication] openURL:url];
         decisionHandler(WKNavigationActionPolicyCancel);
-        [self dismissViewControllerAnimated:YES completion:nil];
         return;
     }
     
