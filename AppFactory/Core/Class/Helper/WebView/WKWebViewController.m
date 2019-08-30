@@ -30,6 +30,7 @@
     self = [super init];
     if (self) {
         self.webView = [[WKWebView alloc] initWithFrame:CGRectZero];
+        self.webView.navigationDelegate = self;
     }
     
     return self;
@@ -76,6 +77,29 @@
 {
     [self.webView removeObserver:self forKeyPath:@"title"];
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
+}
+
+#pragma mark - WKNavigationDelegate
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    
+    NSURL *url = navigationAction.request.URL;
+    
+    if ([url.scheme hasPrefix:@"itms-appss"]) {
+        [[UIApplication sharedApplication] openURL:url];
+        decisionHandler(WKNavigationActionPolicyCancel);
+        [self dismissViewControllerAnimated:YES completion:nil];
+        return;
+    }
+    // Protocol/URL-Scheme without http(s)
+    else if (url.scheme && ![url.scheme hasPrefix:@"http"]) {
+        [[UIApplication sharedApplication] openURL:url];
+        decisionHandler(WKNavigationActionPolicyCancel);
+        [self dismissViewControllerAnimated:YES completion:nil];
+        return;
+    }
+    
+    decisionHandler(WKNavigationActionPolicyAllow);
 }
 
 #pragma mark - Actions

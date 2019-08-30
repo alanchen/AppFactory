@@ -36,6 +36,9 @@
 #import "AFRadioButton.h"
 #import "AFAppVersonHelper.h"
 
+
+#import "IDMPhotoBrowser+AFExtension.h"
+
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource,AFBaseTableViewDelegate>
 
 @property (nonatomic,strong) AFBaseTableView *tableView;
@@ -126,28 +129,49 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(!self.btn){
-         self.btn= [AFRadioButton button];
-        [self.btn setOnBgColor:[UIColor redColor] offBgColor:[UIColor yellowColor]];
-        [self.btn setOnBorderColor:[UIColor blackColor]  offBorderColor:[UIColor blackColor]  ];
-        [self.btn setFrame:CGRectMake(30, 30, 100, 100)];
-        [self.btn setDisableStyle:^(AFRadioButton *btn) {
-            btn.layer.borderColor = [UIColor blueColor].CGColor;
-            btn.layer.borderWidth = 2.0;
-        }];
-        
-        [self.view addSubview:self.btn];
-    }
-    
-    if(indexPath.row == 0){
-        self.btn.isON =YES;
-    }else if(indexPath.row == 1){
-        self.btn.isON = NO;
-    }else{
-        self.btn.enabled = indexPath.row%2;
-    }
-        
-    return;
+//    [[SDImageCache sharedImageCache] clearMemory];
+//    [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
+//
+//    UIImageView *imgV = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 100, 100)];
+//    [self.view addSubview:imgV];
+//    NSArray *arr = @[@"https://d1x7gx748css2y.cloudfront.net/201908/image_5d4dd1fb592e0.jpeg",
+//                     @"https://d1x7gx748css2y.cloudfront.net/201907/image_5d3dad8887ae7.jpeg",
+//                     @"https://d1x7gx748css2y.cloudfront.net/201908/image_5d4e94fa0784f.jpeg",
+//                     @"https://d1x7gx748css2y.cloudfront.net/201908/image_5d63d102bd117.jpeg",
+//                     @"https://d1x7gx748css2y.cloudfront.net/201908/image_5d64f4663ef31.jpeg",
+//                     @"https://d1x7gx748css2y.cloudfront.net/201908/image_5d64f4669f7a9.jpeg",
+//                     @"https://d1x7gx748css2y.cloudfront.net/201908/image_5d64f61001ec6.jpeg",
+//                     @"https://d1x7gx748css2y.cloudfront.net/201908/image_5d64ed02d63e3.jpeg",
+//                     @"https://d1x7gx748css2y.cloudfront.net/201908/image_5d64e281507d3.jpeg",
+//                     @"https://d1x7gx748css2y.cloudfront.net/201908/image_5d65ec80ae4e7.jpeg"];
+//
+//    IDMPhotoBrowser *browser = [IDMPhotoBrowser createBrowserWithUrls:arr fromImageView:imgV index:0];
+//    [self presentViewController:browser animated:YES completion:nil];
+//    return;
+//
+//
+//    if(!self.btn){
+//         self.btn= [AFRadioButton button];
+//        [self.btn setOnBgColor:[UIColor redColor] offBgColor:[UIColor yellowColor]];
+//        [self.btn setOnBorderColor:[UIColor blackColor]  offBorderColor:[UIColor blackColor]  ];
+//        [self.btn setFrame:CGRectMake(30, 30, 100, 100)];
+//        [self.btn setDisableStyle:^(AFRadioButton *btn) {
+//            btn.layer.borderColor = [UIColor blueColor].CGColor;
+//            btn.layer.borderWidth = 2.0;
+//        }];
+//
+//        [self.view addSubview:self.btn];
+//    }
+//
+//    if(indexPath.row == 0){
+//        self.btn.isON =YES;
+//    }else if(indexPath.row == 1){
+//        self.btn.isON = NO;
+//    }else{
+//        self.btn.enabled = indexPath.row%2;
+//    }
+//
+//    return;
     
 //    HUD_SHOW;
 //
@@ -175,11 +199,14 @@
 //    }
 //    return;
     
-//    WKWebViewController *vc =
-//    [WebControllerHelper showWebViewWithURLStr:@"http://ckclouds.com/api/meta/service" onViewController:self];
-//    vc.cancelBlock = ^{
-//        NSLog(@"ccccc");
-//    };
+     NSString *str =@"http://ckclouds.com/api/meta/service";
+//    NSString *str = @"https://apps.apple.com/tw/app/%E5%85%A8%E6%B0%91party-%E5%9C%A8%E7%B7%9A%E5%8D%A1%E6%8B%89ok%E8%A6%96%E8%A8%8A%E4%BA%A4%E5%8F%8B%E8%BB%9F%E9%AB%94/id1112801526";
+    WKWebViewController *vc =
+    [WebControllerHelper showWebViewWithURLStr:str onViewController:self];
+    vc.cancelBlock = ^{
+        NSLog(@"ccccc");
+    };
+    return;
     
 //    [self.tableView endHeaderRefreshing];
 //    [self.tableView endFooterRefreshingWithNoMoreData];
