@@ -86,11 +86,11 @@
         placeholder = nil;
     }
     
-    NSString *key = [[SDWebImageManager sharedManager] cacheKeyForURL:[NSURL URLWithString:url]];
-    UIImage *lastPreviousCachedImage = [[SDImageCache sharedImageCache] imageFromCacheForKey:key];
+//    NSString *key = [[SDWebImageManager sharedManager] cacheKeyForURL:[NSURL URLWithString:url]];
+//    UIImage *lastPreviousCachedImage = [[SDImageCache sharedImageCache] imageFromCacheForKey:key];
     
     [self sd_setImageWithURL:[NSURL URLWithString:url]
-            placeholderImage:lastPreviousCachedImage ?: placeholder
+            placeholderImage:placeholder
                      options:SDWebImageRetryFailed
                     progress:nil
                    completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
