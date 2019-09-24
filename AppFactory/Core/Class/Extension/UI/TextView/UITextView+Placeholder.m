@@ -59,7 +59,11 @@
     dispatch_once(&onceToken, ^{
         UITextField *textField = [[UITextField alloc] init];
         textField.placeholder = @" ";
-        color = [textField valueForKeyPath:@"_placeholderLabel.textColor"];
+        if (@available(iOS 13.0, *)) {
+            color = [UIColor colorWithRed:0 green:0 blue:0.0980392 alpha:0.22];
+        }else{
+            color = [textField valueForKeyPath:@"_placeholderLabel.textColor"];
+        }
     });
     return color;
 }
