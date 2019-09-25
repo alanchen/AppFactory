@@ -95,6 +95,7 @@
     }
     
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.modalPresentationStyle = UIModalPresentationFullScreen;
     imagePickerController.sourceType =  UIImagePickerControllerSourceTypeCamera;
     imagePickerController.allowsEditing = NO;
     
@@ -132,6 +133,7 @@
     }
     
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.modalPresentationStyle = UIModalPresentationFullScreen;
     imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
     imagePickerController.allowsEditing = NO;
     

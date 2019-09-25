@@ -50,6 +50,7 @@
     [FeedbackHelper sharedInstance].finishedBlock = block;
     
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:feedbackViewController];
+    navi.modalPresentationStyle = UIModalPresentationFullScreen;
     [viewController presentViewController:navi animated:YES completion:nil];
     
     return feedbackViewController;

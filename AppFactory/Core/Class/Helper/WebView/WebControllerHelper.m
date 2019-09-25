@@ -36,6 +36,7 @@
     SFSafariViewController *safariViewController = [[SFSafariViewController alloc] initWithURL:url];
     safariViewController.delegate = nil;
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:safariViewController];
+    navigationController.modalPresentationStyle = UIModalPresentationFullScreen;
     [navigationController setNavigationBarHidden:YES animated:NO];
     [vc presentViewController:navigationController animated:YES completion:nil];
 }
@@ -55,6 +56,7 @@
     
     WKWebViewController *webVC = [WKWebViewController createWithURL:url];
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:webVC];
+    navigationController.modalPresentationStyle = UIModalPresentationFullScreen;
     [vc presentViewController:navigationController animated:YES completion:nil];
     return webVC;
 }

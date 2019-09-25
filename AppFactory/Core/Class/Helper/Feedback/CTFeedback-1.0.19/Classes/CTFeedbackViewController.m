@@ -336,6 +336,7 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
 {
     if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
+        controller.modalPresentationStyle = UIModalPresentationFullScreen;
         controller.mailComposeDelegate = self;
         [controller setToRecipients:self.toRecipients];
         [controller setCcRecipients:self.ccRecipients];
@@ -467,6 +468,7 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
 - (void)createImagePickerControllerWithSourceType:(UIImagePickerControllerSourceType)sourceType{
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         UIImagePickerController *controller = [[UIImagePickerController alloc] init];
+        controller.modalPresentationStyle = UIModalPresentationFullScreen;
         controller.sourceType = sourceType;
         controller.allowsEditing = NO;
         controller.delegate = self;
