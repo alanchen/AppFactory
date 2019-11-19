@@ -78,14 +78,14 @@ PODS:
   - PINOperation (1.1.2)
   - pop (1.0.12)
   - PPTopMostController (0.0.1)
-  - PromiseKit (6.8.5):
-    - PromiseKit/CorePromise (= 6.8.5)
-    - PromiseKit/Foundation (= 6.8.5)
-    - PromiseKit/UIKit (= 6.8.5)
-  - PromiseKit/CorePromise (6.8.5)
-  - PromiseKit/Foundation (6.8.5):
+  - PromiseKit (6.9.0):
+    - PromiseKit/CorePromise (= 6.9.0)
+    - PromiseKit/Foundation (= 6.9.0)
+    - PromiseKit/UIKit (= 6.9.0)
+  - PromiseKit/CorePromise (6.9.0)
+  - PromiseKit/Foundation (6.9.0):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.8.5):
+  - PromiseKit/UIKit (6.9.0):
     - PromiseKit/CorePromise
   - ReactiveObjC (3.0.0)
   - RMessage (2.1.5):
@@ -123,7 +123,7 @@ DEPENDENCIES:
   - ObjcAssociatedObjectHelpers (= 2.0.1)
   - PINCache (~> 3.0.1-beta.5)
   - pop
-  - PromiseKit (~> 6.8.4)
+  - PromiseKit (~> 6.9.0)
   - ReactiveObjC (~> 3.0.0)
   - RMessage (~> 2.1.5)
   - SAMKeychain (~> 1.5.2)
@@ -196,7 +196,7 @@ SPEC CHECKSUMS:
   PINOperation: 24b774353ca248fcf87d67b2d61eef42087c125a
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PPTopMostController: 4e6f1e5f8c645bdcc74cd837a20f607ff262c048
-  PromiseKit: 9616b0afef31eae56ab9ce044c8ec2b8612a15cd
+  PromiseKit: 97397236f9e9c443d5b70a941d49cad25160af7a
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   RMessage: 31d44bd26a8f353f987d2e7194f3e9ffb203cbf2
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
@@ -207,6 +207,6 @@ SPEC CHECKSUMS:
   UIImage-Helpers: 06b04a42bdd222844035602e87e936765c80f620
   ViewUtils: 68e42c708a4b3912e39691cef5080282dc5013fb
 
-PODFILE CHECKSUM: 0926948ef088a957689eb59799650e9b659cd066
+PODFILE CHECKSUM: 894ddcb6c6fe88b3468ddbaba3883b767adb8002
 
 COCOAPODS: 1.7.3
