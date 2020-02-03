@@ -51,6 +51,17 @@
     self.segControl.frame = segFrame;
 }
 
+- (UIImage *)imageWithColor: (UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 32.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
+}
+
 #pragma mark - Public Methods
 
 -(void)setTitles:(NSArray *)titles
@@ -66,6 +77,33 @@
     [self layoutIfNeeded];
 }
 
+-(void)setTintColor:(UIColor *)tintColor
+{
+    [super setTintColor:tintColor];
+    
+    if (@available(iOS 13.0, *)) {
+        UIImage *tintColorImage = [self imageWithColor:tintColor];
+        UIImage *whiteImage = [self imageWithColor:[UIColor whiteColor]];
+
+        self.segControl.selectedSegmentTintColor = tintColor;
+        self.segControl.layer.borderColor = tintColor.CGColor;
+        self.segControl.layer.borderWidth = 1;
+        [self.segControl setBackgroundImage:whiteImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        [self.segControl setBackgroundImage:tintColorImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+
+        [self.segControl setTitleTextAttributes:@{NSForegroundColorAttributeName:tintColor}
+                                       forState:UIControlStateNormal];
+        
+        [self.segControl setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]  }
+                                            forState:UIControlStateSelected];
+        
+        [self.segControl setDividerImage:tintColorImage
+                     forLeftSegmentState:UIControlStateNormal
+                       rightSegmentState:UIControlStateNormal
+                              barMetrics:UIBarMetricsDefault];
+        
+    }
+}
 
 #pragma mark - Setter & Getter
 
