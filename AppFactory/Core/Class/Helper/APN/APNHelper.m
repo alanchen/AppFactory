@@ -244,12 +244,36 @@
     if(!tokenData)
         return nil;
     
+    if (@available(iOS 13.0, *)) {
+        return [[self class] parseTokenForiOS13:tokenData];
+    }
+    
     NSString *deviceToken = [[[[tokenData description]
                                stringByReplacingOccurrencesOfString: @"<" withString: @""]
                               stringByReplacingOccurrencesOfString: @">" withString: @""]
                              stringByReplacingOccurrencesOfString: @" " withString: @""] ;
     
     return deviceToken;
+}
+
++ (NSString *)parseTokenForiOS13:(NSData *)tokenData
+{
+    //https://stackoverflow.com/questions/8798725/get-device-token-for-push-notification/8798981#8798981
+    if(!tokenData)
+        return nil;
+    
+    NSUInteger dataLength = tokenData.length;
+    if (dataLength == 0) {
+        return nil;
+    }
+    
+    const unsigned char *dataBuffer = (const unsigned char *)tokenData.bytes;
+    NSMutableString *hexString  = [NSMutableString stringWithCapacity:(dataLength * 2)];
+    for (int i = 0; i < dataLength; ++i) {
+        [hexString appendFormat:@"%02x", dataBuffer[i]];
+    }
+    
+    return [hexString copy];
 }
 
 + (void)saveTokenToDevice:(NSString *)token{
