@@ -7,24 +7,31 @@
 //
 
 #import "UITextField+AFExtension.h"
+#import "NSMutableAttributedString+AFExtension.h"
 
 @implementation UITextField(AFExtension)
 
--(void)setPlaceholderColor:(UIColor *)color
-{
-    if(!color)
-        return;
-    
-    [self setValue:color forKeyPath:@"_placeholderLabel.textColor"];
-}
+//-(void)setPlaceholderColor:(UIColor *)color
+//{
+//    if(!color)
+//        return;
+//    
+//    [self setValue:color forKeyPath:@"_placeholderLabel.textColor"];
+//}
+//
+//-(void)setPlaceholderFont:(UIFont *)font
+//{
+//    if(!font)
+//        return;
+//    
+//    [self setValue:font forKeyPath:@"_placeholderLabel.font"];
+//}
 
--(void)setPlaceholderFont:(UIFont *)font
+-(void)setPlaceholder:(NSString *)placeholderStr font:(UIFont *)font color:(UIColor *)color
 {
-    if(!font)
-        return;
-    
-    [self setValue:font forKeyPath:@"_placeholderLabel.font"];
+    NSMutableAttributedString *placeholder = [[NSMutableAttributedString alloc] initWithString:placeholderStr];
+    [placeholder setAllTextWithFont:font color:color];
+    self.attributedPlaceholder = placeholder;
 }
-
 
 @end

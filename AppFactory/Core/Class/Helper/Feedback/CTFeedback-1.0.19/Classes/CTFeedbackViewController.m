@@ -61,6 +61,8 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
         self.topics = topics;
         self.localizedTopics = localizedTopics;
         self.useHTML = NO;
+        self.modalPresentationStyle = UIModalPresentationFullScreen;
+
     }
     return self;
 }

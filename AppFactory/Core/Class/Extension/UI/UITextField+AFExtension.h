@@ -11,8 +11,10 @@
 
 @interface UITextField(AFExtension)
 
--(void)setPlaceholderColor:(UIColor *)color;
+//-(void)setPlaceholderColor:(UIColor *)color;
+//
+//-(void)setPlaceholderFont:(UIFont *)font;
 
--(void)setPlaceholderFont:(UIFont *)font;
+-(void)setPlaceholder:(NSString *)placeholderStr font:(UIFont *)font color:(UIColor *)color;
 
 @end
