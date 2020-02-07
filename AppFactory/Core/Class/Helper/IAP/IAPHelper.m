@@ -124,7 +124,9 @@ NSString * const kProductionReceiptVerificationURL = @"https://buy.itunes.apple.
     NSString *key = [NSString stringWithFormat:@"%lu",(unsigned long)[request hash]];
     void (^callback)(NSArray *, NSArray *, NSError *) = [self.productsCallbackInfo objectForKey:key];
     if(callback){
-        callback(response.products, response.invalidProductIdentifiers, nil);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            callback(response.products, response.invalidProductIdentifiers, nil);
+        });
     }
 }
 
