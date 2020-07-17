@@ -10,8 +10,8 @@
 #import <ViewUtils/ViewUtils.h>
 #import <AFNetworking/AFNetworking.h>
 #import <ReactiveObjC/ReactiveObjC.h>
-#import <BlocksKit/BlocksKit+UIKit.h>
-#import <BlocksKit/BlocksKit.h>
+#import "BlocksKit+UIKit.h"
+#import "BlocksKit.h"
 #import <PromiseKit/PromiseKit.h>
 #import <MJExtension/MJExtension.h>
 #import <EDColor/EDColor.h>

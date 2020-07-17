@@ -8,7 +8,7 @@
 
 #import "LightBoxWrapper.h"
 #import <pop/POP.h>
-#import <BlocksKit/BlocksKit+UIKit.h>
+#import "BlocksKit+UIKit.h"
 #import <ViewUtils/ViewUtils.h>
 
 @interface LightBoxWrapper() <UIGestureRecognizerDelegate>
