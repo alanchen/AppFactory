@@ -75,7 +75,7 @@ static const char PostHandlerBlockKey;
                     progress:(void (^)(NSProgress * progress))downloadProgress
                   completion:(void (^)(AFApiResponse *res))completion
 {
-    return [self GET:path parameters:params progress:downloadProgress
+    return [self GET:path parameters:params headers:nil progress:downloadProgress
              success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                  [self resHandler:responseObject task:task error:nil completion:completion];
              } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -95,7 +95,7 @@ static const char PostHandlerBlockKey;
                     progress:(void (^)(NSProgress * progress))uploadProgress
                   completion:(void (^)(AFApiResponse *res))completion
 {
-    return [self POST:path parameters:params progress:uploadProgress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    return [self POST:path parameters:params headers:nil progress:uploadProgress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [self resHandler:responseObject task:task error:nil completion:completion];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self resHandler:nil task:task error:error completion:completion];
@@ -115,7 +115,7 @@ static const char PostHandlerBlockKey;
                      progress:(void (^)(NSProgress * progress))uploadProgress
                    completion:(void (^)(AFApiResponse *res))completion
 {
-    return [self POST:path parameters:params constructingBodyWithBlock:block progress:uploadProgress
+    return [self POST:path parameters:params headers:nil constructingBodyWithBlock:block progress:uploadProgress
               success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                   [self resHandler:responseObject task:task error:nil completion:completion];
               } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -127,7 +127,7 @@ static const char PostHandlerBlockKey;
                          params:(id)params
                      completion:(void (^)(AFApiResponse *res))completion
 {
-    return [self DELETE:path parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    return [self DELETE:path parameters:params headers:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [self resHandler:responseObject task:task error:nil completion:completion];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self resHandler:nil task:task error:error completion:completion];
@@ -138,7 +138,7 @@ static const char PostHandlerBlockKey;
                       params:(id)params
                   completion:(void (^)(AFApiResponse *res))completion
 {
-    return [self PUT:path parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    return [self PUT:path parameters:params headers:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [self resHandler:responseObject task:task error:nil completion:completion];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self resHandler:nil task:task error:error completion:completion];
