@@ -18,7 +18,6 @@ Pod::Spec.new do |s|
     s.source_files = 'AppFactory/Core/**/*.{h,m}'
 
 	s.dependency "AFNetworking", "~> 3.0"
-	s.dependency "BlocksKit", "~> 2.2.5"
 	s.dependency "ReactiveObjC", "~> 3.0.0"
 	s.dependency "PromiseKit", "~> 6.9.0"
 	s.dependency "MJExtension", "~> 3.0.13"
