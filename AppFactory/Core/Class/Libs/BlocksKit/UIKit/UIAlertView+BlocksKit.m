@@ -3,13 +3,10 @@
 //  BlocksKit
 //
 
-#import "UIAlertView+BlocksKit.h"
 #import "A2DynamicDelegate.h"
 #import "NSObject+A2BlockDelegate.h"
 #import "NSObject+A2DynamicDelegate.h"
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#import "UIAlertView+BlocksKit.h"
 
 #pragma mark Delegate
 
@@ -130,7 +127,7 @@
 
 #pragma mark Convenience
 
-+ (instancetype)bk_showAlertViewWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSArray *)otherButtonTitles handler:(void (^)(UIAlertView *alertView, NSInteger buttonIndex))block
++ (UIAlertView*)bk_showAlertViewWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSArray *)otherButtonTitles handler:(void (^)(UIAlertView *alertView, NSInteger buttonIndex))block
 {
 	// If no buttons were specified, cancel button becomes "Dismiss"
 	if (!cancelButtonTitle.length && !otherButtonTitles.count)
@@ -154,17 +151,17 @@
 
 #pragma mark Initializers
 
-+ (instancetype)bk_alertViewWithTitle:(NSString *)title
++ (id)bk_alertViewWithTitle:(NSString *)title
 {
 	return [self bk_alertViewWithTitle:title message:nil];
 }
 
-+ (instancetype)bk_alertViewWithTitle:(NSString *)title message:(NSString *)message
++ (id)bk_alertViewWithTitle:(NSString *)title message:(NSString *)message
 {
 	return [[[self class] alloc] bk_initWithTitle:title message:message];
 }
 
-- (instancetype)bk_initWithTitle:(NSString *)title message:(NSString *)message
+- (id)bk_initWithTitle:(NSString *)title message:(NSString *)message
 {
 	self = [self initWithTitle:title message:message delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
 	if (!self) return nil;
@@ -226,5 +223,3 @@
 }
 
 @end
-
-#pragma clang diagnostic pop

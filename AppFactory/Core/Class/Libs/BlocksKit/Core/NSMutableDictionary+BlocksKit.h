@@ -3,10 +3,7 @@
 //  BlocksKit
 //
 
-#import "BKDefines.h"
 #import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
 
 /** Block extensions for NSMutableDictionary.
 
@@ -21,14 +18,14 @@ NS_ASSUME_NONNULL_BEGIN
 
  @see NSDictionary(BlocksKit)
  */
-@interface __GENERICS(NSMutableDictionary, KeyType, ObjectType) (BlocksKit)
+@interface NSMutableDictionary (BlocksKit)
 
 /** Filters a mutable dictionary to the key/value pairs matching the block.
 
  @param block A BOOL-returning code block for a key/value pair.
  @see <NSDictionary(BlocksKit)>bk_reject:
  */
-- (void)bk_performSelect:(BOOL (^)(KeyType key, ObjectType obj))block;
+- (void)bk_performSelect:(BOOL (^)(id key, id obj))block;
 
 /** Filters a mutable dictionary to the key/value pairs not matching the block,
  the logical inverse to bk_select:.
@@ -36,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param block A BOOL-returning code block for a key/value pair.
  @see <NSDictionary(BlocksKit)>bk_select:
  */
-- (void)bk_performReject:(BOOL (^)(KeyType key, ObjectType obj))block;
+- (void)bk_performReject:(BOOL (^)(id key, id obj))block;
 
 /** Transform each value of the dictionary to a new value, as returned by the
  block.
@@ -44,8 +41,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param block A block that returns a new value for a given key/value pair.
  @see <NSDictionary(BlocksKit)>bk_map:
  */
-- (void)bk_performMap:(id (^)(KeyType key, ObjectType obj))block;
+- (void)bk_performMap:(id (^)(id key, id obj))block;
 
 @end
-
-NS_ASSUME_NONNULL_END
