@@ -3,10 +3,7 @@
 //  BlocksKit
 //
 
-#import "BKDefines.h"
 #import <UIKit/UIKit.h>
-
-NS_ASSUME_NONNULL_BEGIN
 
 /** Convenience on-touch methods for UIView.
 
@@ -70,5 +67,3 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)bk_eachSubview:(void (^)(UIView *subview))block;
 
 @end
-
-NS_ASSUME_NONNULL_END

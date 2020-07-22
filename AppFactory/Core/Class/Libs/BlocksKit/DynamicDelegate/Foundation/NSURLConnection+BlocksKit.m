@@ -3,14 +3,11 @@
 //  BlocksKit
 //
 
-#import "NSURLConnection+BlocksKit.h"
-@import ObjectiveC.runtime;
+#import <objc/runtime.h>
 #import "A2DynamicDelegate.h"
-#import "NSObject+A2DynamicDelegate.h"
 #import "NSObject+A2BlockDelegate.h"
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#import "NSObject+A2DynamicDelegate.h"
+#import "NSURLConnection+BlocksKit.h"
 
 #pragma mark Private
 
@@ -309,6 +306,24 @@ static const void *BKResponseLengthKey = &BKResponseLengthKey;
 		block(connection, connection.bk_response, connection.bk_responseData);
 }
 
+#pragma mark - Deprecated iOS 4.x authentication methods
+
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+{
+	id realDelegate = self.realDelegate;
+	if (realDelegate && [realDelegate respondsToSelector:@selector(connection:didReceiveAuthenticationChallenge:)])
+		[realDelegate connection:connection didReceiveAuthenticationChallenge:challenge];
+}
+
+- (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace
+{
+	id realDelegate = self.realDelegate;
+	if (realDelegate && [realDelegate respondsToSelector:@selector(connection:canAuthenticateAgainstProtectionSpace:)])
+		return [realDelegate connection:connection canAuthenticateAgainstProtectionSpace:protectionSpace];
+
+	return NO;
+}
+
 @end
 
 #pragma mark - Category
@@ -351,12 +366,12 @@ static NSString *const kDownloadBlockKey = @"NSURLConnectionDidRecieveData";
 	return [ret initWithRequest:request delegate:dd startImmediately:YES];
 }
 
-- (instancetype)bk_initWithRequest:(NSURLRequest *)request
+- (id)bk_initWithRequest:(NSURLRequest *)request
 {
 	return (self = [self bk_initWithRequest:request completionHandler:nil]);
 }
 
-- (instancetype)bk_initWithRequest:(NSURLRequest *)request completionHandler:(void (^)(NSURLConnection *, NSURLResponse *, NSData *))block
+- (id)bk_initWithRequest:(NSURLRequest *)request completionHandler:(void (^)(NSURLConnection *, NSURLResponse *, NSData *))block
 {
 	Protocol *delegateProtocol = objc_getProtocol("NSURLConnectionDelegate");
 	if (!delegateProtocol)
@@ -409,5 +424,3 @@ static NSString *const kDownloadBlockKey = @"NSURLConnectionDidRecieveData";
 }
 
 @end
-
-#pragma clang diagnostic pop

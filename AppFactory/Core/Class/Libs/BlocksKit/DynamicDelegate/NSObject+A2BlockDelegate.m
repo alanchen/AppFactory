@@ -3,9 +3,8 @@
 //  BlocksKit
 //
 
+#import <objc/message.h>
 #import "NSObject+A2BlockDelegate.h"
-@import ObjectiveC.message;
-#import "A2DynamicDelegate.h"
 #import "NSObject+A2DynamicDelegate.h"
 
 #pragma mark - Declarations and macros

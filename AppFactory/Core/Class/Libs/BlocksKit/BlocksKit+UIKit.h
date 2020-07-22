@@ -1,5 +1,5 @@
 //
-//  BlocksKit UIKit Extensions
+//  BlocksKit+UIKit
 //
 //  The Objective-C block utilities you always wish you had.
 //
@@ -25,18 +25,13 @@
 //  THE SOFTWARE.
 //
 
-#import "BlocksKit.h"
-
 #import "UIActionSheet+BlocksKit.h"
 #import "UIAlertView+BlocksKit.h"
 #import "UIBarButtonItem+BlocksKit.h"
 #import "UIControl+BlocksKit.h"
 #import "UIGestureRecognizer+BlocksKit.h"
-#import "UIImage+BlocksKit.h"
-#import "UIImagePickerController+BlocksKit.h"
 #import "UIPopoverController+BlocksKit.h"
 #import "UITextField+BlocksKit.h"
 #import "UIView+BlocksKit.h"
 #import "UITextField+BlocksKit.h"
-#import "UITextView+BlocksKit.h"
 #import "UIImagePickerController+BlocksKit.h"

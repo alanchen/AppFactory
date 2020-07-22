@@ -3,10 +3,7 @@
 //  BlocksKit
 //
 
-#import "BKDefines.h"
 #import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
 
 /** Block extensions for NSMutableIndexSet.
 
@@ -43,5 +40,3 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @end
-
-NS_ASSUME_NONNULL_END

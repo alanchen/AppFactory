@@ -3,10 +3,7 @@
 //  BlocksKit
 //
 
-#import "BKDefines.h"
 #import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
 
 /** Block extensions for NSIndexSet.
 
@@ -120,5 +117,3 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)bk_none:(BOOL (^)(NSUInteger index))block;
 
 @end
-
-NS_ASSUME_NONNULL_END

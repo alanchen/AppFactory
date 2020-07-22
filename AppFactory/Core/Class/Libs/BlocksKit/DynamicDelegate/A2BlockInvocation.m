@@ -7,6 +7,14 @@
 
 NSString *const A2IncompatibleMethodSignatureKey = @"incompatibleMethodSignature";
 
+#ifndef NSFoundationVersionNumber10_8
+#define NSFoundationVersionNumber10_8 945.00
+#endif
+
+#ifndef NSFoundationVersionNumber_iOS_6_0
+#define NSFoundationVersionNumber_iOS_6_0  993.00
+#endif
+
 #pragma mark Block Internals
 
 typedef NS_OPTIONS(int, BKBlockFlags) {
@@ -32,15 +40,6 @@ typedef struct _BKBlock {
 	// imported variables
 } *BKBlockRef;
 
-NS_INLINE BOOL typesCompatible(const char *a, const char *b) {
-    if (a[0] == b[0]) { return YES; }
-    NSUInteger aSize, aAlign, bSize, bAlign;
-    NSGetSizeAndAlignment(a, &aSize, &aAlign);
-    NSGetSizeAndAlignment(a, &bSize, &bAlign);
-    if (aSize == bSize && aAlign == bAlign) { return YES; }
-    return !!strcmp(a, b);
-}
-
 @interface A2BlockInvocation ()
 
 @property (nonatomic, readonly) NSMethodSignature *blockSignature;
@@ -63,7 +62,7 @@ NS_INLINE BOOL typesCompatible(const char *a, const char *b) {
 {
 	if (!signatureA || !signatureB) return NO;
 	if ([signatureA isEqual:signatureB]) return YES;
-	if (!typesCompatible(signatureA.methodReturnType, signatureB.methodReturnType)) return NO;
+	if (signatureA.methodReturnType[0] != signatureB.methodReturnType[0]) return NO;
 
 	NSMethodSignature *methodSignature = nil, *blockSignature = nil;
 	if (signatureA.numberOfArguments > signatureB.numberOfArguments) {
@@ -78,9 +77,8 @@ NS_INLINE BOOL typesCompatible(const char *a, const char *b) {
 
 	NSUInteger numberOfArguments = methodSignature.numberOfArguments;
 	for (NSUInteger i = 2; i < numberOfArguments; i++) {
-        if (!typesCompatible([methodSignature getArgumentTypeAtIndex:i], [blockSignature getArgumentTypeAtIndex:i - 1])) {
+		if ([methodSignature getArgumentTypeAtIndex:i][0] != [blockSignature getArgumentTypeAtIndex:i - 1][0])
 			return NO;
-        }
 	}
 
 	return YES;

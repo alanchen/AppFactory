@@ -3,13 +3,13 @@
 //  BlocksKit
 //
 
-#import "NSObject+BKBlockObservation.h"
-@import ObjectiveC.runtime;
-@import ObjectiveC.message;
+#import <objc/runtime.h>
+#import <objc/message.h>
 #import "NSArray+BlocksKit.h"
 #import "NSDictionary+BlocksKit.h"
-#import "NSSet+BlocksKit.h"
 #import "NSObject+BKAssociatedObjects.h"
+#import "NSObject+BKBlockObservation.h"
+#import "NSSet+BlocksKit.h"
 
 typedef NS_ENUM(int, BKObserverContext) {
 	BKObserverContextKey,
@@ -149,8 +149,6 @@ static void *BKBlockObservationContext = &BKBlockObservationContext;
 
 @end
 
-static const NSUInteger BKKeyValueObservingOptionWantsChangeDictionary = 0x1000;
-
 @implementation NSObject (BlockObservation)
 
 - (NSString *)bk_addObserverForKeyPath:(NSString *)keyPath task:(void (^)(id target))task
@@ -170,7 +168,6 @@ static const NSUInteger BKKeyValueObservingOptionWantsChangeDictionary = 0x1000;
 - (NSString *)bk_addObserverForKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options task:(void (^)(id obj, NSDictionary *change))task
 {
 	NSString *token = [[NSProcessInfo processInfo] globallyUniqueString];
-	options = options | BKKeyValueObservingOptionWantsChangeDictionary;
 	[self bk_addObserverForKeyPath:keyPath identifier:token options:options task:task];
 	return token;
 }
@@ -178,7 +175,6 @@ static const NSUInteger BKKeyValueObservingOptionWantsChangeDictionary = 0x1000;
 - (NSString *)bk_addObserverForKeyPaths:(NSArray *)keyPaths options:(NSKeyValueObservingOptions)options task:(void (^)(id obj, NSString *keyPath, NSDictionary *change))task
 {
 	NSString *token = [[NSProcessInfo processInfo] globallyUniqueString];
-	options = options | BKKeyValueObservingOptionWantsChangeDictionary;
 	[self bk_addObserverForKeyPaths:keyPaths identifier:token options:options task:task];
 	return token;
 }
@@ -186,14 +182,12 @@ static const NSUInteger BKKeyValueObservingOptionWantsChangeDictionary = 0x1000;
 - (void)bk_addObserverForKeyPath:(NSString *)keyPath identifier:(NSString *)identifier options:(NSKeyValueObservingOptions)options task:(void (^)(id obj, NSDictionary *change))task
 {
 	BKObserverContext context = (options == 0) ? BKObserverContextKey : BKObserverContextKeyWithChange;
-	options = options & (~BKKeyValueObservingOptionWantsChangeDictionary);
 	[self bk_addObserverForKeyPaths:@[keyPath] identifier:identifier options:options context:context task:task];
 }
 
 - (void)bk_addObserverForKeyPaths:(NSArray *)keyPaths identifier:(NSString *)identifier options:(NSKeyValueObservingOptions)options task:(void (^)(id obj, NSString *keyPath, NSDictionary *change))task
 {
 	BKObserverContext context = (options == 0) ? BKObserverContextManyKeys : BKObserverContextManyKeysWithChange;
-	options = options & (~BKKeyValueObservingOptionWantsChangeDictionary);
 	[self bk_addObserverForKeyPaths:keyPaths identifier:identifier options:options context:context task:task];
 }
 

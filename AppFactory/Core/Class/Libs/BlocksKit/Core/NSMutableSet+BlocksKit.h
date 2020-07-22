@@ -3,10 +3,7 @@
 //  BlocksKit
 //
 
-#import "BKDefines.h"
 #import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
 
 /** Block extensions for NSMutableSet.
 
@@ -21,14 +18,14 @@ NS_ASSUME_NONNULL_BEGIN
 
  @see NSSet(BlocksKit)
  */
-@interface __GENERICS(NSMutableSet, ObjectType) (BlocksKit)
+@interface NSMutableSet (BlocksKit)
 
 /** Filters a mutable set to the objects matching the block.
 
  @param block A single-argument, BOOL-returning code block.
  @see <NSSet(BlocksKit)>bk_reject:
  */
-- (void)bk_performSelect:(BOOL (^)(id ObjectType))block;
+- (void)bk_performSelect:(BOOL (^)(id obj))block;
 
 /** Filters a mutable set to all objects but the ones matching the block,
  the logical inverse to bk_select:.
@@ -36,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param block A single-argument, BOOL-returning code block.
  @see <NSSet(BlocksKit)>bk_select:
  */
-- (void)bk_performReject:(BOOL (^)(id ObjectType))block;
+- (void)bk_performReject:(BOOL (^)(id obj))block;
 
 /** Transform the objects in the set to the results of the block.
 
@@ -48,8 +45,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param block A single-argument, object-returning code block.
  @see <NSSet(BlocksKit)>bk_map:
  */
-- (void)bk_performMap:(id (^)(id ObjectType))block;
+- (void)bk_performMap:(id (^)(id obj))block;
 
 @end
-
-NS_ASSUME_NONNULL_END
