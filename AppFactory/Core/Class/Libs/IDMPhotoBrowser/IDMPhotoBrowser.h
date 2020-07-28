@@ -13,6 +13,7 @@
 #import "IDMPhotoProtocol.h"
 #import "IDMCaptionView.h"
 #import "IDMTapDetectingImageView.h"
+#import "IDMZoomingScrollView.h"
 
 // Delgate
 @class IDMPhotoBrowser;
@@ -92,5 +93,26 @@
 
 // Get IDMPhoto at index
 - (id<IDMPhoto>)photoAtIndex:(NSUInteger)index;
+
+
+// Public original private methods
+
+// Paging
+- (void)tilePages;
+- (BOOL)isDisplayingPageForIndex:(NSUInteger)index;
+- (IDMZoomingScrollView *)pageDisplayedAtIndex:(NSUInteger)index;
+- (IDMZoomingScrollView *)pageDisplayingPhoto:(id<IDMPhoto>)photo;
+- (IDMZoomingScrollView *)dequeueRecycledPage;
+- (void)configurePage:(IDMZoomingScrollView *)page forIndex:(NSUInteger)index;
+- (void)didStartViewingPageAtIndex:(NSUInteger)index;
+
+// Frames
+- (CGRect)frameForPagingScrollView;
+- (CGRect)frameForPageAtIndex:(NSUInteger)index;
+- (CGSize)contentSizeForPagingScrollView;
+- (CGPoint)contentOffsetForPageAtIndex:(NSUInteger)index;
+- (CGRect)frameForToolbarAtOrientation:(UIInterfaceOrientation)orientation;
+- (CGRect)frameForDoneButtonAtOrientation:(UIInterfaceOrientation)orientation;
+- (CGRect)frameForCaptionView:(IDMCaptionView *)captionView atIndex:(NSUInteger)index;
 
 @end
