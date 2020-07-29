@@ -97,7 +97,7 @@
 
 // Public original private methods
 
-- (UIScrollView *)pagingScrollView;
+- (UIScrollView *)mainScrollView;
 
 // Paging
 - (void)tilePages;

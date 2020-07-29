@@ -1030,8 +1030,12 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
 
 #pragma mark - Paging
 
-- (UIScrollView *)pagingScrollView {
-    return _pagingScrollView;
+- (UIScrollView *)mainScrollView {
+    if(_pagingScrollView){
+        return _pagingScrollView;
+    }
+    
+    return nil;
 }
 
 - (void)tilePages {
