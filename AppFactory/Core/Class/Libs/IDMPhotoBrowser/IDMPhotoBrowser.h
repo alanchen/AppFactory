@@ -97,6 +97,8 @@
 
 // Public original private methods
 
+- (UIScrollView *)pagingScrollView;
+
 // Paging
 - (void)tilePages;
 - (BOOL)isDisplayingPageForIndex:(NSUInteger)index;

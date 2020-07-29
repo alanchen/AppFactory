@@ -1030,6 +1030,10 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
 
 #pragma mark - Paging
 
+- (UIScrollView *)pagingScrollView {
+    return _pagingScrollView;
+}
+
 - (void)tilePages {
 	// Calculate which pages should be visible
 	// Ignore padding as paging bounces encroach on that
