@@ -51,7 +51,7 @@
     self.alertWindow.rootViewController = [[UIViewController alloc] init];
     
     // we inherit the main window's tintColor
-    self.alertWindow.tintColor = [self appDelegateWindow].tintColor;
+//    self.alertWindow.tintColor = [self appDelegateWindow].tintColor;
     self.alertWindow.windowLevel = UIWindowLevelAlert + 1;
     [self.alertWindow makeKeyAndVisible];
     [self.alertWindow.rootViewController presentViewController:self animated:animated completion:nil];
