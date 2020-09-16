@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDictionary(API)
+@interface NSDictionary(AF_API)
 
 -(NSInteger)resStatusCode;
 -(NSArray *)resItems;
@@ -17,7 +17,7 @@
 
 @end
 
-@interface NSMutableDictionary (API)
+@interface NSMutableDictionary (AF_API)
 
 +(NSMutableDictionary *)paramsWithOffset:(NSInteger)offset limit:(NSInteger)limit;
 -(void)setReqOffset:(NSInteger)offset;
@@ -25,7 +25,7 @@
 
 @end
 
-@interface NSString(API)
+@interface NSString(AF_API)
 
 + (NSString *)stringUrl:(NSString *)url appendId:(NSInteger)anId;
 + (NSString *)stringUrl:(NSString *)url appendString:(NSString *)str;

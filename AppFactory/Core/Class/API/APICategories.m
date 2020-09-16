@@ -9,7 +9,7 @@
 #import "APICategories.h"
 #import "NSObject+AFExtension.h"
 
-@implementation NSDictionary(API)
+@implementation NSDictionary(AF_API)
 
 -(NSInteger)resStatusCode
 {
@@ -33,7 +33,7 @@
 
 @end
 
-@implementation NSMutableDictionary (API)
+@implementation NSMutableDictionary (AF_API)
 
 + (NSMutableDictionary *)paramsWithOffset:(NSInteger)offset limit:(NSInteger)limit
 {
@@ -59,7 +59,7 @@
 
 @end
 
-@implementation NSString(API)
+@implementation NSString(AF_API)
 
 + (NSString *)stringUrl:(NSString *)url appendId:(NSInteger)anId
 {
