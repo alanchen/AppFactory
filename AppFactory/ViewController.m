@@ -206,7 +206,7 @@
     WKWebViewController *vc =
     [WebControllerHelper showWebViewWithURLStr:str onViewController:self];
     vc.cancelBlock = ^{
-        NSLog(@"ccccc");
+        NSLog(@"cccc");
     };
     return;
     
