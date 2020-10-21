@@ -41,6 +41,9 @@ NSString * const kProductionReceiptVerificationURL = @"https://buy.itunes.apple.
     if (self) {
         [self finishAllFailedTransactions];
         [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            self.hasUnfinishedPuchasedTransactions = [self areThereUnfinishedTransactions];
+        });
     }
     
     return self;
@@ -114,6 +117,18 @@ NSString * const kProductionReceiptVerificationURL = @"https://buy.itunes.apple.
                 break;
         }
     };
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        self.hasUnfinishedPuchasedTransactions = [self areThereUnfinishedTransactions];
+    });
+}
+
+// Sent when transactions are removed from the queue (via finishTransaction:).
+- (void)paymentQueue:(SKPaymentQueue *)queue removedTransactions:(NSArray<SKPaymentTransaction *> *)transactions
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        self.hasUnfinishedPuchasedTransactions = [self areThereUnfinishedTransactions];
+    });
 }
 
 #pragma mark - SKProductsRequestDelegate

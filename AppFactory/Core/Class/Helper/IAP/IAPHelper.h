@@ -13,6 +13,7 @@ typedef void (^PaymentCallbackBlock)(SKPaymentTransaction *transaction, NSError 
 
 @interface IAPHelper : NSObject
 @property (nonatomic,strong) NSArray *products; // cached in memory
+@property (nonatomic) BOOL hasUnfinishedPuchasedTransactions;
 
 +(IAPHelper *)sharedInstance;
 
