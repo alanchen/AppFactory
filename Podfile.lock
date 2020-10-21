@@ -68,14 +68,14 @@ PODS:
   - ObjcAssociatedObjectHelpers/Core (2.0.1)
   - "ObjcAssociatedObjectHelpers/NSObject+Dictionary (2.0.1)":
     - ObjcAssociatedObjectHelpers/Core
-  - PINCache (3.0.1-beta.8):
-    - PINCache/Arc-exception-safe (= 3.0.1-beta.8)
-    - PINCache/Core (= 3.0.1-beta.8)
-  - PINCache/Arc-exception-safe (3.0.1-beta.8):
+  - PINCache (3.0.1):
+    - PINCache/Arc-exception-safe (= 3.0.1)
+    - PINCache/Core (= 3.0.1)
+  - PINCache/Arc-exception-safe (3.0.1):
     - PINCache/Core
-  - PINCache/Core (3.0.1-beta.8):
-    - PINOperation (~> 1.1.1)
-  - PINOperation (1.1.2)
+  - PINCache/Core (3.0.1):
+    - PINOperation (~> 1.2.0)
+  - PINOperation (1.2)
   - pop (1.0.12)
   - PPTopMostController (0.0.1)
   - PromiseKit (6.9.0):
@@ -92,9 +92,9 @@ PODS:
     - HexColors (~> 4.0)
     - PPTopMostController
   - SAMKeychain (1.5.3)
-  - SDWebImage (5.8.4):
-    - SDWebImage/Core (= 5.8.4)
-  - SDWebImage/Core (5.8.4)
+  - SDWebImage (5.9.1):
+    - SDWebImage/Core (= 5.9.1)
+  - SDWebImage/Core (5.9.1)
   - SVProgressHUD (2.2.5)
   - TTTAttributedLabel (2.0.0)
   - UIDeviceIdentifier (1.5.0)
@@ -192,15 +192,15 @@ SPEC CHECKSUMS:
   NSHash: 036c03781d372c288d332b512b203e7bb832e46e
   NYXImagesKit: 8163e3335a40eaa173ca5bbbf81fafb57d3947eb
   ObjcAssociatedObjectHelpers: 686c291f292c26a49b9b1fa7d58130a8d35d59d2
-  PINCache: 534fd41d358d828dfdf227a0d327f3673a65e20b
-  PINOperation: 24b774353ca248fcf87d67b2d61eef42087c125a
+  PINCache: ee3c4abadd09970a61cdda0cfc345e69a3d75b26
+  PINOperation: 3a967a927e7867e61976c6cc23e5770416449fbc
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PPTopMostController: 4e6f1e5f8c645bdcc74cd837a20f607ff262c048
   PromiseKit: 97397236f9e9c443d5b70a941d49cad25160af7a
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   RMessage: 31d44bd26a8f353f987d2e7194f3e9ffb203cbf2
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
-  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
+  SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   UIDeviceIdentifier: a79ccdfc940373835a7d8e9fc7541e6bf61b6319
