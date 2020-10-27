@@ -15,6 +15,7 @@
 @interface ToastMessage : NSObject
 +(void)setBottomOffsetPortrait:(float)offset; // default is 90
 +(void)show:(NSString *)str;
++(void)show:(NSString *)str window:(UIWindow *)window;
 +(void)showWithSound:(NSString *)str;
 
 @end

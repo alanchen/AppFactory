@@ -36,9 +36,14 @@
 
 +(void)show:(NSString *)str
 {
+    [self show:str window:[UIApplication sharedApplication].delegate.window];
+}
+
++(void)show:(NSString *)str window:(UIWindow *)window
+{
     if(!str)
         return;
-    UIWindow *window = [UIApplication sharedApplication].delegate.window;
+    
     window = window ? window: [UIApplication sharedApplication].keyWindow;
 
     ToastMessage *toastInstance = [self sharedInstance];
