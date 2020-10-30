@@ -13,6 +13,8 @@
 
 +(UIViewController *)currentViewController;
 
++(UIViewController *)currentViewControllerWithWindow:(UIWindow *)window;
+
 +(void)switchMainTabBarToSelectedIndex:(NSUInteger)selectedIndex
                              popToRoot:(BOOL)popToRoot
                         withCompletion:(void (^)(void))completion;

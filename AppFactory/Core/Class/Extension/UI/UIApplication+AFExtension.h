@@ -13,6 +13,8 @@
 
 -(UIViewController *)visibleViewController;
 
+-(UIViewController *)getVisibleViewController:(UIViewController *)rootViewController;
+
 -(BOOL)isAppActive;
 
 @end

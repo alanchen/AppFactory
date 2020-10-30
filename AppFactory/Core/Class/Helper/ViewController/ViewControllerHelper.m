@@ -16,6 +16,12 @@
     return [[UIApplication sharedApplication] visibleViewController];
 }
 
++(UIViewController *)currentViewControllerWithWindow:(UIWindow *)window
+{
+    UIViewController *rootViewController = window.rootViewController;
+    return [[UIApplication sharedApplication] getVisibleViewController:rootViewController];
+}
+
 +(void)switchMainTabBarToSelectedIndex:(NSUInteger)selectedIndex
                              popToRoot:(BOOL)popToRoot
                         withCompletion:(void (^)(void))completion
