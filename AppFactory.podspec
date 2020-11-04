@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
 	s.dependency "ArrayUtils", "~> 1.3"
 	s.dependency "NSHash", "~> 1.2.0"
 	s.dependency "MWFeedParser", "~> 1.0.1"
-	s.dependency "ActionSheetPicker-3.0", "~> 2.2.0"
+	s.dependency "ActionSheetPicker-3.0", "~> 2.7.1"
 	s.dependency "DateTools", "~> 2.0.0"
 	s.dependency "hpple", "~> 0.2.0"
 	s.dependency "PINCache", "~> 3.0.1"
