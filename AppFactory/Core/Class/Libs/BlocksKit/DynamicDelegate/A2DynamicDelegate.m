@@ -139,6 +139,10 @@ static NSString *selectorDescribe(const void *item1)
 
 - (void)forwardInvocation:(NSInvocation *)outerInv
 {
+    if( [NSStringFromClass([self.realDelegate class]) isEqualToString:@"TUIEmojiSearchTextField"] ){
+        return;
+    }
+    
 	SEL selector = outerInv.selector;
 	A2BlockInvocation *innerInv = nil;
 	if ((innerInv = [self.invocationsBySelectors bk_objectForSelector:selector])) {
