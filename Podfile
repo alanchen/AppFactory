@@ -8,8 +8,7 @@ inhibit_all_warnings!
 target "AppFactory" do
 
 # Basic SDK
-pod 'AFNetworking', '~> 3.0'
-pod 'BlocksKit', '~> 2.2.5'
+pod 'AFNetworking', '~> 4.0'
 pod 'ReactiveObjC', '~> 3.0.0'
 pod 'PromiseKit', '~> 6.9.0'
 pod 'MJExtension', '3.0.13'
