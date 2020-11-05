@@ -65,7 +65,7 @@
     manager.responseSerializer .acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     manager.requestSerializer.timeoutInterval = 5;
     
-    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager GET:url parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         TFHpple *doc = [[TFHpple alloc] initWithHTMLData:responseObject];
         if(block){
             block(doc);
