@@ -35,6 +35,7 @@
     browser.displayDoneButton = NO;
     UIImage *back = AF_BUNDLE_IMAGE(@"navi-cross");
     browser.doneButtonImage = back;
+    browser.doneButtonSize =CGSizeMake(24, 25);
 
     return browser;
 }
