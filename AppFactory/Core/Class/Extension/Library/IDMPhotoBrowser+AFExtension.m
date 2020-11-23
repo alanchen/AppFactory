@@ -7,6 +7,7 @@
 //
 
 #import "IDMPhotoBrowser+AFExtension.h"
+#import "AppFactory.h"
 
 @implementation IDMPhotoBrowser(AFExtension)
 
@@ -26,12 +27,15 @@
     browser.displayActionButton = NO;
     browser.displayArrowButton = NO;
     browser.displayCounterLabel = YES;
-    browser.displayDoneButton = NO;
     browser.usePopAnimation = YES;
     browser.useWhiteBackgroundColor = NO;
     browser.scaleImage = scaleImage;
     [browser setInitialPageIndex:index];
     
+    browser.displayDoneButton = NO;
+    UIImage *back = AF_BUNDLE_IMAGE(@"navi-cross");
+    browser.doneButtonImage = back;
+
     return browser;
 }
 

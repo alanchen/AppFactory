@@ -229,7 +229,7 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
         _isdraggingPhoto = NO;
         
         _statusBarHeight = 20.f;
-        _doneButtonRightInset = 20.f;
+        _doneButtonLeftInset = 20.f;
         // relative to status bar and safeAreaInsets
         _doneButtonTopInset = 10.f;
 
@@ -1201,10 +1201,7 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
 }
 
 - (CGRect)frameForDoneButtonAtOrientation:(UIInterfaceOrientation)orientation {
-    CGRect screenBound = self.view.bounds;
-    CGFloat screenWidth = screenBound.size.width;
-
-    CGRect rtn = CGRectMake(screenWidth - self.doneButtonRightInset - self.doneButtonSize.width, self.doneButtonTopInset, self.doneButtonSize.width, self.doneButtonSize.height);
+    CGRect rtn = CGRectMake(self.doneButtonLeftInset, self.doneButtonTopInset, self.doneButtonSize.width, self.doneButtonSize.height);
     rtn = [self adjustForSafeArea:rtn adjustForStatusBar:true];
     return rtn;
 }
