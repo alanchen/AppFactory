@@ -35,7 +35,7 @@
 
 #import "AFRadioButton.h"
 #import "AFAppVersonHelper.h"
-
+#import "ACPhotoViewer.h"
 
 #import "IDMPhotoBrowser+AFExtension.h"
 
@@ -44,6 +44,8 @@
 @property (nonatomic,strong) AFBaseTableView *tableView;
 
 @property (nonatomic,strong) AFRadioButton *btn;
+
+@property (nonatomic,strong) ACPhotoViewer *viewer;
 
 @end
 
@@ -203,11 +205,45 @@
     NSString *str =@"https://m.bilibili.com/video/av20644256.html?p=1";
 
 //    NSString *str = @"https://apps.apple.com/tw/app/%E5%85%A8%E6%B0%91party-%E5%9C%A8%E7%B7%9A%E5%8D%A1%E6%8B%89ok%E8%A6%96%E8%A8%8A%E4%BA%A4%E5%8F%8B%E8%BB%9F%E9%AB%94/id1112801526";
-    WKWebViewController *vc =
-    [WebControllerHelper showWebViewWithURLStr:str onViewController:self];
-    vc.cancelBlock = ^{
-        NSLog(@"cccc");
-    };
+//    WKWebViewController *vc =
+//    [WebControllerHelper showWebViewWithURLStr:str onViewController:self];
+//    vc.cancelBlock = ^{
+//        NSLog(@"cccc");
+//    };
+    
+    
+
+    NSArray *urls = @[@"https://imghole.pcoin.tw/cbrLwPET8N.png",
+                      @"https://imghole.pcoin.tw/v69zPzcvsL.jpg",
+                      @"https://imghole.pcoin.tw/Mm5cbuUejh.jpg",
+                      @"https://imghole.pcoin.tw/AVEx56d7e3.jpg",
+                      @"https://imghole.pcoin.tw/XkovGM31FU.jpg",
+                      @"https://imghole.pcoin.tw/KqVWtQTLTb.jpg",
+                      @"https://imghole.pcoin.tw/Bo22iRCyy5.jpg",
+                      @"https://imghole.pcoin.tw/QVaHGjycpw.jpg",
+                      @"https://d1x7gx748css2y.cloudfront.net/202104/image_607574f6eb6ec.jpeg"];
+    
+    if(indexPath.row==0){
+        [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
+        self.viewer = [[ACPhotoViewer alloc] initWithURLs:nil];
+        self.viewer.left = 30;
+        self.viewer.top = 170;
+        self.viewer.delegate = self;
+        [self.view addSubview:self.viewer];
+        
+    }else if(indexPath.row==1){
+        NSArray *na = [urls arrayByAddingObjectsFromArray:urls];
+        na = [na arrayByAddingObjectsFromArray:urls];
+        [self.viewer reloadWithUrls:na];
+    }else if(indexPath.row==2){
+        [self.viewer showPageAtIndex:1];
+    }else{
+        NSArray *na = [urls arrayByAddingObjectsFromArray:urls];
+        na = [na arrayByAddingObjectsFromArray:urls];
+        na = [na arrayByAddingObjectsFromArray:urls];
+        [self.viewer reloadWithUrls:na];
+    }
+        
     return;
     
 //    [self.tableView endHeaderRefreshing];
@@ -302,5 +338,15 @@
     return cell;
 }
 
+- (void)photoViewer:(ACPhotoViewer *)photoViewer didShowPhotoAtIndex:(NSUInteger)index
+{
+    NSLog(@"didShowPhotoAtIndex %zd",index);
+    
+}
+
+- (void)photoViewer:(ACPhotoViewer *)photoViewer scrollToPageAtIndex:(NSUInteger)index
+{
+    NSLog(@"scrollToPageAtIndex %zd",index);
+}
 
 @end

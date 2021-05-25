@@ -51,6 +51,9 @@
 		E76D7DE124C7E58A0062E0E5 /* NSObject+A2BlockDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E76D7DBE24C7E58A0062E0E5 /* NSObject+A2BlockDelegate.m */; };
 		E76D7DE224C7E58A0062E0E5 /* A2DynamicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E76D7DC024C7E58A0062E0E5 /* A2DynamicDelegate.m */; };
 		E76D7DE324C7E58A0062E0E5 /* NSObject+A2DynamicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E76D7DC124C7E58A0062E0E5 /* NSObject+A2DynamicDelegate.m */; };
+		E787CE1B265C8CE200B949B4 /* ACPhotoViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = E787CE1A265C8CE200B949B4 /* ACPhotoViewer.m */; };
+		E787CE26265CA45F00B949B4 /* AFTPagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E787CE23265CA45F00B949B4 /* AFTPagingScrollView.m */; };
+		E787CE27265CA45F00B949B4 /* AFTImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E787CE24265CA45F00B949B4 /* AFTImageScrollView.m */; };
 		E78E5FFD1FA07A6D00EA022E /* LightBoxData.m in Sources */ = {isa = PBXBuildFile; fileRef = E78E5FF41FA07A6D00EA022E /* LightBoxData.m */; };
 		E78E60011FA07A6D00EA022E /* LightBoxWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E78E5FFC1FA07A6D00EA022E /* LightBoxWrapper.m */; };
 		E78E60051FA08CAD00EA022E /* ScrollableSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E78E60041FA08CAD00EA022E /* ScrollableSegmentedControl.m */; };
@@ -243,6 +246,12 @@
 		E76D7DC024C7E58A0062E0E5 /* A2DynamicDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A2DynamicDelegate.m; sourceTree = "<group>"; };
 		E76D7DC124C7E58A0062E0E5 /* NSObject+A2DynamicDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+A2DynamicDelegate.m"; sourceTree = "<group>"; };
 		E76D7DC224C7E58A0062E0E5 /* NSObject+A2BlockDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+A2BlockDelegate.h"; sourceTree = "<group>"; };
+		E787CE19265C8CE200B949B4 /* ACPhotoViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACPhotoViewer.h; sourceTree = "<group>"; };
+		E787CE1A265C8CE200B949B4 /* ACPhotoViewer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACPhotoViewer.m; sourceTree = "<group>"; };
+		E787CE20265CA45F00B949B4 /* AFTPagingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFTPagingScrollView.h; sourceTree = "<group>"; };
+		E787CE22265CA45F00B949B4 /* AFTImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFTImageScrollView.h; sourceTree = "<group>"; };
+		E787CE23265CA45F00B949B4 /* AFTPagingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFTPagingScrollView.m; sourceTree = "<group>"; };
+		E787CE24265CA45F00B949B4 /* AFTImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFTImageScrollView.m; sourceTree = "<group>"; };
 		E78E5FF31FA07A6D00EA022E /* LightBoxData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightBoxData.h; sourceTree = "<group>"; };
 		E78E5FF41FA07A6D00EA022E /* LightBoxData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightBoxData.m; sourceTree = "<group>"; };
 		E78E5FFB1FA07A6D00EA022E /* LightBoxWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightBoxWrapper.h; sourceTree = "<group>"; };
@@ -620,6 +629,26 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
+		E787CE18265C8CC200B949B4 /* PhotoViewer */ = {
+			isa = PBXGroup;
+			children = (
+				E787CE19265C8CE200B949B4 /* ACPhotoViewer.h */,
+				E787CE1A265C8CE200B949B4 /* ACPhotoViewer.m */,
+			);
+			path = PhotoViewer;
+			sourceTree = "<group>";
+		};
+		E787CE1F265CA45F00B949B4 /* AFTPhotoScroller */ = {
+			isa = PBXGroup;
+			children = (
+				E787CE20265CA45F00B949B4 /* AFTPagingScrollView.h */,
+				E787CE23265CA45F00B949B4 /* AFTPagingScrollView.m */,
+				E787CE22265CA45F00B949B4 /* AFTImageScrollView.h */,
+				E787CE24265CA45F00B949B4 /* AFTImageScrollView.m */,
+			);
+			path = AFTPhotoScroller;
+			sourceTree = "<group>";
+		};
 		E78E5FF21FA07A6D00EA022E /* LightBox */ = {
 			isa = PBXGroup;
 			children = (
@@ -690,6 +719,7 @@
 		E79A89D923177CC90049968A /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				E787CE1F265CA45F00B949B4 /* AFTPhotoScroller */,
 				E76D7D7824C7E5890062E0E5 /* BlocksKit */,
 				E79A89DA23177CC90049968A /* IDMPhotoBrowser */,
 			);
@@ -700,21 +730,21 @@
 			isa = PBXGroup;
 			children = (
 				E79A89DC23177CC90049968A /* IDMCaptionView.h */,
-				E79A89DE23177CC90049968A /* IDMZoomingScrollView.h */,
-				E79A89DF23177CC90049968A /* IDMPhoto.h */,
+				E79A89E423177CC90049968A /* IDMCaptionView.m */,
 				E79A89E023177CC90049968A /* IDMPhotoBrowser.h */,
-				E79A89E123177CC90049968A /* IDMTapDetectingImageView.m */,
+				E79A89E823177CC90049968A /* IDMPhotoBrowser.m */,
+				E79A89EB23177CC90049968A /* IDMUtils.h */,
 				E79A89E223177CC90049968A /* IDMUtils.m */,
 				E79A89E323177CC90049968A /* IDMTapDetectingView.h */,
-				E79A89E423177CC90049968A /* IDMCaptionView.m */,
+				E79A89EA23177CC90049968A /* IDMTapDetectingView.m */,
+				E79A89DF23177CC90049968A /* IDMPhoto.h */,
 				E79A89E523177CC90049968A /* IDMPhoto.m */,
+				E79A89DE23177CC90049968A /* IDMZoomingScrollView.h */,
 				E79A89E623177CC90049968A /* IDMZoomingScrollView.m */,
 				E79A89E723177CC90049968A /* IDMPhotoProtocol.h */,
-				E79A89E823177CC90049968A /* IDMPhotoBrowser.m */,
 				E79A89E923177CC90049968A /* IDMPBConstants.h */,
-				E79A89EA23177CC90049968A /* IDMTapDetectingView.m */,
-				E79A89EB23177CC90049968A /* IDMUtils.h */,
 				E79A89EC23177CC90049968A /* IDMTapDetectingImageView.h */,
+				E79A89E123177CC90049968A /* IDMTapDetectingImageView.m */,
 			);
 			path = IDMPhotoBrowser;
 			sourceTree = "<group>";
@@ -1185,6 +1215,7 @@
 		E7F8C1BB1F8F1C1600B1E14B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E787CE18265C8CC200B949B4 /* PhotoViewer */,
 				E7F4A9A11FAC058600AE7B27 /* NaviBar */,
 				E78E60061FA08F6600EA022E /* NotificationCount */,
 				E78E60021FA08CAD00EA022E /* SegCtrl */,
@@ -1434,6 +1465,7 @@
 				E7F8C1FA1F8F1C1600B1E14B /* FBSSOHelper.m in Sources */,
 				E7F8C1C81F8F1C1600B1E14B /* AFBaseTableViewController.m in Sources */,
 				E7F8C1D71F8F1C1600B1E14B /* NSString+AFRegExtension.m in Sources */,
+				E787CE26265CA45F00B949B4 /* AFTPagingScrollView.m in Sources */,
 				E7F8C1FD1F8F1C1600B1E14B /* CTFeedbackTopicsViewController.m in Sources */,
 				E7F8C1E11F8F1C1600B1E14B /* UITableView+AFExtension.m in Sources */,
 				E7F8C1EB1F8F1C1600B1E14B /* UIAlertController+AFExtension.m in Sources */,
@@ -1465,6 +1497,7 @@
 				E7F8C1E01F8F1C1600B1E14B /* UIScrollView+AFRefresh.m in Sources */,
 				E7074E5C200853830030D946 /* UITextView+AFExtension.m in Sources */,
 				E7F8C1C71F8F1C1600B1E14B /* AFBaseNavigationController.m in Sources */,
+				E787CE27265CA45F00B949B4 /* AFTImageScrollView.m in Sources */,
 				E76D7DD324C7E58A0062E0E5 /* UIBarButtonItem+BlocksKit.m in Sources */,
 				E7AF70C21FB0350C0040904F /* AFRefreshFooter.m in Sources */,
 				E79A89F023177CC90049968A /* IDMUtils.m in Sources */,
@@ -1521,6 +1554,7 @@
 				E70E9CDD1F948E640017F881 /* UIColor+AFExtension.m in Sources */,
 				E7F8C2071F8F1C1600B1E14B /* RMessageHelper.m in Sources */,
 				E722EB5A1F960F890027CC05 /* AnyPromise+AFExtension.m in Sources */,
+				E787CE1B265C8CE200B949B4 /* ACPhotoViewer.m in Sources */,
 				E722EB661F98867F0027CC05 /* FBSSOResult.m in Sources */,
 				E76D7DD524C7E58A0062E0E5 /* UIView+BlocksKit.m in Sources */,
 				E76D7DE024C7E58A0062E0E5 /* NSURLConnection+BlocksKit.m in Sources */,
