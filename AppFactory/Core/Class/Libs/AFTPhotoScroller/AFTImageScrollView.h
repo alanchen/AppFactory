@@ -16,6 +16,7 @@
 
 @property (nonatomic, assign) NSInteger pageIndex;
 @property (nonatomic, weak) AFTPagingScrollView *pagingScrollView;
+@property (nonatomic, strong) UIView *customCoverView;
 
 - (void)displayImage:(UIImage *)image;
 - (void)setMaxMinZoomScalesForCurrentBounds;

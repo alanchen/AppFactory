@@ -329,6 +329,9 @@ void *kAFTPagingScrollViewKVOContext = &kAFTPagingScrollViewKVOContext;
             AFTImageScrollView *page = [self dequeueRecycledPage];
             if (page == nil) {
                 page = [[AFTImageScrollView alloc] initWithPagingScrollView:self];
+                if ([_delegate respondsToSelector:@selector(pagingScrollView:didCreateImageScrollView:)]) {
+                    [_delegate pagingScrollView:self didCreateImageScrollView:page];
+                }
             }
             [self configurePage:page forIndex:index];
             [_pagingScrollView addSubview:page];
@@ -383,6 +386,9 @@ void *kAFTPagingScrollViewKVOContext = &kAFTPagingScrollViewKVOContext;
         AFTImageScrollView *page = [self dequeueRecycledPage];
         if (page == nil) {
             page = [[AFTImageScrollView alloc] initWithPagingScrollView:self];
+            if ([_delegate respondsToSelector:@selector(pagingScrollView:didCreateImageScrollView:)]) {
+                [_delegate pagingScrollView:self didCreateImageScrollView:page];
+            }
         }
         [self configurePage:page forIndex:index];
         [_pagingScrollView addSubview:page];

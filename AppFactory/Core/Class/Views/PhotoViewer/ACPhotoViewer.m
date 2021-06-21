@@ -94,12 +94,34 @@
 
 #pragma mark - AFTPagingScrollViewDelegate
 
+- (void)pagingScrollView:(AFTPagingScrollView *)pagingScrollView didCreateImageScrollView:(UIScrollView *)imageScrollView
+{
+    if(![self.delegate respondsToSelector:@selector(pageCoverView)]){
+        return;
+    }
+    
+    UIView *coverView = [self.delegate pageCoverView];
+    [imageScrollView addSubview:coverView];
+    ((AFTImageScrollView *)imageScrollView).customCoverView = coverView;
+
+    [coverView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@0);
+        make.top.equalTo(@0);
+        make.height.equalTo(imageScrollView.mas_height);
+        make.width.equalTo(imageScrollView.mas_width);
+    }];
+}
+
 - (void)pagingScrollView:(AFTPagingScrollView *)pagingScrollView
          imageScrollView:(UIScrollView *)imageScrollView
     didReuseForPageIndex:(NSInteger)pageIndex
 {
 //    NSLog(@"didDisplayPageAtIndex %zd",pageIndex);
     
+    [self configCustomCoverViewAtIndex:pageIndex-1];
+    [self configCustomCoverViewAtIndex:pageIndex];
+    [self configCustomCoverViewAtIndex:pageIndex+1];
+
     NSString *url = [self.urls safelyObjectAtIndex:pageIndex];
     if(url){
         UIImage *imageCached = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:url];
@@ -114,6 +136,10 @@
 
 - (void)pagingScrollView:(AFTPagingScrollView *)pagingScrollView didDisplayPageAtIndex:(NSInteger)pageIndex
 {
+    [self configCustomCoverViewAtIndex:pageIndex-1];
+    [self configCustomCoverViewAtIndex:pageIndex];
+    [self configCustomCoverViewAtIndex:pageIndex+1];
+    
     if(pageIndex >= 0 && [self.urls count] ){
         if([self.delegate respondsToSelector:@selector(photoViewer:didShowPhotoAtIndex:)]){
             [self.delegate photoViewer:self didShowPhotoAtIndex:pageIndex];
@@ -123,6 +149,10 @@
 
 - (void)pagingScrollView:(AFTPagingScrollView *)pagingScrollView didScrollToPageAtIndex:(NSInteger)pageIndex
 {
+    [self configCustomCoverViewAtIndex:pageIndex-1];
+    [self configCustomCoverViewAtIndex:pageIndex];
+    [self configCustomCoverViewAtIndex:pageIndex+1];
+    
     if(pageIndex >= 0 && [self.urls count] && self.isReloadDataReady){
         if([self.delegate respondsToSelector:@selector(photoViewer:scrollToPageAtIndex:)]){
             [self.delegate photoViewer:self scrollToPageAtIndex:pageIndex];
@@ -135,6 +165,26 @@
 }
 
 #pragma mark - Private
+
+- (void)configCustomCoverViewAtIndex:(NSInteger)pageIndex
+{
+    if( [self.urls count] == 0 || pageIndex > [self.urls count] || pageIndex < 0){
+        return;
+    }
+    
+    BOOL showCoverView = NO;
+    if([self.delegate respondsToSelector:@selector(photoViewer:showCoverViewAtIndex:)]){
+        showCoverView = [self.delegate photoViewer:self showCoverViewAtIndex:pageIndex];
+    }
+    
+    AFTImageScrollView *page = [self.mainScrollView pageForIndex:pageIndex];
+    if(!page){
+        return;
+    }
+    
+    page.customCoverView.hidden = !showCoverView;
+    page.userInteractionEnabled = !showCoverView;
+}
 
 - (void)downloadImageAtPageIndex:(NSInteger)pageIndex completion:(void (^)(BOOL success))completion{
     

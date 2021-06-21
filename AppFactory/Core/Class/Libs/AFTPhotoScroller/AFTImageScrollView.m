@@ -91,6 +91,10 @@
         [_imageView addGestureRecognizer:self.zoomingTap];
         _imageView.userInteractionEnabled = YES;
     }
+    
+    if (self.customCoverView) {
+        [self bringSubviewToFront:self.customCoverView];
+    }
 }
 
 - (void)setMaxMinZoomScalesForCurrentBounds {

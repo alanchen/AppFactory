@@ -101,6 +101,12 @@ typedef NS_ENUM(NSInteger, AFTPagingScrollViewNavigationOrientation) {
  */
 - (void)pagingScrollView:(AFTPagingScrollView *)pagingScrollView imageScrollView:(UIScrollView *)imageScrollView didReuseForPageIndex:(NSInteger)pageIndex;
 
+/**
+ (当图片容器被建立时的回调)
+ @param imageScrollView The inner scroll view which handles the image zooming.
+ */
+- (void)pagingScrollView:(AFTPagingScrollView *)pagingScrollView didCreateImageScrollView:(UIScrollView *)imageScrollView;
+
 @end
 
 

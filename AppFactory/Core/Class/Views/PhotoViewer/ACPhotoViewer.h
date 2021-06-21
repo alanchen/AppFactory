@@ -17,6 +17,10 @@
 @optional
 - (void)photoViewer:(ACPhotoViewer *)photoViewer scrollToPageAtIndex:(NSUInteger)index;
 - (void)photoViewer:(ACPhotoViewer *)photoViewer didShowPhotoAtIndex:(NSUInteger)index;
+
+- (BOOL)photoViewer:(ACPhotoViewer *)photoViewer showCoverViewAtIndex:(NSUInteger)index;
+- (UIView *)pageCoverView;
+
 @end
 
 @interface ACPhotoViewer : UIView

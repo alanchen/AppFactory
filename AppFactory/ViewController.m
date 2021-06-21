@@ -340,13 +340,29 @@
 
 - (void)photoViewer:(ACPhotoViewer *)photoViewer didShowPhotoAtIndex:(NSUInteger)index
 {
-    NSLog(@"didShowPhotoAtIndex %zd",index);
+//    NSLog(@"didShowPhotoAtIndex %zd",index);
     
 }
 
 - (void)photoViewer:(ACPhotoViewer *)photoViewer scrollToPageAtIndex:(NSUInteger)index
 {
-    NSLog(@"scrollToPageAtIndex %zd",index);
+//    NSLog(@"scrollToPageAtIndex %zd",index);
+}
+
+- (BOOL)photoViewer:(ACPhotoViewer *)photoViewer showCoverViewAtIndex:(NSUInteger)index
+{
+    return index%2 ==0;
+    if(index == 2){
+        return YES;
+    }
+    return NO;
+}
+
+- (UIView *)pageCoverView
+{
+    UIView  *v = [[UIView alloc] initWithFrame:CGRectZero];
+    v.backgroundColor = [UIColor blueColor];
+    return v;
 }
 
 @end
