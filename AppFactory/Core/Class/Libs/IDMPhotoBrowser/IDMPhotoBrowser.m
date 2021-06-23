@@ -76,6 +76,7 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
 	UIBarButtonItem *_previousButton, *_nextButton, *_actionButton;
     UIBarButtonItem *_counterButton;
     UILabel *_counterLabel;
+    UIView *_bgView;
 
     // Actions
     UIActionSheet *_actionsSheet;
@@ -652,6 +653,10 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
     [self performPresentAnimation];
 
     UIInterfaceOrientation currentOrientation = [UIApplication sharedApplication].statusBarOrientation;
+    
+    // Alan add Toolbar background View
+    _bgView = [[UIView alloc] initWithFrame:[self frameForBackgrondViewAtOrientation:currentOrientation]];
+    _bgView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.7];
 
     // Toolbar
     _toolbar = [[UIToolbar alloc] initWithFrame:[self frameForToolbarAtOrientation:currentOrientation]];
@@ -708,7 +713,7 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
     _counterLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 95, 40)];
     _counterLabel.textAlignment = NSTextAlignmentCenter;
     _counterLabel.backgroundColor = [UIColor clearColor];
-    _counterLabel.font = [UIFont fontWithName:@"Helvetica" size:17];
+    _counterLabel.font = [UIFont fontWithName:@"Helvetica" size:16];
 
     if(_useWhiteBackgroundColor == NO) {
         _counterLabel.textColor = [UIColor whiteColor];
@@ -820,6 +825,9 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
 
     UIInterfaceOrientation currentOrientation = [UIApplication sharedApplication].statusBarOrientation;
 
+    // BgView which Alan added
+    _bgView.frame = [self frameForBackgrondViewAtOrientation:currentOrientation];
+
     // Toolbar
     _toolbar.frame = [self frameForToolbarAtOrientation:currentOrientation];
 
@@ -870,8 +878,10 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
 
     // Toolbar
     if (_displayToolbar) {
+        [self.view addSubview:_bgView];
         [self.view addSubview:_toolbar];
     } else {
+        [_bgView removeFromSuperview];
         [_toolbar removeFromSuperview];
     }
 
@@ -1195,8 +1205,15 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
     if ([self isLandscape:orientation])
         height = 32;
 
-    CGRect rtn = CGRectMake(0, self.view.bounds.size.height - height, self.view.bounds.size.width, height);
+//    CGRect rtn = CGRectMake(0, self.view.bounds.size.height - height, self.view.bounds.size.width, height);
+    CGRect rtn = CGRectMake(0, 0, self.view.bounds.size.width, height);
     rtn = [self adjustForSafeArea:rtn adjustForStatusBar:true];
+    return rtn;
+}
+
+- (CGRect)frameForBackgrondViewAtOrientation:(UIInterfaceOrientation)orientation {
+    CGRect rtn = [self frameForToolbarAtOrientation:orientation];
+    rtn = CGRectMake(0, 0 , rtn.size.width, rtn.origin.y + rtn.size.height);
     return rtn;
 }
 
@@ -1317,6 +1334,7 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
     [UIView animateWithDuration:(animated ? 0.1 : 0) animations:^(void) {
         CGFloat alpha = hidden ? 0 : 1;
         [self.navigationController.navigationBar setAlpha:alpha];
+        [_bgView setAlpha:alpha];
         [_toolbar setAlpha:alpha];
         [_doneButton setAlpha:alpha];
         for (UIView *v in captionViews) v.alpha = alpha;
