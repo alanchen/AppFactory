@@ -427,8 +427,8 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
 
     void (^completion)() = ^() {
         self.view.alpha = 1.0f;
-        _pagingScrollView.alpha = 1.0f;
-        resizableImageView.backgroundColor = [UIColor colorWithWhite:(_useWhiteBackgroundColor) ? 1 : 0 alpha:1];
+        self->_pagingScrollView.alpha = 1.0f;
+        resizableImageView.backgroundColor = [UIColor colorWithWhite:(self->_useWhiteBackgroundColor) ? 1 : 0 alpha:1];
         [fadeView removeFromSuperview];
         [resizableImageView removeFromSuperview];
     };
@@ -488,9 +488,9 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
     self.view.hidden = YES;
 
     void (^completion)() = ^() {
-        _senderViewForAnimation.hidden = NO;
-        _senderViewForAnimation = nil;
-        _scaleImage = nil;
+        self->_senderViewForAnimation.hidden = NO;
+        self->_senderViewForAnimation = nil;
+        self->_scaleImage = nil;
 
         [fadeView removeFromSuperview];
         [resizableImageView removeFromSuperview];
@@ -581,9 +581,10 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
     if ([_delegate respondsToSelector:@selector(photoBrowser:willDismissAtPageIndex:)])
         [_delegate photoBrowser:self willDismissAtPageIndex:_currentPageIndex];
 
+    __weak __typeof(_delegate) weakDelegate = _delegate;
     [self dismissViewControllerAnimated:animated completion:^{
-        if ([_delegate respondsToSelector:@selector(photoBrowser:didDismissAtPageIndex:)])
-            [_delegate photoBrowser:self didDismissAtPageIndex:_currentPageIndex];
+        if ([weakDelegate respondsToSelector:@selector(photoBrowser:didDismissAtPageIndex:)])
+            [weakDelegate photoBrowser:self didDismissAtPageIndex:self->_currentPageIndex];
 
 //		if (SYSTEM_VERSION_LESS_THAN(@"8.0"))
 //		{
@@ -773,20 +774,6 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     _viewIsActive = YES;
-}
-
-// Release any retained subviews of the main view.
-- (void)viewDidUnload {
-	_currentPageIndex = 0;
-    _pagingScrollView = nil;
-    _visiblePages = nil;
-    _recycledPages = nil;
-    _toolbar = nil;
-    _doneButton = nil;
-    _previousButton = nil;
-    _nextButton = nil;
-
-    [super viewDidUnload];
 }
 
 #pragma mark - Status Bar
@@ -1334,9 +1321,9 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
     [UIView animateWithDuration:(animated ? 0.1 : 0) animations:^(void) {
         CGFloat alpha = hidden ? 0 : 1;
         [self.navigationController.navigationBar setAlpha:alpha];
-        [_bgView setAlpha:alpha];
-        [_toolbar setAlpha:alpha];
-        [_doneButton setAlpha:alpha];
+        [self->_bgView setAlpha:alpha];
+        [self->_toolbar setAlpha:alpha];
+        [self->_doneButton setAlpha:alpha];
         for (UIView *v in captionViews) v.alpha = alpha;
     } completion:^(BOOL finished) {}];
 
