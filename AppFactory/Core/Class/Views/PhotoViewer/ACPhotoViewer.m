@@ -81,9 +81,7 @@
         [self downloadImageAtPageIndex:pageIndex completion:^(BOOL success) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf showSpinnerAtPageIndex:pageIndex show:NO];
-                if(success){
-                    [weakSelf.mainScrollView reloadPageAtIndex:pageIndex];
-                }
+                [weakSelf.mainScrollView reloadPageAtIndex:pageIndex];
             });
         }];
     }
@@ -261,6 +259,7 @@
     if(!_mainScrollView){
         _mainScrollView = ({
             AFTPagingScrollView *v = [[AFTPagingScrollView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+            v.backgroundColor = [UIColor clearColor];
             v;
         });
     }
@@ -272,7 +271,7 @@
     if(!_placeholderImage){
         _placeholderImage = ({
             CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
-            UIColor *bgColor = [UIColor blackColor];
+            UIColor *bgColor = [UIColor clearColor];
             UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0);
             [bgColor setFill];
             UIRectFill(rect);
