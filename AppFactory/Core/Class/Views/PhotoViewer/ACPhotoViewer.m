@@ -46,8 +46,6 @@
         self.mainScrollView.delegate = self;
         self.mainScrollView.dataSource = self;
         self.mainScrollView.paddingBetweenPages = 6;
-        
-        [self reloadData];
     }
     
     return self;
