@@ -13,11 +13,20 @@
 #import "AppFactory.h"
 #import "LibsHeader.h"
 
+typedef enum : NSUInteger {
+    ACPhotoViewerDefault,
+    ACPhotoViewerLoading,
+    ACPhotoViewerFailed,
+    ACPhotoViewerSuccess,
+} ACPhotoViewerLoadingStatus;
+
 @interface ACPhotoViewer()<AFTPagingScrollViewDataSource, AFTPagingScrollViewDelegate>
 @property (nonatomic, strong) UIImage *placeholderImage;
 @property (nonatomic, strong) AFTPagingScrollView *mainScrollView;
 @property (nonatomic, strong) NSArray *urls;
 @property (nonatomic) BOOL isReloadDataReady;
+@property (nonatomic, strong) NSMutableDictionary *failedUrls;
+@property (nonatomic, strong) NSMutableDictionary *loadingUrls;
 
 @end
 
@@ -38,6 +47,8 @@
         self.clipsToBounds = YES;
         self.backgroundColor = [UIColor clearColor];
         self.urls = urls;
+        self.failedUrls = [@{} mutableCopy];
+        self.loadingUrls = [@{} mutableCopy];
 
         [self addSubview:self.mainScrollView];
         [self.mainScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -62,28 +73,36 @@
 }
 
 - (UIImage *)pagingScrollView:(AFTPagingScrollView *)pagingScrollView imageForPageAtIndex:(NSInteger)pageIndex {
-    
-//    NSLog(@"imageForPageAtIndex %zd",pageIndex);
 
-    __weak __typeof(self) weakSelf = self;
     NSString *url = [self.urls safelyObjectAtIndex:pageIndex];
     if(!url){
+        [self configLoadingStatusAtIndex:pageIndex status:ACPhotoViewerSuccess];
         return self.placeholderImage;
     }
+    
     UIImage *imageCached = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:url];
-
     if(imageCached){
+        [self configLoadingStatusAtIndex:pageIndex status:ACPhotoViewerSuccess];
         return imageCached;
-    }else{
-//        NSLog(@"Start to load image at index %zd",pageIndex);
-        [self downloadImageAtPageIndex:pageIndex completion:^(BOOL success) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf showSpinnerAtPageIndex:pageIndex show:NO];
-                [weakSelf.mainScrollView reloadPageAtIndex:pageIndex];
-            });
-        }];
     }
     
+    if([self checkIfInvalidUrl:url]){
+        [self configLoadingStatusAtIndex:pageIndex status:ACPhotoViewerFailed];
+        return self.placeholderImage;
+    }
+    
+    [self configLoadingStatusAtIndex:pageIndex status:ACPhotoViewerLoading];
+    if([self.loadingUrls safelyObjectForKey:url]){
+        return self.placeholderImage;
+    }
+    __weak __typeof(self) weakSelf = self;
+    [self.loadingUrls safelySetObject:@(YES) forKey:url];
+    [self downloadImageAtPageIndex:pageIndex completion:^(BOOL success) {
+        [weakSelf.loadingUrls removeObjectForKey:url];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.mainScrollView reloadPageAtIndex:pageIndex];
+        });
+    }];
 
     return self.placeholderImage;
 }
@@ -92,20 +111,31 @@
 
 - (void)pagingScrollView:(AFTPagingScrollView *)pagingScrollView didCreateImageScrollView:(UIScrollView *)imageScrollView
 {
-    if(![self.delegate respondsToSelector:@selector(pageCoverView)]){
-        return;
+    if([self.delegate respondsToSelector:@selector(pagePlaceholderView)]){
+        UIView *placeholderView = [self.delegate pagePlaceholderView];
+        placeholderView.hidden = YES;
+        [imageScrollView addSubview:placeholderView];
+        ((AFTImageScrollView *)imageScrollView).placeholderView = placeholderView;
+        [placeholderView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(imageScrollView);
+            make.centerY.equalTo(imageScrollView);
+            make.height.equalTo(@(placeholderView.height));
+            make.width.equalTo(@(placeholderView.width));
+        }];
     }
     
-    UIView *coverView = [self.delegate pageCoverView];
-    [imageScrollView addSubview:coverView];
-    ((AFTImageScrollView *)imageScrollView).customCoverView = coverView;
-
-    [coverView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@0);
-        make.top.equalTo(@0);
-        make.height.equalTo(imageScrollView.mas_height);
-        make.width.equalTo(imageScrollView.mas_width);
-    }];
+    if([self.delegate respondsToSelector:@selector(pageCoverView)]){
+        UIView *coverView = [self.delegate pageCoverView];
+        [imageScrollView addSubview:coverView];
+        ((AFTImageScrollView *)imageScrollView).customCoverView = coverView;
+        [coverView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(@0);
+            make.top.equalTo(@0);
+            make.height.equalTo(imageScrollView.mas_height);
+            make.width.equalTo(imageScrollView.mas_width);
+        }];
+    }
+    
 }
 
 - (void)pagingScrollView:(AFTPagingScrollView *)pagingScrollView
@@ -118,16 +148,7 @@
     [self configCustomCoverViewAtIndex:pageIndex];
     [self configCustomCoverViewAtIndex:pageIndex+1];
 
-    NSString *url = [self.urls safelyObjectAtIndex:pageIndex];
-    if(url){
-        UIImage *imageCached = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:url];
-        if(!imageCached){
-            [self showSpinnerAtPageIndex:pageIndex show:YES];
-            return;
-        }
-    }
-    
-    [self showSpinnerAtPageIndex:pageIndex show:NO];
+    [self.mainScrollView reloadPageAtIndex:pageIndex];
 }
 
 - (void)pagingScrollView:(AFTPagingScrollView *)pagingScrollView didDisplayPageAtIndex:(NSInteger)pageIndex
@@ -182,6 +203,33 @@
     page.userInteractionEnabled = !showCoverView;
 }
 
+- (void)configLoadingStatusAtIndex:(NSInteger)pageIndex status:(ACPhotoViewerLoadingStatus)status
+{
+    AFTImageScrollView *page = [self.mainScrollView pageForIndex:pageIndex];
+    
+    if(!page)
+        return;
+    
+    switch (status) {
+        case ACPhotoViewerLoading:
+            page.placeholderView.hidden = YES;
+            [page.af_spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite];
+            [page bringSubviewToFront:page.af_spinner];
+            [page.af_spinner startAnimating];
+            break;
+        case ACPhotoViewerFailed:
+            page.placeholderView.hidden = NO;
+            [page.af_spinner stopAnimating];
+            break;
+        case ACPhotoViewerSuccess:
+            page.placeholderView.hidden = YES;
+            [page.af_spinner stopAnimating];
+            break;
+        default:
+            break;
+    }
+}
+
 - (void)downloadImageAtPageIndex:(NSInteger)pageIndex completion:(void (^)(BOOL success))completion{
     
     NSString *urlStr = [self.urls safelyObjectAtIndex:pageIndex];
@@ -189,28 +237,31 @@
         if(completion)completion(NO);
         return;;
     }
-
+    
     NSURL *url = [NSURL URLWithString:urlStr];
     [[SDWebImageManager sharedManager] loadImageWithURL:url options:SDWebImageRetryFailed progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL)
     {
         if(image && !error){
             if(completion)completion(YES);
         }else{
+            [self setInvalidUrl:urlStr];
             if(completion)completion(NO);
         }
     }];
 }
 
-- (void)showSpinnerAtPageIndex:(NSInteger)pageIndex show:(BOOL)show
-{
-    AFTImageScrollView *page = [self.mainScrollView pageForIndex:pageIndex];
-    if(show){
-        [page.af_spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite];
-        [page bringSubviewToFront:page.af_spinner];
-        [page.af_spinner startAnimating];
-    }else{
-        [page.af_spinner stopAnimating];
+-(BOOL)checkIfInvalidUrl:(NSString *)url{
+    NSNumber *num =  [self.failedUrls safelyObjectForKey:url];
+    if(num){
+        return [num integerValue]>2; // Allow retry twice
     }
+    return NO;
+}
+
+-(void)setInvalidUrl:(NSString *)url{
+    NSNumber *num = [self.failedUrls safelyObjectForKey:url];
+    num = @([num intValue] + 1);
+    [self.failedUrls safelySetObject:num forKey:url];
 }
 
 #pragma mark - Public

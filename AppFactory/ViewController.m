@@ -214,7 +214,7 @@
     
 
     NSArray *urls = @[@"https://imghole.pcoin.tw/cbrLwPET8N.png",
-                      @"https://imghole.pcoin.tw/v69zPzcvsL.jpg",
+                      @"https://imghole.pcoin.tw/v69zPzcvsL1.jpg",
                       @"https://imghole.pcoin.tw/Mm5cbuUejh.jpg",
                       @"https://imghole.pcoin.tw/AVEx56d7e3.jpg",
                       @"https://imghole.pcoin.tw/XkovGM31FU.jpg",
@@ -225,16 +225,23 @@
     
     if(indexPath.row==0){
         [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
-        self.viewer = [[ACPhotoViewer alloc] initWithURLs:nil];
+        self.viewer = [[ACPhotoViewer alloc] initWithURLs:urls];
         self.viewer.left = 30;
         self.viewer.top = 170;
-        self.viewer.delegate = self;
+        self.viewer.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha: 0.3];
         [self.view addSubview:self.viewer];
+        
+        self.viewer.delegate = self;
+        [self.viewer reloadData];
+        [self.viewer showPageAtIndex:2];
+        [self.viewer showPageAtIndex:1];
+
         
     }else if(indexPath.row==1){
         NSArray *na = [urls arrayByAddingObjectsFromArray:urls];
         na = [na arrayByAddingObjectsFromArray:urls];
         [self.viewer reloadWithUrls:na];
+        [self.viewer showPageAtIndex:2];
     }else if(indexPath.row==2){
         [self.viewer showPageAtIndex:1];
     }else{
@@ -340,18 +347,18 @@
 
 - (void)photoViewer:(ACPhotoViewer *)photoViewer didShowPhotoAtIndex:(NSUInteger)index
 {
-//    NSLog(@"didShowPhotoAtIndex %zd",index);
+    NSLog(@"didShowPhotoAtIndex %zd",index);
     
 }
 
 - (void)photoViewer:(ACPhotoViewer *)photoViewer scrollToPageAtIndex:(NSUInteger)index
 {
-//    NSLog(@"scrollToPageAtIndex %zd",index);
+    NSLog(@"scrollTo %zd",index);
 }
 
 - (BOOL)photoViewer:(ACPhotoViewer *)photoViewer showCoverViewAtIndex:(NSUInteger)index
 {
-    return index%2 ==0;
+    return index==4;
     if(index == 2){
         return YES;
     }
@@ -362,6 +369,13 @@
 {
     UIView  *v = [[UIView alloc] initWithFrame:CGRectZero];
     v.backgroundColor = [UIColor blueColor];
+    return v;
+}
+
+- (UIView *)pagePlaceholderView
+{
+    UIView  *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 400)];
+    v.backgroundColor = [UIColor yellowColor];
     return v;
 }
 

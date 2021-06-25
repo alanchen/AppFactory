@@ -20,6 +20,7 @@
 
 - (BOOL)photoViewer:(ACPhotoViewer *)photoViewer showCoverViewAtIndex:(NSUInteger)index;
 - (UIView *)pageCoverView;
+- (UIView *)pagePlaceholderView;
 
 @end
 
