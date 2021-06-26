@@ -226,15 +226,15 @@
     if(indexPath.row==0){
         [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
         self.viewer = [[ACPhotoViewer alloc] initWithURLs:urls];
-        self.viewer.left = 30;
+        self.viewer.left = 5;
         self.viewer.top = 170;
         self.viewer.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha: 0.3];
         [self.view addSubview:self.viewer];
         
         self.viewer.delegate = self;
         [self.viewer reloadData];
-        [self.viewer showPageAtIndex:2];
-        [self.viewer showPageAtIndex:1];
+        [self.viewer showPageAtIndex:5];
+        [self.viewer showPageAtIndex:3];
 
         
     }else if(indexPath.row==1){
@@ -348,7 +348,6 @@
 - (void)photoViewer:(ACPhotoViewer *)photoViewer didShowPhotoAtIndex:(NSUInteger)index
 {
     NSLog(@"didShowPhotoAtIndex %zd",index);
-    
 }
 
 - (void)photoViewer:(ACPhotoViewer *)photoViewer scrollToPageAtIndex:(NSUInteger)index

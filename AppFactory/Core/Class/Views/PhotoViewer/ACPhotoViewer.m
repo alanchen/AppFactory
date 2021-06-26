@@ -24,7 +24,6 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) UIImage *placeholderImage;
 @property (nonatomic, strong) AFTPagingScrollView *mainScrollView;
 @property (nonatomic, strong) NSArray *urls;
-@property (nonatomic) BOOL isReloadDataReady;
 @property (nonatomic, strong) NSMutableDictionary *failedUrls;
 @property (nonatomic, strong) NSMutableDictionary *loadingUrls;
 
@@ -170,14 +169,10 @@ typedef enum : NSUInteger {
     [self configCustomCoverViewAtIndex:pageIndex];
     [self configCustomCoverViewAtIndex:pageIndex+1];
     
-    if(pageIndex >= 0 && [self.urls count] && self.isReloadDataReady){
+    if(pageIndex >= 0 && [self.urls count] ){
         if([self.delegate respondsToSelector:@selector(photoViewer:scrollToPageAtIndex:)]){
             [self.delegate photoViewer:self scrollToPageAtIndex:pageIndex];
         }
-    }
-    
-    if(!self.isReloadDataReady){
-        self.isReloadDataReady = YES;
     }
 }
 
@@ -268,13 +263,11 @@ typedef enum : NSUInteger {
 
 - (void)reloadData
 {
-    self.isReloadDataReady = NO;
     [self.mainScrollView reloadData];
 }
 
 - (void)reloadWithUrls:(NSArray *)urls
 {
-    self.isReloadDataReady = NO;
     NSInteger i = [self currentIndex];
     self.urls = urls;
     [self.mainScrollView reloadData];

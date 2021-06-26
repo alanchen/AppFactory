@@ -15,10 +15,11 @@
 
 @protocol ACPhotoViewerDelegate <NSObject>
 @optional
-- (void)photoViewer:(ACPhotoViewer *)photoViewer scrollToPageAtIndex:(NSUInteger)index;
-- (void)photoViewer:(ACPhotoViewer *)photoViewer didShowPhotoAtIndex:(NSUInteger)index;
 
+- (void)photoViewer:(ACPhotoViewer *)photoViewer scrollToPageAtIndex:(NSUInteger)index; // Only drag-to-scroll will trigger this method.
+- (void)photoViewer:(ACPhotoViewer *)photoViewer didShowPhotoAtIndex:(NSUInteger)index;
 - (BOOL)photoViewer:(ACPhotoViewer *)photoViewer showCoverViewAtIndex:(NSUInteger)index;
+
 - (UIView *)pageCoverView;
 - (UIView *)pagePlaceholderView;
 
@@ -35,7 +36,7 @@
 
 - (void)reloadData;
 - (void)reloadWithUrls:(NSArray *)urls;
-- (void)showPageAtIndex:(NSInteger)index; // no animation
+- (void)showPageAtIndex:(NSInteger)index; // This will only trigger didShowPhotoAtIndex
 
 @end
 

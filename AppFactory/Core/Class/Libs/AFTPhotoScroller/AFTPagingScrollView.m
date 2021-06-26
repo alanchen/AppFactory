@@ -26,6 +26,8 @@ void *kAFTPagingScrollViewKVOContext = &kAFTPagingScrollViewKVOContext;
 @property (nonatomic, assign) NSInteger currentPageIndex;
 @property (nonatomic, assign) NSInteger nextPageIndex;
 
+@property (nonatomic, assign) BOOL isScrollAvailable;
+
 @property (nonatomic, strong) NSMutableDictionary <NSNumber *, UIImage *> *imageCache; // It only caches 3 images for increasing the dragging behavior between pages back and forth.
 
 @end
@@ -135,7 +137,7 @@ void *kAFTPagingScrollViewKVOContext = &kAFTPagingScrollViewKVOContext;
         _firstTimeLoadPage = NO;
         _currentPageIndex = currentPageIndex;
         
-        if (scroll) {
+        if (scroll && _isScrollAvailable) {
             if ([_delegate respondsToSelector:@selector(pagingScrollView:didScrollToPageAtIndex:)]) {
                 [_delegate pagingScrollView:self didScrollToPageAtIndex:currentPageIndex];
             }
@@ -197,6 +199,9 @@ void *kAFTPagingScrollViewKVOContext = &kAFTPagingScrollViewKVOContext;
 }
 
 - (void)buildInterface {
+    
+    _isScrollAvailable = NO;
+
     // Build paging scroll view
     CGRect pagingScrollViewFrame = [self frameForPagingScrollView];
     
@@ -454,20 +459,30 @@ void *kAFTPagingScrollViewKVOContext = &kAFTPagingScrollViewKVOContext;
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView.dragging || scrollView.decelerating){
+        _isScrollAvailable = YES;
+    }
+    
     [self tilePages];
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    _isScrollAvailable = YES;
     if ([_delegate respondsToSelector:@selector(pagingScrollViewWillBeginPaging:)]) {
         [_delegate pagingScrollViewWillBeginPaging:self];
     }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    _isScrollAvailable = YES;
     if ([_delegate respondsToSelector:@selector(pagingScrollView:didDisplayPageAtIndex:)]) {
         [_delegate pagingScrollView:self didDisplayPageAtIndex:_currentPageIndex];
     }
     [self updateImageCache];
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+    _isScrollAvailable = YES;
 }
 
 #pragma mark - Calculations
@@ -698,7 +713,8 @@ void *kAFTPagingScrollViewKVOContext = &kAFTPagingScrollViewKVOContext;
         CGFloat pageHeight = _pagingScrollView.bounds.size.height;
         contentOffset.y = (_firstVisiblePageIndexBeforeRotation * pageHeight) + (_percentScrolledIntoFirstVisiblePage * pageHeight);
     }
-    
+
+    _isScrollAvailable = NO;
     _pagingScrollView.contentOffset = contentOffset;
     
     // adjust position for parallax bar
