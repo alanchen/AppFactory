@@ -18,8 +18,8 @@ pod 'SVProgressHUD', '2.2.5'
 pod 'ObjcAssociatedObjectHelpers', '2.0.1'
 
 # Analytics Tools & SDK
-pod 'FBSDKCoreKit', '~> 9.0.0'
-pod 'FBSDKLoginKit', '~> 9.0.0'
+pod 'FBSDKCoreKit', '~> 11.1.0'
+pod 'FBSDKLoginKit', '~> 11.1.0'
 
 # Image & ImageView & ImagePicker
 pod 'SDWebImage', '~> 5.0'

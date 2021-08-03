@@ -20,16 +20,23 @@ PODS:
   - DACircularProgress (2.3.1)
   - DateTools (2.0.0)
   - EDColor (1.0.1)
-  - FBSDKCoreKit (9.0.0):
-    - FBSDKCoreKit/Basics (= 9.0.0)
-    - FBSDKCoreKit/Core (= 9.0.0)
-  - FBSDKCoreKit/Basics (9.0.0)
-  - FBSDKCoreKit/Core (9.0.0):
-    - FBSDKCoreKit/Basics
-  - FBSDKLoginKit (9.0.0):
-    - FBSDKLoginKit/Login (= 9.0.0)
-  - FBSDKLoginKit/Login (9.0.0):
-    - FBSDKCoreKit (~> 9.0.0)
+  - FBAEMKit (11.1.0):
+    - FBAEMKit/AEM (= 11.1.0)
+  - FBAEMKit/AEM (11.1.0):
+    - FBSDKCoreKit_Basics (~> 11.1.0)
+  - FBSDKCoreKit (11.1.0):
+    - FBSDKCoreKit/Core (= 11.1.0)
+  - FBSDKCoreKit/Core (11.1.0):
+    - FBAEMKit (~> 11.1.0)
+    - FBSDKCoreKit_Basics (~> 11.1.0)
+  - FBSDKCoreKit_Basics (11.1.0):
+    - FBSDKCoreKit_Basics/Basics (= 11.1.0)
+  - FBSDKCoreKit_Basics/Basics (11.1.0)
+  - FBSDKLoginKit (11.1.0):
+    - FBSDKLoginKit/Login (= 11.1.0)
+  - FBSDKLoginKit/Login (11.1.0):
+    - FBSDKCoreKit (~> 11.1.0)
+    - FBSDKCoreKit_Basics (~> 11.1.0)
   - HexColors (4.0.0)
   - hpple (0.2.0)
   - Masonry (0.6.4)
@@ -94,8 +101,8 @@ DEPENDENCIES:
   - DACircularProgress
   - DateTools (~> 2.0.0)
   - EDColor (~> 1.0.1)
-  - FBSDKCoreKit (~> 9.0.0)
-  - FBSDKLoginKit (~> 9.0.0)
+  - FBSDKCoreKit (~> 11.1.0)
+  - FBSDKLoginKit (~> 11.1.0)
   - hpple (~> 0.2.0)
   - Masonry (~> 0.6.4)
   - MBProgressHUD (~> 1.1.0)
@@ -127,7 +134,9 @@ SPEC REPOS:
     - DACircularProgress
     - DateTools
     - EDColor
+    - FBAEMKit
     - FBSDKCoreKit
+    - FBSDKCoreKit_Basics
     - FBSDKLoginKit
     - HexColors
     - hpple
@@ -162,8 +171,10 @@ SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   EDColor: 91d127cd67d7c1d3862846fb11ef4b3851151bfa
-  FBSDKCoreKit: ac6cc500b8e104bb9a4dd20b1527b5d199123c2e
-  FBSDKLoginKit: e9b6542fdee322333502ab497f628b011dce7d78
+  FBAEMKit: 909dbac3148c409478f00270a9766d2bb343dc2a
+  FBSDKCoreKit: 7ccb8b4bb2b5ee2ad94327b774dc23f03509675d
+  FBSDKCoreKit_Basics: 8f978bce195845f609b0ec6b425949d0d24f525b
+  FBSDKLoginKit: d65eb587a9eaa89295338fb0bb3b358bde0b7ae4
   HexColors: 5f95843ef89aff6a72e1fd3a8ebabf205cc43379
   hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
@@ -189,6 +200,6 @@ SPEC CHECKSUMS:
   UIImage-Helpers: 06b04a42bdd222844035602e87e936765c80f620
   ViewUtils: 68e42c708a4b3912e39691cef5080282dc5013fb
 
-PODFILE CHECKSUM: e091728dd349764678aac7cedeada0d56c58a27d
+PODFILE CHECKSUM: 83e67a3c3aa7bedf98cc241ab6782fd7a9d76cc7
 
-COCOAPODS: 1.9.0
+COCOAPODS: 1.10.1
