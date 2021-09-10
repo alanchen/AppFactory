@@ -71,10 +71,10 @@ SYNTHESIZE_ASC_OBJ(typeNumber, setTypeNumber);
     return [self.viewControllers containsObject:vc];
 }
 
--(UIViewController *)findVCOfClass:(Class)class
+-(UIViewController *)findVCOfClass:(Class)classname
 {
     id theVC = [self.viewControllers bk_match:^BOOL(id vc) {
-        if([vc isKindOfClass:class]){
+        if([vc isKindOfClass:classname]){
             return YES;
         }
         return NO;

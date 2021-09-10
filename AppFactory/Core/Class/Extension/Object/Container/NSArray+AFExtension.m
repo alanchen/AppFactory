@@ -25,12 +25,12 @@
     }];
 }
 
--(NSArray *)arrayWithClass:(Class)class
+-(NSArray *)arrayWithClass:(Class)classname
 {
     NSMutableArray *arr = [NSMutableArray array];
     
     [self enumObjsByBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        if([obj isKindOfClass:class]){
+        if([obj isKindOfClass:classname]){
             [arr addObject:obj];
         }
     }];

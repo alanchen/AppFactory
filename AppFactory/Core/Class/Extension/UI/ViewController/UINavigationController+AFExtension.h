@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, NavigationBarStyle){
 -(UIViewController *)rootViewController;
 -(NSInteger)viewControllersCount;
 -(BOOL)isContainVC:(id)vc;
--(UIViewController *)findVCOfClass:(Class)class;
+-(UIViewController *)findVCOfClass:(Class)classname;
 
 
 @end
