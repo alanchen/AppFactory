@@ -281,7 +281,9 @@ typedef enum : NSUInteger {
         return;
     }
     index = MIN( MAX(0, index), count - 1);
-    [self.mainScrollView displayPageAtIndex:index];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.mainScrollView displayPageAtIndex:index];
+    });
 }
 
 - (NSInteger)currentIndex
