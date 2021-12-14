@@ -39,6 +39,14 @@
     navigationController.modalPresentationStyle = UIModalPresentationFullScreen;
     [navigationController setNavigationBarHidden:YES animated:NO];
     [vc presentViewController:navigationController animated:YES completion:nil];
+    
+    if (@available(iOS 13.0, *)) {
+        UINavigationBarAppearance *barAppearance = [UINavigationBarAppearance new];
+        [barAppearance configureWithOpaqueBackground];
+        barAppearance.backgroundColor = [UIColor whiteColor];
+        navigationController.navigationBar.standardAppearance = barAppearance;
+        navigationController.navigationBar.scrollEdgeAppearance = barAppearance;
+    }
 }
 
 +(WKWebViewController *)showWebViewWithURLStr:(NSString *)urlStr onViewController:(UIViewController *)vc
@@ -58,6 +66,15 @@
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:webVC];
     navigationController.modalPresentationStyle = UIModalPresentationFullScreen;
     [vc presentViewController:navigationController animated:YES completion:nil];
+    
+    if (@available(iOS 13.0, *)) {
+        UINavigationBarAppearance *barAppearance = [UINavigationBarAppearance new];
+        [barAppearance configureWithOpaqueBackground];
+        barAppearance.backgroundColor = [UIColor whiteColor];
+        navigationController.navigationBar.standardAppearance = barAppearance;
+        navigationController.navigationBar.scrollEdgeAppearance = barAppearance;
+    }
+    
     return webVC;
 }
 
