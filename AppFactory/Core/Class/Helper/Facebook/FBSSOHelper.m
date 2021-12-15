@@ -179,7 +179,7 @@ static NSString *kFBRefreshUserDataDate = @"FB_UPDATE_USER_DATE";
     
     FBSDKGraphRequest *req = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:parameters];
     
-    [req startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+    [req startWithCompletion:^(id<FBSDKGraphRequestConnecting>  _Nullable connection, id  _Nullable result, NSError * _Nullable error) {
         BOOL success = !error;
         if (success) {
             NSString *cover = [[result safelyObjectForKey:@"cover"] safelyObjectForKey:@"source"];
@@ -204,8 +204,7 @@ static NSString *kFBRefreshUserDataDate = @"FB_UPDATE_USER_DATE";
         completion(nil, nil);
         return;
     }
-    
-    [FBSDKAccessToken refreshCurrentAccessToken:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+    [FBSDKAccessToken refreshCurrentAccessTokenWithCompletion:^(id<FBSDKGraphRequestConnecting>  _Nullable connection, id  _Nullable result, NSError * _Nullable error) {
         completion(error, result);
     }];
 }

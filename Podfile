@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
+platform :ios, '10.0'
 use_frameworks!
 
 # ignore all warnings from all pods
@@ -18,8 +18,8 @@ pod 'SVProgressHUD', '2.2.5'
 pod 'ObjcAssociatedObjectHelpers', '2.0.1'
 
 # Analytics Tools & SDK
-pod 'FBSDKCoreKit', '~> 11.1.0'
-pod 'FBSDKLoginKit', '~> 11.1.0'
+pod 'FBSDKCoreKit', '~> 12.2.1'
+pod 'FBSDKLoginKit', '~> 12.2.1'
 
 # Image & ImageView & ImagePicker
 pod 'SDWebImage', '~> 5.0'

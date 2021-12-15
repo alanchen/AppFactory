@@ -20,23 +20,14 @@ PODS:
   - DACircularProgress (2.3.1)
   - DateTools (2.0.0)
   - EDColor (1.0.1)
-  - FBAEMKit (11.1.0):
-    - FBAEMKit/AEM (= 11.1.0)
-  - FBAEMKit/AEM (11.1.0):
-    - FBSDKCoreKit_Basics (~> 11.1.0)
-  - FBSDKCoreKit (11.1.0):
-    - FBSDKCoreKit/Core (= 11.1.0)
-  - FBSDKCoreKit/Core (11.1.0):
-    - FBAEMKit (~> 11.1.0)
-    - FBSDKCoreKit_Basics (~> 11.1.0)
-  - FBSDKCoreKit_Basics (11.1.0):
-    - FBSDKCoreKit_Basics/Basics (= 11.1.0)
-  - FBSDKCoreKit_Basics/Basics (11.1.0)
-  - FBSDKLoginKit (11.1.0):
-    - FBSDKLoginKit/Login (= 11.1.0)
-  - FBSDKLoginKit/Login (11.1.0):
-    - FBSDKCoreKit (~> 11.1.0)
-    - FBSDKCoreKit_Basics (~> 11.1.0)
+  - FBAEMKit (12.2.1):
+    - FBSDKCoreKit_Basics (= 12.2.1)
+  - FBSDKCoreKit (12.2.1):
+    - FBAEMKit (= 12.2.1)
+    - FBSDKCoreKit_Basics (= 12.2.1)
+  - FBSDKCoreKit_Basics (12.2.1)
+  - FBSDKLoginKit (12.2.1):
+    - FBSDKCoreKit (= 12.2.1)
   - HexColors (4.0.0)
   - hpple (0.2.0)
   - Masonry (0.6.4)
@@ -84,12 +75,12 @@ PODS:
     - HexColors (~> 4.0)
     - PPTopMostController
   - SAMKeychain (1.5.3)
-  - SDWebImage (5.9.4):
-    - SDWebImage/Core (= 5.9.4)
-  - SDWebImage/Core (5.9.4)
+  - SDWebImage (5.12.1):
+    - SDWebImage/Core (= 5.12.1)
+  - SDWebImage/Core (5.12.1)
   - SVProgressHUD (2.2.5)
   - TTTAttributedLabel (2.0.0)
-  - UIDeviceIdentifier (1.5.0)
+  - UIDeviceIdentifier (1.7.1)
   - UIImage-Helpers (0.0.3)
   - ViewUtils (1.1.2)
 
@@ -101,8 +92,8 @@ DEPENDENCIES:
   - DACircularProgress
   - DateTools (~> 2.0.0)
   - EDColor (~> 1.0.1)
-  - FBSDKCoreKit (~> 11.1.0)
-  - FBSDKLoginKit (~> 11.1.0)
+  - FBSDKCoreKit (~> 12.2.1)
+  - FBSDKLoginKit (~> 12.2.1)
   - hpple (~> 0.2.0)
   - Masonry (~> 0.6.4)
   - MBProgressHUD (~> 1.1.0)
@@ -171,10 +162,10 @@ SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   EDColor: 91d127cd67d7c1d3862846fb11ef4b3851151bfa
-  FBAEMKit: 909dbac3148c409478f00270a9766d2bb343dc2a
-  FBSDKCoreKit: 7ccb8b4bb2b5ee2ad94327b774dc23f03509675d
-  FBSDKCoreKit_Basics: 8f978bce195845f609b0ec6b425949d0d24f525b
-  FBSDKLoginKit: d65eb587a9eaa89295338fb0bb3b358bde0b7ae4
+  FBAEMKit: 4cea610d0bc1680572f2aad7b25db7a2f2690d82
+  FBSDKCoreKit: 5b1992fe65802ca26be7e68bc4fac5f59fa39908
+  FBSDKCoreKit_Basics: a6a92ca628e05f86f458a4721574c5ddfb058ba3
+  FBSDKLoginKit: 7467b7f988ca4fdf48f12a839bcfce4264752429
   HexColors: 5f95843ef89aff6a72e1fd3a8ebabf205cc43379
   hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
@@ -193,13 +184,13 @@ SPEC CHECKSUMS:
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   RMessage: 31d44bd26a8f353f987d2e7194f3e9ffb203cbf2
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
-  SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
+  SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
-  UIDeviceIdentifier: a79ccdfc940373835a7d8e9fc7541e6bf61b6319
+  UIDeviceIdentifier: d0fee204f467dacf8808b7ac14ce43affeb271a5
   UIImage-Helpers: 06b04a42bdd222844035602e87e936765c80f620
   ViewUtils: 68e42c708a4b3912e39691cef5080282dc5013fb
 
-PODFILE CHECKSUM: 83e67a3c3aa7bedf98cc241ab6782fd7a9d76cc7
+PODFILE CHECKSUM: ab09c393ef471e0d017fb1ea7cdf28e0a742ef1f
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2
