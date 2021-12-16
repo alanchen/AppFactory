@@ -24,6 +24,7 @@
 @property (nonatomic)CGFloat bgAlpha;  // default is 0.3
 @property (nonatomic)CGFloat appearDuration; // default is 0.3
 @property (nonatomic)CGFloat disappearDuration; // default is 0.3
+@property (nonatomic, weak) UIView *showOnTheView; // default is main window, special case usually don't use this
 
 + (LightBoxWrapper *)sharedInstance;
 

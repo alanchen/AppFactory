@@ -94,7 +94,11 @@
     
     self.contentView = contentView;
     [self addSubview:self.contentView];
-    [SHARED_APP.delegate.window addSubview:self];
+    if(self.showOnTheView){
+        [self.showOnTheView addSubview:self];
+    }else{
+        [SHARED_APP.delegate.window addSubview:self];
+    }
     [self.contentView setNeedsLayout];
     [self.contentView layoutIfNeeded];
     self.contentView.alpha = 0;
@@ -174,6 +178,7 @@
     self.bgAlpha = 0.3;
     self.appearDuration = 0.3;
     self.disappearDuration = 0.3;
+    self.showOnTheView = nil;
 }
 
 #pragma mark - Animation
