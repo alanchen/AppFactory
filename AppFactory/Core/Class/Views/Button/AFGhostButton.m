@@ -7,7 +7,7 @@
 //
 
 #import "AFGhostButton.h"
-#import <UIImage_Helpers/UIImage-Helpers.h>
+#import "UIImage-Helpers.h"
 #import "UIColor+AFExtension.h"
 
 @interface AFGhostButton ()

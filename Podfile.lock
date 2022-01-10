@@ -80,8 +80,7 @@ PODS:
   - SDWebImage/Core (5.12.1)
   - SVProgressHUD (2.2.5)
   - TTTAttributedLabel (2.0.0)
-  - UIDeviceIdentifier (1.7.1)
-  - UIImage-Helpers (0.0.3)
+  - UIDeviceIdentifier (2.0.0)
   - ViewUtils (1.1.2)
 
 DEPENDENCIES:
@@ -113,7 +112,6 @@ DEPENDENCIES:
   - SVProgressHUD (= 2.2.5)
   - TTTAttributedLabel (~> 2.0.0)
   - UIDeviceIdentifier
-  - UIImage-Helpers (~> 0.0.3)
   - ViewUtils (~> 1.1.2)
 
 SPEC REPOS:
@@ -151,7 +149,6 @@ SPEC REPOS:
     - SVProgressHUD
     - TTTAttributedLabel
     - UIDeviceIdentifier
-    - UIImage-Helpers
     - ViewUtils
 
 SPEC CHECKSUMS:
@@ -187,10 +184,9 @@ SPEC CHECKSUMS:
   SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
-  UIDeviceIdentifier: d0fee204f467dacf8808b7ac14ce43affeb271a5
-  UIImage-Helpers: 06b04a42bdd222844035602e87e936765c80f620
+  UIDeviceIdentifier: af4e11e25a2ea670078e2bd677bb0e8144f9f063
   ViewUtils: 68e42c708a4b3912e39691cef5080282dc5013fb
 
-PODFILE CHECKSUM: ab09c393ef471e0d017fb1ea7cdf28e0a742ef1f
+PODFILE CHECKSUM: d0bde7c7b3fe0963f8f3bbbbf7b5f1c288412566
 
 COCOAPODS: 1.11.2

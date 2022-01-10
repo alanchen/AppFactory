@@ -18,5 +18,5 @@
 #import <DateTools/DateTools.h>
 #import <ArrayUtils/ArrayUtils.h>
 #import <ObjcAssociatedObjectHelpers/ObjcAssociatedObjectHelpers.h>
-#import <UIImage_Helpers/UIImage-Helpers.h>
+#import "UIImage-Helpers.h"
 

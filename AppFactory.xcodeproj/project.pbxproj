@@ -19,6 +19,10 @@
 		E74174561FA03D6B009456FD /* RACSubject+AFThrottle.m in Sources */ = {isa = PBXBuildFile; fileRef = E74174551FA03D6B009456FD /* RACSubject+AFThrottle.m */; };
 		E741BEF61F9ED49500FE41C4 /* AFGhostButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E741BEF51F9ED49500FE41C4 /* AFGhostButton.m */; };
 		E741BEF91F9EDA5600FE41C4 /* AFRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E741BEF81F9EDA5600FE41C4 /* AFRadioButton.m */; };
+		E74EC637278C3792002C8FA8 /* UIImage+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = E74EC62F278C3792002C8FA8 /* UIImage+Blur.m */; };
+		E74EC638278C3792002C8FA8 /* UIImage+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = E74EC630278C3792002C8FA8 /* UIImage+Screenshot.m */; };
+		E74EC639278C3792002C8FA8 /* UIImage-Helpers.md in Resources */ = {isa = PBXBuildFile; fileRef = E74EC632278C3792002C8FA8 /* UIImage-Helpers.md */; };
+		E74EC63A278C3792002C8FA8 /* UIImage+ImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = E74EC633278C3792002C8FA8 /* UIImage+ImageWithColor.m */; };
 		E76D7DC424C7E58A0062E0E5 /* NSDictionary+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E76D7D7C24C7E5890062E0E5 /* NSDictionary+BlocksKit.m */; };
 		E76D7DC524C7E58A0062E0E5 /* NSMutableArray+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E76D7D7E24C7E5890062E0E5 /* NSMutableArray+BlocksKit.m */; };
 		E76D7DC624C7E58A0062E0E5 /* NSMutableIndexSet+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E76D7D7F24C7E5890062E0E5 /* NSMutableIndexSet+BlocksKit.m */; };
@@ -178,6 +182,14 @@
 		E741BEF51F9ED49500FE41C4 /* AFGhostButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFGhostButton.m; sourceTree = "<group>"; };
 		E741BEF71F9EDA5600FE41C4 /* AFRadioButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFRadioButton.h; sourceTree = "<group>"; };
 		E741BEF81F9EDA5600FE41C4 /* AFRadioButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFRadioButton.m; sourceTree = "<group>"; };
+		E74EC62F278C3792002C8FA8 /* UIImage+Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blur.m"; sourceTree = "<group>"; };
+		E74EC630278C3792002C8FA8 /* UIImage+Screenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Screenshot.m"; sourceTree = "<group>"; };
+		E74EC631278C3792002C8FA8 /* UIImage+ImageWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithColor.h"; sourceTree = "<group>"; };
+		E74EC632278C3792002C8FA8 /* UIImage-Helpers.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "UIImage-Helpers.md"; sourceTree = "<group>"; };
+		E74EC633278C3792002C8FA8 /* UIImage+ImageWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithColor.m"; sourceTree = "<group>"; };
+		E74EC634278C3792002C8FA8 /* UIImage+Screenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Screenshot.h"; sourceTree = "<group>"; };
+		E74EC635278C3792002C8FA8 /* UIImage+Blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blur.h"; sourceTree = "<group>"; };
+		E74EC636278C3792002C8FA8 /* UIImage-Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage-Helpers.h"; sourceTree = "<group>"; };
 		E76D7D7A24C7E5890062E0E5 /* BlocksKit+UIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BlocksKit+UIKit.h"; sourceTree = "<group>"; };
 		E76D7D7C24C7E5890062E0E5 /* NSDictionary+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BlocksKit.m"; sourceTree = "<group>"; };
 		E76D7D7D24C7E5890062E0E5 /* NSOrderedSet+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOrderedSet+BlocksKit.h"; sourceTree = "<group>"; };
@@ -514,6 +526,21 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		E74EC62E278C3792002C8FA8 /* UIImage-Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E74EC636278C3792002C8FA8 /* UIImage-Helpers.h */,
+				E74EC635278C3792002C8FA8 /* UIImage+Blur.h */,
+				E74EC62F278C3792002C8FA8 /* UIImage+Blur.m */,
+				E74EC634278C3792002C8FA8 /* UIImage+Screenshot.h */,
+				E74EC630278C3792002C8FA8 /* UIImage+Screenshot.m */,
+				E74EC631278C3792002C8FA8 /* UIImage+ImageWithColor.h */,
+				E74EC633278C3792002C8FA8 /* UIImage+ImageWithColor.m */,
+				E74EC632278C3792002C8FA8 /* UIImage-Helpers.md */,
+			);
+			path = "UIImage-Helpers";
+			sourceTree = "<group>";
+		};
 		E76D7D7824C7E5890062E0E5 /* BlocksKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -719,6 +746,7 @@
 		E79A89D923177CC90049968A /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				E74EC62E278C3792002C8FA8 /* UIImage-Helpers */,
 				E787CE1F265CA45F00B949B4 /* AFTPhotoScroller */,
 				E76D7D7824C7E5890062E0E5 /* BlocksKit */,
 				E79A89DA23177CC90049968A /* IDMPhotoBrowser */,
@@ -1318,6 +1346,7 @@
 				E7C20AD61F906A16004B70E0 /* CTFeedback.bundle in Resources */,
 				E7905D5E1F7A350A006CC6F5 /* Launch Screen.storyboard in Resources */,
 				E79A89ED23177CC90049968A /* IDMPhotoBrowser.bundle in Resources */,
+				E74EC639278C3792002C8FA8 /* UIImage-Helpers.md in Resources */,
 				E7905D511F7A32E4006CC6F5 /* Assets.xcassets in Resources */,
 				E7F8C20E1F8F1C1600B1E14B /* AppFactory.bundle in Resources */,
 				E79A89EE23177CC90049968A /* IDMPBLocalizations.bundle in Resources */,
@@ -1379,7 +1408,6 @@
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/TTTAttributedLabel/TTTAttributedLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/UIDeviceIdentifier/UIDeviceIdentifier.framework",
-				"${BUILT_PRODUCTS_DIR}/UIImage-Helpers/UIImage_Helpers.framework",
 				"${BUILT_PRODUCTS_DIR}/ViewUtils/ViewUtils.framework",
 				"${BUILT_PRODUCTS_DIR}/hpple/hpple.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
@@ -1417,7 +1445,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTTAttributedLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIDeviceIdentifier.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIImage_Helpers.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewUtils.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hpple.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
@@ -1451,6 +1478,7 @@
 				E7F8C1D91F8F1C1600B1E14B /* NSString+AFWebExtension.m in Sources */,
 				E76D7DD024C7E58A0062E0E5 /* NSIndexSet+BlocksKit.m in Sources */,
 				E76D7DE124C7E58A0062E0E5 /* NSObject+A2BlockDelegate.m in Sources */,
+				E74EC637278C3792002C8FA8 /* UIImage+Blur.m in Sources */,
 				E76D7DC624C7E58A0062E0E5 /* NSMutableIndexSet+BlocksKit.m in Sources */,
 				E76D7DCC24C7E58A0062E0E5 /* NSOrderedSet+BlocksKit.m in Sources */,
 				E7F8C1FB1F8F1C1600B1E14B /* CTFeedbackCell.m in Sources */,
@@ -1462,6 +1490,7 @@
 				E7F8C1F11F8F1C1600B1E14B /* APNHelper.m in Sources */,
 				E7F8C1E71F8F1C1600B1E14B /* UIView+AFBorder.m in Sources */,
 				E79A89F123177CC90049968A /* IDMCaptionView.m in Sources */,
+				E74EC638278C3792002C8FA8 /* UIImage+Screenshot.m in Sources */,
 				E7F8C1E91F8F1C1600B1E14B /* UIView+AFSubView.m in Sources */,
 				E7F8C1E21F8F1C1600B1E14B /* UITableViewCell+AFExtension.m in Sources */,
 				E7F8C2041F8F1C1600B1E14B /* ImagePickerHelper.m in Sources */,
@@ -1521,6 +1550,7 @@
 				E7F8C1EE1F8F1C1600B1E14B /* UINavigationController+AFExtension.m in Sources */,
 				E7F8C1CC1F8F1C1600B1E14B /* AFTableEmptyCaseView.m in Sources */,
 				E73BD18D202D716B0028B351 /* AFBaseTabBar.m in Sources */,
+				E74EC63A278C3792002C8FA8 /* UIImage+ImageWithColor.m in Sources */,
 				E76D7DCF24C7E58A0062E0E5 /* NSObject+BKBlockExecution.m in Sources */,
 				E7F8C1F51F8F1C1600B1E14B /* AFCountryPickerViewController.m in Sources */,
 				E7F4A9A41FAC05A200AE7B27 /* AFNaviBar.m in Sources */,

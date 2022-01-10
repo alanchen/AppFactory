@@ -29,7 +29,6 @@ Pod::Spec.new do |s|
 	s.dependency "FBSDKLoginKit", "~> 12.2.1"
 	s.dependency "SDWebImage", "~> 5.0"
 	s.dependency "NYXImagesKit", "~> 2.3"
-	s.dependency "UIImage-Helpers", "~> 0.0.3"
 	s.dependency "TTTAttributedLabel", "~> 2.0.0"
 	s.dependency "ViewUtils", "~> 1.1.2"
 	s.dependency "MJRefresh", "~> 3.1.4"

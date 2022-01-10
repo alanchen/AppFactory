@@ -24,7 +24,6 @@ pod 'FBSDKLoginKit', '~> 12.2.1'
 # Image & ImageView & ImagePicker
 pod 'SDWebImage', '~> 5.0'
 pod 'NYXImagesKit', '~> 2.3'
-pod 'UIImage-Helpers', '~> 0.0.3'
 
 # View
 pod 'TTTAttributedLabel', '~> 2.0.0'
