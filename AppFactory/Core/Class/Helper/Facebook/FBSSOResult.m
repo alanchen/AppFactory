@@ -6,6 +6,7 @@
 //  Copyright © 2017年 alan. All rights reserved.
 //
 
+/*
 #import "FBSSOResult.h"
 
 @implementation FBSSOResult
@@ -51,3 +52,4 @@
 
 @end
 
+ */

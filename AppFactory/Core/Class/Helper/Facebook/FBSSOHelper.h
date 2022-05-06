@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FBSSOResult.h"
-
+/*
 @import FBSDKLoginKit;
 @import FBSDKCoreKit;
 
@@ -41,4 +41,5 @@
             openURL:(NSURL *)url
             options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options;
 @end
+ */
 

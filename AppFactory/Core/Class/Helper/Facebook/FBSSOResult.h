@@ -6,6 +6,7 @@
 //  Copyright © 2017年 alan. All rights reserved.
 //
 
+/*
 #import <Foundation/Foundation.h>
 
 @import FBSDKLoginKit;
@@ -23,3 +24,5 @@
 -(BOOL)isDeclinedPermissions;
 
 @end
+ 
+ */
