@@ -20,14 +20,14 @@ PODS:
   - DACircularProgress (2.3.1)
   - DateTools (2.0.0)
   - EDColor (1.0.1)
-  - FBAEMKit (12.2.1):
-    - FBSDKCoreKit_Basics (= 12.2.1)
-  - FBSDKCoreKit (12.2.1):
-    - FBAEMKit (= 12.2.1)
-    - FBSDKCoreKit_Basics (= 12.2.1)
-  - FBSDKCoreKit_Basics (12.2.1)
-  - FBSDKLoginKit (12.2.1):
-    - FBSDKCoreKit (= 12.2.1)
+  - FBAEMKit (13.2.0):
+    - FBSDKCoreKit_Basics (= 13.2.0)
+  - FBSDKCoreKit (13.2.0):
+    - FBAEMKit (= 13.2.0)
+    - FBSDKCoreKit_Basics (= 13.2.0)
+  - FBSDKCoreKit_Basics (13.2.0)
+  - FBSDKLoginKit (13.2.0):
+    - FBSDKCoreKit (= 13.2.0)
   - HexColors (4.0.0)
   - hpple (0.2.0)
   - Masonry (0.6.4)
@@ -75,9 +75,9 @@ PODS:
     - HexColors (~> 4.0)
     - PPTopMostController
   - SAMKeychain (1.5.3)
-  - SDWebImage (5.12.1):
-    - SDWebImage/Core (= 5.12.1)
-  - SDWebImage/Core (5.12.1)
+  - SDWebImage (5.12.5):
+    - SDWebImage/Core (= 5.12.5)
+  - SDWebImage/Core (5.12.5)
   - SVProgressHUD (2.2.5)
   - TTTAttributedLabel (2.0.0)
   - UIDeviceIdentifier (2.0.0)
@@ -91,8 +91,8 @@ DEPENDENCIES:
   - DACircularProgress
   - DateTools (~> 2.0.0)
   - EDColor (~> 1.0.1)
-  - FBSDKCoreKit (~> 12.2.1)
-  - FBSDKLoginKit (~> 12.2.1)
+  - FBSDKCoreKit (~> 13.2.0)
+  - FBSDKLoginKit (~> 13.2.0)
   - hpple (~> 0.2.0)
   - Masonry (~> 0.6.4)
   - MBProgressHUD (~> 1.1.0)
@@ -159,10 +159,10 @@ SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   EDColor: 91d127cd67d7c1d3862846fb11ef4b3851151bfa
-  FBAEMKit: 4cea610d0bc1680572f2aad7b25db7a2f2690d82
-  FBSDKCoreKit: 5b1992fe65802ca26be7e68bc4fac5f59fa39908
-  FBSDKCoreKit_Basics: a6a92ca628e05f86f458a4721574c5ddfb058ba3
-  FBSDKLoginKit: 7467b7f988ca4fdf48f12a839bcfce4264752429
+  FBAEMKit: c2b2895363b7e57192013d1dc49fdf498b28624c
+  FBSDKCoreKit: 58139803d861e72c7661dc875611a759352a55ac
+  FBSDKCoreKit_Basics: 1ffc68326a5ece051d85574f02a0adcf27c2a5f2
+  FBSDKLoginKit: 19e2a878556c2ee4f20486dc406e582783cd7578
   HexColors: 5f95843ef89aff6a72e1fd3a8ebabf205cc43379
   hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
@@ -181,12 +181,12 @@ SPEC CHECKSUMS:
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   RMessage: 31d44bd26a8f353f987d2e7194f3e9ffb203cbf2
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
-  SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
+  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   UIDeviceIdentifier: af4e11e25a2ea670078e2bd677bb0e8144f9f063
   ViewUtils: 68e42c708a4b3912e39691cef5080282dc5013fb
 
-PODFILE CHECKSUM: d0bde7c7b3fe0963f8f3bbbbf7b5f1c288412566
+PODFILE CHECKSUM: 39f1269eea27e18d299c7f7fc6e164132362a607
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
