@@ -7,7 +7,7 @@
 //
 
 #import "ImagePickerHelper.h"
-#import "UIImage+Resizing.h"
+#import "UIImage+NYXResize.h"
 #import "UIAlertController+AFExtension.h"
 #import "UsefulDefinition.h"
 #import "DeviceMacros.h"
@@ -223,7 +223,7 @@
     UIImage *image = [self imageFromPickerInfo:info];
     CGSize maxSize = CGSizeMake(800,800);
     if(image.size.width>maxSize.width || image.size.height>maxSize.height)
-        image = [image scaleToSize:maxSize usingMode:NYXResizeModeAspectFit];
+        image = [image scaleToFitSize:maxSize];
     
     return image;
 }

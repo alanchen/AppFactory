@@ -23,7 +23,6 @@ pod 'ObjcAssociatedObjectHelpers', '2.0.1'
 
 # Image & ImageView & ImagePicker
 pod 'SDWebImage', '~> 5.0'
-pod 'NYXImagesKit', '~> 2.3'
 
 # View
 pod 'TTTAttributedLabel', '~> 2.0.0'

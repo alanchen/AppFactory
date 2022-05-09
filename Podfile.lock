@@ -35,7 +35,6 @@ PODS:
   - "MWFeedParser/NSDate+InternetDateTime (1.0.1)"
   - "MWFeedParser/NSString+HTML (1.0.1)"
   - NSHash (1.2.0)
-  - NYXImagesKit (2.3)
   - ObjcAssociatedObjectHelpers (2.0.1):
     - ObjcAssociatedObjectHelpers/Core (= 2.0.1)
     - "ObjcAssociatedObjectHelpers/NSObject+Dictionary (= 2.0.1)"
@@ -88,7 +87,6 @@ DEPENDENCIES:
   - MJRefresh (~> 3.1.4)
   - MWFeedParser (~> 1.0.1)
   - NSHash (~> 1.2.0)
-  - NYXImagesKit (~> 2.3)
   - ObjcAssociatedObjectHelpers (= 2.0.1)
   - PINCache (~> 3.0.1-beta.5)
   - pop
@@ -118,7 +116,6 @@ SPEC REPOS:
     - MJRefresh
     - MWFeedParser
     - NSHash
-    - NYXImagesKit
     - ObjcAssociatedObjectHelpers
     - PINCache
     - PINOperation
@@ -149,7 +146,6 @@ SPEC CHECKSUMS:
   MJRefresh: ee5b68f639775462faba4db0fd243baf4d42c2cf
   MWFeedParser: 2cf646014c1baf6ad1b08c480b40a08180079247
   NSHash: 036c03781d372c288d332b512b203e7bb832e46e
-  NYXImagesKit: 8163e3335a40eaa173ca5bbbf81fafb57d3947eb
   ObjcAssociatedObjectHelpers: 686c291f292c26a49b9b1fa7d58130a8d35d59d2
   PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
   PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
@@ -165,6 +161,6 @@ SPEC CHECKSUMS:
   UIDeviceIdentifier: af4e11e25a2ea670078e2bd677bb0e8144f9f063
   ViewUtils: 68e42c708a4b3912e39691cef5080282dc5013fb
 
-PODFILE CHECKSUM: 0099a7a38f9e5616fa14246d7e732575b4b06b87
+PODFILE CHECKSUM: 93ec4a87e4dfd87a99aa16c24aec5537deaf29db
 
 COCOAPODS: 1.11.3

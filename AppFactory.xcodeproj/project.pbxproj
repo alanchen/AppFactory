@@ -55,6 +55,8 @@
 		E76D7DE124C7E58A0062E0E5 /* NSObject+A2BlockDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E76D7DBE24C7E58A0062E0E5 /* NSObject+A2BlockDelegate.m */; };
 		E76D7DE224C7E58A0062E0E5 /* A2DynamicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E76D7DC024C7E58A0062E0E5 /* A2DynamicDelegate.m */; };
 		E76D7DE324C7E58A0062E0E5 /* NSObject+A2DynamicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E76D7DC124C7E58A0062E0E5 /* NSObject+A2DynamicDelegate.m */; };
+		E773C23F2828F08F003F9377 /* UIImage+NYXResize.m in Sources */ = {isa = PBXBuildFile; fileRef = E773C23E2828F08F003F9377 /* UIImage+NYXResize.m */; };
+		E773C2422828F1AF003F9377 /* NYXImagesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E773C2412828F1AF003F9377 /* NYXImagesHelper.m */; };
 		E787CE1B265C8CE200B949B4 /* ACPhotoViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = E787CE1A265C8CE200B949B4 /* ACPhotoViewer.m */; };
 		E787CE26265CA45F00B949B4 /* AFTPagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E787CE23265CA45F00B949B4 /* AFTPagingScrollView.m */; };
 		E787CE27265CA45F00B949B4 /* AFTImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E787CE24265CA45F00B949B4 /* AFTImageScrollView.m */; };
@@ -258,6 +260,10 @@
 		E76D7DC024C7E58A0062E0E5 /* A2DynamicDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A2DynamicDelegate.m; sourceTree = "<group>"; };
 		E76D7DC124C7E58A0062E0E5 /* NSObject+A2DynamicDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+A2DynamicDelegate.m"; sourceTree = "<group>"; };
 		E76D7DC224C7E58A0062E0E5 /* NSObject+A2BlockDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+A2BlockDelegate.h"; sourceTree = "<group>"; };
+		E773C23D2828F08F003F9377 /* UIImage+NYXResize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+NYXResize.h"; sourceTree = "<group>"; };
+		E773C23E2828F08F003F9377 /* UIImage+NYXResize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+NYXResize.m"; sourceTree = "<group>"; };
+		E773C2402828F1AF003F9377 /* NYXImagesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYXImagesHelper.h; sourceTree = "<group>"; };
+		E773C2412828F1AF003F9377 /* NYXImagesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYXImagesHelper.m; sourceTree = "<group>"; };
 		E787CE19265C8CE200B949B4 /* ACPhotoViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACPhotoViewer.h; sourceTree = "<group>"; };
 		E787CE1A265C8CE200B949B4 /* ACPhotoViewer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACPhotoViewer.m; sourceTree = "<group>"; };
 		E787CE20265CA45F00B949B4 /* AFTPagingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFTPagingScrollView.h; sourceTree = "<group>"; };
@@ -1162,8 +1168,12 @@
 		E7F8C19C1F8F1C1600B1E14B /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				E773C2402828F1AF003F9377 /* NYXImagesHelper.h */,
+				E773C2412828F1AF003F9377 /* NYXImagesHelper.m */,
 				E7F8C19D1F8F1C1600B1E14B /* ImagePickerHelper.h */,
 				E7F8C19E1F8F1C1600B1E14B /* ImagePickerHelper.m */,
+				E773C23D2828F08F003F9377 /* UIImage+NYXResize.h */,
+				E773C23E2828F08F003F9377 /* UIImage+NYXResize.m */,
 			);
 			path = ImagePicker;
 			sourceTree = "<group>";
@@ -1394,7 +1404,6 @@
 				"${BUILT_PRODUCTS_DIR}/MWFeedParser/MWFeedParser.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/NSHash/NSHash.framework",
-				"${BUILT_PRODUCTS_DIR}/NYXImagesKit/NYXImagesKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjcAssociatedObjectHelpers/ObjcAssociatedObjectHelpers.framework",
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
@@ -1426,7 +1435,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MWFeedParser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSHash.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NYXImagesKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcAssociatedObjectHelpers.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
@@ -1502,8 +1510,10 @@
 				E7F8C1EC1F8F1C1600B1E14B /* UIAlertController+Window.m in Sources */,
 				E7F8C1FE1F8F1C1600B1E14B /* CTFeedbackViewController.m in Sources */,
 				E76D7DCD24C7E58A0062E0E5 /* NSObject+BKAssociatedObjects.m in Sources */,
+				E773C23F2828F08F003F9377 /* UIImage+NYXResize.m in Sources */,
 				E7F8C1D11F8F1C1600B1E14B /* NSObject+AFExtension.m in Sources */,
 				E7F8C1CB1F8F1C1600B1E14B /* AFBaseTableView.m in Sources */,
+				E773C2422828F1AF003F9377 /* NYXImagesHelper.m in Sources */,
 				E76D7DDA24C7E58A0062E0E5 /* UITextField+BlocksKit.m in Sources */,
 				E741BEF91F9EDA5600FE41C4 /* AFRadioButton.m in Sources */,
 				E7F8C1E41F8F1C1600B1E14B /* UILabel+AFExtension.m in Sources */,
