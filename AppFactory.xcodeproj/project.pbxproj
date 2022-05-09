@@ -78,6 +78,7 @@
 		E79A89F323177CC90049968A /* IDMZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E79A89E623177CC90049968A /* IDMZoomingScrollView.m */; };
 		E79A89F423177CC90049968A /* IDMPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = E79A89E823177CC90049968A /* IDMPhotoBrowser.m */; };
 		E79A89F523177CC90049968A /* IDMTapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E79A89EA23177CC90049968A /* IDMTapDetectingView.m */; };
+		E7AD53FA2828F4BA0001E3A7 /* UIImage+Rotating.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AD53F92828F4BA0001E3A7 /* UIImage+Rotating.m */; };
 		E7AF70C21FB0350C0040904F /* AFRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AF70C11FB0350C0040904F /* AFRefreshFooter.m */; };
 		E7AF70C51FB036810040904F /* AFRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AF70C41FB036810040904F /* AFRefreshHeader.m */; };
 		E7C20AD61F906A16004B70E0 /* CTFeedback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7C20AD51F906A16004B70E0 /* CTFeedback.bundle */; };
@@ -307,6 +308,8 @@
 		E79A89EB23177CC90049968A /* IDMUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMUtils.h; sourceTree = "<group>"; };
 		E79A89EC23177CC90049968A /* IDMTapDetectingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMTapDetectingImageView.h; sourceTree = "<group>"; };
 		E7AD2E321F8DA8EA00F8E58A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7AD53F82828F4B90001E3A7 /* UIImage+Rotating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotating.h"; sourceTree = "<group>"; };
+		E7AD53F92828F4BA0001E3A7 /* UIImage+Rotating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotating.m"; sourceTree = "<group>"; };
 		E7AF70C01FB0350C0040904F /* AFRefreshFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFRefreshFooter.h; sourceTree = "<group>"; };
 		E7AF70C11FB0350C0040904F /* AFRefreshFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFRefreshFooter.m; sourceTree = "<group>"; };
 		E7AF70C31FB036810040904F /* AFRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFRefreshHeader.h; sourceTree = "<group>"; };
@@ -1168,10 +1171,12 @@
 		E7F8C19C1F8F1C1600B1E14B /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
-				E773C2402828F1AF003F9377 /* NYXImagesHelper.h */,
-				E773C2412828F1AF003F9377 /* NYXImagesHelper.m */,
 				E7F8C19D1F8F1C1600B1E14B /* ImagePickerHelper.h */,
 				E7F8C19E1F8F1C1600B1E14B /* ImagePickerHelper.m */,
+				E7AD53F82828F4B90001E3A7 /* UIImage+Rotating.h */,
+				E7AD53F92828F4BA0001E3A7 /* UIImage+Rotating.m */,
+				E773C2402828F1AF003F9377 /* NYXImagesHelper.h */,
+				E773C2412828F1AF003F9377 /* NYXImagesHelper.m */,
 				E773C23D2828F08F003F9377 /* UIImage+NYXResize.h */,
 				E773C23E2828F08F003F9377 /* UIImage+NYXResize.m */,
 			);
@@ -1484,6 +1489,7 @@
 				E7F8C1DC1F8F1C1600B1E14B /* UIImage+AFExtension.m in Sources */,
 				E76D7DE324C7E58A0062E0E5 /* NSObject+A2DynamicDelegate.m in Sources */,
 				E7FF1CC420EC730B0009E046 /* IAPHelper.m in Sources */,
+				E7AD53FA2828F4BA0001E3A7 /* UIImage+Rotating.m in Sources */,
 				E7F8C1DA1F8F1C1600B1E14B /* UIButton+AFExtension.m in Sources */,
 				E7F8C1F11F8F1C1600B1E14B /* APNHelper.m in Sources */,
 				E7F8C1E71F8F1C1600B1E14B /* UIView+AFBorder.m in Sources */,
