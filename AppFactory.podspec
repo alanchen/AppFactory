@@ -40,7 +40,6 @@ Pod::Spec.new do |s|
 	s.dependency "DateTools", "~> 2.0.0"
 	s.dependency "hpple", "~> 0.2.0"
 	s.dependency "PINCache", "~> 3.0.1"
-	s.dependency "EDColor", "~> 1.0.1"
 	s.dependency "UIDeviceIdentifier"
 	s.dependency "DACircularProgress"
 	s.dependency "pop"

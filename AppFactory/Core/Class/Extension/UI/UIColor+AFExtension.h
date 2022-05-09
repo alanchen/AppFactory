@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <EDColor/EDColor.h>
 
 @interface UIColor(AFExtension)
 
++ (UIColor *)colorWithHex:(UInt32)hex;
++ (UIColor *)colorWithHex:(UInt32)hex andAlpha:(CGFloat)alpha;
 +(UIColor *)color24WithR:(float)r G:(float)g  B:(float)b A:(float)a;
 +(UIColor *)hexRGBA:(UInt32)hex;
 +(UIColor *)random;

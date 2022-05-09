@@ -15,6 +15,23 @@
     return[UIColor colorWithRed:(float)r/255.0 green:(float)g/255.0 blue:(float)b/255.0 alpha:a];
 }
 
++ (UIColor *)colorWithHex:(UInt32)hex andAlpha:(CGFloat)alpha
+{
+    int r = (hex >> 16) & 0xFF;
+    int g = (hex >> 8) & 0xFF;
+    int b = (hex) & 0xFF;
+    
+    return [UIColor colorWithRed:r / 255.0f
+                           green:g / 255.0f
+                            blue:b / 255.0f
+                           alpha:alpha];
+}
+
++ (UIColor *)colorWithHex:(UInt32)hex
+{
+    return [self colorWithHex:hex andAlpha:1.0];
+}
+
 +(UIColor *)hexRGBA:(UInt32)hex
 {
     return [UIColor colorWithHex:hex];

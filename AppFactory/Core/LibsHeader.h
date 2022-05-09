@@ -14,7 +14,7 @@
 #import "BlocksKit.h"
 #import <PromiseKit/PromiseKit.h>
 #import <MJExtension/MJExtension.h>
-#import <EDColor/EDColor.h>
+#import "UIColor+AFExtension.h"
 #import <DateTools/DateTools.h>
 #import <ArrayUtils/ArrayUtils.h>
 #import <ObjcAssociatedObjectHelpers/ObjcAssociatedObjectHelpers.h>
