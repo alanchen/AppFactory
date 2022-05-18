@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <TTTAttributedLabel/TTTAttributedLabel.h>
+#import "TTTAttributedLabel.h"
 
 @interface TTTAttributedLabel(AFExension)
 

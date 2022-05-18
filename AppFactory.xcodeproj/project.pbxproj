@@ -82,6 +82,7 @@
 		E7AF70C21FB0350C0040904F /* AFRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AF70C11FB0350C0040904F /* AFRefreshFooter.m */; };
 		E7AF70C51FB036810040904F /* AFRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AF70C41FB036810040904F /* AFRefreshHeader.m */; };
 		E7C20AD61F906A16004B70E0 /* CTFeedback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7C20AD51F906A16004B70E0 /* CTFeedback.bundle */; };
+		E7E8E05B283488DF001EF76D /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E8E05A283488DF001EF76D /* TTTAttributedLabel.m */; };
 		E7F4A97D1FA9A5CD00AE7B27 /* AFButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F4A97C1FA9A5CD00AE7B27 /* AFButtonsView.m */; };
 		E7F4A9A41FAC05A200AE7B27 /* AFNaviBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F4A9A31FAC05A200AE7B27 /* AFNaviBar.m */; };
 		E7F58B951FBA869500AAE7A5 /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F58B941FBA869500AAE7A5 /* WKWebViewController.m */; };
@@ -315,6 +316,8 @@
 		E7AF70C31FB036810040904F /* AFRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFRefreshHeader.h; sourceTree = "<group>"; };
 		E7AF70C41FB036810040904F /* AFRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFRefreshHeader.m; sourceTree = "<group>"; };
 		E7C20AD51F906A16004B70E0 /* CTFeedback.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CTFeedback.bundle; sourceTree = "<group>"; };
+		E7E8E059283488DF001EF76D /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
+		E7E8E05A283488DF001EF76D /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 		E7F4A97B1FA9A5CD00AE7B27 /* AFButtonsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFButtonsView.h; sourceTree = "<group>"; };
 		E7F4A97C1FA9A5CD00AE7B27 /* AFButtonsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFButtonsView.m; sourceTree = "<group>"; };
 		E7F4A9A21FAC05A200AE7B27 /* AFNaviBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNaviBar.h; sourceTree = "<group>"; };
@@ -755,6 +758,7 @@
 		E79A89D923177CC90049968A /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				E7E8E058283488DF001EF76D /* TTTAttributedLabel */,
 				E74EC62E278C3792002C8FA8 /* UIImage-Helpers */,
 				E787CE1F265CA45F00B949B4 /* AFTPhotoScroller */,
 				E76D7D7824C7E5890062E0E5 /* BlocksKit */,
@@ -792,6 +796,15 @@
 				E7AD2E321F8DA8EA00F8E58A /* Info.plist */,
 			);
 			path = bundle;
+			sourceTree = "<group>";
+		};
+		E7E8E058283488DF001EF76D /* TTTAttributedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				E7E8E059283488DF001EF76D /* TTTAttributedLabel.h */,
+				E7E8E05A283488DF001EF76D /* TTTAttributedLabel.m */,
+			);
+			path = TTTAttributedLabel;
 			sourceTree = "<group>";
 		};
 		E7F4A9A11FAC058600AE7B27 /* NaviBar */ = {
@@ -1419,7 +1432,6 @@
 				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/TTTAttributedLabel/TTTAttributedLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/UIDeviceIdentifier/UIDeviceIdentifier.framework",
 				"${BUILT_PRODUCTS_DIR}/ViewUtils/ViewUtils.framework",
 				"${BUILT_PRODUCTS_DIR}/hpple/hpple.framework",
@@ -1450,7 +1462,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTTAttributedLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIDeviceIdentifier.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewUtils.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hpple.framework",
@@ -1610,6 +1621,7 @@
 				E76D7DD424C7E58A0062E0E5 /* UIAlertView+BlocksKit.m in Sources */,
 				E76D7DD924C7E58A0062E0E5 /* UIImagePickerController+BlocksKit.m in Sources */,
 				E7F8C1CE1F8F1C1600B1E14B /* NSArray+AFExtension.m in Sources */,
+				E7E8E05B283488DF001EF76D /* TTTAttributedLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

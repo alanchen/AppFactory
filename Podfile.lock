@@ -69,7 +69,6 @@ PODS:
     - SDWebImage/Core (= 5.12.5)
   - SDWebImage/Core (5.12.5)
   - SVProgressHUD (2.2.5)
-  - TTTAttributedLabel (2.0.0)
   - UIDeviceIdentifier (2.0.0)
   - ViewUtils (1.1.2)
 
@@ -96,7 +95,6 @@ DEPENDENCIES:
   - SAMKeychain (~> 1.5.2)
   - SDWebImage (~> 5.0)
   - SVProgressHUD (= 2.2.5)
-  - TTTAttributedLabel (~> 2.0.0)
   - UIDeviceIdentifier
   - ViewUtils (~> 1.1.2)
 
@@ -127,7 +125,6 @@ SPEC REPOS:
     - SAMKeychain
     - SDWebImage
     - SVProgressHUD
-    - TTTAttributedLabel
     - UIDeviceIdentifier
     - ViewUtils
 
@@ -157,10 +154,9 @@ SPEC CHECKSUMS:
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   UIDeviceIdentifier: af4e11e25a2ea670078e2bd677bb0e8144f9f063
   ViewUtils: 68e42c708a4b3912e39691cef5080282dc5013fb
 
-PODFILE CHECKSUM: 93ec4a87e4dfd87a99aa16c24aec5537deaf29db
+PODFILE CHECKSUM: 247b4c29084673a45e03f707a4c436c212f19cf6
 
 COCOAPODS: 1.11.3
