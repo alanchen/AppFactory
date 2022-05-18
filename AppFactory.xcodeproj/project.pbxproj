@@ -23,6 +23,8 @@
 		E74EC638278C3792002C8FA8 /* UIImage+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = E74EC630278C3792002C8FA8 /* UIImage+Screenshot.m */; };
 		E74EC639278C3792002C8FA8 /* UIImage-Helpers.md in Resources */ = {isa = PBXBuildFile; fileRef = E74EC632278C3792002C8FA8 /* UIImage-Helpers.md */; };
 		E74EC63A278C3792002C8FA8 /* UIImage+ImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = E74EC633278C3792002C8FA8 /* UIImage+ImageWithColor.m */; };
+		E76A145B28349253002C01B0 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = E76A145928349253002C01B0 /* NSString+HTML.m */; };
+		E76A145C28349253002C01B0 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = E76A145A28349253002C01B0 /* GTMNSString+HTML.m */; };
 		E76D7DC424C7E58A0062E0E5 /* NSDictionary+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E76D7D7C24C7E5890062E0E5 /* NSDictionary+BlocksKit.m */; };
 		E76D7DC524C7E58A0062E0E5 /* NSMutableArray+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E76D7D7E24C7E5890062E0E5 /* NSMutableArray+BlocksKit.m */; };
 		E76D7DC624C7E58A0062E0E5 /* NSMutableIndexSet+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E76D7D7F24C7E5890062E0E5 /* NSMutableIndexSet+BlocksKit.m */; };
@@ -194,6 +196,10 @@
 		E74EC634278C3792002C8FA8 /* UIImage+Screenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Screenshot.h"; sourceTree = "<group>"; };
 		E74EC635278C3792002C8FA8 /* UIImage+Blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blur.h"; sourceTree = "<group>"; };
 		E74EC636278C3792002C8FA8 /* UIImage-Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage-Helpers.h"; sourceTree = "<group>"; };
+		E76A145728349253002C01B0 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		E76A145828349253002C01B0 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		E76A145928349253002C01B0 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		E76A145A28349253002C01B0 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		E76D7D7A24C7E5890062E0E5 /* BlocksKit+UIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BlocksKit+UIKit.h"; sourceTree = "<group>"; };
 		E76D7D7C24C7E5890062E0E5 /* NSDictionary+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BlocksKit.m"; sourceTree = "<group>"; };
 		E76D7D7D24C7E5890062E0E5 /* NSOrderedSet+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOrderedSet+BlocksKit.h"; sourceTree = "<group>"; };
@@ -553,6 +559,17 @@
 			path = "UIImage-Helpers";
 			sourceTree = "<group>";
 		};
+		E76A145628349253002C01B0 /* MWFeedParser */ = {
+			isa = PBXGroup;
+			children = (
+				E76A145728349253002C01B0 /* NSString+HTML.h */,
+				E76A145928349253002C01B0 /* NSString+HTML.m */,
+				E76A145828349253002C01B0 /* GTMNSString+HTML.h */,
+				E76A145A28349253002C01B0 /* GTMNSString+HTML.m */,
+			);
+			path = MWFeedParser;
+			sourceTree = "<group>";
+		};
 		E76D7D7824C7E5890062E0E5 /* BlocksKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -758,6 +775,7 @@
 		E79A89D923177CC90049968A /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				E76A145628349253002C01B0 /* MWFeedParser */,
 				E7E8E058283488DF001EF76D /* TTTAttributedLabel */,
 				E74EC62E278C3792002C8FA8 /* UIImage-Helpers */,
 				E787CE1F265CA45F00B949B4 /* AFTPhotoScroller */,
@@ -1419,7 +1437,6 @@
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/MWFeedParser/MWFeedParser.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/NSHash/NSHash.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjcAssociatedObjectHelpers/ObjcAssociatedObjectHelpers.framework",
@@ -1449,7 +1466,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MWFeedParser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcAssociatedObjectHelpers.framework",
@@ -1609,12 +1625,14 @@
 				E722EB661F98867F0027CC05 /* FBSSOResult.m in Sources */,
 				E76D7DD524C7E58A0062E0E5 /* UIView+BlocksKit.m in Sources */,
 				E76D7DE024C7E58A0062E0E5 /* NSURLConnection+BlocksKit.m in Sources */,
+				E76A145B28349253002C01B0 /* NSString+HTML.m in Sources */,
 				E7F8C1C51F8F1C1600B1E14B /* AFHTTPSessionManager+AFExtension.m in Sources */,
 				E7AF70C51FB036810040904F /* AFRefreshHeader.m in Sources */,
 				E76D7DDD24C7E58A0062E0E5 /* MFMessageComposeViewController+BlocksKit.m in Sources */,
 				E78E60011FA07A6D00EA022E /* LightBoxWrapper.m in Sources */,
 				E76D7DC524C7E58A0062E0E5 /* NSMutableArray+BlocksKit.m in Sources */,
 				E7905D491F7A32E4006CC6F5 /* AppDelegate.m in Sources */,
+				E76A145C28349253002C01B0 /* GTMNSString+HTML.m in Sources */,
 				E7F4A97D1FA9A5CD00AE7B27 /* AFButtonsView.m in Sources */,
 				E7F8C1CD1F8F1C1600B1E14B /* IDMPhotoBrowser+AFExtension.m in Sources */,
 				E7F8C1D41F8F1C1600B1E14B /* NSAttributedString+AFExtension.m in Sources */,

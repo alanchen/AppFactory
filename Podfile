@@ -36,7 +36,6 @@ pod 'pop'
 pod 'SAMKeychain', '~> 1.5.2'
 pod 'ArrayUtils', '~> 1.3'
 pod 'NSHash', '~> 1.2.0' # MD5 [string MD5]
-pod 'MWFeedParser', '~> 1.0.1' # unescapingFromHTML gtm_stringByUnescapingFromHTML
 pod 'ActionSheetPicker-3.0', '2.2.0'
 pod 'DateTools', '~> 2.0.0'
 pod 'hpple', '~> 0.2.0'
